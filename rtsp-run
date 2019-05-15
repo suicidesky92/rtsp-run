@@ -1,7 +1,7 @@
 #!/bin/bash
 
-wd='/home/sky/Videos/' # videos will be played from this directory
-streamer="/home/sky/Downloads/rtsp-streamer/gst-rtsp-server1.0_1.14u1804/gst-rtsp-server1.0-1.14.1/examples/test-launch" # absolute path to streamer binary
+wd='/Videos/' # videos will be played from this directory
+streamer="/opt/rtsp-streamer/gst-rtsp-server1.0_1.14u1804/gst-rtsp-server1.0-1.14.1/examples/test-launch" # absolute path to streamer binary
 
 index=1
 cd $wd
