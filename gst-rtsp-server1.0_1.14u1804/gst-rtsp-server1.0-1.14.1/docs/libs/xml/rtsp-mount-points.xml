@@ -1,0 +1,263 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN"
+               "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd" [
+<!ENTITY % version-entities SYSTEM "version.entities">
+%version-entities;
+]>
+<refentry id="GstRTSPMountPoints">
+<refmeta>
+<refentrytitle role="top_of_page" id="GstRTSPMountPoints.top_of_page">GstRTSPMountPoints</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GST-RTSP-SERVER Library</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>GstRTSPMountPoints</refname>
+<refpurpose>Map a path to media</refpurpose>
+</refnamediv>
+
+<refsect1 id="GstRTSPMountPoints.functions" role="functions_proto">
+<title role="functions_proto.title">Functions</title>
+<informaltable pgwide="1" frame="none">
+<tgroup cols="2">
+<colspec colname="functions_return" colwidth="150px"/>
+<colspec colname="functions_name"/>
+<tbody>
+<row><entry role="function_type"><link linkend="GstRTSPMountPoints"><returnvalue>GstRTSPMountPoints</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-rtsp-mount-points-new">gst_rtsp_mount_points_new</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-rtsp-mount-points-add-factory">gst_rtsp_mount_points_add_factory</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-rtsp-mount-points-remove-factory">gst_rtsp_mount_points_remove_factory</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstRTSPMediaFactory"><returnvalue>GstRTSPMediaFactory</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-rtsp-mount-points-match">gst_rtsp_mount_points_match</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gchar"><returnvalue>gchar</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-rtsp-mount-points-make-path">gst_rtsp_mount_points_make_path</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="GstRTSPMountPoints.other" role="other_proto">
+<title role="other_proto.title">Types and Values</title>
+<informaltable role="enum_members_table" pgwide="1" frame="none">
+<tgroup cols="2">
+<colspec colname="name" colwidth="150px"/>
+<colspec colname="description"/>
+<tbody>
+<row><entry role="datatype_keyword">struct</entry><entry role="function_name"><link linkend="GstRTSPMountPoints-struct">GstRTSPMountPoints</link></entry></row>
+<row><entry role="datatype_keyword">struct</entry><entry role="function_name"><link linkend="GstRTSPMountPointsClass">GstRTSPMountPointsClass</link></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="GstRTSPMountPoints.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<screen>    <link linkend="GObject">GObject</link>
+    <phrase role="lineart">&#9584;&#9472;&#9472;</phrase> GstRTSPMountPoints
+</screen>
+</refsect1>
+
+
+<refsect1 id="GstRTSPMountPoints.description" role="desc">
+<title role="desc.title">Description</title>
+<para>A <link linkend="GstRTSPMountPoints"><type>GstRTSPMountPoints</type></link> object maintains a relation between paths
+and <link linkend="GstRTSPMediaFactory"><type>GstRTSPMediaFactory</type></link> objects. This object is usually given to
+<link linkend="GstRTSPClient"><type>GstRTSPClient</type></link> and used to find the media attached to a path.</para>
+<para>With <link linkend="gst-rtsp-mount-points-add-factory"><function>gst_rtsp_mount_points_add_factory()</function></link> and
+<link linkend="gst-rtsp-mount-points-remove-factory"><function>gst_rtsp_mount_points_remove_factory()</function></link>, factories can be added and
+removed.</para>
+<para>With <link linkend="gst-rtsp-mount-points-match"><function>gst_rtsp_mount_points_match()</function></link> you can find the <link linkend="GstRTSPMediaFactory"><type>GstRTSPMediaFactory</type></link>
+object that completely matches the given path.</para>
+<para>Last reviewed on 2013-07-11 (1.0.0)</para>
+
+</refsect1>
+<refsect1 id="GstRTSPMountPoints.functions_details" role="details">
+<title role="details.title">Functions</title>
+<refsect2 id="gst-rtsp-mount-points-new" role="function">
+<title>gst_rtsp_mount_points_new&#160;()</title>
+<indexterm zone="gst-rtsp-mount-points-new"><primary>gst_rtsp_mount_points_new</primary></indexterm>
+<programlisting language="C"><link linkend="GstRTSPMountPoints"><returnvalue>GstRTSPMountPoints</returnvalue></link>&#160;*
+gst_rtsp_mount_points_new (<parameter><type>void</type></parameter>);</programlisting>
+<para>Make a new mount points object.</para>
+<refsect3 id="gst-rtsp-mount-points-new.returns" role="returns">
+<title>Returns</title>
+<para>a new <link linkend="GstRTSPMountPoints"><type>GstRTSPMountPoints</type></link>. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-rtsp-mount-points-add-factory" role="function">
+<title>gst_rtsp_mount_points_add_factory&#160;()</title>
+<indexterm zone="gst-rtsp-mount-points-add-factory"><primary>gst_rtsp_mount_points_add_factory</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_rtsp_mount_points_add_factory (<parameter><link linkend="GstRTSPMountPoints"><type>GstRTSPMountPoints</type></link> *mounts</parameter>,
+                                   <parameter>const <link linkend="gchar"><type>gchar</type></link> *path</parameter>,
+                                   <parameter><link linkend="GstRTSPMediaFactory"><type>GstRTSPMediaFactory</type></link> *factory</parameter>);</programlisting>
+<para>Attach <parameter>factory</parameter>
+ to the mount point <parameter>path</parameter>
+ in <parameter>mounts</parameter>
+.</para>
+<para><parameter>path</parameter>
+ is of the form (/node)+. Any previous mount point will be freed.</para>
+<para>Ownership is taken of the reference on <parameter>factory</parameter>
+ so that <parameter>factory</parameter>
+ should not be
+used after calling this function.</para>
+<refsect3 id="gst-rtsp-mount-points-add-factory.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>mounts</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstRTSPMountPoints"><type>GstRTSPMountPoints</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>path</para></entry>
+<entry role="parameter_description"><para>a mount point</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>factory</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstRTSPMediaFactory"><type>GstRTSPMediaFactory</type></link>. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>transfer full</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-rtsp-mount-points-remove-factory" role="function">
+<title>gst_rtsp_mount_points_remove_factory&#160;()</title>
+<indexterm zone="gst-rtsp-mount-points-remove-factory"><primary>gst_rtsp_mount_points_remove_factory</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_rtsp_mount_points_remove_factory (<parameter><link linkend="GstRTSPMountPoints"><type>GstRTSPMountPoints</type></link> *mounts</parameter>,
+                                      <parameter>const <link linkend="gchar"><type>gchar</type></link> *path</parameter>);</programlisting>
+<para>Remove the <link linkend="GstRTSPMediaFactory"><type>GstRTSPMediaFactory</type></link> associated with <parameter>path</parameter>
+ in <parameter>mounts</parameter>
+.</para>
+<refsect3 id="gst-rtsp-mount-points-remove-factory.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>mounts</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstRTSPMountPoints"><type>GstRTSPMountPoints</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>path</para></entry>
+<entry role="parameter_description"><para>a mount point</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-rtsp-mount-points-match" role="function">
+<title>gst_rtsp_mount_points_match&#160;()</title>
+<indexterm zone="gst-rtsp-mount-points-match"><primary>gst_rtsp_mount_points_match</primary></indexterm>
+<programlisting language="C"><link linkend="GstRTSPMediaFactory"><returnvalue>GstRTSPMediaFactory</returnvalue></link>&#160;*
+gst_rtsp_mount_points_match (<parameter><link linkend="GstRTSPMountPoints"><type>GstRTSPMountPoints</type></link> *mounts</parameter>,
+                             <parameter>const <link linkend="gchar"><type>gchar</type></link> *path</parameter>,
+                             <parameter><link linkend="gint"><type>gint</type></link> *matched</parameter>);</programlisting>
+<para>Find the factory in <parameter>mounts</parameter>
+ that has the longest match with <parameter>path</parameter>
+.</para>
+<para>If <parameter>matched</parameter>
+ is <link linkend="NULL:CAPS"><literal>NULL</literal></link>, <parameter>path</parameter>
+ will match the factory exactly otherwise
+the amount of characters that matched is returned in <parameter>matched</parameter>
+.</para>
+<refsect3 id="gst-rtsp-mount-points-match.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>mounts</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstRTSPMountPoints"><type>GstRTSPMountPoints</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>path</para></entry>
+<entry role="parameter_description"><para>a mount point</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>matched</para></entry>
+<entry role="parameter_description"><para>the amount of <parameter>path</parameter>
+matched. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>out</acronym>][<acronym>allow-none</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-rtsp-mount-points-match.returns" role="returns">
+<title>Returns</title>
+<para>the <link linkend="GstRTSPMediaFactory"><type>GstRTSPMediaFactory</type></link> for <parameter>path</parameter>
+.
+<link linkend="g-object-unref"><function>g_object_unref()</function></link> after usage. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-rtsp-mount-points-make-path" role="function">
+<title>gst_rtsp_mount_points_make_path&#160;()</title>
+<indexterm zone="gst-rtsp-mount-points-make-path"><primary>gst_rtsp_mount_points_make_path</primary></indexterm>
+<programlisting language="C"><link linkend="gchar"><returnvalue>gchar</returnvalue></link>&#160;*
+gst_rtsp_mount_points_make_path (<parameter><link linkend="GstRTSPMountPoints"><type>GstRTSPMountPoints</type></link> *mounts</parameter>,
+                                 <parameter>const <link linkend="GstRTSPUrl"><type>GstRTSPUrl</type></link> *url</parameter>);</programlisting>
+<para>Make a path string from <parameter>url</parameter>
+.</para>
+<refsect3 id="gst-rtsp-mount-points-make-path.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>mounts</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstRTSPMountPoints"><type>GstRTSPMountPoints</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>url</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstRTSPUrl"><type>GstRTSPUrl</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-rtsp-mount-points-make-path.returns" role="returns">
+<title>Returns</title>
+<para>a path string for <parameter>url</parameter>
+, <link linkend="g-free"><function>g_free()</function></link> after usage. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>][<acronym>nullable</acronym>]</emphasis></para>
+</refsect3></refsect2>
+
+</refsect1>
+<refsect1 id="GstRTSPMountPoints.other_details" role="details">
+<title role="details.title">Types and Values</title>
+<refsect2 id="GstRTSPMountPoints-struct" role="struct">
+<title>struct GstRTSPMountPoints</title>
+<indexterm zone="GstRTSPMountPoints-struct"><primary>GstRTSPMountPoints</primary></indexterm>
+<programlisting language="C">struct GstRTSPMountPoints;</programlisting>
+<para>Creates a <link linkend="GstRTSPMediaFactory"><type>GstRTSPMediaFactory</type></link> object for a given url.</para>
+</refsect2>
+<refsect2 id="GstRTSPMountPointsClass" role="struct">
+<title>struct GstRTSPMountPointsClass</title>
+<indexterm zone="GstRTSPMountPointsClass"><primary>GstRTSPMountPointsClass</primary></indexterm>
+<programlisting language="C">struct GstRTSPMountPointsClass {
+  GObjectClass  parent_class;
+
+  gchar * (*make_path) (GstRTSPMountPoints *mounts,
+                        const GstRTSPUrl *url);
+};
+</programlisting>
+<para>The class for the media mounts object.</para>
+<refsect3 id="GstRTSPMountPointsClass.members" role="struct_members">
+<title>Members</title>
+<informaltable role="struct_members_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="struct_members_name" colwidth="300px"/>
+<colspec colname="struct_members_description"/>
+<colspec colname="struct_members_annotations" colwidth="200px"/>
+<tbody>
+<row role="member"><entry role="struct_member_name"><para><structfield id="GstRTSPMountPointsClass.make-path">make_path</structfield>&#160;()</para></entry>
+<entry role="struct_member_description"><para>make a path from the given url.</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+</tbody></tgroup></informaltable>
+</refsect3>
+</refsect2>
+
+</refsect1>
+<refsect1 id="GstRTSPMountPoints.see-also">
+<title>See Also</title>
+<para><link linkend="GstRTSPMediaFactory"><type>GstRTSPMediaFactory</type></link>, <link linkend="GstRTSPClient"><type>GstRTSPClient</type></link></para>
+
+</refsect1>
+
+</refentry>

@@ -1,0 +1,1642 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN"
+               "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd" [
+<!ENTITY % version-entities SYSTEM "version.entities">
+%version-entities;
+]>
+<refentry id="GstRTSPStream">
+<refmeta>
+<refentrytitle role="top_of_page" id="GstRTSPStream.top_of_page">GstRTSPStream</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GST-RTSP-SERVER Library</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>GstRTSPStream</refname>
+<refpurpose>A media stream</refpurpose>
+</refnamediv>
+
+<refsect1 id="GstRTSPStream.functions" role="functions_proto">
+<title role="functions_proto.title">Functions</title>
+<informaltable pgwide="1" frame="none">
+<tgroup cols="2">
+<colspec colname="functions_return" colwidth="150px"/>
+<colspec colname="functions_name"/>
+<tbody>
+<row><entry role="function_type"><link linkend="GstRTSPStream"><returnvalue>GstRTSPStream</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-rtsp-stream-new">gst_rtsp_stream_new</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="guint"><returnvalue>guint</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-rtsp-stream-get-index">gst_rtsp_stream_get_index</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstPad"><returnvalue>GstPad</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-rtsp-stream-get-srcpad">gst_rtsp_stream_get_srcpad</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gchar"><returnvalue>gchar</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-rtsp-stream-get-control">gst_rtsp_stream_get_control</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-rtsp-stream-set-control">gst_rtsp_stream_set_control</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-rtsp-stream-has-control">gst_rtsp_stream_has_control</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="guint"><returnvalue>guint</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-rtsp-stream-get-mtu">gst_rtsp_stream_get_mtu</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-rtsp-stream-set-mtu">gst_rtsp_stream_set_mtu</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gint"><returnvalue>gint</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-rtsp-stream-get-dscp-qos">gst_rtsp_stream_get_dscp_qos</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-rtsp-stream-set-dscp-qos">gst_rtsp_stream_set_dscp_qos</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-rtsp-stream-set-profiles">gst_rtsp_stream_set_profiles</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstRTSPProfile"><returnvalue>GstRTSPProfile</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-rtsp-stream-get-profiles">gst_rtsp_stream_get_profiles</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstRTSPLowerTrans"><returnvalue>GstRTSPLowerTrans</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-rtsp-stream-get-protocols">gst_rtsp_stream_get_protocols</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-rtsp-stream-set-protocols">gst_rtsp_stream_set_protocols</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstClockTime"><returnvalue>GstClockTime</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-rtsp-stream-get-retransmission-time">gst_rtsp_stream_get_retransmission_time</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-rtsp-stream-set-retransmission-time">gst_rtsp_stream_set_retransmission_time</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-rtsp-stream-set-buffer-size">gst_rtsp_stream_set_buffer_size</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="guint"><returnvalue>guint</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-rtsp-stream-get-buffer-size">gst_rtsp_stream_get_buffer_size</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-rtsp-stream-set-seqnum-offset">gst_rtsp_stream_set_seqnum_offset</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="guint16"><returnvalue>guint16</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-rtsp-stream-get-current-seqnum">gst_rtsp_stream_get_current_seqnum</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-rtsp-stream-is-transport-supported">gst_rtsp_stream_is_transport_supported</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstRTSPAddressPool"><returnvalue>GstRTSPAddressPool</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-rtsp-stream-get-address-pool">gst_rtsp_stream_get_address_pool</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-rtsp-stream-set-address-pool">gst_rtsp_stream_set_address_pool</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstRTSPAddress"><returnvalue>GstRTSPAddress</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-rtsp-stream-reserve-address">gst_rtsp_stream_reserve_address</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-rtsp-stream-join-bin">gst_rtsp_stream_join_bin</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-rtsp-stream-leave-bin">gst_rtsp_stream_leave_bin</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-rtsp-stream-get-server-port">gst_rtsp_stream_get_server_port</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstRTSPAddress"><returnvalue>GstRTSPAddress</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-rtsp-stream-get-multicast-address">gst_rtsp_stream_get_multicast_address</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GObject"><returnvalue>GObject</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-rtsp-stream-get-rtpsession">gst_rtsp_stream_get_rtpsession</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-rtsp-stream-get-ssrc">gst_rtsp_stream_get_ssrc</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-rtsp-stream-get-rtpinfo">gst_rtsp_stream_get_rtpinfo</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstCaps"><returnvalue>GstCaps</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-rtsp-stream-get-caps">gst_rtsp_stream_get_caps</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="guint"><returnvalue>guint</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-rtsp-stream-get-pt">gst_rtsp_stream_get_pt</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstFlowReturn"><returnvalue>GstFlowReturn</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-rtsp-stream-recv-rtcp">gst_rtsp_stream_recv_rtcp</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstFlowReturn"><returnvalue>GstFlowReturn</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-rtsp-stream-recv-rtp">gst_rtsp_stream_recv_rtp</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-rtsp-stream-add-transport">gst_rtsp_stream_add_transport</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-rtsp-stream-remove-transport">gst_rtsp_stream_remove_transport</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GSocket"><returnvalue>GSocket</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-rtsp-stream-get-rtp-socket">gst_rtsp_stream_get_rtp_socket</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GSocket"><returnvalue>GSocket</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-rtsp-stream-get-rtcp-socket">gst_rtsp_stream_get_rtcp_socket</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-rtsp-stream-set-blocked">gst_rtsp_stream_set_blocked</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-rtsp-stream-is-blocking">gst_rtsp_stream_is_blocking</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-rtsp-stream-query-stop">gst_rtsp_stream_query_stop</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-rtsp-stream-query-position">gst_rtsp_stream_query_position</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-rtsp-stream-update-crypto">gst_rtsp_stream_update_crypto</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-rtsp-stream-set-pt-map">gst_rtsp_stream_set_pt_map</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstElement"><returnvalue>GstElement</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-rtsp-stream-request-aux-sender">gst_rtsp_stream_request_aux_sender</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-rtsp-stream-seekable">gst_rtsp_stream_seekable</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstRTSPFilterResult"><returnvalue>GstRTSPFilterResult</returnvalue></link>
+</entry><entry role="function_name"><phrase role="c_punctuation">(</phrase><link linkend="GstRTSPStreamTransportFilterFunc">*GstRTSPStreamTransportFilterFunc</link><phrase role="c_punctuation">)</phrase>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GList"><returnvalue>GList</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-rtsp-stream-transport-filter">gst_rtsp_stream_transport_filter</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="GstRTSPStream.properties" role="properties">
+<title role="properties.title">Properties</title>
+<informaltable frame="none">
+<tgroup cols="3">
+<colspec colname="properties_type" colwidth="150px"/>
+<colspec colname="properties_name" colwidth="300px"/>
+<colspec colname="properties_flags" colwidth="200px"/>
+<tbody>
+<row><entry role="property_type"><link linkend="gchar"><type>gchar</type></link>&#160;*</entry><entry role="property_name"><link linkend="GstRTSPStream--control">control</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="GstRTSPProfile"><type>GstRTSPProfile</type></link></entry><entry role="property_name"><link linkend="GstRTSPStream--profiles">profiles</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="GstRTSPLowerTrans"><type>GstRTSPLowerTrans</type></link></entry><entry role="property_name"><link linkend="GstRTSPStream--protocols">protocols</link></entry><entry role="property_flags">Read / Write</entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="GstRTSPStream.signals" role="signal_proto">
+<title role="signal_proto.title">Signals</title>
+<informaltable frame="none">
+<tgroup cols="3">
+<colspec colname="signals_return" colwidth="150px"/>
+<colspec colname="signals_name" colwidth="300px"/>
+<colspec colname="signals_flags" colwidth="200px"/>
+<tbody>
+<row><entry role="signal_type"><link linkend="void"><returnvalue>void</returnvalue></link></entry><entry role="signal_name"><link linkend="GstRTSPStream-new-rtcp-encoder">new-rtcp-encoder</link></entry><entry role="signal_flags"><link linkend="G-SIGNAL-RUN-LAST:CAPS">Run Last</link></entry></row>
+<row><entry role="signal_type"><link linkend="void"><returnvalue>void</returnvalue></link></entry><entry role="signal_name"><link linkend="GstRTSPStream-new-rtp-encoder">new-rtp-encoder</link></entry><entry role="signal_flags"><link linkend="G-SIGNAL-RUN-LAST:CAPS">Run Last</link></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="GstRTSPStream.other" role="other_proto">
+<title role="other_proto.title">Types and Values</title>
+<informaltable role="enum_members_table" pgwide="1" frame="none">
+<tgroup cols="2">
+<colspec colname="name" colwidth="150px"/>
+<colspec colname="description"/>
+<tbody>
+<row><entry role="datatype_keyword">struct</entry><entry role="function_name"><link linkend="GstRTSPStream-struct">GstRTSPStream</link></entry></row>
+<row><entry role="datatype_keyword">struct</entry><entry role="function_name"><link linkend="GstRTSPStreamClass">GstRTSPStreamClass</link></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="GstRTSPStream.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<screen>    <link linkend="GObject">GObject</link>
+    <phrase role="lineart">&#9584;&#9472;&#9472;</phrase> GstRTSPStream
+</screen>
+</refsect1>
+
+
+<refsect1 id="GstRTSPStream.description" role="desc">
+<title role="desc.title">Description</title>
+<para>The <link linkend="GstRTSPStream"><type>GstRTSPStream</type></link> object manages the data transport for one stream. It
+is created from a payloader element and a source pad that produce the RTP
+packets for the stream.</para>
+<para>With <link linkend="gst-rtsp-stream-join-bin"><function>gst_rtsp_stream_join_bin()</function></link> the streaming elements are added to the bin
+and rtpbin. <link linkend="gst-rtsp-stream-leave-bin"><function>gst_rtsp_stream_leave_bin()</function></link> removes the elements again.</para>
+<para>The <link linkend="GstRTSPStream"><type>GstRTSPStream</type></link> will use the configured addresspool, as set with
+<link linkend="gst-rtsp-stream-set-address-pool"><function>gst_rtsp_stream_set_address_pool()</function></link>, to allocate multicast addresses for the
+stream. With <link linkend="gst-rtsp-stream-get-multicast-address"><function>gst_rtsp_stream_get_multicast_address()</function></link> you can get the
+configured address.</para>
+<para>With <link linkend="gst-rtsp-stream-get-server-port"><function>gst_rtsp_stream_get_server_port()</function></link> you can get the port that the server
+will use to receive RTCP. This is the part that the clients will use to send
+RTCP to.</para>
+<para>With <link linkend="gst-rtsp-stream-add-transport"><function>gst_rtsp_stream_add_transport()</function></link> destinations can be added where the
+stream should be sent to. Use <link linkend="gst-rtsp-stream-remove-transport"><function>gst_rtsp_stream_remove_transport()</function></link> to remove
+the destination again.</para>
+<para>Last reviewed on 2013-07-16 (1.0.0)</para>
+
+</refsect1>
+<refsect1 id="GstRTSPStream.functions_details" role="details">
+<title role="details.title">Functions</title>
+<refsect2 id="gst-rtsp-stream-new" role="function">
+<title>gst_rtsp_stream_new&#160;()</title>
+<indexterm zone="gst-rtsp-stream-new"><primary>gst_rtsp_stream_new</primary></indexterm>
+<programlisting language="C"><link linkend="GstRTSPStream"><returnvalue>GstRTSPStream</returnvalue></link>&#160;*
+gst_rtsp_stream_new (<parameter><link linkend="guint"><type>guint</type></link> idx</parameter>,
+                     <parameter><link linkend="GstElement"><type>GstElement</type></link> *payloader</parameter>,
+                     <parameter><link linkend="GstPad"><type>GstPad</type></link> *pad</parameter>);</programlisting>
+<para>Create a new media stream with index <parameter>idx</parameter>
+ that handles RTP data on
+<parameter>pad</parameter>
+ and has a payloader element <parameter>payloader</parameter>
+ if <parameter>pad</parameter>
+ is a source pad
+or a depayloader element <parameter>payloader</parameter>
+ if <parameter>pad</parameter>
+ is a sink pad.</para>
+<refsect3 id="gst-rtsp-stream-new.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>idx</para></entry>
+<entry role="parameter_description"><para>an index</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>pad</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstPad"><type>GstPad</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>payloader</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstElement"><type>GstElement</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-rtsp-stream-new.returns" role="returns">
+<title>Returns</title>
+<para>a new <link linkend="GstRTSPStream"><type>GstRTSPStream</type></link>. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-rtsp-stream-get-index" role="function">
+<title>gst_rtsp_stream_get_index&#160;()</title>
+<indexterm zone="gst-rtsp-stream-get-index"><primary>gst_rtsp_stream_get_index</primary></indexterm>
+<programlisting language="C"><link linkend="guint"><returnvalue>guint</returnvalue></link>
+gst_rtsp_stream_get_index (<parameter><link linkend="GstRTSPStream"><type>GstRTSPStream</type></link> *stream</parameter>);</programlisting>
+<para>Get the stream index.</para>
+<para>Return: the stream index.</para>
+<refsect3 id="gst-rtsp-stream-get-index.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>stream</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstRTSPStream"><type>GstRTSPStream</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-rtsp-stream-get-srcpad" role="function">
+<title>gst_rtsp_stream_get_srcpad&#160;()</title>
+<indexterm zone="gst-rtsp-stream-get-srcpad"><primary>gst_rtsp_stream_get_srcpad</primary></indexterm>
+<programlisting language="C"><link linkend="GstPad"><returnvalue>GstPad</returnvalue></link>&#160;*
+gst_rtsp_stream_get_srcpad (<parameter><link linkend="GstRTSPStream"><type>GstRTSPStream</type></link> *stream</parameter>);</programlisting>
+<para>Get the srcpad associated with <parameter>stream</parameter>
+.</para>
+<refsect3 id="gst-rtsp-stream-get-srcpad.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>stream</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstRTSPStream"><type>GstRTSPStream</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-rtsp-stream-get-srcpad.returns" role="returns">
+<title>Returns</title>
+<para>the srcpad. Unref after usage. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>][<acronym>nullable</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-rtsp-stream-get-control" role="function">
+<title>gst_rtsp_stream_get_control&#160;()</title>
+<indexterm zone="gst-rtsp-stream-get-control"><primary>gst_rtsp_stream_get_control</primary></indexterm>
+<programlisting language="C"><link linkend="gchar"><returnvalue>gchar</returnvalue></link>&#160;*
+gst_rtsp_stream_get_control (<parameter><link linkend="GstRTSPStream"><type>GstRTSPStream</type></link> *stream</parameter>);</programlisting>
+<para>Get the control string to identify this stream.</para>
+<refsect3 id="gst-rtsp-stream-get-control.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>stream</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstRTSPStream"><type>GstRTSPStream</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-rtsp-stream-get-control.returns" role="returns">
+<title>Returns</title>
+<para>the control string. <link linkend="g-free"><function>g_free()</function></link> after usage. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>][<acronym>nullable</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-rtsp-stream-set-control" role="function">
+<title>gst_rtsp_stream_set_control&#160;()</title>
+<indexterm zone="gst-rtsp-stream-set-control"><primary>gst_rtsp_stream_set_control</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_rtsp_stream_set_control (<parameter><link linkend="GstRTSPStream"><type>GstRTSPStream</type></link> *stream</parameter>,
+                             <parameter>const <link linkend="gchar"><type>gchar</type></link> *control</parameter>);</programlisting>
+<para>Set the control string in <parameter>stream</parameter>
+.</para>
+<refsect3 id="gst-rtsp-stream-set-control.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>stream</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstRTSPStream"><type>GstRTSPStream</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>control</para></entry>
+<entry role="parameter_description"><para>a control string. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>nullable</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-rtsp-stream-has-control" role="function">
+<title>gst_rtsp_stream_has_control&#160;()</title>
+<indexterm zone="gst-rtsp-stream-has-control"><primary>gst_rtsp_stream_has_control</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_rtsp_stream_has_control (<parameter><link linkend="GstRTSPStream"><type>GstRTSPStream</type></link> *stream</parameter>,
+                             <parameter>const <link linkend="gchar"><type>gchar</type></link> *control</parameter>);</programlisting>
+<para>Check if <parameter>stream</parameter>
+ has the control string <parameter>control</parameter>
+.</para>
+<refsect3 id="gst-rtsp-stream-has-control.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>stream</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstRTSPStream"><type>GstRTSPStream</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>control</para></entry>
+<entry role="parameter_description"><para>a control string. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>nullable</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-rtsp-stream-has-control.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> is <parameter>stream</parameter>
+has <parameter>control</parameter>
+as the control string</para>
+</refsect3></refsect2>
+<refsect2 id="gst-rtsp-stream-get-mtu" role="function">
+<title>gst_rtsp_stream_get_mtu&#160;()</title>
+<indexterm zone="gst-rtsp-stream-get-mtu"><primary>gst_rtsp_stream_get_mtu</primary></indexterm>
+<programlisting language="C"><link linkend="guint"><returnvalue>guint</returnvalue></link>
+gst_rtsp_stream_get_mtu (<parameter><link linkend="GstRTSPStream"><type>GstRTSPStream</type></link> *stream</parameter>);</programlisting>
+<para>Get the configured MTU in the payloader of <parameter>stream</parameter>
+.</para>
+<refsect3 id="gst-rtsp-stream-get-mtu.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>stream</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstRTSPStream"><type>GstRTSPStream</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-rtsp-stream-get-mtu.returns" role="returns">
+<title>Returns</title>
+<para> the MTU of the payloader.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-rtsp-stream-set-mtu" role="function">
+<title>gst_rtsp_stream_set_mtu&#160;()</title>
+<indexterm zone="gst-rtsp-stream-set-mtu"><primary>gst_rtsp_stream_set_mtu</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_rtsp_stream_set_mtu (<parameter><link linkend="GstRTSPStream"><type>GstRTSPStream</type></link> *stream</parameter>,
+                         <parameter><link linkend="guint"><type>guint</type></link> mtu</parameter>);</programlisting>
+<para>Configure the mtu in the payloader of <parameter>stream</parameter>
+ to <parameter>mtu</parameter>
+.</para>
+<refsect3 id="gst-rtsp-stream-set-mtu.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>stream</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstRTSPStream"><type>GstRTSPStream</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>mtu</para></entry>
+<entry role="parameter_description"><para>a new MTU</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-rtsp-stream-get-dscp-qos" role="function">
+<title>gst_rtsp_stream_get_dscp_qos&#160;()</title>
+<indexterm zone="gst-rtsp-stream-get-dscp-qos"><primary>gst_rtsp_stream_get_dscp_qos</primary></indexterm>
+<programlisting language="C"><link linkend="gint"><returnvalue>gint</returnvalue></link>
+gst_rtsp_stream_get_dscp_qos (<parameter><link linkend="GstRTSPStream"><type>GstRTSPStream</type></link> *stream</parameter>);</programlisting>
+<para>Get the configured DSCP QoS in of the outgoing sockets.</para>
+<refsect3 id="gst-rtsp-stream-get-dscp-qos.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>stream</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstRTSPStream"><type>GstRTSPStream</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-rtsp-stream-get-dscp-qos.returns" role="returns">
+<title>Returns</title>
+<para> the DSCP QoS value of the outgoing sockets, or -1 if disbled.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-rtsp-stream-set-dscp-qos" role="function">
+<title>gst_rtsp_stream_set_dscp_qos&#160;()</title>
+<indexterm zone="gst-rtsp-stream-set-dscp-qos"><primary>gst_rtsp_stream_set_dscp_qos</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_rtsp_stream_set_dscp_qos (<parameter><link linkend="GstRTSPStream"><type>GstRTSPStream</type></link> *stream</parameter>,
+                              <parameter><link linkend="gint"><type>gint</type></link> dscp_qos</parameter>);</programlisting>
+<para>Configure the dscp qos of the outgoing sockets to <parameter>dscp_qos</parameter>
+.</para>
+<refsect3 id="gst-rtsp-stream-set-dscp-qos.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>stream</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstRTSPStream"><type>GstRTSPStream</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>dscp_qos</para></entry>
+<entry role="parameter_description"><para>a new dscp qos value (0-63, or -1 to disable)</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-rtsp-stream-set-profiles" role="function">
+<title>gst_rtsp_stream_set_profiles&#160;()</title>
+<indexterm zone="gst-rtsp-stream-set-profiles"><primary>gst_rtsp_stream_set_profiles</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_rtsp_stream_set_profiles (<parameter><link linkend="GstRTSPStream"><type>GstRTSPStream</type></link> *stream</parameter>,
+                              <parameter><link linkend="GstRTSPProfile"><type>GstRTSPProfile</type></link> profiles</parameter>);</programlisting>
+<para>Configure the allowed profiles for <parameter>stream</parameter>
+.</para>
+<refsect3 id="gst-rtsp-stream-set-profiles.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>stream</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstRTSPStream"><type>GstRTSPStream</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>profiles</para></entry>
+<entry role="parameter_description"><para>the new profiles</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-rtsp-stream-get-profiles" role="function">
+<title>gst_rtsp_stream_get_profiles&#160;()</title>
+<indexterm zone="gst-rtsp-stream-get-profiles"><primary>gst_rtsp_stream_get_profiles</primary></indexterm>
+<programlisting language="C"><link linkend="GstRTSPProfile"><returnvalue>GstRTSPProfile</returnvalue></link>
+gst_rtsp_stream_get_profiles (<parameter><link linkend="GstRTSPStream"><type>GstRTSPStream</type></link> *stream</parameter>);</programlisting>
+<para>Get the allowed profiles of <parameter>stream</parameter>
+.</para>
+<refsect3 id="gst-rtsp-stream-get-profiles.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>stream</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstRTSPStream"><type>GstRTSPStream</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-rtsp-stream-get-profiles.returns" role="returns">
+<title>Returns</title>
+<para> a <link linkend="GstRTSPProfile"><type>GstRTSPProfile</type></link></para>
+</refsect3></refsect2>
+<refsect2 id="gst-rtsp-stream-get-protocols" role="function">
+<title>gst_rtsp_stream_get_protocols&#160;()</title>
+<indexterm zone="gst-rtsp-stream-get-protocols"><primary>gst_rtsp_stream_get_protocols</primary></indexterm>
+<programlisting language="C"><link linkend="GstRTSPLowerTrans"><returnvalue>GstRTSPLowerTrans</returnvalue></link>
+gst_rtsp_stream_get_protocols (<parameter><link linkend="GstRTSPStream"><type>GstRTSPStream</type></link> *stream</parameter>);</programlisting>
+<para>Get the allowed protocols of <parameter>stream</parameter>
+.</para>
+<refsect3 id="gst-rtsp-stream-get-protocols.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>stream</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstRTSPStream"><type>GstRTSPStream</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-rtsp-stream-get-protocols.returns" role="returns">
+<title>Returns</title>
+<para> a <link linkend="GstRTSPLowerTrans"><type>GstRTSPLowerTrans</type></link></para>
+</refsect3></refsect2>
+<refsect2 id="gst-rtsp-stream-set-protocols" role="function">
+<title>gst_rtsp_stream_set_protocols&#160;()</title>
+<indexterm zone="gst-rtsp-stream-set-protocols"><primary>gst_rtsp_stream_set_protocols</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_rtsp_stream_set_protocols (<parameter><link linkend="GstRTSPStream"><type>GstRTSPStream</type></link> *stream</parameter>,
+                               <parameter><link linkend="GstRTSPLowerTrans"><type>GstRTSPLowerTrans</type></link> protocols</parameter>);</programlisting>
+<para>Configure the allowed lower transport for <parameter>stream</parameter>
+.</para>
+<refsect3 id="gst-rtsp-stream-set-protocols.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>stream</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstRTSPStream"><type>GstRTSPStream</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>protocols</para></entry>
+<entry role="parameter_description"><para>the new flags</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-rtsp-stream-get-retransmission-time" role="function">
+<title>gst_rtsp_stream_get_retransmission_time&#160;()</title>
+<indexterm zone="gst-rtsp-stream-get-retransmission-time"><primary>gst_rtsp_stream_get_retransmission_time</primary></indexterm>
+<programlisting language="C"><link linkend="GstClockTime"><returnvalue>GstClockTime</returnvalue></link>
+gst_rtsp_stream_get_retransmission_time
+                               (<parameter><link linkend="GstRTSPStream"><type>GstRTSPStream</type></link> *stream</parameter>);</programlisting>
+<para>Get the amount of time to store retransmission data.</para>
+<refsect3 id="gst-rtsp-stream-get-retransmission-time.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>stream</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstRTSPStream"><type>GstRTSPStream</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-rtsp-stream-get-retransmission-time.returns" role="returns">
+<title>Returns</title>
+<para> the amount of time to store retransmission data.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-rtsp-stream-set-retransmission-time" role="function">
+<title>gst_rtsp_stream_set_retransmission_time&#160;()</title>
+<indexterm zone="gst-rtsp-stream-set-retransmission-time"><primary>gst_rtsp_stream_set_retransmission_time</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_rtsp_stream_set_retransmission_time
+                               (<parameter><link linkend="GstRTSPStream"><type>GstRTSPStream</type></link> *stream</parameter>,
+                                <parameter><link linkend="GstClockTime"><type>GstClockTime</type></link> time</parameter>);</programlisting>
+<para>Set the amount of time to store retransmission packets.</para>
+<refsect3 id="gst-rtsp-stream-set-retransmission-time.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>stream</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstRTSPStream"><type>GstRTSPStream</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>time</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstClockTime"><type>GstClockTime</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-rtsp-stream-set-buffer-size" role="function" condition="since:1.6">
+<title>gst_rtsp_stream_set_buffer_size&#160;()</title>
+<indexterm zone="gst-rtsp-stream-set-buffer-size" role="1.6"><primary>gst_rtsp_stream_set_buffer_size</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_rtsp_stream_set_buffer_size (<parameter><link linkend="GstRTSPStream"><type>GstRTSPStream</type></link> *stream</parameter>,
+                                 <parameter><link linkend="guint"><type>guint</type></link> size</parameter>);</programlisting>
+<para>Set the size of the UDP transmission buffer (in bytes)
+Needs to be set before the stream is joined to a bin.</para>
+<refsect3 id="gst-rtsp-stream-set-buffer-size.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>stream</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstRTSPStream"><type>GstRTSPStream</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>size</para></entry>
+<entry role="parameter_description"><para>the buffer size</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><para role="since">Since: <link linkend="api-index-1.6">1.6</link></para></refsect2>
+<refsect2 id="gst-rtsp-stream-get-buffer-size" role="function" condition="since:1.6">
+<title>gst_rtsp_stream_get_buffer_size&#160;()</title>
+<indexterm zone="gst-rtsp-stream-get-buffer-size" role="1.6"><primary>gst_rtsp_stream_get_buffer_size</primary></indexterm>
+<programlisting language="C"><link linkend="guint"><returnvalue>guint</returnvalue></link>
+gst_rtsp_stream_get_buffer_size (<parameter><link linkend="GstRTSPStream"><type>GstRTSPStream</type></link> *stream</parameter>);</programlisting>
+<para>Get the size of the UDP transmission buffer (in bytes)</para>
+<refsect3 id="gst-rtsp-stream-get-buffer-size.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>stream</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstRTSPStream"><type>GstRTSPStream</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-rtsp-stream-get-buffer-size.returns" role="returns">
+<title>Returns</title>
+<para> the size of the UDP TX buffer</para>
+</refsect3><para role="since">Since: <link linkend="api-index-1.6">1.6</link></para></refsect2>
+<refsect2 id="gst-rtsp-stream-set-seqnum-offset" role="function">
+<title>gst_rtsp_stream_set_seqnum_offset&#160;()</title>
+<indexterm zone="gst-rtsp-stream-set-seqnum-offset"><primary>gst_rtsp_stream_set_seqnum_offset</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_rtsp_stream_set_seqnum_offset (<parameter><link linkend="GstRTSPStream"><type>GstRTSPStream</type></link> *stream</parameter>,
+                                   <parameter><link linkend="guint16"><type>guint16</type></link> seqnum</parameter>);</programlisting>
+</refsect2>
+<refsect2 id="gst-rtsp-stream-get-current-seqnum" role="function">
+<title>gst_rtsp_stream_get_current_seqnum&#160;()</title>
+<indexterm zone="gst-rtsp-stream-get-current-seqnum"><primary>gst_rtsp_stream_get_current_seqnum</primary></indexterm>
+<programlisting language="C"><link linkend="guint16"><returnvalue>guint16</returnvalue></link>
+gst_rtsp_stream_get_current_seqnum (<parameter><link linkend="GstRTSPStream"><type>GstRTSPStream</type></link> *stream</parameter>);</programlisting>
+</refsect2>
+<refsect2 id="gst-rtsp-stream-is-transport-supported" role="function">
+<title>gst_rtsp_stream_is_transport_supported&#160;()</title>
+<indexterm zone="gst-rtsp-stream-is-transport-supported"><primary>gst_rtsp_stream_is_transport_supported</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_rtsp_stream_is_transport_supported
+                               (<parameter><link linkend="GstRTSPStream"><type>GstRTSPStream</type></link> *stream</parameter>,
+                                <parameter><link linkend="GstRTSPTransport"><type>GstRTSPTransport</type></link> *transport</parameter>);</programlisting>
+<para>Check if <parameter>transport</parameter>
+ can be handled by stream</para>
+<refsect3 id="gst-rtsp-stream-is-transport-supported.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>stream</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstRTSPStream"><type>GstRTSPStream</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>transport</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstRTSPTransport"><type>GstRTSPTransport</type></link>. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>transfer none</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-rtsp-stream-is-transport-supported.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if <parameter>transport</parameter>
+can be handled by <parameter>stream</parameter>
+.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-rtsp-stream-get-address-pool" role="function">
+<title>gst_rtsp_stream_get_address_pool&#160;()</title>
+<indexterm zone="gst-rtsp-stream-get-address-pool"><primary>gst_rtsp_stream_get_address_pool</primary></indexterm>
+<programlisting language="C"><link linkend="GstRTSPAddressPool"><returnvalue>GstRTSPAddressPool</returnvalue></link>&#160;*
+gst_rtsp_stream_get_address_pool (<parameter><link linkend="GstRTSPStream"><type>GstRTSPStream</type></link> *stream</parameter>);</programlisting>
+<para>Get the <link linkend="GstRTSPAddressPool"><type>GstRTSPAddressPool</type></link> used as the address pool of <parameter>stream</parameter>
+.</para>
+<refsect3 id="gst-rtsp-stream-get-address-pool.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>stream</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstRTSPStream"><type>GstRTSPStream</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-rtsp-stream-get-address-pool.returns" role="returns">
+<title>Returns</title>
+<para>the <link linkend="GstRTSPAddressPool"><type>GstRTSPAddressPool</type></link> of <parameter>stream</parameter>
+.
+<link linkend="g-object-unref"><function>g_object_unref()</function></link> after usage. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>][<acronym>nullable</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-rtsp-stream-set-address-pool" role="function">
+<title>gst_rtsp_stream_set_address_pool&#160;()</title>
+<indexterm zone="gst-rtsp-stream-set-address-pool"><primary>gst_rtsp_stream_set_address_pool</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_rtsp_stream_set_address_pool (<parameter><link linkend="GstRTSPStream"><type>GstRTSPStream</type></link> *stream</parameter>,
+                                  <parameter><link linkend="GstRTSPAddressPool"><type>GstRTSPAddressPool</type></link> *pool</parameter>);</programlisting>
+<para>configure <parameter>pool</parameter>
+ to be used as the address pool of <parameter>stream</parameter>
+.</para>
+<refsect3 id="gst-rtsp-stream-set-address-pool.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>stream</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstRTSPStream"><type>GstRTSPStream</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>pool</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstRTSPAddressPool"><type>GstRTSPAddressPool</type></link>. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>transfer none</acronym>][<acronym>nullable</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-rtsp-stream-reserve-address" role="function">
+<title>gst_rtsp_stream_reserve_address&#160;()</title>
+<indexterm zone="gst-rtsp-stream-reserve-address"><primary>gst_rtsp_stream_reserve_address</primary></indexterm>
+<programlisting language="C"><link linkend="GstRTSPAddress"><returnvalue>GstRTSPAddress</returnvalue></link>&#160;*
+gst_rtsp_stream_reserve_address (<parameter><link linkend="GstRTSPStream"><type>GstRTSPStream</type></link> *stream</parameter>,
+                                 <parameter>const <link linkend="gchar"><type>gchar</type></link> *address</parameter>,
+                                 <parameter><link linkend="guint"><type>guint</type></link> port</parameter>,
+                                 <parameter><link linkend="guint"><type>guint</type></link> n_ports</parameter>,
+                                 <parameter><link linkend="guint"><type>guint</type></link> ttl</parameter>);</programlisting>
+<para>Reserve <parameter>address</parameter>
+ and <parameter>port</parameter>
+ as the address and port of <parameter>stream</parameter>
+. The original
+<link linkend="GstRTSPAddress"><type>GstRTSPAddress</type></link> is cached and copy is returned, so freeing the return value
+won't release the address from the pool.</para>
+<refsect3 id="gst-rtsp-stream-reserve-address.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>stream</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstRTSPStream"><type>GstRTSPStream</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>address</para></entry>
+<entry role="parameter_description"><para>an address</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>port</para></entry>
+<entry role="parameter_description"><para>a port</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>n_ports</para></entry>
+<entry role="parameter_description"><para>n_ports</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>ttl</para></entry>
+<entry role="parameter_description"><para>a TTL</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-rtsp-stream-reserve-address.returns" role="returns">
+<title>Returns</title>
+<para>the <link linkend="GstRTSPAddress"><type>GstRTSPAddress</type></link> of <parameter>stream</parameter>
+or <link linkend="NULL:CAPS"><literal>NULL</literal></link> when
+the address could be reserved. <link linkend="gst-rtsp-address-free"><function>gst_rtsp_address_free()</function></link> after usage. </para>
+<para><emphasis role="annotation">[<acronym>nullable</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-rtsp-stream-join-bin" role="function">
+<title>gst_rtsp_stream_join_bin&#160;()</title>
+<indexterm zone="gst-rtsp-stream-join-bin"><primary>gst_rtsp_stream_join_bin</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_rtsp_stream_join_bin (<parameter><link linkend="GstRTSPStream"><type>GstRTSPStream</type></link> *stream</parameter>,
+                          <parameter><link linkend="GstBin"><type>GstBin</type></link> *bin</parameter>,
+                          <parameter><link linkend="GstElement"><type>GstElement</type></link> *rtpbin</parameter>,
+                          <parameter><link linkend="GstState"><type>GstState</type></link> state</parameter>);</programlisting>
+<para>Join the <link linkend="GstBin"><type>GstBin</type></link> <parameter>bin</parameter>
+ that contains the element <parameter>rtpbin</parameter>
+.</para>
+<para><parameter>stream</parameter>
+ will link to <parameter>rtpbin</parameter>
+, which must be inside <parameter>bin</parameter>
+. The elements
+added to <parameter>bin</parameter>
+ will be set to the state given in <parameter>state</parameter>
+.</para>
+<refsect3 id="gst-rtsp-stream-join-bin.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>stream</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstRTSPStream"><type>GstRTSPStream</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>bin</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstBin"><type>GstBin</type></link> to join. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>transfer none</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>rtpbin</para></entry>
+<entry role="parameter_description"><para>a rtpbin element in <parameter>bin</parameter>
+. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>transfer none</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>state</para></entry>
+<entry role="parameter_description"><para>the target state of the new elements</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-rtsp-stream-join-bin.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> on success.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-rtsp-stream-leave-bin" role="function">
+<title>gst_rtsp_stream_leave_bin&#160;()</title>
+<indexterm zone="gst-rtsp-stream-leave-bin"><primary>gst_rtsp_stream_leave_bin</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_rtsp_stream_leave_bin (<parameter><link linkend="GstRTSPStream"><type>GstRTSPStream</type></link> *stream</parameter>,
+                           <parameter><link linkend="GstBin"><type>GstBin</type></link> *bin</parameter>,
+                           <parameter><link linkend="GstElement"><type>GstElement</type></link> *rtpbin</parameter>);</programlisting>
+<para>Remove the elements of <parameter>stream</parameter>
+ from <parameter>bin</parameter>
+.</para>
+<para>Return: <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> on success.</para>
+<refsect3 id="gst-rtsp-stream-leave-bin.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>stream</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstRTSPStream"><type>GstRTSPStream</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>bin</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstBin"><type>GstBin</type></link>. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>transfer none</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>rtpbin</para></entry>
+<entry role="parameter_description"><para>a rtpbin <link linkend="GstElement"><type>GstElement</type></link>. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>transfer none</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-rtsp-stream-get-server-port" role="function">
+<title>gst_rtsp_stream_get_server_port&#160;()</title>
+<indexterm zone="gst-rtsp-stream-get-server-port"><primary>gst_rtsp_stream_get_server_port</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_rtsp_stream_get_server_port (<parameter><link linkend="GstRTSPStream"><type>GstRTSPStream</type></link> *stream</parameter>,
+                                 <parameter><link linkend="GstRTSPRange"><type>GstRTSPRange</type></link> *server_port</parameter>,
+                                 <parameter><link linkend="GSocketFamily"><type>GSocketFamily</type></link> family</parameter>);</programlisting>
+<para>Fill <parameter>server_port</parameter>
+ with the port pair used by the server. This function can
+only be called when <parameter>stream</parameter>
+ has been joined.</para>
+<refsect3 id="gst-rtsp-stream-get-server-port.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>stream</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstRTSPStream"><type>GstRTSPStream</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>server_port</para></entry>
+<entry role="parameter_description"><para>result server port. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>out</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>family</para></entry>
+<entry role="parameter_description"><para>the port family to get</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-rtsp-stream-get-multicast-address" role="function">
+<title>gst_rtsp_stream_get_multicast_address&#160;()</title>
+<indexterm zone="gst-rtsp-stream-get-multicast-address"><primary>gst_rtsp_stream_get_multicast_address</primary></indexterm>
+<programlisting language="C"><link linkend="GstRTSPAddress"><returnvalue>GstRTSPAddress</returnvalue></link>&#160;*
+gst_rtsp_stream_get_multicast_address (<parameter><link linkend="GstRTSPStream"><type>GstRTSPStream</type></link> *stream</parameter>,
+                                       <parameter><link linkend="GSocketFamily"><type>GSocketFamily</type></link> family</parameter>);</programlisting>
+<para>Get the multicast address of <parameter>stream</parameter>
+ for <parameter>family</parameter>
+. The original
+<link linkend="GstRTSPAddress"><type>GstRTSPAddress</type></link> is cached and copy is returned, so freeing the return value
+won't release the address from the pool.</para>
+<refsect3 id="gst-rtsp-stream-get-multicast-address.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>stream</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstRTSPStream"><type>GstRTSPStream</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>family</para></entry>
+<entry role="parameter_description"><para>the <link linkend="GSocketFamily"><type>GSocketFamily</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-rtsp-stream-get-multicast-address.returns" role="returns">
+<title>Returns</title>
+<para>the <link linkend="GstRTSPAddress"><type>GstRTSPAddress</type></link> of <parameter>stream</parameter>
+or <link linkend="NULL:CAPS"><literal>NULL</literal></link> when no address could be allocated. <link linkend="gst-rtsp-address-free"><function>gst_rtsp_address_free()</function></link>
+after usage. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>][<acronym>nullable</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-rtsp-stream-get-rtpsession" role="function">
+<title>gst_rtsp_stream_get_rtpsession&#160;()</title>
+<indexterm zone="gst-rtsp-stream-get-rtpsession"><primary>gst_rtsp_stream_get_rtpsession</primary></indexterm>
+<programlisting language="C"><link linkend="GObject"><returnvalue>GObject</returnvalue></link>&#160;*
+gst_rtsp_stream_get_rtpsession (<parameter><link linkend="GstRTSPStream"><type>GstRTSPStream</type></link> *stream</parameter>);</programlisting>
+<para>Get the RTP session of this stream.</para>
+<refsect3 id="gst-rtsp-stream-get-rtpsession.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>stream</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstRTSPStream"><type>GstRTSPStream</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-rtsp-stream-get-rtpsession.returns" role="returns">
+<title>Returns</title>
+<para>The RTP session of this stream. Unref after usage. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-rtsp-stream-get-ssrc" role="function">
+<title>gst_rtsp_stream_get_ssrc&#160;()</title>
+<indexterm zone="gst-rtsp-stream-get-ssrc"><primary>gst_rtsp_stream_get_ssrc</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_rtsp_stream_get_ssrc (<parameter><link linkend="GstRTSPStream"><type>GstRTSPStream</type></link> *stream</parameter>,
+                          <parameter><link linkend="guint"><type>guint</type></link> *ssrc</parameter>);</programlisting>
+<para>Get the SSRC used by the RTP session of this stream. This function can only
+be called when <parameter>stream</parameter>
+ has been joined.</para>
+<refsect3 id="gst-rtsp-stream-get-ssrc.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>stream</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstRTSPStream"><type>GstRTSPStream</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>ssrc</para></entry>
+<entry role="parameter_description"><para>result ssrc. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>out</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-rtsp-stream-get-rtpinfo" role="function">
+<title>gst_rtsp_stream_get_rtpinfo&#160;()</title>
+<indexterm zone="gst-rtsp-stream-get-rtpinfo"><primary>gst_rtsp_stream_get_rtpinfo</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_rtsp_stream_get_rtpinfo (<parameter><link linkend="GstRTSPStream"><type>GstRTSPStream</type></link> *stream</parameter>,
+                             <parameter><link linkend="guint"><type>guint</type></link> *rtptime</parameter>,
+                             <parameter><link linkend="guint"><type>guint</type></link> *seq</parameter>,
+                             <parameter><link linkend="guint"><type>guint</type></link> *clock_rate</parameter>,
+                             <parameter><link linkend="GstClockTime"><type>GstClockTime</type></link> *running_time</parameter>);</programlisting>
+<para>Retrieve the current rtptime, seq and running-time. This is used to
+construct a RTPInfo reply header.</para>
+<refsect3 id="gst-rtsp-stream-get-rtpinfo.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>stream</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstRTSPStream"><type>GstRTSPStream</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>rtptime</para></entry>
+<entry role="parameter_description"><para>result RTP timestamp. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>allow-none</acronym>][<acronym>out caller-allocates</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>seq</para></entry>
+<entry role="parameter_description"><para>result RTP seqnum. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>allow-none</acronym>][<acronym>out caller-allocates</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>clock_rate</para></entry>
+<entry role="parameter_description"><para>the clock rate. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>allow-none</acronym>][<acronym>out caller-allocates</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>running_time</para></entry>
+<entry role="parameter_description"><para>result running-time. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>out caller-allocates</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-rtsp-stream-get-rtpinfo.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> when rtptime, seq and running-time could be determined.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-rtsp-stream-get-caps" role="function">
+<title>gst_rtsp_stream_get_caps&#160;()</title>
+<indexterm zone="gst-rtsp-stream-get-caps"><primary>gst_rtsp_stream_get_caps</primary></indexterm>
+<programlisting language="C"><link linkend="GstCaps"><returnvalue>GstCaps</returnvalue></link>&#160;*
+gst_rtsp_stream_get_caps (<parameter><link linkend="GstRTSPStream"><type>GstRTSPStream</type></link> *stream</parameter>);</programlisting>
+<para>Retrieve the current caps of <parameter>stream</parameter>
+.</para>
+<refsect3 id="gst-rtsp-stream-get-caps.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>stream</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstRTSPStream"><type>GstRTSPStream</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-rtsp-stream-get-caps.returns" role="returns">
+<title>Returns</title>
+<para>the <link linkend="GstCaps"><type>GstCaps</type></link> of <parameter>stream</parameter>
+.
+use <link linkend="gst-caps-unref"><function>gst_caps_unref()</function></link> after usage. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>][<acronym>nullable</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-rtsp-stream-get-pt" role="function">
+<title>gst_rtsp_stream_get_pt&#160;()</title>
+<indexterm zone="gst-rtsp-stream-get-pt"><primary>gst_rtsp_stream_get_pt</primary></indexterm>
+<programlisting language="C"><link linkend="guint"><returnvalue>guint</returnvalue></link>
+gst_rtsp_stream_get_pt (<parameter><link linkend="GstRTSPStream"><type>GstRTSPStream</type></link> *stream</parameter>);</programlisting>
+<para>Get the stream payload type.</para>
+<para>Return: the stream payload type.</para>
+<refsect3 id="gst-rtsp-stream-get-pt.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>stream</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstRTSPStream"><type>GstRTSPStream</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-rtsp-stream-recv-rtcp" role="function">
+<title>gst_rtsp_stream_recv_rtcp&#160;()</title>
+<indexterm zone="gst-rtsp-stream-recv-rtcp"><primary>gst_rtsp_stream_recv_rtcp</primary></indexterm>
+<programlisting language="C"><link linkend="GstFlowReturn"><returnvalue>GstFlowReturn</returnvalue></link>
+gst_rtsp_stream_recv_rtcp (<parameter><link linkend="GstRTSPStream"><type>GstRTSPStream</type></link> *stream</parameter>,
+                           <parameter><link linkend="GstBuffer"><type>GstBuffer</type></link> *buffer</parameter>);</programlisting>
+<para>Handle an RTCP buffer for the stream. This method is usually called when a
+message has been received from a client using the TCP transport.</para>
+<para>This function takes ownership of <parameter>buffer</parameter>
+.</para>
+<refsect3 id="gst-rtsp-stream-recv-rtcp.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>stream</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstRTSPStream"><type>GstRTSPStream</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>buffer</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstBuffer"><type>GstBuffer</type></link>. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>transfer full</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-rtsp-stream-recv-rtcp.returns" role="returns">
+<title>Returns</title>
+<para> a GstFlowReturn.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-rtsp-stream-recv-rtp" role="function">
+<title>gst_rtsp_stream_recv_rtp&#160;()</title>
+<indexterm zone="gst-rtsp-stream-recv-rtp"><primary>gst_rtsp_stream_recv_rtp</primary></indexterm>
+<programlisting language="C"><link linkend="GstFlowReturn"><returnvalue>GstFlowReturn</returnvalue></link>
+gst_rtsp_stream_recv_rtp (<parameter><link linkend="GstRTSPStream"><type>GstRTSPStream</type></link> *stream</parameter>,
+                          <parameter><link linkend="GstBuffer"><type>GstBuffer</type></link> *buffer</parameter>);</programlisting>
+<para>Handle an RTP buffer for the stream. This method is usually called when a
+message has been received from a client using the TCP transport.</para>
+<para>This function takes ownership of <parameter>buffer</parameter>
+.</para>
+<refsect3 id="gst-rtsp-stream-recv-rtp.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>stream</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstRTSPStream"><type>GstRTSPStream</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>buffer</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstBuffer"><type>GstBuffer</type></link>. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>transfer full</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-rtsp-stream-recv-rtp.returns" role="returns">
+<title>Returns</title>
+<para> a GstFlowReturn.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-rtsp-stream-add-transport" role="function">
+<title>gst_rtsp_stream_add_transport&#160;()</title>
+<indexterm zone="gst-rtsp-stream-add-transport"><primary>gst_rtsp_stream_add_transport</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_rtsp_stream_add_transport (<parameter><link linkend="GstRTSPStream"><type>GstRTSPStream</type></link> *stream</parameter>,
+                               <parameter><link linkend="GstRTSPStreamTransport"><type>GstRTSPStreamTransport</type></link> *trans</parameter>);</programlisting>
+<para>Add the transport in <parameter>trans</parameter>
+ to <parameter>stream</parameter>
+. The media of <parameter>stream</parameter>
+ will
+then also be send to the values configured in <parameter>trans</parameter>
+.</para>
+<para><parameter>stream</parameter>
+ must be joined to a bin.</para>
+<para><parameter>trans</parameter>
+ must contain a valid <link linkend="GstRTSPTransport"><type>GstRTSPTransport</type></link>.</para>
+<refsect3 id="gst-rtsp-stream-add-transport.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>stream</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstRTSPStream"><type>GstRTSPStream</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>trans</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstRTSPStreamTransport"><type>GstRTSPStreamTransport</type></link>. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>transfer none</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-rtsp-stream-add-transport.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if <parameter>trans</parameter>
+was added</para>
+</refsect3></refsect2>
+<refsect2 id="gst-rtsp-stream-remove-transport" role="function">
+<title>gst_rtsp_stream_remove_transport&#160;()</title>
+<indexterm zone="gst-rtsp-stream-remove-transport"><primary>gst_rtsp_stream_remove_transport</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_rtsp_stream_remove_transport (<parameter><link linkend="GstRTSPStream"><type>GstRTSPStream</type></link> *stream</parameter>,
+                                  <parameter><link linkend="GstRTSPStreamTransport"><type>GstRTSPStreamTransport</type></link> *trans</parameter>);</programlisting>
+<para>Remove the transport in <parameter>trans</parameter>
+ from <parameter>stream</parameter>
+. The media of <parameter>stream</parameter>
+ will
+not be sent to the values configured in <parameter>trans</parameter>
+.</para>
+<para><parameter>stream</parameter>
+ must be joined to a bin.</para>
+<para><parameter>trans</parameter>
+ must contain a valid <link linkend="GstRTSPTransport"><type>GstRTSPTransport</type></link>.</para>
+<refsect3 id="gst-rtsp-stream-remove-transport.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>stream</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstRTSPStream"><type>GstRTSPStream</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>trans</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstRTSPStreamTransport"><type>GstRTSPStreamTransport</type></link>. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>transfer none</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-rtsp-stream-remove-transport.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if <parameter>trans</parameter>
+was removed</para>
+</refsect3></refsect2>
+<refsect2 id="gst-rtsp-stream-get-rtp-socket" role="function">
+<title>gst_rtsp_stream_get_rtp_socket&#160;()</title>
+<indexterm zone="gst-rtsp-stream-get-rtp-socket"><primary>gst_rtsp_stream_get_rtp_socket</primary></indexterm>
+<programlisting language="C"><link linkend="GSocket"><returnvalue>GSocket</returnvalue></link>&#160;*
+gst_rtsp_stream_get_rtp_socket (<parameter><link linkend="GstRTSPStream"><type>GstRTSPStream</type></link> *stream</parameter>,
+                                <parameter><link linkend="GSocketFamily"><type>GSocketFamily</type></link> family</parameter>);</programlisting>
+<para>Get the RTP socket from <parameter>stream</parameter>
+ for a <parameter>family</parameter>
+.</para>
+<para><parameter>stream</parameter>
+ must be joined to a bin.</para>
+<refsect3 id="gst-rtsp-stream-get-rtp-socket.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>stream</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstRTSPStream"><type>GstRTSPStream</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>family</para></entry>
+<entry role="parameter_description"><para>the socket family</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-rtsp-stream-get-rtp-socket.returns" role="returns">
+<title>Returns</title>
+<para>the RTP socket or <link linkend="NULL:CAPS"><literal>NULL</literal></link> if no
+socket could be allocated for <parameter>family</parameter>
+. Unref after usage. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>][<acronym>nullable</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-rtsp-stream-get-rtcp-socket" role="function">
+<title>gst_rtsp_stream_get_rtcp_socket&#160;()</title>
+<indexterm zone="gst-rtsp-stream-get-rtcp-socket"><primary>gst_rtsp_stream_get_rtcp_socket</primary></indexterm>
+<programlisting language="C"><link linkend="GSocket"><returnvalue>GSocket</returnvalue></link>&#160;*
+gst_rtsp_stream_get_rtcp_socket (<parameter><link linkend="GstRTSPStream"><type>GstRTSPStream</type></link> *stream</parameter>,
+                                 <parameter><link linkend="GSocketFamily"><type>GSocketFamily</type></link> family</parameter>);</programlisting>
+<para>Get the RTCP socket from <parameter>stream</parameter>
+ for a <parameter>family</parameter>
+.</para>
+<para><parameter>stream</parameter>
+ must be joined to a bin.</para>
+<refsect3 id="gst-rtsp-stream-get-rtcp-socket.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>stream</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstRTSPStream"><type>GstRTSPStream</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>family</para></entry>
+<entry role="parameter_description"><para>the socket family</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-rtsp-stream-get-rtcp-socket.returns" role="returns">
+<title>Returns</title>
+<para>the RTCP socket or <link linkend="NULL:CAPS"><literal>NULL</literal></link> if no
+socket could be allocated for <parameter>family</parameter>
+. Unref after usage. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>][<acronym>nullable</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-rtsp-stream-set-blocked" role="function">
+<title>gst_rtsp_stream_set_blocked&#160;()</title>
+<indexterm zone="gst-rtsp-stream-set-blocked"><primary>gst_rtsp_stream_set_blocked</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_rtsp_stream_set_blocked (<parameter><link linkend="GstRTSPStream"><type>GstRTSPStream</type></link> *stream</parameter>,
+                             <parameter><link linkend="gboolean"><type>gboolean</type></link> blocked</parameter>);</programlisting>
+<para>Blocks or unblocks the dataflow on <parameter>stream</parameter>
+.</para>
+<refsect3 id="gst-rtsp-stream-set-blocked.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>stream</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstRTSPStream"><type>GstRTSPStream</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>blocked</para></entry>
+<entry role="parameter_description"><para>boolean indicating we should block or unblock</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-rtsp-stream-set-blocked.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> on success</para>
+</refsect3></refsect2>
+<refsect2 id="gst-rtsp-stream-is-blocking" role="function">
+<title>gst_rtsp_stream_is_blocking&#160;()</title>
+<indexterm zone="gst-rtsp-stream-is-blocking"><primary>gst_rtsp_stream_is_blocking</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_rtsp_stream_is_blocking (<parameter><link linkend="GstRTSPStream"><type>GstRTSPStream</type></link> *stream</parameter>);</programlisting>
+<para>Check if <parameter>stream</parameter>
+ is blocking on a <link linkend="GstBuffer"><type>GstBuffer</type></link>.</para>
+<refsect3 id="gst-rtsp-stream-is-blocking.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>stream</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstRTSPStream"><type>GstRTSPStream</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-rtsp-stream-is-blocking.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if <parameter>stream</parameter>
+is blocking</para>
+</refsect3></refsect2>
+<refsect2 id="gst-rtsp-stream-query-stop" role="function">
+<title>gst_rtsp_stream_query_stop&#160;()</title>
+<indexterm zone="gst-rtsp-stream-query-stop"><primary>gst_rtsp_stream_query_stop</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_rtsp_stream_query_stop (<parameter><link linkend="GstRTSPStream"><type>GstRTSPStream</type></link> *stream</parameter>,
+                            <parameter><link linkend="gint64"><type>gint64</type></link> *stop</parameter>);</programlisting>
+<para>Query the stop of the stream in <link linkend="GST-FORMAT-TIME:CAPS"><literal>GST_FORMAT_TIME</literal></link>. This only considers
+the RTP parts of the pipeline and not the RTCP parts.</para>
+<refsect3 id="gst-rtsp-stream-query-stop.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>stream</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstRTSPStream"><type>GstRTSPStream</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>stop</para></entry>
+<entry role="parameter_description"><para>current stop of a <link linkend="GstRTSPStream"><type>GstRTSPStream</type></link>. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>out</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-rtsp-stream-query-stop.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if the stop could be queried</para>
+</refsect3></refsect2>
+<refsect2 id="gst-rtsp-stream-query-position" role="function">
+<title>gst_rtsp_stream_query_position&#160;()</title>
+<indexterm zone="gst-rtsp-stream-query-position"><primary>gst_rtsp_stream_query_position</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_rtsp_stream_query_position (<parameter><link linkend="GstRTSPStream"><type>GstRTSPStream</type></link> *stream</parameter>,
+                                <parameter><link linkend="gint64"><type>gint64</type></link> *position</parameter>);</programlisting>
+<para>Query the position of the stream in <link linkend="GST-FORMAT-TIME:CAPS"><literal>GST_FORMAT_TIME</literal></link>. This only considers
+the RTP parts of the pipeline and not the RTCP parts.</para>
+<refsect3 id="gst-rtsp-stream-query-position.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>stream</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstRTSPStream"><type>GstRTSPStream</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>position</para></entry>
+<entry role="parameter_description"><para>current position of a <link linkend="GstRTSPStream"><type>GstRTSPStream</type></link>. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>out</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-rtsp-stream-query-position.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if the position could be queried</para>
+</refsect3></refsect2>
+<refsect2 id="gst-rtsp-stream-update-crypto" role="function">
+<title>gst_rtsp_stream_update_crypto&#160;()</title>
+<indexterm zone="gst-rtsp-stream-update-crypto"><primary>gst_rtsp_stream_update_crypto</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_rtsp_stream_update_crypto (<parameter><link linkend="GstRTSPStream"><type>GstRTSPStream</type></link> *stream</parameter>,
+                               <parameter><link linkend="guint"><type>guint</type></link> ssrc</parameter>,
+                               <parameter><link linkend="GstCaps"><type>GstCaps</type></link> *crypto</parameter>);</programlisting>
+<para>Update the new crypto information for <parameter>ssrc</parameter>
+ in <parameter>stream</parameter>
+. If information
+for <parameter>ssrc</parameter>
+ did not exist, it will be added. If information
+for <parameter>ssrc</parameter>
+ existed, it will be replaced. If <parameter>crypto</parameter>
+ is <link linkend="NULL:CAPS"><literal>NULL</literal></link>, it will
+be removed from <parameter>stream</parameter>
+.</para>
+<refsect3 id="gst-rtsp-stream-update-crypto.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>stream</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstRTSPStream"><type>GstRTSPStream</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>ssrc</para></entry>
+<entry role="parameter_description"><para>the SSRC</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>crypto</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstCaps"><type>GstCaps</type></link> with crypto info. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>transfer none</acronym>][<acronym>allow-none</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-rtsp-stream-update-crypto.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if <parameter>crypto</parameter>
+could be updated</para>
+</refsect3></refsect2>
+<refsect2 id="gst-rtsp-stream-set-pt-map" role="function">
+<title>gst_rtsp_stream_set_pt_map&#160;()</title>
+<indexterm zone="gst-rtsp-stream-set-pt-map"><primary>gst_rtsp_stream_set_pt_map</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_rtsp_stream_set_pt_map (<parameter><link linkend="GstRTSPStream"><type>GstRTSPStream</type></link> *stream</parameter>,
+                            <parameter><link linkend="guint"><type>guint</type></link> pt</parameter>,
+                            <parameter><link linkend="GstCaps"><type>GstCaps</type></link> *caps</parameter>);</programlisting>
+<para>Configure a pt map between <parameter>pt</parameter>
+ and <parameter>caps</parameter>
+.</para>
+<refsect3 id="gst-rtsp-stream-set-pt-map.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>stream</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstRTSPStream"><type>GstRTSPStream</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>pt</para></entry>
+<entry role="parameter_description"><para>the pt</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>caps</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstCaps"><type>GstCaps</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-rtsp-stream-request-aux-sender" role="function" condition="since:1.6">
+<title>gst_rtsp_stream_request_aux_sender&#160;()</title>
+<indexterm zone="gst-rtsp-stream-request-aux-sender" role="1.6"><primary>gst_rtsp_stream_request_aux_sender</primary></indexterm>
+<programlisting language="C"><link linkend="GstElement"><returnvalue>GstElement</returnvalue></link>&#160;*
+gst_rtsp_stream_request_aux_sender (<parameter><link linkend="GstRTSPStream"><type>GstRTSPStream</type></link> *stream</parameter>,
+                                    <parameter><link linkend="guint"><type>guint</type></link> sessid</parameter>);</programlisting>
+<para>Creating a rtxsend bin</para>
+<refsect3 id="gst-rtsp-stream-request-aux-sender.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>stream</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstRTSPStream"><type>GstRTSPStream</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>sessid</para></entry>
+<entry role="parameter_description"><para>the session id</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-rtsp-stream-request-aux-sender.returns" role="returns">
+<title>Returns</title>
+<para>a <link linkend="GstElement"><type>GstElement</type></link>. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>][<acronym>nullable</acronym>]</emphasis></para>
+</refsect3><para role="since">Since: <link linkend="api-index-1.6">1.6</link></para></refsect2>
+<refsect2 id="gst-rtsp-stream-seekable" role="function">
+<title>gst_rtsp_stream_seekable&#160;()</title>
+<indexterm zone="gst-rtsp-stream-seekable"><primary>gst_rtsp_stream_seekable</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_rtsp_stream_seekable (<parameter><link linkend="GstRTSPStream"><type>GstRTSPStream</type></link> *stream</parameter>);</programlisting>
+<para>Checks whether the individual <parameter>stream</parameter>
+ is seekable.</para>
+<refsect3 id="gst-rtsp-stream-seekable.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>stream</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstRTSPStream"><type>GstRTSPStream</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-rtsp-stream-seekable.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if <parameter>stream</parameter>
+is seekable, else <link linkend="FALSE:CAPS"><literal>FALSE</literal></link>.</para>
+</refsect3></refsect2>
+<refsect2 id="GstRTSPStreamTransportFilterFunc" role="function">
+<title>GstRTSPStreamTransportFilterFunc&#160;()</title>
+<indexterm zone="GstRTSPStreamTransportFilterFunc"><primary>GstRTSPStreamTransportFilterFunc</primary></indexterm>
+<programlisting language="C"><link linkend="GstRTSPFilterResult"><returnvalue>GstRTSPFilterResult</returnvalue></link>
+<phrase role="c_punctuation">(</phrase>*GstRTSPStreamTransportFilterFunc<phrase role="c_punctuation">)</phrase> (<parameter><link linkend="GstRTSPStream"><type>GstRTSPStream</type></link> *stream</parameter>,
+                                     <parameter><link linkend="GstRTSPStreamTransport"><type>GstRTSPStreamTransport</type></link> *trans</parameter>,
+                                     <parameter><link linkend="gpointer"><type>gpointer</type></link> user_data</parameter>);</programlisting>
+<para>This function will be called by the <link linkend="gst-rtsp-stream-transport-filter"><function>gst_rtsp_stream_transport_filter()</function></link>. An
+implementation should return a value of <link linkend="GstRTSPFilterResult"><type>GstRTSPFilterResult</type></link>.</para>
+<para>When this function returns <link linkend="GST-RTSP-FILTER-REMOVE:CAPS"><type>GST_RTSP_FILTER_REMOVE</type></link>, <parameter>trans</parameter>
+ will be removed
+from <parameter>stream</parameter>
+.</para>
+<para>A return value of <link linkend="GST-RTSP-FILTER-KEEP:CAPS"><type>GST_RTSP_FILTER_KEEP</type></link> will leave <parameter>trans</parameter>
+ untouched in
+<parameter>stream</parameter>
+.</para>
+<para>A value of <link linkend="GST-RTSP-FILTER-REF:CAPS"><type>GST_RTSP_FILTER_REF</type></link> will add <parameter>trans</parameter>
+ to the result <link linkend="GList"><type>GList</type></link> of
+<link linkend="gst-rtsp-stream-transport-filter"><function>gst_rtsp_stream_transport_filter()</function></link>.</para>
+<refsect3 id="GstRTSPStreamTransportFilterFunc.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>stream</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstRTSPStream"><type>GstRTSPStream</type></link> object</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>trans</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstRTSPStreamTransport"><type>GstRTSPStreamTransport</type></link> in <parameter>stream</parameter>
+</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>user_data</para></entry>
+<entry role="parameter_description"><para>user data that has been given to <link linkend="gst-rtsp-stream-transport-filter"><function>gst_rtsp_stream_transport_filter()</function></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="GstRTSPStreamTransportFilterFunc.returns" role="returns">
+<title>Returns</title>
+<para> a <link linkend="GstRTSPFilterResult"><type>GstRTSPFilterResult</type></link>.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-rtsp-stream-transport-filter" role="function">
+<title>gst_rtsp_stream_transport_filter&#160;()</title>
+<indexterm zone="gst-rtsp-stream-transport-filter"><primary>gst_rtsp_stream_transport_filter</primary></indexterm>
+<programlisting language="C"><link linkend="GList"><returnvalue>GList</returnvalue></link>&#160;*
+gst_rtsp_stream_transport_filter (<parameter><link linkend="GstRTSPStream"><type>GstRTSPStream</type></link> *stream</parameter>,
+                                  <parameter><link linkend="GstRTSPStreamTransportFilterFunc"><type>GstRTSPStreamTransportFilterFunc</type></link> func</parameter>,
+                                  <parameter><link linkend="gpointer"><type>gpointer</type></link> user_data</parameter>);</programlisting>
+<para>Call <parameter>func</parameter>
+ for each transport managed by <parameter>stream</parameter>
+. The result value of <parameter>func</parameter>
+
+determines what happens to the transport. <parameter>func</parameter>
+ will be called with <parameter>stream</parameter>
+
+locked so no further actions on <parameter>stream</parameter>
+ can be performed from <parameter>func</parameter>
+.</para>
+<para>If <parameter>func</parameter>
+ returns <link linkend="GST-RTSP-FILTER-REMOVE:CAPS"><type>GST_RTSP_FILTER_REMOVE</type></link>, the transport will be removed from
+<parameter>stream</parameter>
+.</para>
+<para>If <parameter>func</parameter>
+ returns <link linkend="GST-RTSP-FILTER-KEEP:CAPS"><type>GST_RTSP_FILTER_KEEP</type></link>, the transport will remain in <parameter>stream</parameter>
+.</para>
+<para>If <parameter>func</parameter>
+ returns <link linkend="GST-RTSP-FILTER-REF:CAPS"><type>GST_RTSP_FILTER_REF</type></link>, the transport will remain in <parameter>stream</parameter>
+ but
+will also be added with an additional ref to the result <link linkend="GList"><type>GList</type></link> of this
+function..</para>
+<para>When <parameter>func</parameter>
+ is <link linkend="NULL:CAPS"><literal>NULL</literal></link>, <link linkend="GST-RTSP-FILTER-REF:CAPS"><type>GST_RTSP_FILTER_REF</type></link> will be assumed for each transport.</para>
+<refsect3 id="gst-rtsp-stream-transport-filter.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>stream</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstRTSPStream"><type>GstRTSPStream</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>func</para></entry>
+<entry role="parameter_description"><para>a callback. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>scope call</acronym>][<acronym>allow-none</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>user_data</para></entry>
+<entry role="parameter_description"><para>user data passed to <parameter>func</parameter>
+. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>closure</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-rtsp-stream-transport-filter.returns" role="returns">
+<title>Returns</title>
+<para>a <link linkend="GList"><type>GList</type></link> with all
+transports for which <parameter>func</parameter>
+returned <link linkend="GST-RTSP-FILTER-REF:CAPS"><type>GST_RTSP_FILTER_REF</type></link>. After usage, each
+element in the <link linkend="GList"><type>GList</type></link> should be unreffed before the list is freed. </para>
+<para><emphasis role="annotation">[<acronym>element-type</acronym> GstRTSPStreamTransport][<acronym>transfer full</acronym>]</emphasis></para>
+</refsect3></refsect2>
+
+</refsect1>
+<refsect1 id="GstRTSPStream.other_details" role="details">
+<title role="details.title">Types and Values</title>
+<refsect2 id="GstRTSPStream-struct" role="struct">
+<title>struct GstRTSPStream</title>
+<indexterm zone="GstRTSPStream-struct"><primary>GstRTSPStream</primary></indexterm>
+<programlisting language="C">struct GstRTSPStream;</programlisting>
+<para>The definition of a media stream.</para>
+</refsect2>
+<refsect2 id="GstRTSPStreamClass" role="struct">
+<title>struct GstRTSPStreamClass</title>
+<indexterm zone="GstRTSPStreamClass"><primary>GstRTSPStreamClass</primary></indexterm>
+<programlisting language="C">struct GstRTSPStreamClass {
+  GObjectClass parent_class;
+};
+</programlisting>
+</refsect2>
+
+</refsect1>
+<refsect1 id="GstRTSPStream.property-details" role="property_details">
+<title role="property_details.title">Property Details</title>
+<refsect2 id="GstRTSPStream--control" role="property"><title>The <literal>“control”</literal> property</title>
+<indexterm zone="GstRTSPStream--control"><primary>GstRTSPStream:control</primary></indexterm>
+<programlisting>  “control”                  <link linkend="gchar"><type>gchar</type></link>&#160;*</programlisting>
+<para>The control string for this stream.</para><para>Flags: Read / Write</para>
+<para>Default value: NULL</para>
+</refsect2>
+<refsect2 id="GstRTSPStream--profiles" role="property"><title>The <literal>“profiles”</literal> property</title>
+<indexterm zone="GstRTSPStream--profiles"><primary>GstRTSPStream:profiles</primary></indexterm>
+<programlisting>  “profiles”                 <link linkend="GstRTSPProfile"><type>GstRTSPProfile</type></link></programlisting>
+<para>Allowed transfer profiles.</para><para>Flags: Read / Write</para>
+<para>Default value: GST_RTSP_PROFILE_AVP</para>
+</refsect2>
+<refsect2 id="GstRTSPStream--protocols" role="property"><title>The <literal>“protocols”</literal> property</title>
+<indexterm zone="GstRTSPStream--protocols"><primary>GstRTSPStream:protocols</primary></indexterm>
+<programlisting>  “protocols”                <link linkend="GstRTSPLowerTrans"><type>GstRTSPLowerTrans</type></link></programlisting>
+<para>Allowed lower transport protocols.</para><para>Flags: Read / Write</para>
+<para>Default value: GST_RTSP_LOWER_TRANS_UDP | GST_RTSP_LOWER_TRANS_UDP_MCAST | GST_RTSP_LOWER_TRANS_TCP</para>
+</refsect2>
+
+</refsect1>
+<refsect1 id="GstRTSPStream.signal-details" role="signals">
+<title role="signals.title">Signal Details</title>
+<refsect2 id="GstRTSPStream-new-rtcp-encoder" role="signal"><title>The <literal>“new-rtcp-encoder”</literal> signal</title>
+<indexterm zone="GstRTSPStream-new-rtcp-encoder"><primary>GstRTSPStream::new-rtcp-encoder</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+user_function (<link linkend="GstRTSPStream"><type>GstRTSPStream</type></link> *gstrtspstream,
+               <link linkend="GstElement"><type>GstElement</type></link>    *arg1,
+               <link linkend="gpointer"><type>gpointer</type></link>       user_data)</programlisting>
+<para>Flags: <link linkend="G-SIGNAL-RUN-LAST:CAPS">Run Last</link></para>
+</refsect2><refsect2 id="GstRTSPStream-new-rtp-encoder" role="signal"><title>The <literal>“new-rtp-encoder”</literal> signal</title>
+<indexterm zone="GstRTSPStream-new-rtp-encoder"><primary>GstRTSPStream::new-rtp-encoder</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+user_function (<link linkend="GstRTSPStream"><type>GstRTSPStream</type></link> *gstrtspstream,
+               <link linkend="GstElement"><type>GstElement</type></link>    *arg1,
+               <link linkend="gpointer"><type>gpointer</type></link>       user_data)</programlisting>
+<para>Flags: <link linkend="G-SIGNAL-RUN-LAST:CAPS">Run Last</link></para>
+</refsect2>
+</refsect1>
+<refsect1 id="GstRTSPStream.see-also">
+<title>See Also</title>
+<para><link linkend="GstRTSPMedia"><type>GstRTSPMedia</type></link></para>
+
+</refsect1>
+
+</refentry>

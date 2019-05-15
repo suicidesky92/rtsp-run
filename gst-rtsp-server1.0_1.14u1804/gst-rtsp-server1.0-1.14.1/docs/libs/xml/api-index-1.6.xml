@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!DOCTYPE indexdiv PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN"
+               "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd" [
+<!ENTITY % version-entities SYSTEM "version.entities">
+%version-entities;
+]>
+<indexdiv id="api-index-1.6">
+<indexdiv><title>R</title>
+<indexentry><primaryie linkends="GstRTSPAuth-accept-certificate"><link linkend="GstRTSPAuth-accept-certificate">GstRTSPAuth::accept-certificate</link>, object signal in <link linkend="GstRTSPAuth">GstRTSPAuth</link></primaryie></indexentry>
+<indexentry><primaryie linkends="GstRTSPClient-check-requirements"><link linkend="GstRTSPClient-check-requirements">GstRTSPClient::check-requirements</link>, object signal in <link linkend="GstRTSPClient">GstRTSPClient</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-rtsp-auth-get-tls-database"><link linkend="gst-rtsp-auth-get-tls-database">gst_rtsp_auth_get_tls_database</link>, function in <link linkend="GstRTSPAuth">GstRTSPAuth</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-rtsp-auth-set-tls-authentication-mode"><link linkend="gst-rtsp-auth-set-tls-authentication-mode">gst_rtsp_auth_set_tls_authentication_mode</link>, function in <link linkend="GstRTSPAuth">GstRTSPAuth</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-rtsp-media-factory-get-media-gtype"><link linkend="gst-rtsp-media-factory-get-media-gtype">gst_rtsp_media_factory_get_media_gtype</link>, function in <link linkend="GstRTSPMediaFactory">GstRTSPMediaFactory</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-rtsp-media-factory-set-media-gtype"><link linkend="gst-rtsp-media-factory-set-media-gtype">gst_rtsp_media_factory_set_media_gtype</link>, function in <link linkend="GstRTSPMediaFactory">GstRTSPMediaFactory</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-rtsp-stream-get-buffer-size"><link linkend="gst-rtsp-stream-get-buffer-size">gst_rtsp_stream_get_buffer_size</link>, function in <link linkend="GstRTSPStream">GstRTSPStream</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-rtsp-stream-request-aux-sender"><link linkend="gst-rtsp-stream-request-aux-sender">gst_rtsp_stream_request_aux_sender</link>, function in <link linkend="GstRTSPStream">GstRTSPStream</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-rtsp-stream-set-buffer-size"><link linkend="gst-rtsp-stream-set-buffer-size">gst_rtsp_stream_set_buffer_size</link>, function in <link linkend="GstRTSPStream">GstRTSPStream</link></primaryie></indexentry>
+</indexdiv>
+</indexdiv>

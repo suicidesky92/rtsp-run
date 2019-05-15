@@ -1,0 +1,4 @@
+usr/lib/*/lib*-1.0.so
+usr/include/*
+usr/lib/*/pkgconfig/*
+usr/share/gir-*

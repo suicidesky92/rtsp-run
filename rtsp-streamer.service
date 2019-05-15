@@ -1,0 +1,13 @@
+[Unit]
+Description=RTSP Streamer
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+ExecStart=/home/sky/Downloads/rtsp-run
+ExecStop=/usr/bin/pkill -9 "test-launch"
+
+[Install]
+WantedBy=multi-user.target
+
+

@@ -1,0 +1,77 @@
+0% symbol docs coverage.
+495 symbols documented.
+12 symbols incomplete.
+61 not documented.
+
+
+GST_RTSP_ONVIF_BACKCHANNEL_REQUIREMENT
+GstRTSPAuthClass (generate_authenticate_header, accept_certificate)
+GstRTSPClient::announce-request
+GstRTSPClient::check-requirements
+GstRTSPClient::closed
+GstRTSPClient::describe-request
+GstRTSPClient::get-parameter-request
+GstRTSPClient::handle-response
+GstRTSPClient::new-session
+GstRTSPClient::options-request
+GstRTSPClient::pause-request
+GstRTSPClient::play-request
+GstRTSPClient::pre-announce-request
+GstRTSPClient::pre-describe-request
+GstRTSPClient::pre-get-parameter-request
+GstRTSPClient::pre-options-request
+GstRTSPClient::pre-pause-request
+GstRTSPClient::pre-play-request
+GstRTSPClient::pre-record-request
+GstRTSPClient::pre-set-parameter-request
+GstRTSPClient::pre-setup-request
+GstRTSPClient::pre-teardown-request
+GstRTSPClient::record-request
+GstRTSPClient::send-message
+GstRTSPClient::set-parameter-request
+GstRTSPClient::setup-request
+GstRTSPClient::teardown-request
+GstRTSPClientClass (make_path_from_uri, closed, new_session, options_request, describe_request, setup_request, play_request, pause_request, teardown_request, set_parameter_request, get_parameter_request, handle_response, send_message, handle_sdp, announce_request, record_request, check_requirements, pre_options_request, pre_describe_request, pre_setup_request, pre_play_request, pre_pause_request, pre_teardown_request, pre_set_parameter_request, pre_get_parameter_request, pre_announce_request, pre_record_request)
+GstRTSPMedia::new-state
+GstRTSPMedia::new-stream
+GstRTSPMedia::prepared
+GstRTSPMedia::removed-stream
+GstRTSPMedia::target-state
+GstRTSPMedia::unprepared
+GstRTSPMediaClass (create_rtpbin, setup_rtpbin, setup_sdp, new_stream, removed_stream, prepared, unprepared, target_state, new_state, handle_sdp)
+GstRTSPMediaFactory::media-configure
+GstRTSPMediaFactory::media-constructed
+GstRTSPOnvifClient
+GstRTSPOnvifClientClass
+GstRTSPOnvifMedia
+GstRTSPOnvifMediaClass
+GstRTSPOnvifMediaFactory
+GstRTSPOnvifMediaFactoryClass
+GstRTSPOnvifServer
+GstRTSPOnvifServerClass
+GstRTSPPermissions (<items>)
+GstRTSPServer::client-connected
+GstRTSPSessionClass
+GstRTSPSessionMediaClass
+GstRTSPSessionPool::session-removed
+GstRTSPSessionPoolClass
+GstRTSPStream::new-rtcp-encoder
+GstRTSPStream::new-rtp-encoder
+GstRTSPStreamClass
+GstRTSPStreamTransportClass
+GstRTSPToken (<items>)
+GstSDPInfo (<items>)
+gst_rtsp_context_get_current
+gst_rtsp_media_factory_add_role_from_structure (factory, structure)
+gst_rtsp_media_factory_construct_full
+gst_rtsp_media_factory_create_element_full
+gst_rtsp_media_handle_sdp_full
+gst_rtsp_media_setup_sdp_full
+gst_rtsp_onvif_media_get_backchannel_bandwidth (media)
+gst_rtsp_onvif_media_set_backchannel_bandwidth (media)
+gst_rtsp_permissions_add_role_from_structure (permissions, structure)
+gst_rtsp_stream_get_current_seqnum (<parameters>)
+gst_rtsp_stream_set_seqnum_offset (<parameters>)
+
+rtsp-onvif-client:Long_Description
+rtsp-onvif-client:Short_Description

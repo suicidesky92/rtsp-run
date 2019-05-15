@@ -1,0 +1,23 @@
+Package: libgstrtspserver-1.0-doc
+Source: gst-rtsp-server1.0
+Version: 1.14.1-1~ubuntu18.04.1
+Architecture: all
+Maintainer: Maintainers of GStreamer packages <gst-rtsp-server1.0@packages.debian.org>
+Installed-Size: 1233
+Depends: libglib2.0-doc, gstreamer1.0-doc, gstreamer1.0-plugins-base-doc
+Section: doc
+Priority: optional
+Multi-Arch: foreign
+Homepage: https://gstreamer.freedesktop.org
+Description: GStreamer RTSP Server (documentation)
+ gst-rtsp-server is a library on top of GStreamer for building an RTSP
+ server or embedding RTSP server capabilities into applications.
+ .
+ GStreamer is a streaming media framework, based on graphs of filters
+ which operate on media data.  Applications using this library can do
+ anything from real-time sound processing to playing videos, and just
+ about anything else media-related.  Its plugin-based architecture means
+ that new data types or processing capabilities can be added simply by
+ installing new plug-ins.
+ .
+ This package contains the documentation for the GStreamer RTSP Server.

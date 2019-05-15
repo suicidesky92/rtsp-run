@@ -1,0 +1,185 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN"
+               "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd" [
+<!ENTITY % version-entities SYSTEM "version.entities">
+%version-entities;
+]>
+<refentry id="GstRTSPMediaFactoryURI">
+<refmeta>
+<refentrytitle role="top_of_page" id="GstRTSPMediaFactoryURI.top_of_page">GstRTSPMediaFactoryURI</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GST-RTSP-SERVER Library</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>GstRTSPMediaFactoryURI</refname>
+<refpurpose>A factory for URI sources</refpurpose>
+</refnamediv>
+
+<refsect1 id="GstRTSPMediaFactoryURI.functions" role="functions_proto">
+<title role="functions_proto.title">Functions</title>
+<informaltable pgwide="1" frame="none">
+<tgroup cols="2">
+<colspec colname="functions_return" colwidth="150px"/>
+<colspec colname="functions_name"/>
+<tbody>
+<row><entry role="function_type"><link linkend="GstRTSPMediaFactoryURI"><returnvalue>GstRTSPMediaFactoryURI</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-rtsp-media-factory-uri-new">gst_rtsp_media_factory_uri_new</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-rtsp-media-factory-uri-set-uri">gst_rtsp_media_factory_uri_set_uri</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gchar"><returnvalue>gchar</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-rtsp-media-factory-uri-get-uri">gst_rtsp_media_factory_uri_get_uri</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="GstRTSPMediaFactoryURI.properties" role="properties">
+<title role="properties.title">Properties</title>
+<informaltable frame="none">
+<tgroup cols="3">
+<colspec colname="properties_type" colwidth="150px"/>
+<colspec colname="properties_name" colwidth="300px"/>
+<colspec colname="properties_flags" colwidth="200px"/>
+<tbody>
+<row><entry role="property_type"><link linkend="gchar"><type>gchar</type></link>&#160;*</entry><entry role="property_name"><link linkend="GstRTSPMediaFactoryURI--uri">uri</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gboolean"><type>gboolean</type></link></entry><entry role="property_name"><link linkend="GstRTSPMediaFactoryURI--use-gstpay">use-gstpay</link></entry><entry role="property_flags">Read / Write</entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="GstRTSPMediaFactoryURI.other" role="other_proto">
+<title role="other_proto.title">Types and Values</title>
+<informaltable role="enum_members_table" pgwide="1" frame="none">
+<tgroup cols="2">
+<colspec colname="name" colwidth="150px"/>
+<colspec colname="description"/>
+<tbody>
+<row><entry role="datatype_keyword">struct</entry><entry role="function_name"><link linkend="GstRTSPMediaFactoryURI-struct">GstRTSPMediaFactoryURI</link></entry></row>
+<row><entry role="datatype_keyword">struct</entry><entry role="function_name"><link linkend="GstRTSPMediaFactoryURIClass">GstRTSPMediaFactoryURIClass</link></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="GstRTSPMediaFactoryURI.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<screen>    <link linkend="GObject">GObject</link>
+    <phrase role="lineart">&#9584;&#9472;&#9472;</phrase> <link linkend="GstRTSPMediaFactory">GstRTSPMediaFactory</link>
+        <phrase role="lineart">&#9584;&#9472;&#9472;</phrase> GstRTSPMediaFactoryURI
+</screen>
+</refsect1>
+
+
+<refsect1 id="GstRTSPMediaFactoryURI.description" role="desc">
+<title role="desc.title">Description</title>
+<para>This specialized <link linkend="GstRTSPMediaFactory"><type>GstRTSPMediaFactory</type></link> constructs media pipelines from a URI,
+given with <link linkend="gst-rtsp-media-factory-uri-set-uri"><function>gst_rtsp_media_factory_uri_set_uri()</function></link>.</para>
+<para>It will automatically demux and payload the different streams found in the
+media at URL.</para>
+<para>Last reviewed on 2013-07-11 (1.0.0)</para>
+
+</refsect1>
+<refsect1 id="GstRTSPMediaFactoryURI.functions_details" role="details">
+<title role="details.title">Functions</title>
+<refsect2 id="gst-rtsp-media-factory-uri-new" role="function">
+<title>gst_rtsp_media_factory_uri_new&#160;()</title>
+<indexterm zone="gst-rtsp-media-factory-uri-new"><primary>gst_rtsp_media_factory_uri_new</primary></indexterm>
+<programlisting language="C"><link linkend="GstRTSPMediaFactoryURI"><returnvalue>GstRTSPMediaFactoryURI</returnvalue></link>&#160;*
+gst_rtsp_media_factory_uri_new (<parameter><type>void</type></parameter>);</programlisting>
+<para>Create a new <link linkend="GstRTSPMediaFactoryURI"><type>GstRTSPMediaFactoryURI</type></link> instance.</para>
+<refsect3 id="gst-rtsp-media-factory-uri-new.returns" role="returns">
+<title>Returns</title>
+<para>a new <link linkend="GstRTSPMediaFactoryURI"><type>GstRTSPMediaFactoryURI</type></link> object. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-rtsp-media-factory-uri-set-uri" role="function">
+<title>gst_rtsp_media_factory_uri_set_uri&#160;()</title>
+<indexterm zone="gst-rtsp-media-factory-uri-set-uri"><primary>gst_rtsp_media_factory_uri_set_uri</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_rtsp_media_factory_uri_set_uri (<parameter><link linkend="GstRTSPMediaFactoryURI"><type>GstRTSPMediaFactoryURI</type></link> *factory</parameter>,
+                                    <parameter>const <link linkend="gchar"><type>gchar</type></link> *uri</parameter>);</programlisting>
+<para>Set the URI of the resource that will be streamed by this factory.</para>
+<refsect3 id="gst-rtsp-media-factory-uri-set-uri.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>factory</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstRTSPMediaFactory"><type>GstRTSPMediaFactory</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>uri</para></entry>
+<entry role="parameter_description"><para>the uri the stream</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-rtsp-media-factory-uri-get-uri" role="function">
+<title>gst_rtsp_media_factory_uri_get_uri&#160;()</title>
+<indexterm zone="gst-rtsp-media-factory-uri-get-uri"><primary>gst_rtsp_media_factory_uri_get_uri</primary></indexterm>
+<programlisting language="C"><link linkend="gchar"><returnvalue>gchar</returnvalue></link>&#160;*
+gst_rtsp_media_factory_uri_get_uri (<parameter><link linkend="GstRTSPMediaFactoryURI"><type>GstRTSPMediaFactoryURI</type></link> *factory</parameter>);</programlisting>
+<para>Get the URI that will provide media for this factory.</para>
+<refsect3 id="gst-rtsp-media-factory-uri-get-uri.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>factory</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstRTSPMediaFactory"><type>GstRTSPMediaFactory</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-rtsp-media-factory-uri-get-uri.returns" role="returns">
+<title>Returns</title>
+<para>the configured URI. <link linkend="g-free"><function>g_free()</function></link> after usage. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>]</emphasis></para>
+</refsect3></refsect2>
+
+</refsect1>
+<refsect1 id="GstRTSPMediaFactoryURI.other_details" role="details">
+<title role="details.title">Types and Values</title>
+<refsect2 id="GstRTSPMediaFactoryURI-struct" role="struct">
+<title>struct GstRTSPMediaFactoryURI</title>
+<indexterm zone="GstRTSPMediaFactoryURI-struct"><primary>GstRTSPMediaFactoryURI</primary></indexterm>
+<programlisting language="C">struct GstRTSPMediaFactoryURI;</programlisting>
+<para>A media factory that creates a pipeline to play and uri.</para>
+</refsect2>
+<refsect2 id="GstRTSPMediaFactoryURIClass" role="struct">
+<title>struct GstRTSPMediaFactoryURIClass</title>
+<indexterm zone="GstRTSPMediaFactoryURIClass"><primary>GstRTSPMediaFactoryURIClass</primary></indexterm>
+<programlisting language="C">struct GstRTSPMediaFactoryURIClass {
+  GstRTSPMediaFactoryClass  parent_class;
+};
+</programlisting>
+<para>The <link linkend="GstRTSPMediaFactoryURI"><type>GstRTSPMediaFactoryURI</type></link> class structure.</para>
+</refsect2>
+
+</refsect1>
+<refsect1 id="GstRTSPMediaFactoryURI.property-details" role="property_details">
+<title role="property_details.title">Property Details</title>
+<refsect2 id="GstRTSPMediaFactoryURI--uri" role="property"><title>The <literal>“uri”</literal> property</title>
+<indexterm zone="GstRTSPMediaFactoryURI--uri"><primary>GstRTSPMediaFactoryURI:uri</primary></indexterm>
+<programlisting>  “uri”                      <link linkend="gchar"><type>gchar</type></link>&#160;*</programlisting>
+<para>The URI of the resource to stream.</para><para>Flags: Read / Write</para>
+<para>Default value: NULL</para>
+</refsect2>
+<refsect2 id="GstRTSPMediaFactoryURI--use-gstpay" role="property"><title>The <literal>“use-gstpay”</literal> property</title>
+<indexterm zone="GstRTSPMediaFactoryURI--use-gstpay"><primary>GstRTSPMediaFactoryURI:use-gstpay</primary></indexterm>
+<programlisting>  “use-gstpay”               <link linkend="gboolean"><type>gboolean</type></link></programlisting>
+<para>Use the gstpay payloader to avoid decoding.</para><para>Flags: Read / Write</para>
+<para>Default value: FALSE</para>
+</refsect2>
+
+</refsect1>
+<refsect1 id="GstRTSPMediaFactoryURI.see-also">
+<title>See Also</title>
+<para><link linkend="GstRTSPMediaFactory"><type>GstRTSPMediaFactory</type></link>, <link linkend="GstRTSPMedia"><type>GstRTSPMedia</type></link></para>
+
+</refsect1>
+
+</refentry>

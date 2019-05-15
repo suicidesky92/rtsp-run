@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<!DOCTYPE screen PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN"
+               "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd" [
+<!ENTITY % version-entities SYSTEM "version.entities">
+%version-entities;
+]>
+<screen>
+    <link linkend="GObject">GObject</link>
+    <phrase role="lineart">&#9500;&#9472;&#9472;</phrase> <link linkend="GstRTSPAuth">GstRTSPAuth</link>
+    <phrase role="lineart">&#9500;&#9472;&#9472;</phrase> <link linkend="GstRTSPMountPoints">GstRTSPMountPoints</link>
+    <phrase role="lineart">&#9500;&#9472;&#9472;</phrase> <link linkend="GstRTSPMediaFactory">GstRTSPMediaFactory</link>
+    <phrase role="lineart">&#9474;</phrase>   <phrase role="lineart">&#9584;&#9472;&#9472;</phrase> <link linkend="GstRTSPMediaFactoryURI">GstRTSPMediaFactoryURI</link>
+    <phrase role="lineart">&#9500;&#9472;&#9472;</phrase> <link linkend="GstRTSPMedia">GstRTSPMedia</link>
+    <phrase role="lineart">&#9500;&#9472;&#9472;</phrase> <link linkend="GstRTSPServer">GstRTSPServer</link>
+    <phrase role="lineart">&#9500;&#9472;&#9472;</phrase> <link linkend="GstRTSPSessionPool">GstRTSPSessionPool</link>
+    <phrase role="lineart">&#9500;&#9472;&#9472;</phrase> <link linkend="GstRTSPSession">GstRTSPSession</link>
+    <phrase role="lineart">&#9500;&#9472;&#9472;</phrase> <link linkend="GstRTSPClient">GstRTSPClient</link>
+    <phrase role="lineart">&#9500;&#9472;&#9472;</phrase> <link linkend="GstRTSPAddressPool">GstRTSPAddressPool</link>
+    <phrase role="lineart">&#9500;&#9472;&#9472;</phrase> <link linkend="GstRTSPSessionMedia">GstRTSPSessionMedia</link>
+    <phrase role="lineart">&#9500;&#9472;&#9472;</phrase> <link linkend="GstRTSPStreamTransport">GstRTSPStreamTransport</link>
+    <phrase role="lineart">&#9500;&#9472;&#9472;</phrase> <link linkend="GstRTSPStream">GstRTSPStream</link>
+    <phrase role="lineart">&#9584;&#9472;&#9472;</phrase> <link linkend="GstRTSPThreadPool">GstRTSPThreadPool</link>
+    <link linkend="gpointer">gpointer</link>
+    <phrase role="lineart">&#9584;&#9472;&#9472;</phrase> <link linkend="GstRTSPContext">GstRTSPContext</link>
+    <link linkend="GBoxed">GBoxed</link>
+    <phrase role="lineart">&#9500;&#9472;&#9472;</phrase> <link linkend="GstRTSPPermissions">GstRTSPPermissions</link>
+    <phrase role="lineart">&#9584;&#9472;&#9472;</phrase> <link linkend="GstRTSPToken">GstRTSPToken</link>
+</screen>

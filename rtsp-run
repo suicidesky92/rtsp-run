@@ -1,0 +1,18 @@
+#!/bin/bash
+
+wd='/home/sky/Videos/' # videos will be played from this directory
+streamer="/home/sky/Downloads/rtsp-streamer/gst-rtsp-server1.0_1.14u1804/gst-rtsp-server1.0-1.14.1/examples/test-launch" # absolute path to streamer binary
+
+index=1
+cd $wd
+files=`ls *.m4v`
+
+for i in `ls *.m4v`; do
+
+        $streamer --port 200${index} "filesrc location=$wd${i} ! qtdemux ! rtph264pay name=pay0 pt=96" > /dev/null &
+        echo "200${index}/test"
+        index=$((index+1))
+
+done
+
+cd -

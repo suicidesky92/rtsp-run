@@ -1,0 +1,3 @@
+gir:Depends=gir1.2-gst-plugins-base-1.0 (>= 1.14.1), gir1.2-gstreamer-1.0 (>= 1.14.1), libgstrtspserver-1.0-0 (>= 1.14.0)
+misc:Depends=
+misc:Pre-Depends=

@@ -1,0 +1,94 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN"
+               "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd" [
+<!ENTITY % version-entities SYSTEM "version.entities">
+%version-entities;
+]>
+<refentry id="gst-rtsp-server-GstRTSPOnvifServer">
+<refmeta>
+<refentrytitle role="top_of_page" id="gst-rtsp-server-GstRTSPOnvifServer.top_of_page">GstRTSPOnvifServer</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GST-RTSP-SERVER Library</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>GstRTSPOnvifServer</refname>
+<refpurpose>The main server object</refpurpose>
+</refnamediv>
+
+<refsect1 id="gst-rtsp-server-GstRTSPOnvifServer.functions" role="functions_proto">
+<title role="functions_proto.title">Functions</title>
+<informaltable pgwide="1" frame="none">
+<tgroup cols="2">
+<colspec colname="functions_return" colwidth="150px"/>
+<colspec colname="functions_name"/>
+<tbody>
+<row><entry role="function_type"><link linkend="GstRTSPServer"><returnvalue>GstRTSPServer</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-rtsp-onvif-server-new">gst_rtsp_onvif_server_new</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="gst-rtsp-server-GstRTSPOnvifServer.other" role="other_proto">
+<title role="other_proto.title">Types and Values</title>
+<informaltable role="enum_members_table" pgwide="1" frame="none">
+<tgroup cols="2">
+<colspec colname="name" colwidth="150px"/>
+<colspec colname="description"/>
+<tbody>
+<row><entry role="typedef_keyword">typedef</entry><entry role="function_name"><link linkend="GstRTSPOnvifServer">GstRTSPOnvifServer</link></entry></row>
+<row><entry role="typedef_keyword">typedef</entry><entry role="function_name"><link linkend="GstRTSPOnvifServerClass">GstRTSPOnvifServerClass</link></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+
+
+<refsect1 id="gst-rtsp-server-GstRTSPOnvifServer.description" role="desc">
+<title role="desc.title">Description</title>
+<para>The server object is the object listening for connections on a port and
+creating <link linkend="GstRTSPOnvifClient"><type>GstRTSPOnvifClient</type></link> objects to handle those connections.</para>
+<para>The only different to <link linkend="GstRTSPServer"><type>GstRTSPServer</type></link> is that <link linkend="GstRTSPOnvifServer"><type>GstRTSPOnvifServer</type></link> creates
+<link linkend="GstRTSPOnvifClient"><type>GstRTSPOnvifClient</type></link> that have special handling for ONVIF specific features,
+like a backchannel that allows clients to send back media to the server.</para>
+
+</refsect1>
+<refsect1 id="gst-rtsp-server-GstRTSPOnvifServer.functions_details" role="details">
+<title role="details.title">Functions</title>
+<refsect2 id="gst-rtsp-onvif-server-new" role="function">
+<title>gst_rtsp_onvif_server_new&#160;()</title>
+<indexterm zone="gst-rtsp-onvif-server-new"><primary>gst_rtsp_onvif_server_new</primary></indexterm>
+<programlisting language="C"><link linkend="GstRTSPServer"><returnvalue>GstRTSPServer</returnvalue></link>&#160;*
+gst_rtsp_onvif_server_new (<parameter><type>void</type></parameter>);</programlisting>
+<para>Create a new <link linkend="GstRTSPOnvifServer"><type>GstRTSPOnvifServer</type></link> instance.</para>
+<refsect3 id="gst-rtsp-onvif-server-new.returns" role="returns">
+<title>Returns</title>
+<para>a new <link linkend="GstRTSPOnvifServer"><type>GstRTSPOnvifServer</type></link>. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>]</emphasis></para>
+</refsect3></refsect2>
+
+</refsect1>
+<refsect1 id="gst-rtsp-server-GstRTSPOnvifServer.other_details" role="details">
+<title role="details.title">Types and Values</title>
+<refsect2 id="GstRTSPOnvifServer" role="typedef">
+<title>GstRTSPOnvifServer</title>
+<indexterm zone="GstRTSPOnvifServer"><primary>GstRTSPOnvifServer</primary></indexterm>
+<programlisting language="C">typedef struct GstRTSPOnvifServer GstRTSPOnvifServer;
+</programlisting>
+</refsect2>
+<refsect2 id="GstRTSPOnvifServerClass" role="typedef">
+<title>GstRTSPOnvifServerClass</title>
+<indexterm zone="GstRTSPOnvifServerClass"><primary>GstRTSPOnvifServerClass</primary></indexterm>
+<programlisting language="C">typedef struct GstRTSPOnvifServerClass GstRTSPOnvifServerClass;
+</programlisting>
+</refsect2>
+
+</refsect1>
+<refsect1 id="gst-rtsp-server-GstRTSPOnvifServer.see-also">
+<title>See Also</title>
+<para><link linkend="GstRTSPOnvifMediaFactory"><type>GstRTSPOnvifMediaFactory</type></link>, <link linkend="GstRTSPClient"><type>GstRTSPClient</type></link></para>
+
+</refsect1>
+
+</refentry>

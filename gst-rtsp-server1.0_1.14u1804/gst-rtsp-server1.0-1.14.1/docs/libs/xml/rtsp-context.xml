@@ -1,0 +1,141 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN"
+               "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd" [
+<!ENTITY % version-entities SYSTEM "version.entities">
+%version-entities;
+]>
+<refentry id="GstRTSPContext">
+<refmeta>
+<refentrytitle role="top_of_page" id="GstRTSPContext.top_of_page">GstRTSPContext</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GST-RTSP-SERVER Library</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>GstRTSPContext</refname>
+<refpurpose>A client request context</refpurpose>
+</refnamediv>
+
+<refsect1 id="GstRTSPContext.functions" role="functions_proto">
+<title role="functions_proto.title">Functions</title>
+<informaltable pgwide="1" frame="none">
+<tgroup cols="2">
+<colspec colname="functions_return" colwidth="150px"/>
+<colspec colname="functions_name"/>
+<tbody>
+<row><entry role="function_type"><link linkend="GstRTSPContext"><returnvalue>GstRTSPContext</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-rtsp-context-get-current">gst_rtsp_context_get_current</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-rtsp-context-push-current">gst_rtsp_context_push_current</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-rtsp-context-pop-current">gst_rtsp_context_pop_current</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="GstRTSPContext.other" role="other_proto">
+<title role="other_proto.title">Types and Values</title>
+<informaltable role="enum_members_table" pgwide="1" frame="none">
+<tgroup cols="2">
+<colspec colname="name" colwidth="150px"/>
+<colspec colname="description"/>
+<tbody>
+<row><entry role="datatype_keyword">struct</entry><entry role="function_name"><link linkend="GstRTSPContext-struct">GstRTSPContext</link></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="GstRTSPContext.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<screen>    <link linkend="gpointer">gpointer</link>
+    <phrase role="lineart">&#9584;&#9472;&#9472;</phrase> GstRTSPContext
+</screen>
+</refsect1>
+
+
+<refsect1 id="GstRTSPContext.description" role="desc">
+<title role="desc.title">Description</title>
+<para>Last reviewed on 2013-07-11 (1.0.0)</para>
+
+</refsect1>
+<refsect1 id="GstRTSPContext.functions_details" role="details">
+<title role="details.title">Functions</title>
+<refsect2 id="gst-rtsp-context-get-current" role="function">
+<title>gst_rtsp_context_get_current&#160;()</title>
+<indexterm zone="gst-rtsp-context-get-current"><primary>gst_rtsp_context_get_current</primary></indexterm>
+<programlisting language="C"><link linkend="GstRTSPContext"><returnvalue>GstRTSPContext</returnvalue></link>&#160;*
+gst_rtsp_context_get_current (<parameter><type>void</type></parameter>);</programlisting>
+</refsect2>
+<refsect2 id="gst-rtsp-context-push-current" role="function">
+<title>gst_rtsp_context_push_current&#160;()</title>
+<indexterm zone="gst-rtsp-context-push-current"><primary>gst_rtsp_context_push_current</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_rtsp_context_push_current (<parameter><link linkend="GstRTSPContext"><type>GstRTSPContext</type></link> *ctx</parameter>);</programlisting>
+<para>Pushes <parameter>ctx</parameter>
+ onto the context stack. The current
+context can then be received using <link linkend="gst-rtsp-context-get-current"><function>gst_rtsp_context_get_current()</function></link>.</para>
+<refsect3 id="gst-rtsp-context-push-current.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>ctx</para></entry>
+<entry role="parameter_description"><para>a #<link linkend="GstRTSPContext"><type>GstRTSPContext</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-rtsp-context-pop-current" role="function">
+<title>gst_rtsp_context_pop_current&#160;()</title>
+<indexterm zone="gst-rtsp-context-pop-current"><primary>gst_rtsp_context_pop_current</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_rtsp_context_pop_current (<parameter><link linkend="GstRTSPContext"><type>GstRTSPContext</type></link> *ctx</parameter>);</programlisting>
+<para>Pops <parameter>ctx</parameter>
+ off the context stack (verifying that <parameter>ctx</parameter>
+
+is on the top of the stack).</para>
+<refsect3 id="gst-rtsp-context-pop-current.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>ctx</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstRTSPContext"><type>GstRTSPContext</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+
+</refsect1>
+<refsect1 id="GstRTSPContext.other_details" role="details">
+<title role="details.title">Types and Values</title>
+<refsect2 id="GstRTSPContext-struct" role="struct">
+<title>struct GstRTSPContext</title>
+<indexterm zone="GstRTSPContext-struct"><primary>GstRTSPContext</primary></indexterm>
+<programlisting language="C">struct GstRTSPContext;</programlisting>
+<para>Information passed around containing the context of a request.</para>
+<refsect3 id="GstRTSPContext.members" role="struct_members">
+<title>Members</title>
+<informaltable role="struct_members_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="struct_members_name" colwidth="300px"/>
+<colspec colname="struct_members_description"/>
+<colspec colname="struct_members_annotations" colwidth="200px"/>
+<tbody>
+</tbody></tgroup></informaltable>
+</refsect3>
+</refsect2>
+
+</refsect1>
+<refsect1 id="GstRTSPContext.see-also">
+<title>See Also</title>
+<para><link linkend="GstRTSPServer"><type>GstRTSPServer</type></link>, <link linkend="GstRTSPClient"><type>GstRTSPClient</type></link></para>
+
+</refsect1>
+
+</refentry>

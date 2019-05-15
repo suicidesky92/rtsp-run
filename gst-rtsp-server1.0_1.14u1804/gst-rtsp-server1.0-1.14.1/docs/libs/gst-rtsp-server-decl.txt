@@ -1,0 +1,3211 @@
+<MACRO>
+<NAME>GST_TYPE_RTSP_ADDRESS_POOL</NAME>
+#define GST_TYPE_RTSP_ADDRESS_POOL              (gst_rtsp_address_pool_get_type ())
+</MACRO>
+<MACRO>
+<NAME>GST_IS_RTSP_ADDRESS_POOL</NAME>
+#define GST_IS_RTSP_ADDRESS_POOL(obj)           (G_TYPE_CHECK_INSTANCE_TYPE ((obj), GST_TYPE_RTSP_ADDRESS_POOL))
+</MACRO>
+<MACRO>
+<NAME>GST_IS_RTSP_ADDRESS_POOL_CLASS</NAME>
+#define GST_IS_RTSP_ADDRESS_POOL_CLASS(klass)   (G_TYPE_CHECK_CLASS_TYPE ((klass), GST_TYPE_RTSP_ADDRESS_POOL))
+</MACRO>
+<MACRO>
+<NAME>GST_RTSP_ADDRESS_POOL_GET_CLASS</NAME>
+#define GST_RTSP_ADDRESS_POOL_GET_CLASS(obj)    (G_TYPE_INSTANCE_GET_CLASS ((obj), GST_TYPE_RTSP_ADDRESS_POOL, GstRTSPAddressPoolClass))
+</MACRO>
+<MACRO>
+<NAME>GST_RTSP_ADDRESS_POOL</NAME>
+#define GST_RTSP_ADDRESS_POOL(obj)              (G_TYPE_CHECK_INSTANCE_CAST ((obj), GST_TYPE_RTSP_ADDRESS_POOL, GstRTSPAddressPool))
+</MACRO>
+<MACRO>
+<NAME>GST_RTSP_ADDRESS_POOL_CLASS</NAME>
+#define GST_RTSP_ADDRESS_POOL_CLASS(klass)      (G_TYPE_CHECK_CLASS_CAST ((klass), GST_TYPE_RTSP_ADDRESS_POOL, GstRTSPAddressPoolClass))
+</MACRO>
+<MACRO>
+<NAME>GST_RTSP_ADDRESS_POOL_CAST</NAME>
+#define GST_RTSP_ADDRESS_POOL_CAST(obj)         ((GstRTSPAddressPool*)(obj))
+</MACRO>
+<MACRO>
+<NAME>GST_RTSP_ADDRESS_POOL_CLASS_CAST</NAME>
+#define GST_RTSP_ADDRESS_POOL_CLASS_CAST(klass) ((GstRTSPAddressPoolClass*)(klass))
+</MACRO>
+<ENUM>
+<NAME>GstRTSPAddressPoolResult</NAME>
+typedef enum {
+  GST_RTSP_ADDRESS_POOL_OK         =  0,
+  /* errors */
+  GST_RTSP_ADDRESS_POOL_EINVAL     = -1,
+  GST_RTSP_ADDRESS_POOL_ERESERVED  = -2,
+  GST_RTSP_ADDRESS_POOL_ERANGE     = -3,
+
+  GST_RTSP_ADDRESS_POOL_ELAST      = -4,
+} GstRTSPAddressPoolResult;
+</ENUM>
+<STRUCT>
+<NAME>GstRTSPAddress</NAME>
+struct _GstRTSPAddress {
+  GstRTSPAddressPool *pool;
+
+  gchar *address;
+  guint16 port;
+  gint n_ports;
+  guint8 ttl;
+
+  /*<private >*/
+  gpointer priv;
+};
+</STRUCT>
+<FUNCTION>
+<NAME>gst_rtsp_address_get_type</NAME>
+<RETURNS>GType  </RETURNS>
+void
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_address_copy</NAME>
+<RETURNS>GstRTSPAddress  * </RETURNS>
+GstRTSPAddress *addr
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_address_free</NAME>
+<RETURNS>void              </RETURNS>
+GstRTSPAddress *addr
+</FUNCTION>
+<ENUM>
+<NAME>GstRTSPAddressFlags</NAME>
+typedef enum {
+  GST_RTSP_ADDRESS_FLAG_NONE      = 0,
+  GST_RTSP_ADDRESS_FLAG_IPV4      = (1 << 0),
+  GST_RTSP_ADDRESS_FLAG_IPV6      = (1 << 1),
+  GST_RTSP_ADDRESS_FLAG_EVEN_PORT = (1 << 2),
+  GST_RTSP_ADDRESS_FLAG_MULTICAST = (1 << 3),
+  GST_RTSP_ADDRESS_FLAG_UNICAST   = (1 << 4),
+} GstRTSPAddressFlags;
+</ENUM>
+<MACRO>
+<NAME>GST_RTSP_ADDRESS_POOL_ANY_IPV4</NAME>
+#define GST_RTSP_ADDRESS_POOL_ANY_IPV4  "0.0.0.0"
+</MACRO>
+<MACRO>
+<NAME>GST_RTSP_ADDRESS_POOL_ANY_IPV6</NAME>
+#define GST_RTSP_ADDRESS_POOL_ANY_IPV6  "::"
+</MACRO>
+<STRUCT>
+<NAME>GstRTSPAddressPool</NAME>
+struct _GstRTSPAddressPool {
+  GObject       parent;
+
+  /*< private >*/
+  GstRTSPAddressPoolPrivate *priv;
+  gpointer _gst_reserved[GST_PADDING];
+};
+</STRUCT>
+<STRUCT>
+<NAME>GstRTSPAddressPoolClass</NAME>
+struct _GstRTSPAddressPoolClass {
+  GObjectClass  parent_class;
+
+  /*< private >*/
+  gpointer _gst_reserved[GST_PADDING];
+};
+</STRUCT>
+<FUNCTION>
+<NAME>gst_rtsp_address_pool_get_type</NAME>
+<RETURNS>GType                   </RETURNS>
+void
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_address_pool_new</NAME>
+<RETURNS>GstRTSPAddressPool  *   </RETURNS>
+void
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_address_pool_clear</NAME>
+<RETURNS>void                    </RETURNS>
+GstRTSPAddressPool * pool
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_address_pool_dump</NAME>
+<RETURNS>void                    </RETURNS>
+GstRTSPAddressPool * pool
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_address_pool_add_range</NAME>
+<RETURNS>gboolean                </RETURNS>
+GstRTSPAddressPool * pool, const gchar *min_address, const gchar *max_address, guint16 min_port, guint16 max_port, guint8 ttl
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_address_pool_acquire_address</NAME>
+<RETURNS>GstRTSPAddress  *       </RETURNS>
+GstRTSPAddressPool * pool, GstRTSPAddressFlags flags, gint n_ports
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_address_pool_reserve_address</NAME>
+<RETURNS>GstRTSPAddressPoolResult   </RETURNS>
+GstRTSPAddressPool * pool, const gchar *ip_address, guint port, guint n_ports, guint ttl, GstRTSPAddress ** address
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_address_pool_has_unicast_addresses</NAME>
+<RETURNS>gboolean                </RETURNS>
+GstRTSPAddressPool * pool
+</FUNCTION>
+<STRUCT>
+<NAME>GstRTSPAddressPoolPrivate</NAME>
+</STRUCT>
+<MACRO>
+<NAME>GST_TYPE_RTSP_AUTH</NAME>
+#define GST_TYPE_RTSP_AUTH              (gst_rtsp_auth_get_type ())
+</MACRO>
+<MACRO>
+<NAME>GST_IS_RTSP_AUTH</NAME>
+#define GST_IS_RTSP_AUTH(obj)           (G_TYPE_CHECK_INSTANCE_TYPE ((obj), GST_TYPE_RTSP_AUTH))
+</MACRO>
+<MACRO>
+<NAME>GST_IS_RTSP_AUTH_CLASS</NAME>
+#define GST_IS_RTSP_AUTH_CLASS(klass)   (G_TYPE_CHECK_CLASS_TYPE ((klass), GST_TYPE_RTSP_AUTH))
+</MACRO>
+<MACRO>
+<NAME>GST_RTSP_AUTH_GET_CLASS</NAME>
+#define GST_RTSP_AUTH_GET_CLASS(obj)    (G_TYPE_INSTANCE_GET_CLASS ((obj), GST_TYPE_RTSP_AUTH, GstRTSPAuthClass))
+</MACRO>
+<MACRO>
+<NAME>GST_RTSP_AUTH</NAME>
+#define GST_RTSP_AUTH(obj)              (G_TYPE_CHECK_INSTANCE_CAST ((obj), GST_TYPE_RTSP_AUTH, GstRTSPAuth))
+</MACRO>
+<MACRO>
+<NAME>GST_RTSP_AUTH_CLASS</NAME>
+#define GST_RTSP_AUTH_CLASS(klass)      (G_TYPE_CHECK_CLASS_CAST ((klass), GST_TYPE_RTSP_AUTH, GstRTSPAuthClass))
+</MACRO>
+<MACRO>
+<NAME>GST_RTSP_AUTH_CAST</NAME>
+#define GST_RTSP_AUTH_CAST(obj)         ((GstRTSPAuth*)(obj))
+</MACRO>
+<MACRO>
+<NAME>GST_RTSP_AUTH_CLASS_CAST</NAME>
+#define GST_RTSP_AUTH_CLASS_CAST(klass) ((GstRTSPAuthClass*)(klass))
+</MACRO>
+<STRUCT>
+<NAME>GstRTSPAuth</NAME>
+struct _GstRTSPAuth {
+  GObject       parent;
+
+  /*< private >*/
+  GstRTSPAuthPrivate *priv;
+  gpointer _gst_reserved[GST_PADDING];
+};
+</STRUCT>
+<STRUCT>
+<NAME>GstRTSPAuthClass</NAME>
+struct _GstRTSPAuthClass {
+  GObjectClass  parent_class;
+
+  gboolean           (*authenticate) (GstRTSPAuth *auth, GstRTSPContext *ctx);
+  gboolean           (*check)        (GstRTSPAuth *auth, GstRTSPContext *ctx,
+                                      const gchar *check);
+  void               (*generate_authenticate_header) (GstRTSPAuth *auth, GstRTSPContext *ctx);
+  gboolean           (*accept_certificate) (GstRTSPAuth *auth,
+                                            GTlsConnection *connection,
+                                            GTlsCertificate *peer_cert,
+                                            GTlsCertificateFlags errors);
+  /*< private >*/
+  gpointer            _gst_reserved[GST_PADDING - 1];
+};
+</STRUCT>
+<FUNCTION>
+<NAME>gst_rtsp_auth_get_type</NAME>
+<RETURNS>GType                </RETURNS>
+void
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_auth_new</NAME>
+<RETURNS>GstRTSPAuth  *       </RETURNS>
+void
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_auth_set_tls_certificate</NAME>
+<RETURNS>void                 </RETURNS>
+GstRTSPAuth *auth, GTlsCertificate *cert
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_auth_get_tls_certificate</NAME>
+<RETURNS>GTlsCertificate  *   </RETURNS>
+GstRTSPAuth *auth
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_auth_set_tls_database</NAME>
+<RETURNS>void                 </RETURNS>
+GstRTSPAuth *auth, GTlsDatabase *database
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_auth_get_tls_database</NAME>
+<RETURNS>GTlsDatabase  *      </RETURNS>
+GstRTSPAuth *auth
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_auth_set_tls_authentication_mode</NAME>
+<RETURNS>void                 </RETURNS>
+GstRTSPAuth *auth, GTlsAuthenticationMode mode
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_auth_get_tls_authentication_mode</NAME>
+<RETURNS>GTlsAuthenticationMode  </RETURNS>
+GstRTSPAuth *auth
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_auth_set_default_token</NAME>
+<RETURNS>void                 </RETURNS>
+GstRTSPAuth *auth, GstRTSPToken *token
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_auth_get_default_token</NAME>
+<RETURNS>GstRTSPToken  *      </RETURNS>
+GstRTSPAuth *auth
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_auth_add_basic</NAME>
+<RETURNS>void                 </RETURNS>
+GstRTSPAuth *auth, const gchar * basic, GstRTSPToken *token
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_auth_remove_basic</NAME>
+<RETURNS>void                 </RETURNS>
+GstRTSPAuth *auth, const gchar * basic
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_auth_add_digest</NAME>
+<RETURNS>void                 </RETURNS>
+GstRTSPAuth *auth, const gchar *user, const gchar *pass, GstRTSPToken *token
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_auth_remove_digest</NAME>
+<RETURNS>void                 </RETURNS>
+GstRTSPAuth *auth, const gchar *user
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_auth_set_supported_methods</NAME>
+<RETURNS>void                 </RETURNS>
+GstRTSPAuth *auth, GstRTSPAuthMethod methods
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_auth_get_supported_methods</NAME>
+<RETURNS>GstRTSPAuthMethod    </RETURNS>
+GstRTSPAuth *auth
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_auth_check</NAME>
+<RETURNS>gboolean             </RETURNS>
+const gchar *check
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_auth_make_basic</NAME>
+<RETURNS>gchar  *             </RETURNS>
+const gchar * user, const gchar * pass
+</FUNCTION>
+<MACRO>
+<NAME>GST_RTSP_AUTH_CHECK_CONNECT</NAME>
+#define GST_RTSP_AUTH_CHECK_CONNECT                  "auth.check.connect"
+</MACRO>
+<MACRO>
+<NAME>GST_RTSP_AUTH_CHECK_URL</NAME>
+#define GST_RTSP_AUTH_CHECK_URL                      "auth.check.url"
+</MACRO>
+<MACRO>
+<NAME>GST_RTSP_AUTH_CHECK_MEDIA_FACTORY_ACCESS</NAME>
+#define GST_RTSP_AUTH_CHECK_MEDIA_FACTORY_ACCESS     "auth.check.media.factory.access"
+</MACRO>
+<MACRO>
+<NAME>GST_RTSP_AUTH_CHECK_MEDIA_FACTORY_CONSTRUCT</NAME>
+#define GST_RTSP_AUTH_CHECK_MEDIA_FACTORY_CONSTRUCT  "auth.check.media.factory.construct"
+</MACRO>
+<MACRO>
+<NAME>GST_RTSP_AUTH_CHECK_TRANSPORT_CLIENT_SETTINGS</NAME>
+#define GST_RTSP_AUTH_CHECK_TRANSPORT_CLIENT_SETTINGS  "auth.check.transport.client-settings"
+</MACRO>
+<MACRO>
+<NAME>GST_RTSP_TOKEN_MEDIA_FACTORY_ROLE</NAME>
+#define GST_RTSP_TOKEN_MEDIA_FACTORY_ROLE      "media.factory.role"
+</MACRO>
+<MACRO>
+<NAME>GST_RTSP_TOKEN_TRANSPORT_CLIENT_SETTINGS</NAME>
+#define GST_RTSP_TOKEN_TRANSPORT_CLIENT_SETTINGS   "transport.client-settings"
+</MACRO>
+<MACRO>
+<NAME>GST_RTSP_PERM_MEDIA_FACTORY_ACCESS</NAME>
+#define GST_RTSP_PERM_MEDIA_FACTORY_ACCESS      "media.factory.access"
+</MACRO>
+<MACRO>
+<NAME>GST_RTSP_PERM_MEDIA_FACTORY_CONSTRUCT</NAME>
+#define GST_RTSP_PERM_MEDIA_FACTORY_CONSTRUCT   "media.factory.construct"
+</MACRO>
+<STRUCT>
+<NAME>GstRTSPAuthPrivate</NAME>
+</STRUCT>
+<MACRO>
+<NAME>GST_TYPE_RTSP_CLIENT</NAME>
+#define GST_TYPE_RTSP_CLIENT              (gst_rtsp_client_get_type ())
+</MACRO>
+<MACRO>
+<NAME>GST_IS_RTSP_CLIENT</NAME>
+#define GST_IS_RTSP_CLIENT(obj)           (G_TYPE_CHECK_INSTANCE_TYPE ((obj), GST_TYPE_RTSP_CLIENT))
+</MACRO>
+<MACRO>
+<NAME>GST_IS_RTSP_CLIENT_CLASS</NAME>
+#define GST_IS_RTSP_CLIENT_CLASS(klass)   (G_TYPE_CHECK_CLASS_TYPE ((klass), GST_TYPE_RTSP_CLIENT))
+</MACRO>
+<MACRO>
+<NAME>GST_RTSP_CLIENT_GET_CLASS</NAME>
+#define GST_RTSP_CLIENT_GET_CLASS(obj)    (G_TYPE_INSTANCE_GET_CLASS ((obj), GST_TYPE_RTSP_CLIENT, GstRTSPClientClass))
+</MACRO>
+<MACRO>
+<NAME>GST_RTSP_CLIENT</NAME>
+#define GST_RTSP_CLIENT(obj)              (G_TYPE_CHECK_INSTANCE_CAST ((obj), GST_TYPE_RTSP_CLIENT, GstRTSPClient))
+</MACRO>
+<MACRO>
+<NAME>GST_RTSP_CLIENT_CLASS</NAME>
+#define GST_RTSP_CLIENT_CLASS(klass)      (G_TYPE_CHECK_CLASS_CAST ((klass), GST_TYPE_RTSP_CLIENT, GstRTSPClientClass))
+</MACRO>
+<MACRO>
+<NAME>GST_RTSP_CLIENT_CAST</NAME>
+#define GST_RTSP_CLIENT_CAST(obj)         ((GstRTSPClient*)(obj))
+</MACRO>
+<MACRO>
+<NAME>GST_RTSP_CLIENT_CLASS_CAST</NAME>
+#define GST_RTSP_CLIENT_CLASS_CAST(klass) ((GstRTSPClientClass*)(klass))
+</MACRO>
+<USER_FUNCTION>
+<NAME>GstRTSPClientSendFunc</NAME>
+<RETURNS>gboolean </RETURNS>
+GstRTSPClient *client,
+                                                GstRTSPMessage *message,
+                                                gboolean close,
+                                                gpointer user_data
+</USER_FUNCTION>
+<STRUCT>
+<NAME>GstRTSPClient</NAME>
+struct _GstRTSPClient {
+  GObject       parent;
+
+  /*< private >*/
+  GstRTSPClientPrivate *priv;
+  gpointer _gst_reserved[GST_PADDING];
+};
+</STRUCT>
+<STRUCT>
+<NAME>GstRTSPClientClass</NAME>
+struct _GstRTSPClientClass {
+  GObjectClass  parent_class;
+
+  GstSDPMessage * (*create_sdp) (GstRTSPClient *client, GstRTSPMedia *media);
+  gboolean        (*configure_client_media)     (GstRTSPClient * client,
+                                                 GstRTSPMedia * media, GstRTSPStream * stream,
+                                                 GstRTSPContext * ctx);
+  gboolean        (*configure_client_transport) (GstRTSPClient * client,
+                                                 GstRTSPContext * ctx,
+                                                 GstRTSPTransport * ct);
+  GstRTSPResult   (*params_set) (GstRTSPClient *client, GstRTSPContext *ctx);
+  GstRTSPResult   (*params_get) (GstRTSPClient *client, GstRTSPContext *ctx);
+  gchar *         (*make_path_from_uri) (GstRTSPClient *client, const GstRTSPUrl *uri);
+
+  /* signals */
+  void     (*closed)                  (GstRTSPClient *client);
+  void     (*new_session)             (GstRTSPClient *client, GstRTSPSession *session);
+  void     (*options_request)         (GstRTSPClient *client, GstRTSPContext *ctx);
+  void     (*describe_request)        (GstRTSPClient *client, GstRTSPContext *ctx);
+  void     (*setup_request)           (GstRTSPClient *client, GstRTSPContext *ctx);
+  void     (*play_request)            (GstRTSPClient *client, GstRTSPContext *ctx);
+  void     (*pause_request)           (GstRTSPClient *client, GstRTSPContext *ctx);
+  void     (*teardown_request)        (GstRTSPClient *client, GstRTSPContext *ctx);
+  void     (*set_parameter_request)   (GstRTSPClient *client, GstRTSPContext *ctx);
+  void     (*get_parameter_request)   (GstRTSPClient *client, GstRTSPContext *ctx);
+  void     (*handle_response)         (GstRTSPClient *client, GstRTSPContext *ctx);
+
+  void     (*tunnel_http_response)    (GstRTSPClient * client, GstRTSPMessage * request,
+                                       GstRTSPMessage * response);
+  void     (*send_message)            (GstRTSPClient * client, GstRTSPContext *ctx,
+                                       GstRTSPMessage * response);
+
+  gboolean (*handle_sdp)              (GstRTSPClient *client, GstRTSPContext *ctx, GstRTSPMedia *media, GstSDPMessage *sdp);
+
+  void     (*announce_request)        (GstRTSPClient *client, GstRTSPContext *ctx);
+  void     (*record_request)          (GstRTSPClient *client, GstRTSPContext *ctx);
+  gchar*   (*check_requirements)      (GstRTSPClient *client, GstRTSPContext *ctx, gchar ** arr);
+
+  GstRTSPStatusCode (*pre_options_request)       (GstRTSPClient *client, GstRTSPContext *ctx);
+  GstRTSPStatusCode (*pre_describe_request)      (GstRTSPClient *client, GstRTSPContext *ctx);
+  GstRTSPStatusCode (*pre_setup_request)         (GstRTSPClient *client, GstRTSPContext *ctx);
+  GstRTSPStatusCode (*pre_play_request)          (GstRTSPClient *client, GstRTSPContext *ctx);
+  GstRTSPStatusCode (*pre_pause_request)         (GstRTSPClient *client, GstRTSPContext *ctx);
+  GstRTSPStatusCode (*pre_teardown_request)      (GstRTSPClient *client, GstRTSPContext *ctx);
+  GstRTSPStatusCode (*pre_set_parameter_request) (GstRTSPClient *client, GstRTSPContext *ctx);
+  GstRTSPStatusCode (*pre_get_parameter_request) (GstRTSPClient *client, GstRTSPContext *ctx);
+  GstRTSPStatusCode (*pre_announce_request)      (GstRTSPClient *client, GstRTSPContext *ctx);
+  GstRTSPStatusCode (*pre_record_request)        (GstRTSPClient *client, GstRTSPContext *ctx);
+
+  /*< private >*/
+  gpointer _gst_reserved[GST_PADDING_LARGE-16];
+};
+</STRUCT>
+<FUNCTION>
+<NAME>gst_rtsp_client_get_type</NAME>
+<RETURNS>GType                  </RETURNS>
+void
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_client_new</NAME>
+<RETURNS>GstRTSPClient  *       </RETURNS>
+void
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_client_set_session_pool</NAME>
+<RETURNS>void                   </RETURNS>
+GstRTSPClient *client, GstRTSPSessionPool *pool
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_client_get_session_pool</NAME>
+<RETURNS>GstRTSPSessionPool  *  </RETURNS>
+GstRTSPClient *client
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_client_set_mount_points</NAME>
+<RETURNS>void                   </RETURNS>
+GstRTSPClient *client, GstRTSPMountPoints *mounts
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_client_get_mount_points</NAME>
+<RETURNS>GstRTSPMountPoints  *  </RETURNS>
+GstRTSPClient *client
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_client_set_auth</NAME>
+<RETURNS>void                   </RETURNS>
+GstRTSPClient *client, GstRTSPAuth *auth
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_client_get_auth</NAME>
+<RETURNS>GstRTSPAuth  *         </RETURNS>
+GstRTSPClient *client
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_client_set_thread_pool</NAME>
+<RETURNS>void                   </RETURNS>
+GstRTSPClient *client, GstRTSPThreadPool *pool
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_client_get_thread_pool</NAME>
+<RETURNS>GstRTSPThreadPool  *   </RETURNS>
+GstRTSPClient *client
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_client_set_connection</NAME>
+<RETURNS>gboolean               </RETURNS>
+GstRTSPClient *client, GstRTSPConnection *conn
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_client_get_connection</NAME>
+<RETURNS>GstRTSPConnection  *   </RETURNS>
+GstRTSPClient *client
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_client_attach</NAME>
+<RETURNS>guint                  </RETURNS>
+GstRTSPClient *client, GMainContext *context
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_client_close</NAME>
+<RETURNS>void                   </RETURNS>
+GstRTSPClient * client
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_client_set_send_func</NAME>
+<RETURNS>void                   </RETURNS>
+GstRTSPClient *client, GstRTSPClientSendFunc func, gpointer user_data, GDestroyNotify notify
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_client_handle_message</NAME>
+<RETURNS>GstRTSPResult          </RETURNS>
+GstRTSPClient *client, GstRTSPMessage *message
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_client_send_message</NAME>
+<RETURNS>GstRTSPResult          </RETURNS>
+GstRTSPClient * client, GstRTSPSession *session, GstRTSPMessage *message
+</FUNCTION>
+<USER_FUNCTION>
+<NAME>GstRTSPClientSessionFilterFunc</NAME>
+<RETURNS>GstRTSPFilterResult </RETURNS>
+GstRTSPClient *client,
+                                                                GstRTSPSession *sess,
+                                                                gpointer user_data
+</USER_FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_client_session_filter</NAME>
+<RETURNS>GList  *                </RETURNS>
+GstRTSPClient *client, GstRTSPClientSessionFilterFunc func, gpointer user_data
+</FUNCTION>
+<STRUCT>
+<NAME>GstRTSPClientPrivate</NAME>
+</STRUCT>
+<MACRO>
+<NAME>GST_TYPE_RTSP_CONTEXT</NAME>
+#define GST_TYPE_RTSP_CONTEXT              (gst_rtsp_context_get_type ())
+</MACRO>
+<STRUCT>
+<NAME>GstRTSPContext</NAME>
+struct _GstRTSPContext {
+  GstRTSPServer          *server;
+  GstRTSPConnection      *conn;
+  GstRTSPClient          *client;
+  GstRTSPMessage         *request;
+  GstRTSPUrl             *uri;
+  GstRTSPMethod           method;
+  GstRTSPAuth            *auth;
+  GstRTSPToken           *token;
+  GstRTSPSession         *session;
+  GstRTSPSessionMedia    *sessmedia;
+  GstRTSPMediaFactory    *factory;
+  GstRTSPMedia           *media;
+  GstRTSPStream          *stream;
+  GstRTSPMessage         *response;
+  GstRTSPStreamTransport *trans;
+
+  /*< private >*/
+  gpointer            _gst_reserved[GST_PADDING - 1];
+};
+</STRUCT>
+<FUNCTION>
+<NAME>gst_rtsp_context_get_type</NAME>
+<RETURNS>GType  </RETURNS>
+void
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_context_get_current</NAME>
+<RETURNS>GstRTSPContext  *     </RETURNS>
+void
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_context_push_current</NAME>
+<RETURNS>void                  </RETURNS>
+GstRTSPContext * ctx
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_context_pop_current</NAME>
+<RETURNS>void                  </RETURNS>
+GstRTSPContext * ctx
+</FUNCTION>
+<MACRO>
+<NAME>GST_TYPE_RTSP_MEDIA_FACTORY_URI</NAME>
+#define GST_TYPE_RTSP_MEDIA_FACTORY_URI              (gst_rtsp_media_factory_uri_get_type ())
+</MACRO>
+<MACRO>
+<NAME>GST_IS_RTSP_MEDIA_FACTORY_URI</NAME>
+#define GST_IS_RTSP_MEDIA_FACTORY_URI(obj)           (G_TYPE_CHECK_INSTANCE_TYPE ((obj), GST_TYPE_RTSP_MEDIA_FACTORY_URI))
+</MACRO>
+<MACRO>
+<NAME>GST_IS_RTSP_MEDIA_FACTORY_URI_CLASS</NAME>
+#define GST_IS_RTSP_MEDIA_FACTORY_URI_CLASS(klass)   (G_TYPE_CHECK_CLASS_TYPE ((klass), GST_TYPE_RTSP_MEDIA_FACTORY_URI))
+</MACRO>
+<MACRO>
+<NAME>GST_RTSP_MEDIA_FACTORY_URI_GET_CLASS</NAME>
+#define GST_RTSP_MEDIA_FACTORY_URI_GET_CLASS(obj)    (G_TYPE_INSTANCE_GET_CLASS ((obj), GST_TYPE_RTSP_MEDIA_FACTORY_URI, GstRTSPMediaFactoryURIClass))
+</MACRO>
+<MACRO>
+<NAME>GST_RTSP_MEDIA_FACTORY_URI</NAME>
+#define GST_RTSP_MEDIA_FACTORY_URI(obj)              (G_TYPE_CHECK_INSTANCE_CAST ((obj), GST_TYPE_RTSP_MEDIA_FACTORY_URI, GstRTSPMediaFactoryURI))
+</MACRO>
+<MACRO>
+<NAME>GST_RTSP_MEDIA_FACTORY_URI_CLASS</NAME>
+#define GST_RTSP_MEDIA_FACTORY_URI_CLASS(klass)      (G_TYPE_CHECK_CLASS_CAST ((klass), GST_TYPE_RTSP_MEDIA_FACTORY_URI, GstRTSPMediaFactoryURIClass))
+</MACRO>
+<MACRO>
+<NAME>GST_RTSP_MEDIA_FACTORY_URI_CAST</NAME>
+#define GST_RTSP_MEDIA_FACTORY_URI_CAST(obj)         ((GstRTSPMediaFactoryURI*)(obj))
+</MACRO>
+<MACRO>
+<NAME>GST_RTSP_MEDIA_FACTORY_URI_CLASS_CAST</NAME>
+#define GST_RTSP_MEDIA_FACTORY_URI_CLASS_CAST(klass) ((GstRTSPMediaFactoryURIClass*)(klass))
+</MACRO>
+<STRUCT>
+<NAME>GstRTSPMediaFactoryURI</NAME>
+struct _GstRTSPMediaFactoryURI {
+  GstRTSPMediaFactory   parent;
+
+  /*< private >*/
+  GstRTSPMediaFactoryURIPrivate *priv;
+  gpointer _gst_reserved[GST_PADDING];
+};
+</STRUCT>
+<STRUCT>
+<NAME>GstRTSPMediaFactoryURIClass</NAME>
+struct _GstRTSPMediaFactoryURIClass {
+  GstRTSPMediaFactoryClass  parent_class;
+
+  /*< private >*/
+  gpointer _gst_reserved[GST_PADDING];
+};
+</STRUCT>
+<FUNCTION>
+<NAME>gst_rtsp_media_factory_uri_get_type</NAME>
+<RETURNS>GType                  </RETURNS>
+void
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_media_factory_uri_new</NAME>
+<RETURNS>GstRTSPMediaFactoryURI  * </RETURNS>
+void
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_media_factory_uri_set_uri</NAME>
+<RETURNS>void                   </RETURNS>
+GstRTSPMediaFactoryURI *factory, const gchar *uri
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_media_factory_uri_get_uri</NAME>
+<RETURNS>gchar  *               </RETURNS>
+GstRTSPMediaFactoryURI *factory
+</FUNCTION>
+<STRUCT>
+<NAME>GstRTSPMediaFactoryURIPrivate</NAME>
+</STRUCT>
+<MACRO>
+<NAME>GST_TYPE_RTSP_MEDIA_FACTORY</NAME>
+#define GST_TYPE_RTSP_MEDIA_FACTORY              (gst_rtsp_media_factory_get_type ())
+</MACRO>
+<MACRO>
+<NAME>GST_IS_RTSP_MEDIA_FACTORY</NAME>
+#define GST_IS_RTSP_MEDIA_FACTORY(obj)           (G_TYPE_CHECK_INSTANCE_TYPE ((obj), GST_TYPE_RTSP_MEDIA_FACTORY))
+</MACRO>
+<MACRO>
+<NAME>GST_IS_RTSP_MEDIA_FACTORY_CLASS</NAME>
+#define GST_IS_RTSP_MEDIA_FACTORY_CLASS(klass)   (G_TYPE_CHECK_CLASS_TYPE ((klass), GST_TYPE_RTSP_MEDIA_FACTORY))
+</MACRO>
+<MACRO>
+<NAME>GST_RTSP_MEDIA_FACTORY_GET_CLASS</NAME>
+#define GST_RTSP_MEDIA_FACTORY_GET_CLASS(obj)    (G_TYPE_INSTANCE_GET_CLASS ((obj), GST_TYPE_RTSP_MEDIA_FACTORY, GstRTSPMediaFactoryClass))
+</MACRO>
+<MACRO>
+<NAME>GST_RTSP_MEDIA_FACTORY</NAME>
+#define GST_RTSP_MEDIA_FACTORY(obj)              (G_TYPE_CHECK_INSTANCE_CAST ((obj), GST_TYPE_RTSP_MEDIA_FACTORY, GstRTSPMediaFactory))
+</MACRO>
+<MACRO>
+<NAME>GST_RTSP_MEDIA_FACTORY_CLASS</NAME>
+#define GST_RTSP_MEDIA_FACTORY_CLASS(klass)      (G_TYPE_CHECK_CLASS_CAST ((klass), GST_TYPE_RTSP_MEDIA_FACTORY, GstRTSPMediaFactoryClass))
+</MACRO>
+<MACRO>
+<NAME>GST_RTSP_MEDIA_FACTORY_CAST</NAME>
+#define GST_RTSP_MEDIA_FACTORY_CAST(obj)         ((GstRTSPMediaFactory*)(obj))
+</MACRO>
+<MACRO>
+<NAME>GST_RTSP_MEDIA_FACTORY_CLASS_CAST</NAME>
+#define GST_RTSP_MEDIA_FACTORY_CLASS_CAST(klass) ((GstRTSPMediaFactoryClass*)(klass))
+</MACRO>
+<STRUCT>
+<NAME>GstRTSPMediaFactory</NAME>
+struct _GstRTSPMediaFactory {
+  GObject            parent;
+
+  /*< private >*/
+  GstRTSPMediaFactoryPrivate *priv;
+  gpointer _gst_reserved[GST_PADDING];
+};
+</STRUCT>
+<STRUCT>
+<NAME>GstRTSPMediaFactoryClass</NAME>
+struct _GstRTSPMediaFactoryClass {
+  GObjectClass  parent_class;
+
+  gchar *         (*gen_key)            (GstRTSPMediaFactory *factory, const GstRTSPUrl *url);
+
+  GstElement *    (*create_element)     (GstRTSPMediaFactory *factory, const GstRTSPUrl *url);
+  GstRTSPMedia *  (*construct)          (GstRTSPMediaFactory *factory, const GstRTSPUrl *url);
+  GstElement *    (*create_pipeline)    (GstRTSPMediaFactory *factory, GstRTSPMedia *media);
+  void            (*configure)          (GstRTSPMediaFactory *factory, GstRTSPMedia *media);
+
+  /* signals */
+  void            (*media_constructed)  (GstRTSPMediaFactory *factory, GstRTSPMedia *media);
+  void            (*media_configure)    (GstRTSPMediaFactory *factory, GstRTSPMedia *media);
+
+  /*< private >*/
+  gpointer         _gst_reserved[GST_PADDING_LARGE];
+};
+</STRUCT>
+<FUNCTION>
+<NAME>gst_rtsp_media_factory_get_type</NAME>
+<RETURNS>GType                  </RETURNS>
+void
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_media_factory_new</NAME>
+<RETURNS>GstRTSPMediaFactory  * </RETURNS>
+void
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_media_factory_set_launch</NAME>
+<RETURNS>void                   </RETURNS>
+GstRTSPMediaFactory *factory, const gchar *launch
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_media_factory_get_launch</NAME>
+<RETURNS>gchar  *               </RETURNS>
+GstRTSPMediaFactory *factory
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_media_factory_set_permissions</NAME>
+<RETURNS>void                   </RETURNS>
+GstRTSPMediaFactory *factory, GstRTSPPermissions *permissions
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_media_factory_get_permissions</NAME>
+<RETURNS>GstRTSPPermissions  *  </RETURNS>
+GstRTSPMediaFactory *factory
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_media_factory_add_role</NAME>
+<RETURNS>void                   </RETURNS>
+GstRTSPMediaFactory *factory, const gchar *role, const gchar *fieldname, ...
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_media_factory_add_role_from_structure</NAME>
+<RETURNS>void                   </RETURNS>
+GstRTSPMediaFactory * factory, GstStructure *structure
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_media_factory_set_shared</NAME>
+<RETURNS>void                   </RETURNS>
+GstRTSPMediaFactory *factory, gboolean shared
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_media_factory_is_shared</NAME>
+<RETURNS>gboolean               </RETURNS>
+GstRTSPMediaFactory *factory
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_media_factory_set_stop_on_disconnect</NAME>
+<RETURNS>void                   </RETURNS>
+GstRTSPMediaFactory *factory, gboolean stop_on_disconnect
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_media_factory_is_stop_on_disonnect</NAME>
+<RETURNS>gboolean               </RETURNS>
+GstRTSPMediaFactory *factory
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_media_factory_set_suspend_mode</NAME>
+<RETURNS>void                   </RETURNS>
+GstRTSPMediaFactory *factory, GstRTSPSuspendMode mode
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_media_factory_get_suspend_mode</NAME>
+<RETURNS>GstRTSPSuspendMode     </RETURNS>
+GstRTSPMediaFactory *factory
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_media_factory_set_eos_shutdown</NAME>
+<RETURNS>void                   </RETURNS>
+GstRTSPMediaFactory *factory, gboolean eos_shutdown
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_media_factory_is_eos_shutdown</NAME>
+<RETURNS>gboolean               </RETURNS>
+GstRTSPMediaFactory *factory
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_media_factory_set_profiles</NAME>
+<RETURNS>void                   </RETURNS>
+GstRTSPMediaFactory *factory, GstRTSPProfile profiles
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_media_factory_get_profiles</NAME>
+<RETURNS>GstRTSPProfile         </RETURNS>
+GstRTSPMediaFactory *factory
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_media_factory_set_protocols</NAME>
+<RETURNS>void                   </RETURNS>
+GstRTSPMediaFactory *factory, GstRTSPLowerTrans protocols
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_media_factory_get_protocols</NAME>
+<RETURNS>GstRTSPLowerTrans      </RETURNS>
+GstRTSPMediaFactory *factory
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_media_factory_set_address_pool</NAME>
+<RETURNS>void                   </RETURNS>
+GstRTSPMediaFactory * factory, GstRTSPAddressPool * pool
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_media_factory_get_address_pool</NAME>
+<RETURNS>GstRTSPAddressPool  *  </RETURNS>
+GstRTSPMediaFactory * factory
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_media_factory_set_multicast_iface</NAME>
+<RETURNS>void                   </RETURNS>
+GstRTSPMediaFactory *factory, const gchar *multicast_iface
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_media_factory_get_multicast_iface</NAME>
+<RETURNS>gchar  *               </RETURNS>
+GstRTSPMediaFactory *factory
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_media_factory_set_buffer_size</NAME>
+<RETURNS>void                   </RETURNS>
+GstRTSPMediaFactory * factory, guint size
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_media_factory_get_buffer_size</NAME>
+<RETURNS>guint                  </RETURNS>
+GstRTSPMediaFactory * factory
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_media_factory_set_retransmission_time</NAME>
+<RETURNS>void                   </RETURNS>
+GstRTSPMediaFactory * factory, GstClockTime time
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_media_factory_get_retransmission_time</NAME>
+<RETURNS>GstClockTime           </RETURNS>
+GstRTSPMediaFactory * factory
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_media_factory_set_latency</NAME>
+<RETURNS>void                   </RETURNS>
+GstRTSPMediaFactory * factory, guint                 latency
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_media_factory_get_latency</NAME>
+<RETURNS>guint                  </RETURNS>
+GstRTSPMediaFactory * factory
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_media_factory_set_transport_mode</NAME>
+<RETURNS>void                   </RETURNS>
+GstRTSPMediaFactory *factory, GstRTSPTransportMode mode
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_media_factory_get_transport_mode</NAME>
+<RETURNS>GstRTSPTransportMode   </RETURNS>
+GstRTSPMediaFactory *factory
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_media_factory_set_media_gtype</NAME>
+<RETURNS>void                   </RETURNS>
+GstRTSPMediaFactory * factory, GType media_gtype
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_media_factory_get_media_gtype</NAME>
+<RETURNS>GType                  </RETURNS>
+GstRTSPMediaFactory * factory
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_media_factory_set_clock</NAME>
+<RETURNS>void                   </RETURNS>
+GstRTSPMediaFactory *factory, GstClock * clock
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_media_factory_get_clock</NAME>
+<RETURNS>GstClock  *            </RETURNS>
+GstRTSPMediaFactory *factory
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_media_factory_set_publish_clock_mode</NAME>
+<RETURNS>void                     </RETURNS>
+GstRTSPMediaFactory * factory, GstRTSPPublishClockMode mode
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_media_factory_get_publish_clock_mode</NAME>
+<RETURNS>GstRTSPPublishClockMode  </RETURNS>
+GstRTSPMediaFactory * factory
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_media_factory_construct</NAME>
+<RETURNS>GstRTSPMedia  *        </RETURNS>
+GstRTSPMediaFactory *factory, const GstRTSPUrl *url
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_media_factory_create_element</NAME>
+<RETURNS>GstElement  *          </RETURNS>
+GstRTSPMediaFactory *factory, const GstRTSPUrl *url
+</FUNCTION>
+<STRUCT>
+<NAME>GstRTSPMediaFactoryPrivate</NAME>
+</STRUCT>
+<MACRO>
+<NAME>GST_TYPE_RTSP_MEDIA</NAME>
+#define GST_TYPE_RTSP_MEDIA              (gst_rtsp_media_get_type ())
+</MACRO>
+<MACRO>
+<NAME>GST_IS_RTSP_MEDIA</NAME>
+#define GST_IS_RTSP_MEDIA(obj)           (G_TYPE_CHECK_INSTANCE_TYPE ((obj), GST_TYPE_RTSP_MEDIA))
+</MACRO>
+<MACRO>
+<NAME>GST_IS_RTSP_MEDIA_CLASS</NAME>
+#define GST_IS_RTSP_MEDIA_CLASS(klass)   (G_TYPE_CHECK_CLASS_TYPE ((klass), GST_TYPE_RTSP_MEDIA))
+</MACRO>
+<MACRO>
+<NAME>GST_RTSP_MEDIA_GET_CLASS</NAME>
+#define GST_RTSP_MEDIA_GET_CLASS(obj)    (G_TYPE_INSTANCE_GET_CLASS ((obj), GST_TYPE_RTSP_MEDIA, GstRTSPMediaClass))
+</MACRO>
+<MACRO>
+<NAME>GST_RTSP_MEDIA</NAME>
+#define GST_RTSP_MEDIA(obj)              (G_TYPE_CHECK_INSTANCE_CAST ((obj), GST_TYPE_RTSP_MEDIA, GstRTSPMedia))
+</MACRO>
+<MACRO>
+<NAME>GST_RTSP_MEDIA_CLASS</NAME>
+#define GST_RTSP_MEDIA_CLASS(klass)      (G_TYPE_CHECK_CLASS_CAST ((klass), GST_TYPE_RTSP_MEDIA, GstRTSPMediaClass))
+</MACRO>
+<MACRO>
+<NAME>GST_RTSP_MEDIA_CAST</NAME>
+#define GST_RTSP_MEDIA_CAST(obj)         ((GstRTSPMedia*)(obj))
+</MACRO>
+<MACRO>
+<NAME>GST_RTSP_MEDIA_CLASS_CAST</NAME>
+#define GST_RTSP_MEDIA_CLASS_CAST(klass) ((GstRTSPMediaClass*)(klass))
+</MACRO>
+<ENUM>
+<NAME>GstRTSPMediaStatus</NAME>
+typedef enum {
+  GST_RTSP_MEDIA_STATUS_UNPREPARED  = 0,
+  GST_RTSP_MEDIA_STATUS_UNPREPARING = 1,
+  GST_RTSP_MEDIA_STATUS_PREPARING   = 2,
+  GST_RTSP_MEDIA_STATUS_PREPARED    = 3,
+  GST_RTSP_MEDIA_STATUS_SUSPENDED   = 4,
+  GST_RTSP_MEDIA_STATUS_ERROR       = 5
+} GstRTSPMediaStatus;
+</ENUM>
+<ENUM>
+<NAME>GstRTSPSuspendMode</NAME>
+typedef enum {
+  GST_RTSP_SUSPEND_MODE_NONE   = 0,
+  GST_RTSP_SUSPEND_MODE_PAUSE  = 1,
+  GST_RTSP_SUSPEND_MODE_RESET  = 2
+} GstRTSPSuspendMode;
+</ENUM>
+<ENUM>
+<NAME>GstRTSPTransportMode</NAME>
+typedef enum {
+  GST_RTSP_TRANSPORT_MODE_PLAY    = 1,
+  GST_RTSP_TRANSPORT_MODE_RECORD  = 2,
+} GstRTSPTransportMode;
+</ENUM>
+<ENUM>
+<NAME>GstRTSPPublishClockMode</NAME>
+typedef enum {
+  GST_RTSP_PUBLISH_CLOCK_MODE_NONE,
+  GST_RTSP_PUBLISH_CLOCK_MODE_CLOCK,
+  GST_RTSP_PUBLISH_CLOCK_MODE_CLOCK_AND_OFFSET
+} GstRTSPPublishClockMode;
+</ENUM>
+<MACRO>
+<NAME>GST_TYPE_RTSP_TRANSPORT_MODE</NAME>
+#define GST_TYPE_RTSP_TRANSPORT_MODE (gst_rtsp_transport_mode_get_type())
+</MACRO>
+<FUNCTION>
+<NAME>gst_rtsp_transport_mode_get_type</NAME>
+<RETURNS>GType  </RETURNS>
+void
+</FUNCTION>
+<MACRO>
+<NAME>GST_TYPE_RTSP_SUSPEND_MODE</NAME>
+#define GST_TYPE_RTSP_SUSPEND_MODE (gst_rtsp_suspend_mode_get_type())
+</MACRO>
+<FUNCTION>
+<NAME>gst_rtsp_suspend_mode_get_type</NAME>
+<RETURNS>GType  </RETURNS>
+void
+</FUNCTION>
+<MACRO>
+<NAME>GST_TYPE_RTSP_PUBLISH_CLOCK_MODE</NAME>
+#define GST_TYPE_RTSP_PUBLISH_CLOCK_MODE (gst_rtsp_publish_clock_mode_get_type())
+</MACRO>
+<FUNCTION>
+<NAME>gst_rtsp_publish_clock_mode_get_type</NAME>
+<RETURNS>GType  </RETURNS>
+void
+</FUNCTION>
+<STRUCT>
+<NAME>GstRTSPMedia</NAME>
+struct _GstRTSPMedia {
+  GObject            parent;
+
+  /*< private >*/
+  GstRTSPMediaPrivate *priv;
+  gpointer _gst_reserved[GST_PADDING];
+};
+</STRUCT>
+<STRUCT>
+<NAME>GstRTSPMediaClass</NAME>
+struct _GstRTSPMediaClass {
+  GObjectClass  parent_class;
+
+  /* vmethods */
+  gboolean        (*handle_message)  (GstRTSPMedia *media, GstMessage *message);
+  gboolean        (*prepare)         (GstRTSPMedia *media, GstRTSPThread *thread);
+  gboolean        (*unprepare)       (GstRTSPMedia *media);
+  gboolean        (*suspend)         (GstRTSPMedia *media);
+  gboolean        (*unsuspend)       (GstRTSPMedia *media);
+  gboolean        (*convert_range)   (GstRTSPMedia *media, GstRTSPTimeRange *range,
+                                      GstRTSPRangeUnit unit);
+  gboolean        (*query_position)  (GstRTSPMedia *media, gint64 *position);
+  gboolean        (*query_stop)      (GstRTSPMedia *media, gint64 *stop);
+  GstElement *    (*create_rtpbin)   (GstRTSPMedia *media);
+  gboolean        (*setup_rtpbin)    (GstRTSPMedia *media, GstElement *rtpbin);
+  gboolean        (*setup_sdp)       (GstRTSPMedia *media, GstSDPMessage *sdp, GstSDPInfo *info);
+
+  /* signals */
+  void            (*new_stream)      (GstRTSPMedia *media, GstRTSPStream * stream);
+  void            (*removed_stream)  (GstRTSPMedia *media, GstRTSPStream * stream);
+
+  void            (*prepared)        (GstRTSPMedia *media);
+  void            (*unprepared)      (GstRTSPMedia *media);
+
+  void            (*target_state)    (GstRTSPMedia *media, GstState state);
+  void            (*new_state)       (GstRTSPMedia *media, GstState state);
+
+  gboolean        (*handle_sdp)      (GstRTSPMedia *media, GstSDPMessage *sdp);
+
+  /*< private >*/
+  gpointer         _gst_reserved[GST_PADDING_LARGE-1];
+};
+</STRUCT>
+<FUNCTION>
+<NAME>gst_rtsp_media_get_type</NAME>
+<RETURNS>GType                  </RETURNS>
+void
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_media_new</NAME>
+<RETURNS>GstRTSPMedia  *        </RETURNS>
+GstElement *element
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_media_get_element</NAME>
+<RETURNS>GstElement  *          </RETURNS>
+GstRTSPMedia *media
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_media_take_pipeline</NAME>
+<RETURNS>void                   </RETURNS>
+GstRTSPMedia *media, GstPipeline *pipeline
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_media_get_status</NAME>
+<RETURNS>GstRTSPMediaStatus     </RETURNS>
+GstRTSPMedia *media
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_media_set_permissions</NAME>
+<RETURNS>void                   </RETURNS>
+GstRTSPMedia *media, GstRTSPPermissions *permissions
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_media_get_permissions</NAME>
+<RETURNS>GstRTSPPermissions  *  </RETURNS>
+GstRTSPMedia *media
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_media_set_shared</NAME>
+<RETURNS>void                   </RETURNS>
+GstRTSPMedia *media, gboolean shared
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_media_is_shared</NAME>
+<RETURNS>gboolean               </RETURNS>
+GstRTSPMedia *media
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_media_set_stop_on_disconnect</NAME>
+<RETURNS>void                   </RETURNS>
+GstRTSPMedia *media, gboolean stop_on_disconnect
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_media_is_stop_on_disconnect</NAME>
+<RETURNS>gboolean               </RETURNS>
+GstRTSPMedia *media
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_media_set_transport_mode</NAME>
+<RETURNS>void                   </RETURNS>
+GstRTSPMedia *media, GstRTSPTransportMode mode
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_media_get_transport_mode</NAME>
+<RETURNS>GstRTSPTransportMode   </RETURNS>
+GstRTSPMedia *media
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_media_set_reusable</NAME>
+<RETURNS>void                   </RETURNS>
+GstRTSPMedia *media, gboolean reusable
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_media_is_reusable</NAME>
+<RETURNS>gboolean               </RETURNS>
+GstRTSPMedia *media
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_media_set_profiles</NAME>
+<RETURNS>void                   </RETURNS>
+GstRTSPMedia *media, GstRTSPProfile profiles
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_media_get_profiles</NAME>
+<RETURNS>GstRTSPProfile         </RETURNS>
+GstRTSPMedia *media
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_media_set_protocols</NAME>
+<RETURNS>void                   </RETURNS>
+GstRTSPMedia *media, GstRTSPLowerTrans protocols
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_media_get_protocols</NAME>
+<RETURNS>GstRTSPLowerTrans      </RETURNS>
+GstRTSPMedia *media
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_media_set_eos_shutdown</NAME>
+<RETURNS>void                   </RETURNS>
+GstRTSPMedia *media, gboolean eos_shutdown
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_media_is_eos_shutdown</NAME>
+<RETURNS>gboolean               </RETURNS>
+GstRTSPMedia *media
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_media_set_address_pool</NAME>
+<RETURNS>void                   </RETURNS>
+GstRTSPMedia *media, GstRTSPAddressPool *pool
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_media_get_address_pool</NAME>
+<RETURNS>GstRTSPAddressPool  *  </RETURNS>
+GstRTSPMedia *media
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_media_set_multicast_iface</NAME>
+<RETURNS>void                   </RETURNS>
+GstRTSPMedia *media, const gchar *multicast_iface
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_media_get_multicast_iface</NAME>
+<RETURNS>gchar  *               </RETURNS>
+GstRTSPMedia *media
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_media_set_buffer_size</NAME>
+<RETURNS>void                   </RETURNS>
+GstRTSPMedia *media, guint size
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_media_get_buffer_size</NAME>
+<RETURNS>guint                  </RETURNS>
+GstRTSPMedia *media
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_media_set_retransmission_time</NAME>
+<RETURNS>void                   </RETURNS>
+GstRTSPMedia *media, GstClockTime time
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_media_get_retransmission_time</NAME>
+<RETURNS>GstClockTime           </RETURNS>
+GstRTSPMedia *media
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_media_set_latency</NAME>
+<RETURNS>void                   </RETURNS>
+GstRTSPMedia *media, guint latency
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_media_get_latency</NAME>
+<RETURNS>guint                  </RETURNS>
+GstRTSPMedia *media
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_media_use_time_provider</NAME>
+<RETURNS>void                   </RETURNS>
+GstRTSPMedia *media, gboolean time_provider
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_media_is_time_provider</NAME>
+<RETURNS>gboolean               </RETURNS>
+GstRTSPMedia *media
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_media_get_time_provider</NAME>
+<RETURNS>GstNetTimeProvider  *  </RETURNS>
+GstRTSPMedia *media, const gchar *address, guint16 port
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_media_set_clock</NAME>
+<RETURNS>void                   </RETURNS>
+GstRTSPMedia *media, GstClock * clock
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_media_set_publish_clock_mode</NAME>
+<RETURNS>void                     </RETURNS>
+GstRTSPMedia * media, GstRTSPPublishClockMode mode
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_media_get_publish_clock_mode</NAME>
+<RETURNS>GstRTSPPublishClockMode  </RETURNS>
+GstRTSPMedia * media
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_media_prepare</NAME>
+<RETURNS>gboolean               </RETURNS>
+GstRTSPMedia *media, GstRTSPThread *thread
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_media_unprepare</NAME>
+<RETURNS>gboolean               </RETURNS>
+GstRTSPMedia *media
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_media_set_suspend_mode</NAME>
+<RETURNS>void                   </RETURNS>
+GstRTSPMedia *media, GstRTSPSuspendMode mode
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_media_get_suspend_mode</NAME>
+<RETURNS>GstRTSPSuspendMode     </RETURNS>
+GstRTSPMedia *media
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_media_suspend</NAME>
+<RETURNS>gboolean               </RETURNS>
+GstRTSPMedia *media
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_media_unsuspend</NAME>
+<RETURNS>gboolean               </RETURNS>
+GstRTSPMedia *media
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_media_setup_sdp</NAME>
+<RETURNS>gboolean               </RETURNS>
+GstRTSPMedia * media, GstSDPMessage * sdp, GstSDPInfo * info
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_media_handle_sdp</NAME>
+<RETURNS>gboolean               </RETURNS>
+GstRTSPMedia * media, GstSDPMessage * sdp
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_media_collect_streams</NAME>
+<RETURNS>void                   </RETURNS>
+GstRTSPMedia *media
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_media_create_stream</NAME>
+<RETURNS>GstRTSPStream  *       </RETURNS>
+GstRTSPMedia *media, GstElement *payloader, GstPad *pad
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_media_get_clock</NAME>
+<RETURNS>GstClock  *            </RETURNS>
+GstRTSPMedia *media
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_media_get_base_time</NAME>
+<RETURNS>GstClockTime           </RETURNS>
+GstRTSPMedia *media
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_media_n_streams</NAME>
+<RETURNS>guint                  </RETURNS>
+GstRTSPMedia *media
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_media_get_stream</NAME>
+<RETURNS>GstRTSPStream  *       </RETURNS>
+GstRTSPMedia *media, guint idx
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_media_find_stream</NAME>
+<RETURNS>GstRTSPStream  *       </RETURNS>
+GstRTSPMedia *media, const gchar * control
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_media_seek</NAME>
+<RETURNS>gboolean               </RETURNS>
+GstRTSPMedia *media, GstRTSPTimeRange *range
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_media_seek_full</NAME>
+<RETURNS>gboolean               </RETURNS>
+GstRTSPMedia *media, GstRTSPTimeRange *range, GstSeekFlags flags
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_media_seekable</NAME>
+<RETURNS>GstClockTimeDiff       </RETURNS>
+GstRTSPMedia *media
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_media_get_range_string</NAME>
+<RETURNS>gchar  *               </RETURNS>
+GstRTSPMedia *media, gboolean play, GstRTSPRangeUnit unit
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_media_set_state</NAME>
+<RETURNS>gboolean               </RETURNS>
+GstRTSPMedia *media, GstState state, GPtrArray *transports
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_media_set_pipeline_state</NAME>
+<RETURNS>void                   </RETURNS>
+GstRTSPMedia * media, GstState state
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_media_complete_pipeline</NAME>
+<RETURNS>gboolean               </RETURNS>
+GstRTSPMedia * media, GPtrArray * transports
+</FUNCTION>
+<STRUCT>
+<NAME>GstRTSPMediaPrivate</NAME>
+</STRUCT>
+<MACRO>
+<NAME>GST_TYPE_RTSP_MOUNT_POINTS</NAME>
+#define GST_TYPE_RTSP_MOUNT_POINTS              (gst_rtsp_mount_points_get_type ())
+</MACRO>
+<MACRO>
+<NAME>GST_IS_RTSP_MOUNT_POINTS</NAME>
+#define GST_IS_RTSP_MOUNT_POINTS(obj)           (G_TYPE_CHECK_INSTANCE_TYPE ((obj), GST_TYPE_RTSP_MOUNT_POINTS))
+</MACRO>
+<MACRO>
+<NAME>GST_IS_RTSP_MOUNT_POINTS_CLASS</NAME>
+#define GST_IS_RTSP_MOUNT_POINTS_CLASS(klass)   (G_TYPE_CHECK_CLASS_TYPE ((klass), GST_TYPE_RTSP_MOUNT_POINTS))
+</MACRO>
+<MACRO>
+<NAME>GST_RTSP_MOUNT_POINTS_GET_CLASS</NAME>
+#define GST_RTSP_MOUNT_POINTS_GET_CLASS(obj)    (G_TYPE_INSTANCE_GET_CLASS ((obj), GST_TYPE_RTSP_MOUNT_POINTS, GstRTSPMountPointsClass))
+</MACRO>
+<MACRO>
+<NAME>GST_RTSP_MOUNT_POINTS</NAME>
+#define GST_RTSP_MOUNT_POINTS(obj)              (G_TYPE_CHECK_INSTANCE_CAST ((obj), GST_TYPE_RTSP_MOUNT_POINTS, GstRTSPMountPoints))
+</MACRO>
+<MACRO>
+<NAME>GST_RTSP_MOUNT_POINTS_CLASS</NAME>
+#define GST_RTSP_MOUNT_POINTS_CLASS(klass)      (G_TYPE_CHECK_CLASS_CAST ((klass), GST_TYPE_RTSP_MOUNT_POINTS, GstRTSPMountPointsClass))
+</MACRO>
+<MACRO>
+<NAME>GST_RTSP_MOUNT_POINTS_CAST</NAME>
+#define GST_RTSP_MOUNT_POINTS_CAST(obj)         ((GstRTSPMountPoints*)(obj))
+</MACRO>
+<MACRO>
+<NAME>GST_RTSP_MOUNT_POINTS_CLASS_CAST</NAME>
+#define GST_RTSP_MOUNT_POINTS_CLASS_CAST(klass) ((GstRTSPMountPointsClass*)(klass))
+</MACRO>
+<STRUCT>
+<NAME>GstRTSPMountPoints</NAME>
+struct _GstRTSPMountPoints {
+  GObject       parent;
+
+  /*< private >*/
+  GstRTSPMountPointsPrivate *priv;
+  gpointer _gst_reserved[GST_PADDING];
+};
+</STRUCT>
+<STRUCT>
+<NAME>GstRTSPMountPointsClass</NAME>
+struct _GstRTSPMountPointsClass {
+  GObjectClass  parent_class;
+
+  gchar * (*make_path) (GstRTSPMountPoints *mounts,
+                        const GstRTSPUrl *url);
+
+  /*< private >*/
+  gpointer _gst_reserved[GST_PADDING];
+};
+</STRUCT>
+<FUNCTION>
+<NAME>gst_rtsp_mount_points_get_type</NAME>
+<RETURNS>GType                  </RETURNS>
+void
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_mount_points_new</NAME>
+<RETURNS>GstRTSPMountPoints  *  </RETURNS>
+void
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_mount_points_make_path</NAME>
+<RETURNS>gchar  *               </RETURNS>
+GstRTSPMountPoints *mounts, const GstRTSPUrl * url
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_mount_points_match</NAME>
+<RETURNS>GstRTSPMediaFactory  * </RETURNS>
+GstRTSPMountPoints *mounts, const gchar *path, gint * matched
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_mount_points_add_factory</NAME>
+<RETURNS>void                   </RETURNS>
+GstRTSPMountPoints *mounts, const gchar *path, GstRTSPMediaFactory *factory
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_mount_points_remove_factory</NAME>
+<RETURNS>void                   </RETURNS>
+GstRTSPMountPoints *mounts, const gchar *path
+</FUNCTION>
+<STRUCT>
+<NAME>GstRTSPMountPointsPrivate</NAME>
+</STRUCT>
+<MACRO>
+<NAME>GST_TYPE_RTSP_ONVIF_CLIENT</NAME>
+#define GST_TYPE_RTSP_ONVIF_CLIENT              (gst_rtsp_onvif_client_get_type ())
+</MACRO>
+<MACRO>
+<NAME>GST_IS_RTSP_ONVIF_CLIENT</NAME>
+#define GST_IS_RTSP_ONVIF_CLIENT(obj)           (G_TYPE_CHECK_INSTANCE_TYPE ((obj), GST_TYPE_RTSP_ONVIF_CLIENT))
+</MACRO>
+<MACRO>
+<NAME>GST_IS_RTSP_ONVIF_CLIENT_CLASS</NAME>
+#define GST_IS_RTSP_ONVIF_CLIENT_CLASS(klass)   (G_TYPE_CHECK_CLASS_TYPE ((klass), GST_TYPE_RTSP_ONVIF_CLIENT))
+</MACRO>
+<MACRO>
+<NAME>GST_RTSP_ONVIF_CLIENT_GET_CLASS</NAME>
+#define GST_RTSP_ONVIF_CLIENT_GET_CLASS(obj)    (G_TYPE_INSTANCE_GET_CLASS ((obj), GST_TYPE_RTSP_ONVIF_CLIENT, GstRTSPOnvifClientClass))
+</MACRO>
+<MACRO>
+<NAME>GST_RTSP_ONVIF_CLIENT</NAME>
+#define GST_RTSP_ONVIF_CLIENT(obj)              (G_TYPE_CHECK_INSTANCE_CAST ((obj), GST_TYPE_RTSP_ONVIF_CLIENT, GstRTSPOnvifClient))
+</MACRO>
+<MACRO>
+<NAME>GST_RTSP_ONVIF_CLIENT_CLASS</NAME>
+#define GST_RTSP_ONVIF_CLIENT_CLASS(klass)      (G_TYPE_CHECK_CLASS_CAST ((klass), GST_TYPE_RTSP_ONVIF_CLIENT, GstRTSPOnvifClientClass))
+</MACRO>
+<MACRO>
+<NAME>GST_RTSP_ONVIF_CLIENT_CAST</NAME>
+#define GST_RTSP_ONVIF_CLIENT_CAST(obj)         ((GstRTSPOnvifClient*)(obj))
+</MACRO>
+<MACRO>
+<NAME>GST_RTSP_ONVIF_CLIENT_CLASS_CAST</NAME>
+#define GST_RTSP_ONVIF_CLIENT_CLASS_CAST(klass) ((GstRTSPOnvifClientClass*)(klass))
+</MACRO>
+<TYPEDEF>
+<NAME>GstRTSPOnvifClientClass</NAME>
+typedef struct GstRTSPOnvifClientClass GstRTSPOnvifClientClass;
+</TYPEDEF>
+<TYPEDEF>
+<NAME>GstRTSPOnvifClient</NAME>
+typedef struct GstRTSPOnvifClient GstRTSPOnvifClient;
+</TYPEDEF>
+<FUNCTION>
+<NAME>gst_rtsp_onvif_client_get_type</NAME>
+<RETURNS>GType  </RETURNS>
+void
+</FUNCTION>
+<MACRO>
+<NAME>GST_TYPE_RTSP_ONVIF_MEDIA_FACTORY</NAME>
+#define GST_TYPE_RTSP_ONVIF_MEDIA_FACTORY              (gst_rtsp_onvif_media_factory_get_type ())
+</MACRO>
+<MACRO>
+<NAME>GST_IS_RTSP_ONVIF_MEDIA_FACTORY</NAME>
+#define GST_IS_RTSP_ONVIF_MEDIA_FACTORY(obj)           (G_TYPE_CHECK_INSTANCE_TYPE ((obj), GST_TYPE_RTSP_ONVIF_MEDIA_FACTORY))
+</MACRO>
+<MACRO>
+<NAME>GST_IS_RTSP_ONVIF_MEDIA_FACTORY_CLASS</NAME>
+#define GST_IS_RTSP_ONVIF_MEDIA_FACTORY_CLASS(klass)   (G_TYPE_CHECK_CLASS_TYPE ((klass), GST_TYPE_RTSP_ONVIF_MEDIA_FACTORY))
+</MACRO>
+<MACRO>
+<NAME>GST_RTSP_ONVIF_MEDIA_FACTORY_GET_CLASS</NAME>
+#define GST_RTSP_ONVIF_MEDIA_FACTORY_GET_CLASS(obj)    (G_TYPE_INSTANCE_GET_CLASS ((obj), GST_TYPE_RTSP_ONVIF_MEDIA_FACTORY, GstRTSPOnvifMediaFactoryClass))
+</MACRO>
+<MACRO>
+<NAME>GST_RTSP_ONVIF_MEDIA_FACTORY</NAME>
+#define GST_RTSP_ONVIF_MEDIA_FACTORY(obj)              (G_TYPE_CHECK_INSTANCE_CAST ((obj), GST_TYPE_RTSP_ONVIF_MEDIA_FACTORY, GstRTSPOnvifMediaFactory))
+</MACRO>
+<MACRO>
+<NAME>GST_RTSP_ONVIF_MEDIA_FACTORY_CLASS</NAME>
+#define GST_RTSP_ONVIF_MEDIA_FACTORY_CLASS(klass)      (G_TYPE_CHECK_CLASS_CAST ((klass), GST_TYPE_RTSP_ONVIF_MEDIA_FACTORY, GstRTSPOnvifMediaFactoryClass))
+</MACRO>
+<MACRO>
+<NAME>GST_RTSP_ONVIF_MEDIA_FACTORY_CAST</NAME>
+#define GST_RTSP_ONVIF_MEDIA_FACTORY_CAST(obj)         ((GstRTSPOnvifMediaFactory*)(obj))
+</MACRO>
+<MACRO>
+<NAME>GST_RTSP_ONVIF_MEDIA_FACTORY_CLASS_CAST</NAME>
+#define GST_RTSP_ONVIF_MEDIA_FACTORY_CLASS_CAST(klass) ((GstRTSPOnvifMediaFactoryClass*)(klass))
+</MACRO>
+<TYPEDEF>
+<NAME>GstRTSPOnvifMediaFactoryClass</NAME>
+typedef struct GstRTSPOnvifMediaFactoryClass GstRTSPOnvifMediaFactoryClass;
+</TYPEDEF>
+<TYPEDEF>
+<NAME>GstRTSPOnvifMediaFactory</NAME>
+typedef struct GstRTSPOnvifMediaFactory GstRTSPOnvifMediaFactory;
+</TYPEDEF>
+<TYPEDEF>
+<NAME>GstRTSPOnvifMediaFactoryPrivate</NAME>
+typedef struct GstRTSPOnvifMediaFactoryPrivate GstRTSPOnvifMediaFactoryPrivate;
+</TYPEDEF>
+<FUNCTION>
+<NAME>gst_rtsp_onvif_media_factory_get_type</NAME>
+<RETURNS>GType  </RETURNS>
+void
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_onvif_media_factory_new</NAME>
+<RETURNS>GstRTSPMediaFactory  *</RETURNS>
+void
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_onvif_media_factory_set_backchannel_launch</NAME>
+<RETURNS>void  </RETURNS>
+GstRTSPOnvifMediaFactory * factory, const gchar * launch
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_onvif_media_factory_get_backchannel_launch</NAME>
+<RETURNS>gchar  * </RETURNS>
+GstRTSPOnvifMediaFactory * factory
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_onvif_media_factory_has_backchannel_support</NAME>
+<RETURNS>gboolean  </RETURNS>
+GstRTSPOnvifMediaFactory * factory
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_onvif_media_factory_set_backchannel_bandwidth</NAME>
+<RETURNS>void  </RETURNS>
+GstRTSPOnvifMediaFactory * factory, guint bandwidth
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_onvif_media_factory_get_backchannel_bandwidth</NAME>
+<RETURNS>guint  </RETURNS>
+GstRTSPOnvifMediaFactory * factory
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_onvif_media_factory_requires_backchannel</NAME>
+<RETURNS>gboolean  </RETURNS>
+GstRTSPMediaFactory * factory, GstRTSPContext * ctx
+</FUNCTION>
+<MACRO>
+<NAME>GST_TYPE_RTSP_ONVIF_MEDIA</NAME>
+#define GST_TYPE_RTSP_ONVIF_MEDIA              (gst_rtsp_onvif_media_get_type ())
+</MACRO>
+<MACRO>
+<NAME>GST_IS_RTSP_ONVIF_MEDIA</NAME>
+#define GST_IS_RTSP_ONVIF_MEDIA(obj)           (G_TYPE_CHECK_INSTANCE_TYPE ((obj), GST_TYPE_RTSP_ONVIF_MEDIA))
+</MACRO>
+<MACRO>
+<NAME>GST_IS_RTSP_ONVIF_MEDIA_CLASS</NAME>
+#define GST_IS_RTSP_ONVIF_MEDIA_CLASS(klass)   (G_TYPE_CHECK_CLASS_TYPE ((klass), GST_TYPE_RTSP_ONVIF_MEDIA))
+</MACRO>
+<MACRO>
+<NAME>GST_RTSP_ONVIF_MEDIA_GET_CLASS</NAME>
+#define GST_RTSP_ONVIF_MEDIA_GET_CLASS(obj)    (G_TYPE_INSTANCE_GET_CLASS ((obj), GST_TYPE_RTSP_ONVIF_MEDIA, GstRTSPOnvifMediaClass))
+</MACRO>
+<MACRO>
+<NAME>GST_RTSP_ONVIF_MEDIA</NAME>
+#define GST_RTSP_ONVIF_MEDIA(obj)              (G_TYPE_CHECK_INSTANCE_CAST ((obj), GST_TYPE_RTSP_ONVIF_MEDIA, GstRTSPOnvifMedia))
+</MACRO>
+<MACRO>
+<NAME>GST_RTSP_ONVIF_MEDIA_CLASS</NAME>
+#define GST_RTSP_ONVIF_MEDIA_CLASS(klass)      (G_TYPE_CHECK_CLASS_CAST ((klass), GST_TYPE_RTSP_ONVIF_MEDIA, GstRTSPOnvifMediaClass))
+</MACRO>
+<MACRO>
+<NAME>GST_RTSP_ONVIF_MEDIA_CAST</NAME>
+#define GST_RTSP_ONVIF_MEDIA_CAST(obj)         ((GstRTSPOnvifMedia*)(obj))
+</MACRO>
+<MACRO>
+<NAME>GST_RTSP_ONVIF_MEDIA_CLASS_CAST</NAME>
+#define GST_RTSP_ONVIF_MEDIA_CLASS_CAST(klass) ((GstRTSPOnvifMediaClass*)(klass))
+</MACRO>
+<TYPEDEF>
+<NAME>GstRTSPOnvifMediaClass</NAME>
+typedef struct GstRTSPOnvifMediaClass GstRTSPOnvifMediaClass;
+</TYPEDEF>
+<TYPEDEF>
+<NAME>GstRTSPOnvifMedia</NAME>
+typedef struct GstRTSPOnvifMedia GstRTSPOnvifMedia;
+</TYPEDEF>
+<TYPEDEF>
+<NAME>GstRTSPOnvifMediaPrivate</NAME>
+typedef struct GstRTSPOnvifMediaPrivate GstRTSPOnvifMediaPrivate;
+</TYPEDEF>
+<FUNCTION>
+<NAME>gst_rtsp_onvif_media_get_type</NAME>
+<RETURNS>GType  </RETURNS>
+void
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_onvif_media_collect_backchannel</NAME>
+<RETURNS>gboolean  </RETURNS>
+GstRTSPOnvifMedia * media
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_onvif_media_set_backchannel_bandwidth</NAME>
+<RETURNS>void  </RETURNS>
+GstRTSPOnvifMedia * media, guint bandwidth
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_onvif_media_get_backchannel_bandwidth</NAME>
+<RETURNS>guint  </RETURNS>
+GstRTSPOnvifMedia * media
+</FUNCTION>
+<MACRO>
+<NAME>GST_TYPE_RTSP_ONVIF_SERVER</NAME>
+#define GST_TYPE_RTSP_ONVIF_SERVER              (gst_rtsp_onvif_server_get_type ())
+</MACRO>
+<MACRO>
+<NAME>GST_IS_RTSP_ONVIF_SERVER</NAME>
+#define GST_IS_RTSP_ONVIF_SERVER(obj)           (G_TYPE_CHECK_INSTANCE_TYPE ((obj), GST_TYPE_RTSP_ONVIF_SERVER))
+</MACRO>
+<MACRO>
+<NAME>GST_IS_RTSP_ONVIF_SERVER_CLASS</NAME>
+#define GST_IS_RTSP_ONVIF_SERVER_CLASS(klass)   (G_TYPE_CHECK_CLASS_TYPE ((klass), GST_TYPE_RTSP_ONVIF_SERVER))
+</MACRO>
+<MACRO>
+<NAME>GST_RTSP_ONVIF_SERVER_GET_CLASS</NAME>
+#define GST_RTSP_ONVIF_SERVER_GET_CLASS(obj)    (G_TYPE_INSTANCE_GET_CLASS ((obj), GST_TYPE_RTSP_ONVIF_SERVER, GstRTSPOnvifServerClass))
+</MACRO>
+<MACRO>
+<NAME>GST_RTSP_ONVIF_SERVER</NAME>
+#define GST_RTSP_ONVIF_SERVER(obj)              (G_TYPE_CHECK_INSTANCE_CAST ((obj), GST_TYPE_RTSP_ONVIF_SERVER, GstRTSPOnvifServer))
+</MACRO>
+<MACRO>
+<NAME>GST_RTSP_ONVIF_SERVER_CLASS</NAME>
+#define GST_RTSP_ONVIF_SERVER_CLASS(klass)      (G_TYPE_CHECK_CLASS_CAST ((klass), GST_TYPE_RTSP_ONVIF_SERVER, GstRTSPOnvifServerClass))
+</MACRO>
+<MACRO>
+<NAME>GST_RTSP_ONVIF_SERVER_CAST</NAME>
+#define GST_RTSP_ONVIF_SERVER_CAST(obj)         ((GstRTSPOnvifServer*)(obj))
+</MACRO>
+<MACRO>
+<NAME>GST_RTSP_ONVIF_SERVER_CLASS_CAST</NAME>
+#define GST_RTSP_ONVIF_SERVER_CLASS_CAST(klass) ((GstRTSPOnvifServerClass*)(klass))
+</MACRO>
+<TYPEDEF>
+<NAME>GstRTSPOnvifServerClass</NAME>
+typedef struct GstRTSPOnvifServerClass GstRTSPOnvifServerClass;
+</TYPEDEF>
+<TYPEDEF>
+<NAME>GstRTSPOnvifServer</NAME>
+typedef struct GstRTSPOnvifServer GstRTSPOnvifServer;
+</TYPEDEF>
+<FUNCTION>
+<NAME>gst_rtsp_onvif_server_get_type</NAME>
+<RETURNS>GType  </RETURNS>
+void
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_onvif_server_new</NAME>
+<RETURNS>GstRTSPServer  *</RETURNS>
+void
+</FUNCTION>
+<MACRO>
+<NAME>GST_RTSP_ONVIF_BACKCHANNEL_REQUIREMENT</NAME>
+#define GST_RTSP_ONVIF_BACKCHANNEL_REQUIREMENT "www.onvif.org/ver20/backchannel"
+</MACRO>
+<FUNCTION>
+<NAME>gst_rtsp_params_set</NAME>
+<RETURNS>GstRTSPResult     </RETURNS>
+GstRTSPClient * client, GstRTSPContext * ctx
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_params_get</NAME>
+<RETURNS>GstRTSPResult     </RETURNS>
+GstRTSPClient * client, GstRTSPContext * ctx
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_permissions_get_type</NAME>
+<RETURNS>GType  </RETURNS>
+void
+</FUNCTION>
+<MACRO>
+<NAME>GST_TYPE_RTSP_PERMISSIONS</NAME>
+#define GST_TYPE_RTSP_PERMISSIONS        (gst_rtsp_permissions_get_type ())
+</MACRO>
+<MACRO>
+<NAME>GST_IS_RTSP_PERMISSIONS</NAME>
+#define GST_IS_RTSP_PERMISSIONS(obj)     (GST_IS_MINI_OBJECT_TYPE (obj, GST_TYPE_RTSP_PERMISSIONS))
+</MACRO>
+<MACRO>
+<NAME>GST_RTSP_PERMISSIONS_CAST</NAME>
+#define GST_RTSP_PERMISSIONS_CAST(obj)   ((GstRTSPPermissions*)(obj))
+</MACRO>
+<MACRO>
+<NAME>GST_RTSP_PERMISSIONS</NAME>
+#define GST_RTSP_PERMISSIONS(obj)        (GST_RTSP_PERMISSIONS_CAST(obj))
+</MACRO>
+<STRUCT>
+<NAME>GstRTSPPermissions</NAME>
+struct _GstRTSPPermissions {
+  GstMiniObject mini_object;
+};
+</STRUCT>
+<FUNCTION>
+<NAME>gst_rtsp_permissions_ref</NAME>
+<RETURNS>GstRTSPPermissions  *</RETURNS>
+GstRTSPPermissions * permissions
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_permissions_unref</NAME>
+<RETURNS>void</RETURNS>
+GstRTSPPermissions * permissions
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_permissions_new</NAME>
+<RETURNS>GstRTSPPermissions  *  </RETURNS>
+void
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_permissions_add_role</NAME>
+<RETURNS>void                   </RETURNS>
+GstRTSPPermissions *permissions, const gchar *role, const gchar *fieldname, ...
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_permissions_add_role_valist</NAME>
+<RETURNS>void                   </RETURNS>
+GstRTSPPermissions *permissions, const gchar *role, const gchar *fieldname, va_list var_args
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_permissions_add_role_empty</NAME>
+<RETURNS>void                   </RETURNS>
+GstRTSPPermissions * permissions, const gchar * role
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_permissions_add_role_from_structure</NAME>
+<RETURNS>void                   </RETURNS>
+GstRTSPPermissions * permissions, GstStructure *structure
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_permissions_add_permission_for_role</NAME>
+<RETURNS>void                   </RETURNS>
+GstRTSPPermissions * permissions, const gchar * role, const gchar * permission, gboolean      allowed
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_permissions_remove_role</NAME>
+<RETURNS>void                   </RETURNS>
+GstRTSPPermissions *permissions, const gchar *role
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_permissions_get_role</NAME>
+<RETURNS>const GstStructure  *  </RETURNS>
+GstRTSPPermissions *permissions, const gchar *role
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_permissions_is_allowed</NAME>
+<RETURNS>gboolean               </RETURNS>
+GstRTSPPermissions *permissions, const gchar *role, const gchar *permission
+</FUNCTION>
+<STRUCT>
+<NAME>GstSDPInfo</NAME>
+typedef struct {
+  gboolean is_ipv6;
+  const gchar *server_ip;
+} GstSDPInfo;
+</STRUCT>
+<FUNCTION>
+<NAME>gst_rtsp_sdp_from_media</NAME>
+<RETURNS>gboolean             </RETURNS>
+GstSDPMessage *sdp, GstSDPInfo *info, GstRTSPMedia * media
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_sdp_from_stream</NAME>
+<RETURNS>gboolean             </RETURNS>
+GstSDPMessage * sdp, GstSDPInfo * info, GstRTSPStream *stream
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_sdp_make_media</NAME>
+<RETURNS>gboolean</RETURNS>
+GstSDPMessage * sdp, GstSDPInfo * info, GstRTSPStream * stream, GstCaps * caps, GstRTSPProfile profile
+</FUNCTION>
+<MACRO>
+<NAME>GST_RTSP_SERVER_API</NAME>
+#define GST_RTSP_SERVER_API GST_EXPORT
+</MACRO>
+<MACRO>
+<NAME>GST_RTSP_SERVER_DEPRECATED</NAME>
+<DEPRECATED/>
+#define GST_RTSP_SERVER_DEPRECATED GST_RTSP_SERVER_API
+</MACRO>
+<MACRO>
+<NAME>GST_RTSP_SERVER_DEPRECATED_FOR</NAME>
+#define GST_RTSP_SERVER_DEPRECATED_FOR(f) GST_RTSP_SERVER_API
+</MACRO>
+<MACRO>
+<NAME>GST_TYPE_RTSP_SERVER</NAME>
+#define GST_TYPE_RTSP_SERVER              (gst_rtsp_server_get_type ())
+</MACRO>
+<MACRO>
+<NAME>GST_IS_RTSP_SERVER</NAME>
+#define GST_IS_RTSP_SERVER(obj)           (G_TYPE_CHECK_INSTANCE_TYPE ((obj), GST_TYPE_RTSP_SERVER))
+</MACRO>
+<MACRO>
+<NAME>GST_IS_RTSP_SERVER_CLASS</NAME>
+#define GST_IS_RTSP_SERVER_CLASS(klass)   (G_TYPE_CHECK_CLASS_TYPE ((klass), GST_TYPE_RTSP_SERVER))
+</MACRO>
+<MACRO>
+<NAME>GST_RTSP_SERVER_GET_CLASS</NAME>
+#define GST_RTSP_SERVER_GET_CLASS(obj)    (G_TYPE_INSTANCE_GET_CLASS ((obj), GST_TYPE_RTSP_SERVER, GstRTSPServerClass))
+</MACRO>
+<MACRO>
+<NAME>GST_RTSP_SERVER</NAME>
+#define GST_RTSP_SERVER(obj)              (G_TYPE_CHECK_INSTANCE_CAST ((obj), GST_TYPE_RTSP_SERVER, GstRTSPServer))
+</MACRO>
+<MACRO>
+<NAME>GST_RTSP_SERVER_CLASS</NAME>
+#define GST_RTSP_SERVER_CLASS(klass)      (G_TYPE_CHECK_CLASS_CAST ((klass), GST_TYPE_RTSP_SERVER, GstRTSPServerClass))
+</MACRO>
+<MACRO>
+<NAME>GST_RTSP_SERVER_CAST</NAME>
+#define GST_RTSP_SERVER_CAST(obj)         ((GstRTSPServer*)(obj))
+</MACRO>
+<MACRO>
+<NAME>GST_RTSP_SERVER_CLASS_CAST</NAME>
+#define GST_RTSP_SERVER_CLASS_CAST(klass) ((GstRTSPServerClass*)(klass))
+</MACRO>
+<STRUCT>
+<NAME>GstRTSPServer</NAME>
+struct _GstRTSPServer {
+  GObject      parent;
+
+  /*< private >*/
+  GstRTSPServerPrivate *priv;
+  gpointer _gst_reserved[GST_PADDING];
+};
+</STRUCT>
+<STRUCT>
+<NAME>GstRTSPServerClass</NAME>
+struct _GstRTSPServerClass {
+  GObjectClass  parent_class;
+
+  GstRTSPClient * (*create_client)      (GstRTSPServer *server);
+
+  /* signals */
+  void            (*client_connected)   (GstRTSPServer *server, GstRTSPClient *client);
+
+  /*< private >*/
+  gpointer         _gst_reserved[GST_PADDING_LARGE];
+};
+</STRUCT>
+<FUNCTION>
+<NAME>gst_rtsp_server_get_type</NAME>
+<RETURNS>GType                  </RETURNS>
+void
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_server_new</NAME>
+<RETURNS>GstRTSPServer  *       </RETURNS>
+void
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_server_set_address</NAME>
+<RETURNS>void                   </RETURNS>
+GstRTSPServer *server, const gchar *address
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_server_get_address</NAME>
+<RETURNS>gchar  *               </RETURNS>
+GstRTSPServer *server
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_server_set_service</NAME>
+<RETURNS>void                   </RETURNS>
+GstRTSPServer *server, const gchar *service
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_server_get_service</NAME>
+<RETURNS>gchar  *               </RETURNS>
+GstRTSPServer *server
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_server_set_backlog</NAME>
+<RETURNS>void                   </RETURNS>
+GstRTSPServer *server, gint backlog
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_server_get_backlog</NAME>
+<RETURNS>gint                   </RETURNS>
+GstRTSPServer *server
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_server_get_bound_port</NAME>
+<RETURNS>int                    </RETURNS>
+GstRTSPServer *server
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_server_set_session_pool</NAME>
+<RETURNS>void                   </RETURNS>
+GstRTSPServer *server, GstRTSPSessionPool *pool
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_server_get_session_pool</NAME>
+<RETURNS>GstRTSPSessionPool  *  </RETURNS>
+GstRTSPServer *server
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_server_set_mount_points</NAME>
+<RETURNS>void                   </RETURNS>
+GstRTSPServer *server, GstRTSPMountPoints *mounts
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_server_get_mount_points</NAME>
+<RETURNS>GstRTSPMountPoints  *  </RETURNS>
+GstRTSPServer *server
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_server_set_auth</NAME>
+<RETURNS>void                   </RETURNS>
+GstRTSPServer *server, GstRTSPAuth *auth
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_server_get_auth</NAME>
+<RETURNS>GstRTSPAuth  *         </RETURNS>
+GstRTSPServer *server
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_server_set_thread_pool</NAME>
+<RETURNS>void                   </RETURNS>
+GstRTSPServer *server, GstRTSPThreadPool *pool
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_server_get_thread_pool</NAME>
+<RETURNS>GstRTSPThreadPool  *   </RETURNS>
+GstRTSPServer *server
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_server_transfer_connection</NAME>
+<RETURNS>gboolean               </RETURNS>
+GstRTSPServer * server, GSocket *socket, const gchar * ip, gint port, const gchar *initial_buffer
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_server_io_func</NAME>
+<RETURNS>gboolean               </RETURNS>
+GSocket *socket, GIOCondition condition, GstRTSPServer *server
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_server_create_socket</NAME>
+<RETURNS>GSocket  *             </RETURNS>
+GstRTSPServer *server, GCancellable  *cancellable, GError **error
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_server_create_source</NAME>
+<RETURNS>GSource  *             </RETURNS>
+GstRTSPServer *server, GCancellable * cancellable, GError **error
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_server_attach</NAME>
+<RETURNS>guint                  </RETURNS>
+GstRTSPServer *server, GMainContext *context
+</FUNCTION>
+<USER_FUNCTION>
+<NAME>GstRTSPServerClientFilterFunc</NAME>
+<RETURNS>GstRTSPFilterResult </RETURNS>
+GstRTSPServer *server,
+                                                               GstRTSPClient *client,
+                                                               gpointer user_data
+</USER_FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_server_client_filter</NAME>
+<RETURNS>GList  *                </RETURNS>
+GstRTSPServer *server, GstRTSPServerClientFilterFunc func, gpointer user_data
+</FUNCTION>
+<STRUCT>
+<NAME>GstRTSPServerPrivate</NAME>
+</STRUCT>
+<MACRO>
+<NAME>GST_TYPE_RTSP_SESSION_MEDIA</NAME>
+#define GST_TYPE_RTSP_SESSION_MEDIA              (gst_rtsp_session_media_get_type ())
+</MACRO>
+<MACRO>
+<NAME>GST_IS_RTSP_SESSION_MEDIA</NAME>
+#define GST_IS_RTSP_SESSION_MEDIA(obj)           (G_TYPE_CHECK_INSTANCE_TYPE ((obj), GST_TYPE_RTSP_SESSION_MEDIA))
+</MACRO>
+<MACRO>
+<NAME>GST_IS_RTSP_SESSION_MEDIA_CLASS</NAME>
+#define GST_IS_RTSP_SESSION_MEDIA_CLASS(klass)   (G_TYPE_CHECK_CLASS_TYPE ((klass), GST_TYPE_RTSP_SESSION_MEDIA))
+</MACRO>
+<MACRO>
+<NAME>GST_RTSP_SESSION_MEDIA_GET_CLASS</NAME>
+#define GST_RTSP_SESSION_MEDIA_GET_CLASS(obj)    (G_TYPE_INSTANCE_GET_CLASS ((obj), GST_TYPE_RTSP_SESSION_MEDIA, GstRTSPSessionMediaClass))
+</MACRO>
+<MACRO>
+<NAME>GST_RTSP_SESSION_MEDIA</NAME>
+#define GST_RTSP_SESSION_MEDIA(obj)              (G_TYPE_CHECK_INSTANCE_CAST ((obj), GST_TYPE_RTSP_SESSION_MEDIA, GstRTSPSessionMedia))
+</MACRO>
+<MACRO>
+<NAME>GST_RTSP_SESSION_MEDIA_CLASS</NAME>
+#define GST_RTSP_SESSION_MEDIA_CLASS(klass)      (G_TYPE_CHECK_CLASS_CAST ((klass), GST_TYPE_RTSP_SESSION_MEDIA, GstRTSPSessionMediaClass))
+</MACRO>
+<MACRO>
+<NAME>GST_RTSP_SESSION_MEDIA_CAST</NAME>
+#define GST_RTSP_SESSION_MEDIA_CAST(obj)         ((GstRTSPSessionMedia*)(obj))
+</MACRO>
+<MACRO>
+<NAME>GST_RTSP_SESSION_MEDIA_CLASS_CAST</NAME>
+#define GST_RTSP_SESSION_MEDIA_CLASS_CAST(klass) ((GstRTSPSessionMediaClass*)(klass))
+</MACRO>
+<STRUCT>
+<NAME>GstRTSPSessionMedia</NAME>
+struct _GstRTSPSessionMedia
+{
+  GObject  parent;
+
+  /*< private >*/
+  GstRTSPSessionMediaPrivate *priv;
+  gpointer _gst_reserved[GST_PADDING];
+};
+</STRUCT>
+<STRUCT>
+<NAME>GstRTSPSessionMediaClass</NAME>
+struct _GstRTSPSessionMediaClass
+{
+  GObjectClass  parent_class;
+
+  /*< private >*/
+  gpointer _gst_reserved[GST_PADDING];
+};
+</STRUCT>
+<FUNCTION>
+<NAME>gst_rtsp_session_media_get_type</NAME>
+<RETURNS>GType                     </RETURNS>
+void
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_session_media_new</NAME>
+<RETURNS>GstRTSPSessionMedia  *    </RETURNS>
+const gchar *path, GstRTSPMedia *media
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_session_media_matches</NAME>
+<RETURNS>gboolean                  </RETURNS>
+GstRTSPSessionMedia *media, const gchar *path, gint * matched
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_session_media_get_media</NAME>
+<RETURNS>GstRTSPMedia  *           </RETURNS>
+GstRTSPSessionMedia *media
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_session_media_get_base_time</NAME>
+<RETURNS>GstClockTime              </RETURNS>
+GstRTSPSessionMedia *media
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_session_media_set_state</NAME>
+<RETURNS>gboolean                  </RETURNS>
+GstRTSPSessionMedia *media, GstState state
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_session_media_set_rtsp_state</NAME>
+<RETURNS>void                      </RETURNS>
+GstRTSPSessionMedia *media, GstRTSPState state
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_session_media_get_rtsp_state</NAME>
+<RETURNS>GstRTSPState              </RETURNS>
+GstRTSPSessionMedia *media
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_session_media_set_transport</NAME>
+<RETURNS>GstRTSPStreamTransport  * </RETURNS>
+GstRTSPSessionMedia *media, GstRTSPStream *stream, GstRTSPTransport *tr
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_session_media_get_transport</NAME>
+<RETURNS>GstRTSPStreamTransport  * </RETURNS>
+GstRTSPSessionMedia *media, guint idx
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_session_media_get_transports</NAME>
+<RETURNS>GPtrArray  *              </RETURNS>
+GstRTSPSessionMedia *media
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_session_media_alloc_channels</NAME>
+<RETURNS>gboolean                  </RETURNS>
+GstRTSPSessionMedia *media, GstRTSPRange *range
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_session_media_get_rtpinfo</NAME>
+<RETURNS>gchar  *                  </RETURNS>
+GstRTSPSessionMedia * media
+</FUNCTION>
+<STRUCT>
+<NAME>GstRTSPSessionMediaPrivate</NAME>
+</STRUCT>
+<MACRO>
+<NAME>GST_TYPE_RTSP_SESSION_POOL</NAME>
+#define GST_TYPE_RTSP_SESSION_POOL              (gst_rtsp_session_pool_get_type ())
+</MACRO>
+<MACRO>
+<NAME>GST_IS_RTSP_SESSION_POOL</NAME>
+#define GST_IS_RTSP_SESSION_POOL(obj)           (G_TYPE_CHECK_INSTANCE_TYPE ((obj), GST_TYPE_RTSP_SESSION_POOL))
+</MACRO>
+<MACRO>
+<NAME>GST_IS_RTSP_SESSION_POOL_CLASS</NAME>
+#define GST_IS_RTSP_SESSION_POOL_CLASS(klass)   (G_TYPE_CHECK_CLASS_TYPE ((klass), GST_TYPE_RTSP_SESSION_POOL))
+</MACRO>
+<MACRO>
+<NAME>GST_RTSP_SESSION_POOL_GET_CLASS</NAME>
+#define GST_RTSP_SESSION_POOL_GET_CLASS(obj)    (G_TYPE_INSTANCE_GET_CLASS ((obj), GST_TYPE_RTSP_SESSION_POOL, GstRTSPSessionPoolClass))
+</MACRO>
+<MACRO>
+<NAME>GST_RTSP_SESSION_POOL</NAME>
+#define GST_RTSP_SESSION_POOL(obj)              (G_TYPE_CHECK_INSTANCE_CAST ((obj), GST_TYPE_RTSP_SESSION_POOL, GstRTSPSessionPool))
+</MACRO>
+<MACRO>
+<NAME>GST_RTSP_SESSION_POOL_CLASS</NAME>
+#define GST_RTSP_SESSION_POOL_CLASS(klass)      (G_TYPE_CHECK_CLASS_CAST ((klass), GST_TYPE_RTSP_SESSION_POOL, GstRTSPSessionPoolClass))
+</MACRO>
+<MACRO>
+<NAME>GST_RTSP_SESSION_POOL_CAST</NAME>
+#define GST_RTSP_SESSION_POOL_CAST(obj)         ((GstRTSPSessionPool*)(obj))
+</MACRO>
+<MACRO>
+<NAME>GST_RTSP_SESSION_POOL_CLASS_CAST</NAME>
+#define GST_RTSP_SESSION_POOL_CLASS_CAST(klass) ((GstRTSPSessionPoolClass*)(klass))
+</MACRO>
+<STRUCT>
+<NAME>GstRTSPSessionPool</NAME>
+struct _GstRTSPSessionPool {
+  GObject       parent;
+
+  /*< private >*/
+  GstRTSPSessionPoolPrivate *priv;
+  gpointer _gst_reserved[GST_PADDING];
+};
+</STRUCT>
+<STRUCT>
+<NAME>GstRTSPSessionPoolClass</NAME>
+struct _GstRTSPSessionPoolClass {
+  GObjectClass  parent_class;
+
+  gchar *          (*create_session_id)   (GstRTSPSessionPool *pool);
+  GstRTSPSession * (*create_session)      (GstRTSPSessionPool *pool, const gchar *id);
+
+  /* signals */
+  void             (*session_removed)     (GstRTSPSessionPool *pool,
+                                           GstRTSPSession *session);
+
+  /*< private >*/
+  gpointer _gst_reserved[GST_PADDING_LARGE - 1];
+};
+</STRUCT>
+<USER_FUNCTION>
+<NAME>GstRTSPSessionPoolFunc</NAME>
+<RETURNS>gboolean </RETURNS>
+GstRTSPSessionPool *pool, gpointer user_data
+</USER_FUNCTION>
+<USER_FUNCTION>
+<NAME>GstRTSPSessionPoolFilterFunc</NAME>
+<RETURNS>GstRTSPFilterResult </RETURNS>
+GstRTSPSessionPool *pool,
+                                                              GstRTSPSession *session,
+                                                              gpointer user_data
+</USER_FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_session_pool_get_type</NAME>
+<RETURNS>GType                  </RETURNS>
+void
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_session_pool_new</NAME>
+<RETURNS>GstRTSPSessionPool  *  </RETURNS>
+void
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_session_pool_set_max_sessions</NAME>
+<RETURNS>void                   </RETURNS>
+GstRTSPSessionPool *pool, guint max
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_session_pool_get_max_sessions</NAME>
+<RETURNS>guint                  </RETURNS>
+GstRTSPSessionPool *pool
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_session_pool_get_n_sessions</NAME>
+<RETURNS>guint                  </RETURNS>
+GstRTSPSessionPool *pool
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_session_pool_create</NAME>
+<RETURNS>GstRTSPSession  *      </RETURNS>
+GstRTSPSessionPool *pool
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_session_pool_find</NAME>
+<RETURNS>GstRTSPSession  *      </RETURNS>
+GstRTSPSessionPool *pool, const gchar *sessionid
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_session_pool_remove</NAME>
+<RETURNS>gboolean               </RETURNS>
+GstRTSPSessionPool *pool, GstRTSPSession *sess
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_session_pool_filter</NAME>
+<RETURNS>GList  *               </RETURNS>
+GstRTSPSessionPool *pool, GstRTSPSessionPoolFilterFunc func, gpointer user_data
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_session_pool_cleanup</NAME>
+<RETURNS>guint                  </RETURNS>
+GstRTSPSessionPool *pool
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_session_pool_create_watch</NAME>
+<RETURNS>GSource  *             </RETURNS>
+GstRTSPSessionPool *pool
+</FUNCTION>
+<STRUCT>
+<NAME>GstRTSPSessionPoolPrivate</NAME>
+</STRUCT>
+<MACRO>
+<NAME>GST_TYPE_RTSP_SESSION</NAME>
+#define GST_TYPE_RTSP_SESSION              (gst_rtsp_session_get_type ())
+</MACRO>
+<MACRO>
+<NAME>GST_IS_RTSP_SESSION</NAME>
+#define GST_IS_RTSP_SESSION(obj)           (G_TYPE_CHECK_INSTANCE_TYPE ((obj), GST_TYPE_RTSP_SESSION))
+</MACRO>
+<MACRO>
+<NAME>GST_IS_RTSP_SESSION_CLASS</NAME>
+#define GST_IS_RTSP_SESSION_CLASS(klass)   (G_TYPE_CHECK_CLASS_TYPE ((klass), GST_TYPE_RTSP_SESSION))
+</MACRO>
+<MACRO>
+<NAME>GST_RTSP_SESSION_GET_CLASS</NAME>
+#define GST_RTSP_SESSION_GET_CLASS(obj)    (G_TYPE_INSTANCE_GET_CLASS ((obj), GST_TYPE_RTSP_SESSION, GstRTSPSessionClass))
+</MACRO>
+<MACRO>
+<NAME>GST_RTSP_SESSION</NAME>
+#define GST_RTSP_SESSION(obj)              (G_TYPE_CHECK_INSTANCE_CAST ((obj), GST_TYPE_RTSP_SESSION, GstRTSPSession))
+</MACRO>
+<MACRO>
+<NAME>GST_RTSP_SESSION_CLASS</NAME>
+#define GST_RTSP_SESSION_CLASS(klass)      (G_TYPE_CHECK_CLASS_CAST ((klass), GST_TYPE_RTSP_SESSION, GstRTSPSessionClass))
+</MACRO>
+<MACRO>
+<NAME>GST_RTSP_SESSION_CAST</NAME>
+#define GST_RTSP_SESSION_CAST(obj)         ((GstRTSPSession*)(obj))
+</MACRO>
+<MACRO>
+<NAME>GST_RTSP_SESSION_CLASS_CAST</NAME>
+#define GST_RTSP_SESSION_CLASS_CAST(klass) ((GstRTSPSessionClass*)(klass))
+</MACRO>
+<ENUM>
+<NAME>GstRTSPFilterResult</NAME>
+typedef enum
+{
+  GST_RTSP_FILTER_REMOVE,
+  GST_RTSP_FILTER_KEEP,
+  GST_RTSP_FILTER_REF,
+} GstRTSPFilterResult;
+</ENUM>
+<STRUCT>
+<NAME>GstRTSPSession</NAME>
+struct _GstRTSPSession {
+  GObject       parent;
+
+  /*< private >*/
+  GstRTSPSessionPrivate *priv;
+  gpointer _gst_reserved[GST_PADDING];
+};
+</STRUCT>
+<STRUCT>
+<NAME>GstRTSPSessionClass</NAME>
+struct _GstRTSPSessionClass {
+  GObjectClass  parent_class;
+
+  /*< private >*/
+  gpointer _gst_reserved[GST_PADDING];
+};
+</STRUCT>
+<FUNCTION>
+<NAME>gst_rtsp_session_get_type</NAME>
+<RETURNS>GType                   </RETURNS>
+void
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_session_new</NAME>
+<RETURNS>GstRTSPSession  *       </RETURNS>
+const gchar *sessionid
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_session_get_sessionid</NAME>
+<RETURNS>const gchar  *          </RETURNS>
+GstRTSPSession *session
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_session_get_header</NAME>
+<RETURNS>gchar  *                </RETURNS>
+GstRTSPSession *session
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_session_set_timeout</NAME>
+<RETURNS>void                    </RETURNS>
+GstRTSPSession *session, guint timeout
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_session_get_timeout</NAME>
+<RETURNS>guint                   </RETURNS>
+GstRTSPSession *session
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_session_touch</NAME>
+<RETURNS>void                    </RETURNS>
+GstRTSPSession *session
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_session_prevent_expire</NAME>
+<RETURNS>void                    </RETURNS>
+GstRTSPSession *session
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_session_allow_expire</NAME>
+<RETURNS>void                    </RETURNS>
+GstRTSPSession *session
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_session_next_timeout_usec</NAME>
+<RETURNS>gint                    </RETURNS>
+GstRTSPSession *session, gint64 now
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_session_is_expired_usec</NAME>
+<RETURNS>gboolean                </RETURNS>
+GstRTSPSession *session, gint64 now
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_session_next_timeout</NAME>
+<DEPRECATED/>
+<RETURNS>gint                    </RETURNS>
+GstRTSPSession *session, GTimeVal *now
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_session_is_expired</NAME>
+<DEPRECATED/>
+<RETURNS>gboolean                </RETURNS>
+GstRTSPSession *session, GTimeVal *now
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_session_manage_media</NAME>
+<RETURNS>GstRTSPSessionMedia  *  </RETURNS>
+GstRTSPSession *sess, const gchar *path, GstRTSPMedia *media
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_session_release_media</NAME>
+<RETURNS>gboolean                </RETURNS>
+GstRTSPSession *sess, GstRTSPSessionMedia *media
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_session_get_media</NAME>
+<RETURNS>GstRTSPSessionMedia  *  </RETURNS>
+GstRTSPSession *sess, const gchar *path, gint * matched
+</FUNCTION>
+<USER_FUNCTION>
+<NAME>GstRTSPSessionFilterFunc</NAME>
+<RETURNS>GstRTSPFilterResult </RETURNS>
+GstRTSPSession *sess,
+                                                          GstRTSPSessionMedia *media,
+                                                          gpointer user_data
+</USER_FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_session_filter</NAME>
+<RETURNS>GList  *                </RETURNS>
+GstRTSPSession *sess, GstRTSPSessionFilterFunc func, gpointer user_data
+</FUNCTION>
+<STRUCT>
+<NAME>GstRTSPSessionPrivate</NAME>
+</STRUCT>
+<MACRO>
+<NAME>GST_TYPE_RTSP_STREAM_TRANSPORT</NAME>
+#define GST_TYPE_RTSP_STREAM_TRANSPORT              (gst_rtsp_stream_transport_get_type ())
+</MACRO>
+<MACRO>
+<NAME>GST_IS_RTSP_STREAM_TRANSPORT</NAME>
+#define GST_IS_RTSP_STREAM_TRANSPORT(obj)           (G_TYPE_CHECK_INSTANCE_TYPE ((obj), GST_TYPE_RTSP_STREAM_TRANSPORT))
+</MACRO>
+<MACRO>
+<NAME>GST_IS_RTSP_STREAM_TRANSPORT_CLASS</NAME>
+#define GST_IS_RTSP_STREAM_TRANSPORT_CLASS(klass)   (G_TYPE_CHECK_CLASS_TYPE ((klass), GST_TYPE_RTSP_STREAM_TRANSPORT))
+</MACRO>
+<MACRO>
+<NAME>GST_RTSP_STREAM_TRANSPORT_GET_CLASS</NAME>
+#define GST_RTSP_STREAM_TRANSPORT_GET_CLASS(obj)    (G_TYPE_INSTANCE_GET_CLASS ((obj), GST_TYPE_RTSP_STREAM_TRANSPORT, GstRTSPStreamTransportClass))
+</MACRO>
+<MACRO>
+<NAME>GST_RTSP_STREAM_TRANSPORT</NAME>
+#define GST_RTSP_STREAM_TRANSPORT(obj)              (G_TYPE_CHECK_INSTANCE_CAST ((obj), GST_TYPE_RTSP_STREAM_TRANSPORT, GstRTSPStreamTransport))
+</MACRO>
+<MACRO>
+<NAME>GST_RTSP_STREAM_TRANSPORT_CLASS</NAME>
+#define GST_RTSP_STREAM_TRANSPORT_CLASS(klass)      (G_TYPE_CHECK_CLASS_CAST ((klass), GST_TYPE_RTSP_STREAM_TRANSPORT, GstRTSPStreamTransportClass))
+</MACRO>
+<MACRO>
+<NAME>GST_RTSP_STREAM_TRANSPORT_CAST</NAME>
+#define GST_RTSP_STREAM_TRANSPORT_CAST(obj)         ((GstRTSPStreamTransport*)(obj))
+</MACRO>
+<MACRO>
+<NAME>GST_RTSP_STREAM_TRANSPORT_CLASS_CAST</NAME>
+#define GST_RTSP_STREAM_TRANSPORT_CLASS_CAST(klass) ((GstRTSPStreamTransportClass*)(klass))
+</MACRO>
+<USER_FUNCTION>
+<NAME>GstRTSPSendFunc</NAME>
+<RETURNS>gboolean </RETURNS>
+GstBuffer *buffer, guint8 channel, gpointer user_data
+</USER_FUNCTION>
+<USER_FUNCTION>
+<NAME>GstRTSPKeepAliveFunc</NAME>
+<RETURNS>void </RETURNS>
+gpointer user_data
+</USER_FUNCTION>
+<STRUCT>
+<NAME>GstRTSPStreamTransport</NAME>
+struct _GstRTSPStreamTransport {
+  GObject              parent;
+
+  /*< private >*/
+  GstRTSPStreamTransportPrivate *priv;
+  gpointer _gst_reserved[GST_PADDING];
+};
+</STRUCT>
+<STRUCT>
+<NAME>GstRTSPStreamTransportClass</NAME>
+struct _GstRTSPStreamTransportClass {
+  GObjectClass parent_class;
+
+  /*< private >*/
+  gpointer _gst_reserved[GST_PADDING];
+};
+</STRUCT>
+<FUNCTION>
+<NAME>gst_rtsp_stream_transport_get_type</NAME>
+<RETURNS>GType                     </RETURNS>
+void
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_stream_transport_new</NAME>
+<RETURNS>GstRTSPStreamTransport  * </RETURNS>
+GstRTSPStream *stream, GstRTSPTransport *tr
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_stream_transport_get_stream</NAME>
+<RETURNS>GstRTSPStream  *          </RETURNS>
+GstRTSPStreamTransport *trans
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_stream_transport_set_transport</NAME>
+<RETURNS>void                      </RETURNS>
+GstRTSPStreamTransport *trans, GstRTSPTransport * tr
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_stream_transport_get_transport</NAME>
+<RETURNS>const GstRTSPTransport  * </RETURNS>
+GstRTSPStreamTransport *trans
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_stream_transport_set_url</NAME>
+<RETURNS>void                      </RETURNS>
+GstRTSPStreamTransport *trans, const GstRTSPUrl * url
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_stream_transport_get_url</NAME>
+<RETURNS>const GstRTSPUrl  *       </RETURNS>
+GstRTSPStreamTransport *trans
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_stream_transport_get_rtpinfo</NAME>
+<RETURNS>gchar  *                  </RETURNS>
+GstRTSPStreamTransport *trans, GstClockTime start_time
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_stream_transport_set_callbacks</NAME>
+<RETURNS>void                      </RETURNS>
+GstRTSPStreamTransport *trans, GstRTSPSendFunc send_rtp, GstRTSPSendFunc send_rtcp, gpointer user_data, GDestroyNotify  notify
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_stream_transport_set_keepalive</NAME>
+<RETURNS>void                      </RETURNS>
+GstRTSPStreamTransport *trans, GstRTSPKeepAliveFunc keep_alive, gpointer user_data, GDestroyNotify  notify
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_stream_transport_keep_alive</NAME>
+<RETURNS>void                      </RETURNS>
+GstRTSPStreamTransport *trans
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_stream_transport_set_active</NAME>
+<RETURNS>gboolean                  </RETURNS>
+GstRTSPStreamTransport *trans, gboolean active
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_stream_transport_set_timed_out</NAME>
+<RETURNS>void                      </RETURNS>
+GstRTSPStreamTransport *trans, gboolean timedout
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_stream_transport_is_timed_out</NAME>
+<RETURNS>gboolean                  </RETURNS>
+GstRTSPStreamTransport *trans
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_stream_transport_send_rtp</NAME>
+<RETURNS>gboolean                  </RETURNS>
+GstRTSPStreamTransport *trans, GstBuffer *buffer
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_stream_transport_send_rtcp</NAME>
+<RETURNS>gboolean                  </RETURNS>
+GstRTSPStreamTransport *trans, GstBuffer *buffer
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_stream_transport_recv_data</NAME>
+<RETURNS>GstFlowReturn             </RETURNS>
+GstRTSPStreamTransport *trans, guint channel, GstBuffer *buffer
+</FUNCTION>
+<STRUCT>
+<NAME>GstRTSPStreamTransportPrivate</NAME>
+</STRUCT>
+<MACRO>
+<NAME>GST_TYPE_RTSP_STREAM</NAME>
+#define GST_TYPE_RTSP_STREAM              (gst_rtsp_stream_get_type ())
+</MACRO>
+<MACRO>
+<NAME>GST_IS_RTSP_STREAM</NAME>
+#define GST_IS_RTSP_STREAM(obj)           (G_TYPE_CHECK_INSTANCE_TYPE ((obj), GST_TYPE_RTSP_STREAM))
+</MACRO>
+<MACRO>
+<NAME>GST_IS_RTSP_STREAM_CLASS</NAME>
+#define GST_IS_RTSP_STREAM_CLASS(klass)   (G_TYPE_CHECK_CLASS_TYPE ((klass), GST_TYPE_RTSP_STREAM))
+</MACRO>
+<MACRO>
+<NAME>GST_RTSP_STREAM_GET_CLASS</NAME>
+#define GST_RTSP_STREAM_GET_CLASS(obj)    (G_TYPE_INSTANCE_GET_CLASS ((obj), GST_TYPE_RTSP_STREAM, GstRTSPStreamClass))
+</MACRO>
+<MACRO>
+<NAME>GST_RTSP_STREAM</NAME>
+#define GST_RTSP_STREAM(obj)              (G_TYPE_CHECK_INSTANCE_CAST ((obj), GST_TYPE_RTSP_STREAM, GstRTSPStream))
+</MACRO>
+<MACRO>
+<NAME>GST_RTSP_STREAM_CLASS</NAME>
+#define GST_RTSP_STREAM_CLASS(klass)      (G_TYPE_CHECK_CLASS_CAST ((klass), GST_TYPE_RTSP_STREAM, GstRTSPStreamClass))
+</MACRO>
+<MACRO>
+<NAME>GST_RTSP_STREAM_CAST</NAME>
+#define GST_RTSP_STREAM_CAST(obj)         ((GstRTSPStream*)(obj))
+</MACRO>
+<MACRO>
+<NAME>GST_RTSP_STREAM_CLASS_CAST</NAME>
+#define GST_RTSP_STREAM_CLASS_CAST(klass) ((GstRTSPStreamClass*)(klass))
+</MACRO>
+<STRUCT>
+<NAME>GstRTSPStream</NAME>
+struct _GstRTSPStream {
+  GObject       parent;
+
+  /*< private >*/
+  GstRTSPStreamPrivate *priv;
+  gpointer _gst_reserved[GST_PADDING];
+};
+</STRUCT>
+<STRUCT>
+<NAME>GstRTSPStreamClass</NAME>
+struct _GstRTSPStreamClass {
+  GObjectClass parent_class;
+
+  /*< private >*/
+  gpointer _gst_reserved[GST_PADDING];
+};
+</STRUCT>
+<FUNCTION>
+<NAME>gst_rtsp_stream_get_type</NAME>
+<RETURNS>GType              </RETURNS>
+void
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_stream_new</NAME>
+<RETURNS>GstRTSPStream  *   </RETURNS>
+guint idx, GstElement *payloader, GstPad *pad
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_stream_get_index</NAME>
+<RETURNS>guint              </RETURNS>
+GstRTSPStream *stream
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_stream_get_pt</NAME>
+<RETURNS>guint              </RETURNS>
+GstRTSPStream *stream
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_stream_get_srcpad</NAME>
+<RETURNS>GstPad  *          </RETURNS>
+GstRTSPStream *stream
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_stream_get_sinkpad</NAME>
+<RETURNS>GstPad  *          </RETURNS>
+GstRTSPStream *stream
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_stream_set_control</NAME>
+<RETURNS>void               </RETURNS>
+GstRTSPStream *stream, const gchar *control
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_stream_get_control</NAME>
+<RETURNS>gchar  *           </RETURNS>
+GstRTSPStream *stream
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_stream_has_control</NAME>
+<RETURNS>gboolean           </RETURNS>
+GstRTSPStream *stream, const gchar *control
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_stream_set_mtu</NAME>
+<RETURNS>void               </RETURNS>
+GstRTSPStream *stream, guint mtu
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_stream_get_mtu</NAME>
+<RETURNS>guint              </RETURNS>
+GstRTSPStream *stream
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_stream_set_dscp_qos</NAME>
+<RETURNS>void               </RETURNS>
+GstRTSPStream *stream, gint dscp_qos
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_stream_get_dscp_qos</NAME>
+<RETURNS>gint               </RETURNS>
+GstRTSPStream *stream
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_stream_is_transport_supported</NAME>
+<RETURNS>gboolean           </RETURNS>
+GstRTSPStream *stream, GstRTSPTransport *transport
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_stream_set_profiles</NAME>
+<RETURNS>void               </RETURNS>
+GstRTSPStream *stream, GstRTSPProfile profiles
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_stream_get_profiles</NAME>
+<RETURNS>GstRTSPProfile     </RETURNS>
+GstRTSPStream *stream
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_stream_set_protocols</NAME>
+<RETURNS>void               </RETURNS>
+GstRTSPStream *stream, GstRTSPLowerTrans protocols
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_stream_get_protocols</NAME>
+<RETURNS>GstRTSPLowerTrans  </RETURNS>
+GstRTSPStream *stream
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_stream_set_address_pool</NAME>
+<RETURNS>void               </RETURNS>
+GstRTSPStream *stream, GstRTSPAddressPool *pool
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_stream_get_address_pool</NAME>
+<RETURNS>GstRTSPAddressPool  *</RETURNS>
+GstRTSPStream *stream
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_stream_set_multicast_iface</NAME>
+<RETURNS>void               </RETURNS>
+GstRTSPStream *stream, const gchar * multicast_iface
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_stream_get_multicast_iface</NAME>
+<RETURNS>gchar  *           </RETURNS>
+GstRTSPStream *stream
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_stream_reserve_address</NAME>
+<RETURNS>GstRTSPAddress  *  </RETURNS>
+GstRTSPStream *stream, const gchar * address, guint port, guint n_ports, guint ttl
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_stream_join_bin</NAME>
+<RETURNS>gboolean           </RETURNS>
+GstRTSPStream *stream, GstBin *bin, GstElement *rtpbin, GstState state
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_stream_leave_bin</NAME>
+<RETURNS>gboolean           </RETURNS>
+GstRTSPStream *stream, GstBin *bin, GstElement *rtpbin
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_stream_get_joined_bin</NAME>
+<RETURNS>GstBin  *          </RETURNS>
+GstRTSPStream *stream
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_stream_set_blocked</NAME>
+<RETURNS>gboolean           </RETURNS>
+GstRTSPStream * stream, gboolean blocked
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_stream_is_blocking</NAME>
+<RETURNS>gboolean           </RETURNS>
+GstRTSPStream * stream
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_stream_unblock_linked</NAME>
+<RETURNS>gboolean           </RETURNS>
+GstRTSPStream * stream
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_stream_set_client_side</NAME>
+<RETURNS>void               </RETURNS>
+GstRTSPStream *stream, gboolean client_side
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_stream_is_client_side</NAME>
+<RETURNS>gboolean           </RETURNS>
+GstRTSPStream *stream
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_stream_get_server_port</NAME>
+<RETURNS>void               </RETURNS>
+GstRTSPStream *stream, GstRTSPRange *server_port, GSocketFamily family
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_stream_get_multicast_address</NAME>
+<RETURNS>GstRTSPAddress  *  </RETURNS>
+GstRTSPStream *stream, GSocketFamily family
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_stream_get_rtpsession</NAME>
+<RETURNS>GObject  *         </RETURNS>
+GstRTSPStream *stream
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_stream_get_srtp_encoder</NAME>
+<RETURNS>GstElement  *      </RETURNS>
+GstRTSPStream *stream
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_stream_get_ssrc</NAME>
+<RETURNS>void               </RETURNS>
+GstRTSPStream *stream, guint *ssrc
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_stream_get_rtpinfo</NAME>
+<RETURNS>gboolean           </RETURNS>
+GstRTSPStream *stream, guint *rtptime, guint *seq, guint *clock_rate, GstClockTime *running_time
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_stream_get_caps</NAME>
+<RETURNS>GstCaps  *         </RETURNS>
+GstRTSPStream *stream
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_stream_recv_rtp</NAME>
+<RETURNS>GstFlowReturn      </RETURNS>
+GstRTSPStream *stream, GstBuffer *buffer
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_stream_recv_rtcp</NAME>
+<RETURNS>GstFlowReturn      </RETURNS>
+GstRTSPStream *stream, GstBuffer *buffer
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_stream_add_transport</NAME>
+<RETURNS>gboolean           </RETURNS>
+GstRTSPStream *stream, GstRTSPStreamTransport *trans
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_stream_remove_transport</NAME>
+<RETURNS>gboolean           </RETURNS>
+GstRTSPStream *stream, GstRTSPStreamTransport *trans
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_stream_get_rtp_socket</NAME>
+<RETURNS>GSocket  *         </RETURNS>
+GstRTSPStream *stream, GSocketFamily family
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_stream_get_rtcp_socket</NAME>
+<RETURNS>GSocket  *         </RETURNS>
+GstRTSPStream *stream, GSocketFamily family
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_stream_get_rtp_multicast_socket</NAME>
+<RETURNS>GSocket  *         </RETURNS>
+GstRTSPStream *stream, GSocketFamily family
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_stream_get_rtcp_multicast_socket</NAME>
+<RETURNS>GSocket  *         </RETURNS>
+GstRTSPStream *stream, GSocketFamily family
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_stream_update_crypto</NAME>
+<RETURNS>gboolean           </RETURNS>
+GstRTSPStream * stream, guint ssrc, GstCaps * crypto
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_stream_query_position</NAME>
+<RETURNS>gboolean           </RETURNS>
+GstRTSPStream * stream, gint64 * position
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_stream_query_stop</NAME>
+<RETURNS>gboolean           </RETURNS>
+GstRTSPStream * stream, gint64 * stop
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_stream_seekable</NAME>
+<RETURNS>gboolean           </RETURNS>
+GstRTSPStream *stream
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_stream_set_seqnum_offset</NAME>
+<RETURNS>void               </RETURNS>
+GstRTSPStream *stream, guint16 seqnum
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_stream_get_current_seqnum</NAME>
+<RETURNS>guint16            </RETURNS>
+GstRTSPStream *stream
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_stream_set_retransmission_time</NAME>
+<RETURNS>void               </RETURNS>
+GstRTSPStream *stream, GstClockTime time
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_stream_get_retransmission_time</NAME>
+<RETURNS>GstClockTime       </RETURNS>
+GstRTSPStream *stream
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_stream_get_retransmission_pt</NAME>
+<RETURNS>guint              </RETURNS>
+GstRTSPStream * stream
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_stream_set_retransmission_pt</NAME>
+<RETURNS>void               </RETURNS>
+GstRTSPStream * stream, guint rtx_pt
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_stream_set_buffer_size</NAME>
+<RETURNS>void               </RETURNS>
+GstRTSPStream *stream, guint size
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_stream_get_buffer_size</NAME>
+<RETURNS>guint              </RETURNS>
+GstRTSPStream *stream
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_stream_set_pt_map</NAME>
+<RETURNS>void               </RETURNS>
+GstRTSPStream * stream, guint pt, GstCaps * caps
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_stream_request_aux_sender</NAME>
+<RETURNS>GstElement  *      </RETURNS>
+GstRTSPStream * stream, guint sessid
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_stream_allocate_udp_sockets</NAME>
+<RETURNS>gboolean           </RETURNS>
+GstRTSPStream * stream, GSocketFamily family, GstRTSPTransport *transport, gboolean use_client_settings
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_stream_set_publish_clock_mode</NAME>
+<RETURNS>void                     </RETURNS>
+GstRTSPStream * stream, GstRTSPPublishClockMode mode
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_stream_get_publish_clock_mode</NAME>
+<RETURNS>GstRTSPPublishClockMode  </RETURNS>
+GstRTSPStream * stream
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_stream_complete_stream</NAME>
+<RETURNS>gboolean           </RETURNS>
+GstRTSPStream * stream, const GstRTSPTransport * transport
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_stream_is_complete</NAME>
+<RETURNS>gboolean            </RETURNS>
+GstRTSPStream * stream
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_stream_is_sender</NAME>
+<RETURNS>gboolean            </RETURNS>
+GstRTSPStream * stream
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_stream_is_receiver</NAME>
+<RETURNS>gboolean            </RETURNS>
+GstRTSPStream * stream
+</FUNCTION>
+<USER_FUNCTION>
+<NAME>GstRTSPStreamTransportFilterFunc</NAME>
+<RETURNS>GstRTSPFilterResult </RETURNS>
+GstRTSPStream *stream,
+                                                                 GstRTSPStreamTransport *trans,
+                                                                 gpointer user_data
+</USER_FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_stream_transport_filter</NAME>
+<RETURNS>GList  *                </RETURNS>
+GstRTSPStream *stream, GstRTSPStreamTransportFilterFunc func, gpointer user_data
+</FUNCTION>
+<STRUCT>
+<NAME>GstRTSPStreamPrivate</NAME>
+</STRUCT>
+<MACRO>
+<NAME>GST_TYPE_RTSP_THREAD_POOL</NAME>
+#define GST_TYPE_RTSP_THREAD_POOL              (gst_rtsp_thread_pool_get_type ())
+</MACRO>
+<MACRO>
+<NAME>GST_IS_RTSP_THREAD_POOL</NAME>
+#define GST_IS_RTSP_THREAD_POOL(obj)           (G_TYPE_CHECK_INSTANCE_TYPE ((obj), GST_TYPE_RTSP_THREAD_POOL))
+</MACRO>
+<MACRO>
+<NAME>GST_IS_RTSP_THREAD_POOL_CLASS</NAME>
+#define GST_IS_RTSP_THREAD_POOL_CLASS(klass)   (G_TYPE_CHECK_CLASS_TYPE ((klass), GST_TYPE_RTSP_THREAD_POOL))
+</MACRO>
+<MACRO>
+<NAME>GST_RTSP_THREAD_POOL_GET_CLASS</NAME>
+#define GST_RTSP_THREAD_POOL_GET_CLASS(obj)    (G_TYPE_INSTANCE_GET_CLASS ((obj), GST_TYPE_RTSP_THREAD_POOL, GstRTSPThreadPoolClass))
+</MACRO>
+<MACRO>
+<NAME>GST_RTSP_THREAD_POOL</NAME>
+#define GST_RTSP_THREAD_POOL(obj)              (G_TYPE_CHECK_INSTANCE_CAST ((obj), GST_TYPE_RTSP_THREAD_POOL, GstRTSPThreadPool))
+</MACRO>
+<MACRO>
+<NAME>GST_RTSP_THREAD_POOL_CLASS</NAME>
+#define GST_RTSP_THREAD_POOL_CLASS(klass)      (G_TYPE_CHECK_CLASS_CAST ((klass), GST_TYPE_RTSP_THREAD_POOL, GstRTSPThreadPoolClass))
+</MACRO>
+<MACRO>
+<NAME>GST_RTSP_THREAD_POOL_CAST</NAME>
+#define GST_RTSP_THREAD_POOL_CAST(obj)         ((GstRTSPThreadPool*)(obj))
+</MACRO>
+<MACRO>
+<NAME>GST_RTSP_THREAD_POOL_CLASS_CAST</NAME>
+#define GST_RTSP_THREAD_POOL_CLASS_CAST(klass) ((GstRTSPThreadPoolClass*)(klass))
+</MACRO>
+<FUNCTION>
+<NAME>gst_rtsp_thread_get_type</NAME>
+<RETURNS>GType  </RETURNS>
+void
+</FUNCTION>
+<MACRO>
+<NAME>GST_TYPE_RTSP_THREAD</NAME>
+#define GST_TYPE_RTSP_THREAD        (gst_rtsp_thread_get_type ())
+</MACRO>
+<MACRO>
+<NAME>GST_IS_RTSP_THREAD</NAME>
+#define GST_IS_RTSP_THREAD(obj)     (GST_IS_MINI_OBJECT_TYPE (obj, GST_TYPE_RTSP_THREAD))
+</MACRO>
+<MACRO>
+<NAME>GST_RTSP_THREAD_CAST</NAME>
+#define GST_RTSP_THREAD_CAST(obj)   ((GstRTSPThread*)(obj))
+</MACRO>
+<MACRO>
+<NAME>GST_RTSP_THREAD</NAME>
+#define GST_RTSP_THREAD(obj)        (GST_RTSP_THREAD_CAST(obj))
+</MACRO>
+<ENUM>
+<NAME>GstRTSPThreadType</NAME>
+typedef enum
+{
+  GST_RTSP_THREAD_TYPE_CLIENT,
+  GST_RTSP_THREAD_TYPE_MEDIA
+} GstRTSPThreadType;
+</ENUM>
+<STRUCT>
+<NAME>GstRTSPThread</NAME>
+struct _GstRTSPThread {
+  GstMiniObject mini_object;
+
+  GstRTSPThreadType type;
+  GMainContext *context;
+  GMainLoop *loop;
+};
+</STRUCT>
+<FUNCTION>
+<NAME>gst_rtsp_thread_new</NAME>
+<RETURNS>GstRTSPThread  *   </RETURNS>
+GstRTSPThreadType type
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_thread_reuse</NAME>
+<RETURNS>gboolean           </RETURNS>
+GstRTSPThread * thread
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_thread_stop</NAME>
+<RETURNS>void               </RETURNS>
+GstRTSPThread * thread
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_thread_ref</NAME>
+<RETURNS>GstRTSPThread  *</RETURNS>
+GstRTSPThread * thread
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_thread_unref</NAME>
+<RETURNS>void</RETURNS>
+GstRTSPThread * thread
+</FUNCTION>
+<STRUCT>
+<NAME>GstRTSPThreadPool</NAME>
+struct _GstRTSPThreadPool {
+  GObject       parent;
+
+  /*< private >*/
+  GstRTSPThreadPoolPrivate *priv;
+  gpointer _gst_reserved[GST_PADDING];
+};
+</STRUCT>
+<STRUCT>
+<NAME>GstRTSPThreadPoolClass</NAME>
+struct _GstRTSPThreadPoolClass {
+  GObjectClass  parent_class;
+
+  GThreadPool *pool;
+
+  GstRTSPThread * (*get_thread)        (GstRTSPThreadPool *pool,
+                                        GstRTSPThreadType type,
+                                        GstRTSPContext *ctx);
+  void            (*configure_thread)  (GstRTSPThreadPool *pool,
+                                        GstRTSPThread * thread,
+                                        GstRTSPContext *ctx);
+
+  void            (*thread_enter)      (GstRTSPThreadPool *pool,
+                                        GstRTSPThread *thread);
+  void            (*thread_leave)      (GstRTSPThreadPool *pool,
+                                        GstRTSPThread *thread);
+
+  /*< private >*/
+  gpointer         _gst_reserved[GST_PADDING];
+};
+</STRUCT>
+<FUNCTION>
+<NAME>gst_rtsp_thread_pool_get_type</NAME>
+<RETURNS>GType                </RETURNS>
+void
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_thread_pool_new</NAME>
+<RETURNS>GstRTSPThreadPool  * </RETURNS>
+void
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_thread_pool_set_max_threads</NAME>
+<RETURNS>void                 </RETURNS>
+GstRTSPThreadPool * pool, gint max_threads
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_thread_pool_get_max_threads</NAME>
+<RETURNS>gint                 </RETURNS>
+GstRTSPThreadPool * pool
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_thread_pool_get_thread</NAME>
+<RETURNS>GstRTSPThread  *     </RETURNS>
+GstRTSPThreadPool *pool, GstRTSPThreadType type, GstRTSPContext *ctx
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_thread_pool_cleanup</NAME>
+<RETURNS>void                 </RETURNS>
+void
+</FUNCTION>
+<STRUCT>
+<NAME>GstRTSPThreadPoolPrivate</NAME>
+</STRUCT>
+<FUNCTION>
+<NAME>gst_rtsp_token_get_type</NAME>
+<RETURNS>GType  </RETURNS>
+void
+</FUNCTION>
+<MACRO>
+<NAME>GST_TYPE_RTSP_TOKEN</NAME>
+#define GST_TYPE_RTSP_TOKEN        (gst_rtsp_token_get_type())
+</MACRO>
+<MACRO>
+<NAME>GST_IS_RTSP_TOKEN</NAME>
+#define GST_IS_RTSP_TOKEN(obj)     (GST_IS_MINI_OBJECT_TYPE (obj, GST_TYPE_RTSP_TOKEN))
+</MACRO>
+<MACRO>
+<NAME>GST_RTSP_TOKEN_CAST</NAME>
+#define GST_RTSP_TOKEN_CAST(obj)   ((GstRTSPToken*)(obj))
+</MACRO>
+<MACRO>
+<NAME>GST_RTSP_TOKEN</NAME>
+#define GST_RTSP_TOKEN(obj)        (GST_RTSP_TOKEN_CAST(obj))
+</MACRO>
+<STRUCT>
+<NAME>GstRTSPToken</NAME>
+struct _GstRTSPToken {
+  GstMiniObject mini_object;
+};
+</STRUCT>
+<FUNCTION>
+<NAME>gst_rtsp_token_ref</NAME>
+<RETURNS>GstRTSPToken  *</RETURNS>
+GstRTSPToken * token
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_token_unref</NAME>
+<RETURNS>void</RETURNS>
+GstRTSPToken * token
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_token_new_empty</NAME>
+<RETURNS>GstRTSPToken  *       </RETURNS>
+void
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_token_new</NAME>
+<RETURNS>GstRTSPToken  *       </RETURNS>
+const gchar * firstfield, ...
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_token_new_valist</NAME>
+<RETURNS>GstRTSPToken  *       </RETURNS>
+const gchar * firstfield, va_list var_args
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_token_get_structure</NAME>
+<RETURNS>const GstStructure  * </RETURNS>
+GstRTSPToken *token
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_token_writable_structure</NAME>
+<RETURNS>GstStructure  *       </RETURNS>
+GstRTSPToken *token
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_token_set_string</NAME>
+<RETURNS>void                  </RETURNS>
+GstRTSPToken * token, const gchar  * field, const gchar  * string_value
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_token_get_string</NAME>
+<RETURNS>const gchar  *        </RETURNS>
+GstRTSPToken *token, const gchar *field
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_token_set_bool</NAME>
+<RETURNS>void                  </RETURNS>
+GstRTSPToken * token, const gchar  * field, gboolean       bool_value
+</FUNCTION>
+<FUNCTION>
+<NAME>gst_rtsp_token_is_allowed</NAME>
+<RETURNS>gboolean              </RETURNS>
+GstRTSPToken *token, const gchar *field
+</FUNCTION>

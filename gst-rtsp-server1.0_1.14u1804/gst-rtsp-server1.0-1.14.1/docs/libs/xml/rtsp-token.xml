@@ -1,0 +1,400 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN"
+               "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd" [
+<!ENTITY % version-entities SYSTEM "version.entities">
+%version-entities;
+]>
+<refentry id="GstRTSPToken">
+<refmeta>
+<refentrytitle role="top_of_page" id="GstRTSPToken.top_of_page">GstRTSPToken</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GST-RTSP-SERVER Library</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>GstRTSPToken</refname>
+<refpurpose>Roles and permissions for a client</refpurpose>
+</refnamediv>
+
+<refsect1 id="GstRTSPToken.functions" role="functions_proto">
+<title role="functions_proto.title">Functions</title>
+<informaltable pgwide="1" frame="none">
+<tgroup cols="2">
+<colspec colname="functions_return" colwidth="150px"/>
+<colspec colname="functions_name"/>
+<tbody>
+<row><entry role="function_type"><link linkend="GstRTSPToken"><returnvalue>GstRTSPToken</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-rtsp-token-new-empty">gst_rtsp_token_new_empty</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstRTSPToken"><returnvalue>GstRTSPToken</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-rtsp-token-new">gst_rtsp_token_new</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstRTSPToken"><returnvalue>GstRTSPToken</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-rtsp-token-new-valist">gst_rtsp_token_new_valist</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstRTSPToken"><returnvalue>GstRTSPToken</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-rtsp-token-ref">gst_rtsp_token_ref</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-rtsp-token-unref">gst_rtsp_token_unref</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type">const <link linkend="GstStructure"><returnvalue>GstStructure</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-rtsp-token-get-structure">gst_rtsp_token_get_structure</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstStructure"><returnvalue>GstStructure</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-rtsp-token-writable-structure">gst_rtsp_token_writable_structure</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-rtsp-token-set-string">gst_rtsp_token_set_string</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type">const <link linkend="gchar"><returnvalue>gchar</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-rtsp-token-get-string">gst_rtsp_token_get_string</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-rtsp-token-set-bool">gst_rtsp_token_set_bool</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-rtsp-token-is-allowed">gst_rtsp_token_is_allowed</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="GstRTSPToken.other" role="other_proto">
+<title role="other_proto.title">Types and Values</title>
+<informaltable role="enum_members_table" pgwide="1" frame="none">
+<tgroup cols="2">
+<colspec colname="name" colwidth="150px"/>
+<colspec colname="description"/>
+<tbody>
+<row><entry role="datatype_keyword">struct</entry><entry role="function_name"><link linkend="GstRTSPToken-struct">GstRTSPToken</link></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="GstRTSPToken.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<screen>    <link linkend="GBoxed">GBoxed</link>
+    <phrase role="lineart">&#9584;&#9472;&#9472;</phrase> GstRTSPToken
+</screen>
+</refsect1>
+
+
+<refsect1 id="GstRTSPToken.description" role="desc">
+<title role="desc.title">Description</title>
+<para>A <link linkend="GstRTSPToken"><type>GstRTSPToken</type></link> contains the permissions and roles of the user
+performing the current request. A token is usually created when a user is
+authenticated by the <link linkend="GstRTSPAuth"><type>GstRTSPAuth</type></link> object and is then placed as the current
+token for the current request.</para>
+<para><link linkend="GstRTSPAuth"><type>GstRTSPAuth</type></link> can use the token and its contents to check authorization for
+various operations by comparing the token to the <link linkend="GstRTSPPermissions"><type>GstRTSPPermissions</type></link> of the
+object.</para>
+<para>The accepted values of the token are entirely defined by the <link linkend="GstRTSPAuth"><type>GstRTSPAuth</type></link>
+object that implements the security policy.</para>
+<para>Last reviewed on 2013-07-15 (1.0.0)</para>
+
+</refsect1>
+<refsect1 id="GstRTSPToken.functions_details" role="details">
+<title role="details.title">Functions</title>
+<refsect2 id="gst-rtsp-token-new-empty" role="function">
+<title>gst_rtsp_token_new_empty&#160;()</title>
+<indexterm zone="gst-rtsp-token-new-empty"><primary>gst_rtsp_token_new_empty</primary></indexterm>
+<programlisting language="C"><link linkend="GstRTSPToken"><returnvalue>GstRTSPToken</returnvalue></link>&#160;*
+gst_rtsp_token_new_empty (<parameter><type>void</type></parameter>);</programlisting>
+<para>Create a new empty Authorization token.</para>
+
+<para><emphasis role="annotation">[<acronym>rename-to</acronym> gst_rtsp_token_new]</emphasis></para><refsect3 id="gst-rtsp-token-new-empty.returns" role="returns">
+<title>Returns</title>
+<para>a new empty authorization token. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-rtsp-token-new" role="function">
+<title>gst_rtsp_token_new&#160;()</title>
+<indexterm zone="gst-rtsp-token-new"><primary>gst_rtsp_token_new</primary></indexterm>
+<programlisting language="C"><link linkend="GstRTSPToken"><returnvalue>GstRTSPToken</returnvalue></link>&#160;*
+gst_rtsp_token_new (<parameter>const <link linkend="gchar"><type>gchar</type></link> *firstfield</parameter>,
+                    <parameter>...</parameter>);</programlisting>
+<para>Create a new Authorization token with the given fieldnames and values.
+Arguments are given similar to <link linkend="gst-structure-new"><function>gst_structure_new()</function></link>.</para>
+
+<para><emphasis role="annotation">[<acronym>skip</acronym>]</emphasis></para><refsect3 id="gst-rtsp-token-new.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>firstfield</para></entry>
+<entry role="parameter_description"><para>the first fieldname</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>...</para></entry>
+<entry role="parameter_description"><para>additional arguments</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-rtsp-token-new.returns" role="returns">
+<title>Returns</title>
+<para>a new authorization token. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-rtsp-token-new-valist" role="function">
+<title>gst_rtsp_token_new_valist&#160;()</title>
+<indexterm zone="gst-rtsp-token-new-valist"><primary>gst_rtsp_token_new_valist</primary></indexterm>
+<programlisting language="C"><link linkend="GstRTSPToken"><returnvalue>GstRTSPToken</returnvalue></link>&#160;*
+gst_rtsp_token_new_valist (<parameter>const <link linkend="gchar"><type>gchar</type></link> *firstfield</parameter>,
+                           <parameter><link linkend="va-list"><type>va_list</type></link> var_args</parameter>);</programlisting>
+<para>Create a new Authorization token with the given fieldnames and values.
+Arguments are given similar to <link linkend="gst-structure-new-valist"><function>gst_structure_new_valist()</function></link>.</para>
+
+<para><emphasis role="annotation">[<acronym>skip</acronym>]</emphasis></para><refsect3 id="gst-rtsp-token-new-valist.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>firstfield</para></entry>
+<entry role="parameter_description"><para>the first fieldname</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>var_args</para></entry>
+<entry role="parameter_description"><para>additional arguments</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-rtsp-token-new-valist.returns" role="returns">
+<title>Returns</title>
+<para>a new authorization token. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-rtsp-token-ref" role="function">
+<title>gst_rtsp_token_ref&#160;()</title>
+<indexterm zone="gst-rtsp-token-ref"><primary>gst_rtsp_token_ref</primary></indexterm>
+<programlisting language="C"><link linkend="GstRTSPToken"><returnvalue>GstRTSPToken</returnvalue></link>&#160;*
+gst_rtsp_token_ref (<parameter><link linkend="GstRTSPToken"><type>GstRTSPToken</type></link> *token</parameter>);</programlisting>
+<para>Increase the refcount of this token.</para>
+<refsect3 id="gst-rtsp-token-ref.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>token</para></entry>
+<entry role="parameter_description"><para>The token to refcount</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-rtsp-token-ref.returns" role="returns">
+<title>Returns</title>
+<para><parameter>token</parameter>
+(for convenience when doing assignments). </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-rtsp-token-unref" role="function">
+<title>gst_rtsp_token_unref&#160;()</title>
+<indexterm zone="gst-rtsp-token-unref"><primary>gst_rtsp_token_unref</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_rtsp_token_unref (<parameter><link linkend="GstRTSPToken"><type>GstRTSPToken</type></link> *token</parameter>);</programlisting>
+<para>Decrease the refcount of an token, freeing it if the refcount reaches 0.</para>
+<refsect3 id="gst-rtsp-token-unref.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>token</para></entry>
+<entry role="parameter_description"><para>the token to refcount. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>transfer full</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-rtsp-token-get-structure" role="function">
+<title>gst_rtsp_token_get_structure&#160;()</title>
+<indexterm zone="gst-rtsp-token-get-structure"><primary>gst_rtsp_token_get_structure</primary></indexterm>
+<programlisting language="C">const <link linkend="GstStructure"><returnvalue>GstStructure</returnvalue></link>&#160;*
+gst_rtsp_token_get_structure (<parameter><link linkend="GstRTSPToken"><type>GstRTSPToken</type></link> *token</parameter>);</programlisting>
+<para>Access the structure of the token.</para>
+<refsect3 id="gst-rtsp-token-get-structure.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>token</para></entry>
+<entry role="parameter_description"><para>The <link linkend="GstRTSPToken"><type>GstRTSPToken</type></link>.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-rtsp-token-get-structure.returns" role="returns">
+<title>Returns</title>
+<para>The structure of the token. The structure is still
+owned by the token, which means that you should not free it and that the
+pointer becomes invalid when you free the token.</para>
+<para>MT safe. </para>
+<para><emphasis role="annotation">[<acronym>transfer none</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-rtsp-token-writable-structure" role="function">
+<title>gst_rtsp_token_writable_structure&#160;()</title>
+<indexterm zone="gst-rtsp-token-writable-structure"><primary>gst_rtsp_token_writable_structure</primary></indexterm>
+<programlisting language="C"><link linkend="GstStructure"><returnvalue>GstStructure</returnvalue></link>&#160;*
+gst_rtsp_token_writable_structure (<parameter><link linkend="GstRTSPToken"><type>GstRTSPToken</type></link> *token</parameter>);</programlisting>
+<para>Get a writable version of the structure.</para>
+<refsect3 id="gst-rtsp-token-writable-structure.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>token</para></entry>
+<entry role="parameter_description"><para>The <link linkend="GstRTSPToken"><type>GstRTSPToken</type></link>.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-rtsp-token-writable-structure.returns" role="returns">
+<title>Returns</title>
+<para>The structure of the token. The structure is still
+owned by the token, which means that you should not free it and that the
+pointer becomes invalid when you free the token. This function checks if
+<parameter>token</parameter>
+is writable and will never return <link linkend="NULL:CAPS"><literal>NULL</literal></link>.</para>
+<para>MT safe. </para>
+<para><emphasis role="annotation">[<acronym>transfer none</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-rtsp-token-set-string" role="function" condition="since:1.14">
+<title>gst_rtsp_token_set_string&#160;()</title>
+<indexterm zone="gst-rtsp-token-set-string" role="1.14"><primary>gst_rtsp_token_set_string</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_rtsp_token_set_string (<parameter><link linkend="GstRTSPToken"><type>GstRTSPToken</type></link> *token</parameter>,
+                           <parameter>const <link linkend="gchar"><type>gchar</type></link> *field</parameter>,
+                           <parameter>const <link linkend="gchar"><type>gchar</type></link> *string_value</parameter>);</programlisting>
+<para>Sets a string value on <parameter>token</parameter>
+.</para>
+<refsect3 id="gst-rtsp-token-set-string.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>token</para></entry>
+<entry role="parameter_description"><para>The <link linkend="GstRTSPToken"><type>GstRTSPToken</type></link>.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>field</para></entry>
+<entry role="parameter_description"><para>field to set</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>string_value</para></entry>
+<entry role="parameter_description"><para>string value to set</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><para role="since">Since: <link linkend="api-index-1.14">1.14</link></para></refsect2>
+<refsect2 id="gst-rtsp-token-get-string" role="function">
+<title>gst_rtsp_token_get_string&#160;()</title>
+<indexterm zone="gst-rtsp-token-get-string"><primary>gst_rtsp_token_get_string</primary></indexterm>
+<programlisting language="C">const <link linkend="gchar"><returnvalue>gchar</returnvalue></link>&#160;*
+gst_rtsp_token_get_string (<parameter><link linkend="GstRTSPToken"><type>GstRTSPToken</type></link> *token</parameter>,
+                           <parameter>const <link linkend="gchar"><type>gchar</type></link> *field</parameter>);</programlisting>
+<para>Get the string value of <parameter>field</parameter>
+ in <parameter>token</parameter>
+.</para>
+<refsect3 id="gst-rtsp-token-get-string.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>token</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstRTSPToken"><type>GstRTSPToken</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>field</para></entry>
+<entry role="parameter_description"><para>a field name</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-rtsp-token-get-string.returns" role="returns">
+<title>Returns</title>
+<para>the string value of <parameter>field</parameter>
+in
+<parameter>token</parameter>
+or <link linkend="NULL:CAPS"><literal>NULL</literal></link> when <parameter>field</parameter>
+is not defined in <parameter>token</parameter>
+. The string
+becomes invalid when you free <parameter>token</parameter>
+. </para>
+<para><emphasis role="annotation">[<acronym>transfer none</acronym>][<acronym>nullable</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-rtsp-token-set-bool" role="function" condition="since:1.14">
+<title>gst_rtsp_token_set_bool&#160;()</title>
+<indexterm zone="gst-rtsp-token-set-bool" role="1.14"><primary>gst_rtsp_token_set_bool</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_rtsp_token_set_bool (<parameter><link linkend="GstRTSPToken"><type>GstRTSPToken</type></link> *token</parameter>,
+                         <parameter>const <link linkend="gchar"><type>gchar</type></link> *field</parameter>,
+                         <parameter><link linkend="gboolean"><type>gboolean</type></link> bool_value</parameter>);</programlisting>
+<para>Sets a boolean value on <parameter>token</parameter>
+.</para>
+<refsect3 id="gst-rtsp-token-set-bool.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>token</para></entry>
+<entry role="parameter_description"><para>The <link linkend="GstRTSPToken"><type>GstRTSPToken</type></link>.</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>field</para></entry>
+<entry role="parameter_description"><para>field to set</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>bool_value</para></entry>
+<entry role="parameter_description"><para>boolean value to set</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><para role="since">Since: <link linkend="api-index-1.14">1.14</link></para></refsect2>
+<refsect2 id="gst-rtsp-token-is-allowed" role="function">
+<title>gst_rtsp_token_is_allowed&#160;()</title>
+<indexterm zone="gst-rtsp-token-is-allowed"><primary>gst_rtsp_token_is_allowed</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_rtsp_token_is_allowed (<parameter><link linkend="GstRTSPToken"><type>GstRTSPToken</type></link> *token</parameter>,
+                           <parameter>const <link linkend="gchar"><type>gchar</type></link> *field</parameter>);</programlisting>
+<para>Check if <parameter>token</parameter>
+ has a boolean <parameter>field</parameter>
+ and if it is set to <link linkend="TRUE:CAPS"><literal>TRUE</literal></link>.</para>
+<refsect3 id="gst-rtsp-token-is-allowed.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>token</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstRTSPToken"><type>GstRTSPToken</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>field</para></entry>
+<entry role="parameter_description"><para>a field name</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-rtsp-token-is-allowed.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if <parameter>token</parameter>
+has a boolean field named <parameter>field</parameter>
+set to <link linkend="TRUE:CAPS"><literal>TRUE</literal></link>.</para>
+</refsect3></refsect2>
+
+</refsect1>
+<refsect1 id="GstRTSPToken.other_details" role="details">
+<title role="details.title">Types and Values</title>
+<refsect2 id="GstRTSPToken-struct" role="struct">
+<title>struct GstRTSPToken</title>
+<indexterm zone="GstRTSPToken-struct"><primary>GstRTSPToken</primary></indexterm>
+<programlisting language="C">struct GstRTSPToken {
+  GstMiniObject mini_object;
+};
+</programlisting>
+<para>An opaque object used for checking authorisations.
+It is generated after successful authentication.</para>
+</refsect2>
+
+</refsect1>
+<refsect1 id="GstRTSPToken.see-also">
+<title>See Also</title>
+<para><link linkend="GstRTSPClient"><type>GstRTSPClient</type></link>, <link linkend="GstRTSPPermissions"><type>GstRTSPPermissions</type></link>, <link linkend="GstRTSPAuth"><type>GstRTSPAuth</type></link></para>
+
+</refsect1>
+
+</refentry>

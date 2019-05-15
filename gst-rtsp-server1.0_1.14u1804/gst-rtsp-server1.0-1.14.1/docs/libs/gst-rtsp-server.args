@@ -1,0 +1,430 @@
+<ARG>
+<NAME>GstRTSPMediaFactory::buffer-size</NAME>
+<TYPE>guint</TYPE>
+<RANGE></RANGE>
+<FLAGS>rw</FLAGS>
+<NICK>Buffer Size</NICK>
+<BLURB>The kernel UDP buffer size to use.</BLURB>
+<DEFAULT>524288</DEFAULT>
+</ARG>
+
+<ARG>
+<NAME>GstRTSPMediaFactory::clock</NAME>
+<TYPE>GstClock*</TYPE>
+<RANGE></RANGE>
+<FLAGS>rw</FLAGS>
+<NICK>Clock</NICK>
+<BLURB>Clock to be used by the pipelines created for all medias of this factory.</BLURB>
+<DEFAULT></DEFAULT>
+</ARG>
+
+<ARG>
+<NAME>GstRTSPMediaFactory::eos-shutdown</NAME>
+<TYPE>gboolean</TYPE>
+<RANGE></RANGE>
+<FLAGS>rw</FLAGS>
+<NICK>EOS Shutdown</NICK>
+<BLURB>Send EOS down the pipeline before shutting down.</BLURB>
+<DEFAULT>FALSE</DEFAULT>
+</ARG>
+
+<ARG>
+<NAME>GstRTSPMediaFactory::latency</NAME>
+<TYPE>guint</TYPE>
+<RANGE></RANGE>
+<FLAGS>rw</FLAGS>
+<NICK>Latency</NICK>
+<BLURB>Latency used for receiving media in milliseconds.</BLURB>
+<DEFAULT>200</DEFAULT>
+</ARG>
+
+<ARG>
+<NAME>GstRTSPMediaFactory::launch</NAME>
+<TYPE>gchar*</TYPE>
+<RANGE></RANGE>
+<FLAGS>rw</FLAGS>
+<NICK>Launch</NICK>
+<BLURB>A launch description of the pipeline.</BLURB>
+<DEFAULT>NULL</DEFAULT>
+</ARG>
+
+<ARG>
+<NAME>GstRTSPMediaFactory::profiles</NAME>
+<TYPE>GstRTSPProfile</TYPE>
+<RANGE></RANGE>
+<FLAGS>rw</FLAGS>
+<NICK>Profiles</NICK>
+<BLURB>Allowed transfer profiles.</BLURB>
+<DEFAULT>GST_RTSP_PROFILE_AVP</DEFAULT>
+</ARG>
+
+<ARG>
+<NAME>GstRTSPMediaFactory::protocols</NAME>
+<TYPE>GstRTSPLowerTrans</TYPE>
+<RANGE></RANGE>
+<FLAGS>rw</FLAGS>
+<NICK>Protocols</NICK>
+<BLURB>Allowed lower transport protocols.</BLURB>
+<DEFAULT>GST_RTSP_LOWER_TRANS_UDP | GST_RTSP_LOWER_TRANS_UDP_MCAST | GST_RTSP_LOWER_TRANS_TCP</DEFAULT>
+</ARG>
+
+<ARG>
+<NAME>GstRTSPMediaFactory::shared</NAME>
+<TYPE>gboolean</TYPE>
+<RANGE></RANGE>
+<FLAGS>rw</FLAGS>
+<NICK>Shared</NICK>
+<BLURB>If media from this factory is shared.</BLURB>
+<DEFAULT>FALSE</DEFAULT>
+</ARG>
+
+<ARG>
+<NAME>GstRTSPMediaFactory::stop-on-disconnect</NAME>
+<TYPE>gboolean</TYPE>
+<RANGE></RANGE>
+<FLAGS>rw</FLAGS>
+<NICK>Stop On Disconnect</NICK>
+<BLURB>If media from this factory should be stopped when a client disconnects without TEARDOWN.</BLURB>
+<DEFAULT>TRUE</DEFAULT>
+</ARG>
+
+<ARG>
+<NAME>GstRTSPMediaFactory::suspend-mode</NAME>
+<TYPE>GstRTSPSuspendMode</TYPE>
+<RANGE></RANGE>
+<FLAGS>rw</FLAGS>
+<NICK>Suspend Mode</NICK>
+<BLURB>Control how media will be suspended.</BLURB>
+<DEFAULT>GST_RTSP_SUSPEND_MODE_NONE</DEFAULT>
+</ARG>
+
+<ARG>
+<NAME>GstRTSPMediaFactory::transport-mode</NAME>
+<TYPE>GstRTSPTransportMode</TYPE>
+<RANGE></RANGE>
+<FLAGS>rw</FLAGS>
+<NICK>Transport Mode</NICK>
+<BLURB>If media from this factory is for PLAY or RECORD.</BLURB>
+<DEFAULT>GST_RTSP_TRANSPORT_MODE_PLAY</DEFAULT>
+</ARG>
+
+<ARG>
+<NAME>GstRTSPMedia::buffer-size</NAME>
+<TYPE>guint</TYPE>
+<RANGE></RANGE>
+<FLAGS>rw</FLAGS>
+<NICK>Buffer Size</NICK>
+<BLURB>The kernel UDP buffer size to use.</BLURB>
+<DEFAULT>524288</DEFAULT>
+</ARG>
+
+<ARG>
+<NAME>GstRTSPMedia::clock</NAME>
+<TYPE>GstClock*</TYPE>
+<RANGE></RANGE>
+<FLAGS>rw</FLAGS>
+<NICK>Clock</NICK>
+<BLURB>Clock to be used by the media pipeline.</BLURB>
+<DEFAULT></DEFAULT>
+</ARG>
+
+<ARG>
+<NAME>GstRTSPMedia::element</NAME>
+<TYPE>GstElement*</TYPE>
+<RANGE></RANGE>
+<FLAGS>rwX</FLAGS>
+<NICK>The Element</NICK>
+<BLURB>The GstBin to use for streaming the media.</BLURB>
+<DEFAULT></DEFAULT>
+</ARG>
+
+<ARG>
+<NAME>GstRTSPMedia::eos-shutdown</NAME>
+<TYPE>gboolean</TYPE>
+<RANGE></RANGE>
+<FLAGS>rw</FLAGS>
+<NICK>EOS Shutdown</NICK>
+<BLURB>Send an EOS event to the pipeline before unpreparing.</BLURB>
+<DEFAULT>FALSE</DEFAULT>
+</ARG>
+
+<ARG>
+<NAME>GstRTSPMedia::latency</NAME>
+<TYPE>guint</TYPE>
+<RANGE></RANGE>
+<FLAGS>rw</FLAGS>
+<NICK>Latency</NICK>
+<BLURB>Latency used for receiving media in milliseconds.</BLURB>
+<DEFAULT>524288</DEFAULT>
+</ARG>
+
+<ARG>
+<NAME>GstRTSPMedia::profiles</NAME>
+<TYPE>GstRTSPProfile</TYPE>
+<RANGE></RANGE>
+<FLAGS>rw</FLAGS>
+<NICK>Profiles</NICK>
+<BLURB>Allowed transfer profiles.</BLURB>
+<DEFAULT>GST_RTSP_PROFILE_AVP</DEFAULT>
+</ARG>
+
+<ARG>
+<NAME>GstRTSPMedia::protocols</NAME>
+<TYPE>GstRTSPLowerTrans</TYPE>
+<RANGE></RANGE>
+<FLAGS>rw</FLAGS>
+<NICK>Protocols</NICK>
+<BLURB>Allowed lower transport protocols.</BLURB>
+<DEFAULT>GST_RTSP_LOWER_TRANS_UDP | GST_RTSP_LOWER_TRANS_UDP_MCAST | GST_RTSP_LOWER_TRANS_TCP</DEFAULT>
+</ARG>
+
+<ARG>
+<NAME>GstRTSPMedia::reusable</NAME>
+<TYPE>gboolean</TYPE>
+<RANGE></RANGE>
+<FLAGS>rw</FLAGS>
+<NICK>Reusable</NICK>
+<BLURB>If this media pipeline can be reused after an unprepare.</BLURB>
+<DEFAULT>FALSE</DEFAULT>
+</ARG>
+
+<ARG>
+<NAME>GstRTSPMedia::shared</NAME>
+<TYPE>gboolean</TYPE>
+<RANGE></RANGE>
+<FLAGS>rw</FLAGS>
+<NICK>Shared</NICK>
+<BLURB>If this media pipeline can be shared.</BLURB>
+<DEFAULT>FALSE</DEFAULT>
+</ARG>
+
+<ARG>
+<NAME>GstRTSPMedia::stop-on-disconnect</NAME>
+<TYPE>gboolean</TYPE>
+<RANGE></RANGE>
+<FLAGS>rw</FLAGS>
+<NICK>Stop On Disconnect</NICK>
+<BLURB>If this media pipeline should be stopped when a client disconnects without TEARDOWN.</BLURB>
+<DEFAULT>TRUE</DEFAULT>
+</ARG>
+
+<ARG>
+<NAME>GstRTSPMedia::suspend-mode</NAME>
+<TYPE>GstRTSPSuspendMode</TYPE>
+<RANGE></RANGE>
+<FLAGS>rw</FLAGS>
+<NICK>Suspend Mode</NICK>
+<BLURB>How to suspend the media in PAUSED.</BLURB>
+<DEFAULT>GST_RTSP_SUSPEND_MODE_NONE</DEFAULT>
+</ARG>
+
+<ARG>
+<NAME>GstRTSPMedia::time-provider</NAME>
+<TYPE>gboolean</TYPE>
+<RANGE></RANGE>
+<FLAGS>rw</FLAGS>
+<NICK>Time Provider</NICK>
+<BLURB>Use a NetTimeProvider for clients.</BLURB>
+<DEFAULT>FALSE</DEFAULT>
+</ARG>
+
+<ARG>
+<NAME>GstRTSPMedia::transport-mode</NAME>
+<TYPE>GstRTSPTransportMode</TYPE>
+<RANGE></RANGE>
+<FLAGS>rw</FLAGS>
+<NICK>Transport Mode</NICK>
+<BLURB>If this media pipeline can be used for PLAY or RECORD.</BLURB>
+<DEFAULT>GST_RTSP_TRANSPORT_MODE_PLAY</DEFAULT>
+</ARG>
+
+<ARG>
+<NAME>GstRTSPServer::address</NAME>
+<TYPE>gchar*</TYPE>
+<RANGE></RANGE>
+<FLAGS>rw</FLAGS>
+<NICK>Address</NICK>
+<BLURB>The address the server uses to listen on.</BLURB>
+<DEFAULT>"0.0.0.0"</DEFAULT>
+</ARG>
+
+<ARG>
+<NAME>GstRTSPServer::backlog</NAME>
+<TYPE>gint</TYPE>
+<RANGE>>= 0</RANGE>
+<FLAGS>rw</FLAGS>
+<NICK>Backlog</NICK>
+<BLURB>The maximum length to which the queue of pending connections may grow.</BLURB>
+<DEFAULT>5</DEFAULT>
+</ARG>
+
+<ARG>
+<NAME>GstRTSPServer::bound-port</NAME>
+<TYPE>gint</TYPE>
+<RANGE>[-1,65535]</RANGE>
+<FLAGS>r</FLAGS>
+<NICK>Bound port</NICK>
+<BLURB>The port number the server is listening on.</BLURB>
+<DEFAULT>-1</DEFAULT>
+</ARG>
+
+<ARG>
+<NAME>GstRTSPServer::mount-points</NAME>
+<TYPE>GstRTSPMountPoints*</TYPE>
+<RANGE></RANGE>
+<FLAGS>rw</FLAGS>
+<NICK>Mount Points</NICK>
+<BLURB>The mount points to use for client session.</BLURB>
+<DEFAULT></DEFAULT>
+</ARG>
+
+<ARG>
+<NAME>GstRTSPServer::service</NAME>
+<TYPE>gchar*</TYPE>
+<RANGE></RANGE>
+<FLAGS>rw</FLAGS>
+<NICK>Service</NICK>
+<BLURB>The service or port number the server uses to listen on.</BLURB>
+<DEFAULT>"8554"</DEFAULT>
+</ARG>
+
+<ARG>
+<NAME>GstRTSPServer::session-pool</NAME>
+<TYPE>GstRTSPSessionPool*</TYPE>
+<RANGE></RANGE>
+<FLAGS>rw</FLAGS>
+<NICK>Session Pool</NICK>
+<BLURB>The session pool to use for client session.</BLURB>
+<DEFAULT></DEFAULT>
+</ARG>
+
+<ARG>
+<NAME>GstRTSPSessionPool::max-sessions</NAME>
+<TYPE>guint</TYPE>
+<RANGE></RANGE>
+<FLAGS>rw</FLAGS>
+<NICK>Max Sessions</NICK>
+<BLURB>the maximum amount of sessions (0 = unlimited).</BLURB>
+<DEFAULT>0</DEFAULT>
+</ARG>
+
+<ARG>
+<NAME>GstRTSPSession::sessionid</NAME>
+<TYPE>gchar*</TYPE>
+<RANGE></RANGE>
+<FLAGS>rwX</FLAGS>
+<NICK>Sessionid</NICK>
+<BLURB>the session id.</BLURB>
+<DEFAULT>NULL</DEFAULT>
+</ARG>
+
+<ARG>
+<NAME>GstRTSPSession::timeout</NAME>
+<TYPE>guint</TYPE>
+<RANGE></RANGE>
+<FLAGS>rw</FLAGS>
+<NICK>timeout</NICK>
+<BLURB>the timeout of the session (0 = never).</BLURB>
+<DEFAULT>60</DEFAULT>
+</ARG>
+
+<ARG>
+<NAME>GstRTSPSession::timeout-always-visible</NAME>
+<TYPE>gboolean</TYPE>
+<RANGE></RANGE>
+<FLAGS>rw</FLAGS>
+<NICK>Timeout Always Visible </NICK>
+<BLURB>timeout always visible in header.</BLURB>
+<DEFAULT>FALSE</DEFAULT>
+</ARG>
+
+<ARG>
+<NAME>GstRTSPClient::drop-backlog</NAME>
+<TYPE>gboolean</TYPE>
+<RANGE></RANGE>
+<FLAGS>rw</FLAGS>
+<NICK>Drop Backlog</NICK>
+<BLURB>Drop data when the backlog queue is full.</BLURB>
+<DEFAULT>TRUE</DEFAULT>
+</ARG>
+
+<ARG>
+<NAME>GstRTSPClient::mount-points</NAME>
+<TYPE>GstRTSPMountPoints*</TYPE>
+<RANGE></RANGE>
+<FLAGS>rw</FLAGS>
+<NICK>Mount Points</NICK>
+<BLURB>The mount points to use for client session.</BLURB>
+<DEFAULT></DEFAULT>
+</ARG>
+
+<ARG>
+<NAME>GstRTSPClient::session-pool</NAME>
+<TYPE>GstRTSPSessionPool*</TYPE>
+<RANGE></RANGE>
+<FLAGS>rw</FLAGS>
+<NICK>Session Pool</NICK>
+<BLURB>The session pool to use for client session.</BLURB>
+<DEFAULT></DEFAULT>
+</ARG>
+
+<ARG>
+<NAME>GstRTSPMediaFactoryURI::uri</NAME>
+<TYPE>gchar*</TYPE>
+<RANGE></RANGE>
+<FLAGS>rw</FLAGS>
+<NICK>URI</NICK>
+<BLURB>The URI of the resource to stream.</BLURB>
+<DEFAULT>NULL</DEFAULT>
+</ARG>
+
+<ARG>
+<NAME>GstRTSPMediaFactoryURI::use-gstpay</NAME>
+<TYPE>gboolean</TYPE>
+<RANGE></RANGE>
+<FLAGS>rw</FLAGS>
+<NICK>Use gstpay</NICK>
+<BLURB>Use the gstpay payloader to avoid decoding.</BLURB>
+<DEFAULT>FALSE</DEFAULT>
+</ARG>
+
+<ARG>
+<NAME>GstRTSPStream::control</NAME>
+<TYPE>gchar*</TYPE>
+<RANGE></RANGE>
+<FLAGS>rw</FLAGS>
+<NICK>Control</NICK>
+<BLURB>The control string for this stream.</BLURB>
+<DEFAULT>NULL</DEFAULT>
+</ARG>
+
+<ARG>
+<NAME>GstRTSPStream::profiles</NAME>
+<TYPE>GstRTSPProfile</TYPE>
+<RANGE></RANGE>
+<FLAGS>rw</FLAGS>
+<NICK>Profiles</NICK>
+<BLURB>Allowed transfer profiles.</BLURB>
+<DEFAULT>GST_RTSP_PROFILE_AVP</DEFAULT>
+</ARG>
+
+<ARG>
+<NAME>GstRTSPStream::protocols</NAME>
+<TYPE>GstRTSPLowerTrans</TYPE>
+<RANGE></RANGE>
+<FLAGS>rw</FLAGS>
+<NICK>Protocols</NICK>
+<BLURB>Allowed lower transport protocols.</BLURB>
+<DEFAULT>GST_RTSP_LOWER_TRANS_UDP | GST_RTSP_LOWER_TRANS_UDP_MCAST | GST_RTSP_LOWER_TRANS_TCP</DEFAULT>
+</ARG>
+
+<ARG>
+<NAME>GstRTSPThreadPool::max-threads</NAME>
+<TYPE>gint</TYPE>
+<RANGE>>= -1</RANGE>
+<FLAGS>rw</FLAGS>
+<NICK>Max Threads</NICK>
+<BLURB>The maximum amount of threads to use for client connections (0 = only mainloop, -1 = unlimited).</BLURB>
+<DEFAULT>1</DEFAULT>
+</ARG>
+

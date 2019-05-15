@@ -1,0 +1,405 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN"
+               "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd" [
+<!ENTITY % version-entities SYSTEM "version.entities">
+%version-entities;
+]>
+<refentry id="GstRTSPPermissions">
+<refmeta>
+<refentrytitle role="top_of_page" id="GstRTSPPermissions.top_of_page">GstRTSPPermissions</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GST-RTSP-SERVER Library</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>GstRTSPPermissions</refname>
+<refpurpose>Roles and associated permissions</refpurpose>
+</refnamediv>
+
+<refsect1 id="GstRTSPPermissions.functions" role="functions_proto">
+<title role="functions_proto.title">Functions</title>
+<informaltable pgwide="1" frame="none">
+<tgroup cols="2">
+<colspec colname="functions_return" colwidth="150px"/>
+<colspec colname="functions_name"/>
+<tbody>
+<row><entry role="function_type"><link linkend="GstRTSPPermissions"><returnvalue>GstRTSPPermissions</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-rtsp-permissions-new">gst_rtsp_permissions_new</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstRTSPPermissions"><returnvalue>GstRTSPPermissions</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-rtsp-permissions-ref">gst_rtsp_permissions_ref</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-rtsp-permissions-unref">gst_rtsp_permissions_unref</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-rtsp-permissions-add-role">gst_rtsp_permissions_add_role</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-rtsp-permissions-add-role-valist">gst_rtsp_permissions_add_role_valist</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-rtsp-permissions-add-role-empty">gst_rtsp_permissions_add_role_empty</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-rtsp-permissions-add-role-from-structure">gst_rtsp_permissions_add_role_from_structure</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-rtsp-permissions-add-permission-for-role">gst_rtsp_permissions_add_permission_for_role</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-rtsp-permissions-remove-role">gst_rtsp_permissions_remove_role</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type">const <link linkend="GstStructure"><returnvalue>GstStructure</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-rtsp-permissions-get-role">gst_rtsp_permissions_get_role</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-rtsp-permissions-is-allowed">gst_rtsp_permissions_is_allowed</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="GstRTSPPermissions.other" role="other_proto">
+<title role="other_proto.title">Types and Values</title>
+<informaltable role="enum_members_table" pgwide="1" frame="none">
+<tgroup cols="2">
+<colspec colname="name" colwidth="150px"/>
+<colspec colname="description"/>
+<tbody>
+<row><entry role="datatype_keyword">struct</entry><entry role="function_name"><link linkend="GstRTSPPermissions-struct">GstRTSPPermissions</link></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="GstRTSPPermissions.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<screen>    <link linkend="GBoxed">GBoxed</link>
+    <phrase role="lineart">&#9584;&#9472;&#9472;</phrase> GstRTSPPermissions
+</screen>
+</refsect1>
+
+
+<refsect1 id="GstRTSPPermissions.description" role="desc">
+<title role="desc.title">Description</title>
+<para>The <link linkend="GstRTSPPermissions"><type>GstRTSPPermissions</type></link> object contains an array of roles and associated
+permissions. The roles are represented with a string and the permissions with
+a generic <link linkend="GstStructure"><type>GstStructure</type></link>.</para>
+<para>The permissions are deliberately kept generic. The possible values of the
+roles and <link linkend="GstStructure"><type>GstStructure</type></link> keys and values are only determined by the <link linkend="GstRTSPAuth"><type>GstRTSPAuth</type></link>
+object that performs the checks on the permissions and the current
+<link linkend="GstRTSPToken"><type>GstRTSPToken</type></link>.</para>
+<para>As a convenience function, <link linkend="gst-rtsp-permissions-is-allowed"><function>gst_rtsp_permissions_is_allowed()</function></link> can be used to
+check if the permissions contains a role that contains the boolean value
+<link linkend="TRUE:CAPS"><literal>TRUE</literal></link> for the the given key.</para>
+<para>Last reviewed on 2013-07-15 (1.0.0)</para>
+
+</refsect1>
+<refsect1 id="GstRTSPPermissions.functions_details" role="details">
+<title role="details.title">Functions</title>
+<refsect2 id="gst-rtsp-permissions-new" role="function">
+<title>gst_rtsp_permissions_new&#160;()</title>
+<indexterm zone="gst-rtsp-permissions-new"><primary>gst_rtsp_permissions_new</primary></indexterm>
+<programlisting language="C"><link linkend="GstRTSPPermissions"><returnvalue>GstRTSPPermissions</returnvalue></link>&#160;*
+gst_rtsp_permissions_new (<parameter><type>void</type></parameter>);</programlisting>
+<para>Create a new empty Authorization permissions.</para>
+<refsect3 id="gst-rtsp-permissions-new.returns" role="returns">
+<title>Returns</title>
+<para>a new empty authorization permissions. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-rtsp-permissions-ref" role="function">
+<title>gst_rtsp_permissions_ref&#160;()</title>
+<indexterm zone="gst-rtsp-permissions-ref"><primary>gst_rtsp_permissions_ref</primary></indexterm>
+<programlisting language="C"><link linkend="GstRTSPPermissions"><returnvalue>GstRTSPPermissions</returnvalue></link>&#160;*
+gst_rtsp_permissions_ref (<parameter><link linkend="GstRTSPPermissions"><type>GstRTSPPermissions</type></link> *permissions</parameter>);</programlisting>
+<para>Increase the refcount of this permissions.</para>
+<refsect3 id="gst-rtsp-permissions-ref.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>permissions</para></entry>
+<entry role="parameter_description"><para>The permissions to refcount</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-rtsp-permissions-ref.returns" role="returns">
+<title>Returns</title>
+<para><parameter>permissions</parameter>
+(for convenience when doing assignments). </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-rtsp-permissions-unref" role="function">
+<title>gst_rtsp_permissions_unref&#160;()</title>
+<indexterm zone="gst-rtsp-permissions-unref"><primary>gst_rtsp_permissions_unref</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_rtsp_permissions_unref (<parameter><link linkend="GstRTSPPermissions"><type>GstRTSPPermissions</type></link> *permissions</parameter>);</programlisting>
+<para>Decrease the refcount of an permissions, freeing it if the refcount reaches 0.</para>
+<refsect3 id="gst-rtsp-permissions-unref.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>permissions</para></entry>
+<entry role="parameter_description"><para>the permissions to refcount. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>transfer full</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-rtsp-permissions-add-role" role="function">
+<title>gst_rtsp_permissions_add_role&#160;()</title>
+<indexterm zone="gst-rtsp-permissions-add-role"><primary>gst_rtsp_permissions_add_role</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_rtsp_permissions_add_role (<parameter><link linkend="GstRTSPPermissions"><type>GstRTSPPermissions</type></link> *permissions</parameter>,
+                               <parameter>const <link linkend="gchar"><type>gchar</type></link> *role</parameter>,
+                               <parameter>const <link linkend="gchar"><type>gchar</type></link> *fieldname</parameter>,
+                               <parameter>...</parameter>);</programlisting>
+<para>Add a new <parameter>role</parameter>
+ to <parameter>permissions</parameter>
+ with the given variables. The fields
+are the same layout as <link linkend="gst-structure-new"><function>gst_structure_new()</function></link>.</para>
+<refsect3 id="gst-rtsp-permissions-add-role.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>permissions</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstRTSPPermissions"><type>GstRTSPPermissions</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>role</para></entry>
+<entry role="parameter_description"><para>a role</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>fieldname</para></entry>
+<entry role="parameter_description"><para>the first field name</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>...</para></entry>
+<entry role="parameter_description"><para>additional arguments</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-rtsp-permissions-add-role-valist" role="function">
+<title>gst_rtsp_permissions_add_role_valist&#160;()</title>
+<indexterm zone="gst-rtsp-permissions-add-role-valist"><primary>gst_rtsp_permissions_add_role_valist</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_rtsp_permissions_add_role_valist (<parameter><link linkend="GstRTSPPermissions"><type>GstRTSPPermissions</type></link> *permissions</parameter>,
+                                      <parameter>const <link linkend="gchar"><type>gchar</type></link> *role</parameter>,
+                                      <parameter>const <link linkend="gchar"><type>gchar</type></link> *fieldname</parameter>,
+                                      <parameter><link linkend="va-list"><type>va_list</type></link> var_args</parameter>);</programlisting>
+<para>Add a new <parameter>role</parameter>
+ to <parameter>permissions</parameter>
+ with the given variables. Structure fields
+are set according to the varargs in a manner similar to <link linkend="gst-structure-new"><function>gst_structure_new()</function></link>.</para>
+<refsect3 id="gst-rtsp-permissions-add-role-valist.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>permissions</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstRTSPPermissions"><type>GstRTSPPermissions</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>role</para></entry>
+<entry role="parameter_description"><para>a role</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>fieldname</para></entry>
+<entry role="parameter_description"><para>the first field name</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>var_args</para></entry>
+<entry role="parameter_description"><para>additional fields to add</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-rtsp-permissions-add-role-empty" role="function" condition="since:1.14">
+<title>gst_rtsp_permissions_add_role_empty&#160;()</title>
+<indexterm zone="gst-rtsp-permissions-add-role-empty" role="1.14"><primary>gst_rtsp_permissions_add_role_empty</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_rtsp_permissions_add_role_empty (<parameter><link linkend="GstRTSPPermissions"><type>GstRTSPPermissions</type></link> *permissions</parameter>,
+                                     <parameter>const <link linkend="gchar"><type>gchar</type></link> *role</parameter>);</programlisting>
+<para>Add a new <parameter>role</parameter>
+ to <parameter>permissions</parameter>
+ without any permissions. You can add
+permissions for the role with <link linkend="gst-rtsp-permissions-add-permission-for-role"><function>gst_rtsp_permissions_add_permission_for_role()</function></link>.</para>
+
+<para><emphasis role="annotation">[<acronym>rename-to</acronym> gst_rtsp_permissions_add_role]</emphasis></para><refsect3 id="gst-rtsp-permissions-add-role-empty.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>permissions</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstRTSPPermissions"><type>GstRTSPPermissions</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>role</para></entry>
+<entry role="parameter_description"><para>a role</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><para role="since">Since: <link linkend="api-index-1.14">1.14</link></para></refsect2>
+<refsect2 id="gst-rtsp-permissions-add-role-from-structure" role="function" condition="since:1.14">
+<title>gst_rtsp_permissions_add_role_from_structure&#160;()</title>
+<indexterm zone="gst-rtsp-permissions-add-role-from-structure" role="1.14"><primary>gst_rtsp_permissions_add_role_from_structure</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_rtsp_permissions_add_role_from_structure
+                               (<parameter><link linkend="GstRTSPPermissions"><type>GstRTSPPermissions</type></link> *permissions</parameter>,
+                                <parameter><link linkend="GstStructure"><type>GstStructure</type></link> *structure</parameter>);</programlisting>
+<para>Add a new role to <parameter>permissions</parameter>
+ based on <parameter>structure</parameter>
+, for example
+given a role named <literal>tester</literal>, which should be granted a permission named
+<literal>permission1</literal>, the structure could be created with:</para>
+<para><literal>
+gst_structure_new ("tester", "permission1", G_TYPE_BOOLEAN, TRUE, NULL);
+</literal></para>
+<para role="since">Since: <link linkend="api-index-1.14">1.14</link></para></refsect2>
+<refsect2 id="gst-rtsp-permissions-add-permission-for-role" role="function" condition="since:1.14">
+<title>gst_rtsp_permissions_add_permission_for_role&#160;()</title>
+<indexterm zone="gst-rtsp-permissions-add-permission-for-role" role="1.14"><primary>gst_rtsp_permissions_add_permission_for_role</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_rtsp_permissions_add_permission_for_role
+                               (<parameter><link linkend="GstRTSPPermissions"><type>GstRTSPPermissions</type></link> *permissions</parameter>,
+                                <parameter>const <link linkend="gchar"><type>gchar</type></link> *role</parameter>,
+                                <parameter>const <link linkend="gchar"><type>gchar</type></link> *permission</parameter>,
+                                <parameter><link linkend="gboolean"><type>gboolean</type></link> allowed</parameter>);</programlisting>
+<para>Add a new <parameter>permission</parameter>
+ for <parameter>role</parameter>
+ to <parameter>permissions</parameter>
+ with the access in <parameter>allowed</parameter>
+.</para>
+<refsect3 id="gst-rtsp-permissions-add-permission-for-role.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>permissions</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstRTSPPermissions"><type>GstRTSPPermissions</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>role</para></entry>
+<entry role="parameter_description"><para>a role</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>permission</para></entry>
+<entry role="parameter_description"><para>the permission</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>allowed</para></entry>
+<entry role="parameter_description"><para>whether the role has this permission or not</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><para role="since">Since: <link linkend="api-index-1.14">1.14</link></para></refsect2>
+<refsect2 id="gst-rtsp-permissions-remove-role" role="function">
+<title>gst_rtsp_permissions_remove_role&#160;()</title>
+<indexterm zone="gst-rtsp-permissions-remove-role"><primary>gst_rtsp_permissions_remove_role</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_rtsp_permissions_remove_role (<parameter><link linkend="GstRTSPPermissions"><type>GstRTSPPermissions</type></link> *permissions</parameter>,
+                                  <parameter>const <link linkend="gchar"><type>gchar</type></link> *role</parameter>);</programlisting>
+<para>Remove all permissions for <parameter>role</parameter>
+ in <parameter>permissions</parameter>
+.</para>
+<refsect3 id="gst-rtsp-permissions-remove-role.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>permissions</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstRTSPPermissions"><type>GstRTSPPermissions</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>role</para></entry>
+<entry role="parameter_description"><para>a role</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-rtsp-permissions-get-role" role="function">
+<title>gst_rtsp_permissions_get_role&#160;()</title>
+<indexterm zone="gst-rtsp-permissions-get-role"><primary>gst_rtsp_permissions_get_role</primary></indexterm>
+<programlisting language="C">const <link linkend="GstStructure"><returnvalue>GstStructure</returnvalue></link>&#160;*
+gst_rtsp_permissions_get_role (<parameter><link linkend="GstRTSPPermissions"><type>GstRTSPPermissions</type></link> *permissions</parameter>,
+                               <parameter>const <link linkend="gchar"><type>gchar</type></link> *role</parameter>);</programlisting>
+<para>Get all permissions for <parameter>role</parameter>
+ in <parameter>permissions</parameter>
+.</para>
+<refsect3 id="gst-rtsp-permissions-get-role.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>permissions</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstRTSPPermissions"><type>GstRTSPPermissions</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>role</para></entry>
+<entry role="parameter_description"><para>a role</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-rtsp-permissions-get-role.returns" role="returns">
+<title>Returns</title>
+<para>the structure with permissions for <parameter>role</parameter>
+. It
+remains valid for as long as <parameter>permissions</parameter>
+is valid. </para>
+<para><emphasis role="annotation">[<acronym>transfer none</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-rtsp-permissions-is-allowed" role="function">
+<title>gst_rtsp_permissions_is_allowed&#160;()</title>
+<indexterm zone="gst-rtsp-permissions-is-allowed"><primary>gst_rtsp_permissions_is_allowed</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_rtsp_permissions_is_allowed (<parameter><link linkend="GstRTSPPermissions"><type>GstRTSPPermissions</type></link> *permissions</parameter>,
+                                 <parameter>const <link linkend="gchar"><type>gchar</type></link> *role</parameter>,
+                                 <parameter>const <link linkend="gchar"><type>gchar</type></link> *permission</parameter>);</programlisting>
+<para>Check if <parameter>role</parameter>
+ in <parameter>permissions</parameter>
+ is given permission for <parameter>permission</parameter>
+.</para>
+<refsect3 id="gst-rtsp-permissions-is-allowed.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>permissions</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstRTSPPermissions"><type>GstRTSPPermissions</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>role</para></entry>
+<entry role="parameter_description"><para>a role</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>permission</para></entry>
+<entry role="parameter_description"><para>a permission</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-rtsp-permissions-is-allowed.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if <parameter>role</parameter>
+is allowed <parameter>permission</parameter>
+.</para>
+</refsect3></refsect2>
+
+</refsect1>
+<refsect1 id="GstRTSPPermissions.other_details" role="details">
+<title role="details.title">Types and Values</title>
+<refsect2 id="GstRTSPPermissions-struct" role="struct">
+<title>struct GstRTSPPermissions</title>
+<indexterm zone="GstRTSPPermissions-struct"><primary>GstRTSPPermissions</primary></indexterm>
+<programlisting language="C">struct GstRTSPPermissions {
+  GstMiniObject mini_object;
+};
+</programlisting>
+<para>The opaque permissions structure. It is used to define the permissions
+of objects in different roles.</para>
+</refsect2>
+
+</refsect1>
+<refsect1 id="GstRTSPPermissions.see-also">
+<title>See Also</title>
+<para><link linkend="GstRTSPToken"><type>GstRTSPToken</type></link>, <link linkend="GstRTSPAuth"><type>GstRTSPAuth</type></link></para>
+
+</refsect1>
+
+</refentry>

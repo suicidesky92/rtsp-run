@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<!DOCTYPE indexdiv PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN"
+               "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd" [
+<!ENTITY % version-entities SYSTEM "version.entities">
+%version-entities;
+]>
+<indexdiv id="api-index-deprecated">
+<indexdiv><title>R</title>
+<indexentry><primaryie linkends="gst-rtsp-session-is-expired"><link linkend="gst-rtsp-session-is-expired">gst_rtsp_session_is_expired</link>, function in <link linkend="GstRTSPSession">GstRTSPSession</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-rtsp-session-next-timeout"><link linkend="gst-rtsp-session-next-timeout">gst_rtsp_session_next_timeout</link>, function in <link linkend="GstRTSPSession">GstRTSPSession</link></primaryie></indexentry>
+</indexdiv>
+</indexdiv>

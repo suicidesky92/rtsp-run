@@ -1,0 +1,50 @@
+Format: 1.8
+Date: Wed, 23 May 2018 13:56:07 +0100
+Source: gst-rtsp-server1.0
+Binary: libgstrtspserver-1.0-doc libgstrtspserver-1.0-dev libgstrtspserver-1.0-0 libgstrtspserver-1.0-0-dbg gir1.2-gst-rtsp-server-1.0 gstreamer1.0-rtsp gstreamer1.0-rtsp-dbg
+Architecture: amd64 all
+Version: 1.14.1-1~ubuntu18.04.1
+Distribution: bionic
+Urgency: medium
+Maintainer: Maintainers of GStreamer packages <gst-rtsp-server1.0@packages.debian.org>
+Changed-By: Iain Lane <iain@orangesquash.org.uk>
+Description:
+ gir1.2-gst-rtsp-server-1.0 - GObject introspection data for the GStreamer RTSP Server
+ gstreamer1.0-rtsp - RTSP plugin for GStreamer
+ gstreamer1.0-rtsp-dbg - RTSP plugin for GStreamer
+ libgstrtspserver-1.0-0 - GStreamer RTSP Server (shared library)
+ libgstrtspserver-1.0-0-dbg - GStreamer RTSP Server (debug symbols)
+ libgstrtspserver-1.0-dev - GStreamer RTSP Server (development files)
+ libgstrtspserver-1.0-doc - GStreamer RTSP Server (documentation)
+Launchpad-Bugs-Fixed: 1772898
+Changes:
+ gst-rtsp-server1.0 (1.14.1-1~ubuntu18.04.1) bionic; urgency=medium
+ .
+   * No-change backport to bionic (LP: #1772898)
+Checksums-Sha1:
+ 8d733df06bd68b77b5a35180144bca18e1511612 15816 gir1.2-gst-rtsp-server-1.0_1.14.1-1~ubuntu18.04.1_amd64.deb
+ b694991ad458db6d34ef481efaec207b99d2990d 16167 gst-rtsp-server1.0_1.14.1-1~ubuntu18.04.1_amd64.buildinfo
+ a117cad788d96f6765811bf82099e28728ecf409 93696 gstreamer1.0-rtsp-dbg_1.14.1-1~ubuntu18.04.1_amd64.deb
+ 90cc794c2665cc73e655fc9e3a6f0914fd6582af 39220 gstreamer1.0-rtsp_1.14.1-1~ubuntu18.04.1_amd64.deb
+ f6a3bc2806575b8dd4461f24483ecfb8daa88c23 410628 libgstrtspserver-1.0-0-dbg_1.14.1-1~ubuntu18.04.1_amd64.deb
+ 1719f4f857e9374500397fae189910b4b8887613 119408 libgstrtspserver-1.0-0_1.14.1-1~ubuntu18.04.1_amd64.deb
+ c07cc15c1c804ebd1f3ff5045e4a283de826d4c1 47020 libgstrtspserver-1.0-dev_1.14.1-1~ubuntu18.04.1_amd64.deb
+ 709929d26b37aa17439a5f33e17ed4416634e0ec 71400 libgstrtspserver-1.0-doc_1.14.1-1~ubuntu18.04.1_all.deb
+Checksums-Sha256:
+ e242d862258473c9a7fdf70e5d0e1f96f829ad0dabcfa030a14bb03a065b35c9 15816 gir1.2-gst-rtsp-server-1.0_1.14.1-1~ubuntu18.04.1_amd64.deb
+ 18aec5aa3e2a3d6fbbff1108c378973032ea19b63cfaf7051de8d49a86a36eea 16167 gst-rtsp-server1.0_1.14.1-1~ubuntu18.04.1_amd64.buildinfo
+ bc902c0213c09d5e50955e4f0383db79ed06e1dc0632f81a84ae0f38e198afae 93696 gstreamer1.0-rtsp-dbg_1.14.1-1~ubuntu18.04.1_amd64.deb
+ 8308cb644fd4edb3fc7ae8324402416fa5020a9f0f91b1fd0690ae183bcc06e1 39220 gstreamer1.0-rtsp_1.14.1-1~ubuntu18.04.1_amd64.deb
+ 320c78bf95583a3559d1309132a670dd2bbb61440914c3422c39c1c3a3d39af3 410628 libgstrtspserver-1.0-0-dbg_1.14.1-1~ubuntu18.04.1_amd64.deb
+ e18f04d437ba0f59d0869646866da89f57940bd8c598c9263990a2d7a1dc67cf 119408 libgstrtspserver-1.0-0_1.14.1-1~ubuntu18.04.1_amd64.deb
+ cce635c0972c34a4534bff0054529bf25fda988cfd741c73fa8b0c3976b18098 47020 libgstrtspserver-1.0-dev_1.14.1-1~ubuntu18.04.1_amd64.deb
+ 715d4de13cacaa8637f9424a9bdb9c33aa89db069a024db3e5ed161da215b85d 71400 libgstrtspserver-1.0-doc_1.14.1-1~ubuntu18.04.1_all.deb
+Files:
+ 32cd138275600f2b5d6b60e8664749a6 15816 introspection optional gir1.2-gst-rtsp-server-1.0_1.14.1-1~ubuntu18.04.1_amd64.deb
+ c69e3b3d197524ea87aa5f574b99a463 16167 libs optional gst-rtsp-server1.0_1.14.1-1~ubuntu18.04.1_amd64.buildinfo
+ 7d2dbe8a604a5a1de05fa935789dd3f6 93696 libs optional gstreamer1.0-rtsp-dbg_1.14.1-1~ubuntu18.04.1_amd64.deb
+ 5b16a45ddc62d5faefaac57339a435d3 39220 libs optional gstreamer1.0-rtsp_1.14.1-1~ubuntu18.04.1_amd64.deb
+ aaaf0d3b13364006169e934525ad46da 410628 debug extra libgstrtspserver-1.0-0-dbg_1.14.1-1~ubuntu18.04.1_amd64.deb
+ 6d84cca546a09b919ad348fe9888bab2 119408 libs optional libgstrtspserver-1.0-0_1.14.1-1~ubuntu18.04.1_amd64.deb
+ 673c1f588f8d24524310a40f20bfbaab 47020 libdevel optional libgstrtspserver-1.0-dev_1.14.1-1~ubuntu18.04.1_amd64.deb
+ eea53cb3d10457a8dcf2a6cb509c28ad 71400 doc optional libgstrtspserver-1.0-doc_1.14.1-1~ubuntu18.04.1_all.deb

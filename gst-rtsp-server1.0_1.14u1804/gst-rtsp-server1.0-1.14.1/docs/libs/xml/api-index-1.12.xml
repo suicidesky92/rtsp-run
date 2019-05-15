@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!DOCTYPE indexdiv PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN"
+               "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd" [
+<!ENTITY % version-entities SYSTEM "version.entities">
+%version-entities;
+]>
+<indexdiv id="api-index-1.12">
+<indexdiv><title>R</title>
+<indexentry><primaryie linkends="GstRTSPClient-pre-announce-request"><link linkend="GstRTSPClient-pre-announce-request">GstRTSPClient::pre-announce-request</link>, object signal in <link linkend="GstRTSPClient">GstRTSPClient</link></primaryie></indexentry>
+<indexentry><primaryie linkends="GstRTSPClient-pre-describe-request"><link linkend="GstRTSPClient-pre-describe-request">GstRTSPClient::pre-describe-request</link>, object signal in <link linkend="GstRTSPClient">GstRTSPClient</link></primaryie></indexentry>
+<indexentry><primaryie linkends="GstRTSPClient-pre-get-parameter-request"><link linkend="GstRTSPClient-pre-get-parameter-request">GstRTSPClient::pre-get-parameter-request</link>, object signal in <link linkend="GstRTSPClient">GstRTSPClient</link></primaryie></indexentry>
+<indexentry><primaryie linkends="GstRTSPClient-pre-options-request"><link linkend="GstRTSPClient-pre-options-request">GstRTSPClient::pre-options-request</link>, object signal in <link linkend="GstRTSPClient">GstRTSPClient</link></primaryie></indexentry>
+<indexentry><primaryie linkends="GstRTSPClient-pre-pause-request"><link linkend="GstRTSPClient-pre-pause-request">GstRTSPClient::pre-pause-request</link>, object signal in <link linkend="GstRTSPClient">GstRTSPClient</link></primaryie></indexentry>
+<indexentry><primaryie linkends="GstRTSPClient-pre-play-request"><link linkend="GstRTSPClient-pre-play-request">GstRTSPClient::pre-play-request</link>, object signal in <link linkend="GstRTSPClient">GstRTSPClient</link></primaryie></indexentry>
+<indexentry><primaryie linkends="GstRTSPClient-pre-record-request"><link linkend="GstRTSPClient-pre-record-request">GstRTSPClient::pre-record-request</link>, object signal in <link linkend="GstRTSPClient">GstRTSPClient</link></primaryie></indexentry>
+<indexentry><primaryie linkends="GstRTSPClient-pre-set-parameter-request"><link linkend="GstRTSPClient-pre-set-parameter-request">GstRTSPClient::pre-set-parameter-request</link>, object signal in <link linkend="GstRTSPClient">GstRTSPClient</link></primaryie></indexentry>
+<indexentry><primaryie linkends="GstRTSPClient-pre-setup-request"><link linkend="GstRTSPClient-pre-setup-request">GstRTSPClient::pre-setup-request</link>, object signal in <link linkend="GstRTSPClient">GstRTSPClient</link></primaryie></indexentry>
+<indexentry><primaryie linkends="GstRTSPClient-pre-teardown-request"><link linkend="GstRTSPClient-pre-teardown-request">GstRTSPClient::pre-teardown-request</link>, object signal in <link linkend="GstRTSPClient">GstRTSPClient</link></primaryie></indexentry>
+</indexdiv>
+</indexdiv>

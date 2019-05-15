@@ -1,0 +1,305 @@
+<SIGNAL>
+<NAME>GstRTSPAuth::accept-certificate</NAME>
+<RETURNS>gboolean</RETURNS>
+<FLAGS>l</FLAGS>
+GstRTSPAuth *gstrtspauth
+GTlsConnection *arg1
+GTlsCertificate *arg2
+GTlsCertificateFlags  arg3
+</SIGNAL>
+
+<SIGNAL>
+<NAME>GstRTSPMediaFactory::media-configure</NAME>
+<RETURNS>void</RETURNS>
+<FLAGS>l</FLAGS>
+GstRTSPMediaFactory *gstrtspmediafactory
+GstRTSPMedia *arg1
+</SIGNAL>
+
+<SIGNAL>
+<NAME>GstRTSPMediaFactory::media-constructed</NAME>
+<RETURNS>void</RETURNS>
+<FLAGS>l</FLAGS>
+GstRTSPMediaFactory *gstrtspmediafactory
+GstRTSPMedia *arg1
+</SIGNAL>
+
+<SIGNAL>
+<NAME>GstRTSPMedia::new-state</NAME>
+<RETURNS>void</RETURNS>
+<FLAGS>l</FLAGS>
+GstRTSPMedia *gstrtspmedia
+gint  arg1
+</SIGNAL>
+
+<SIGNAL>
+<NAME>GstRTSPMedia::new-stream</NAME>
+<RETURNS>void</RETURNS>
+<FLAGS>l</FLAGS>
+GstRTSPMedia *gstrtspmedia
+GstRTSPStream *arg1
+</SIGNAL>
+
+<SIGNAL>
+<NAME>GstRTSPMedia::prepared</NAME>
+<RETURNS>void</RETURNS>
+<FLAGS>l</FLAGS>
+GstRTSPMedia *gstrtspmedia
+</SIGNAL>
+
+<SIGNAL>
+<NAME>GstRTSPMedia::removed-stream</NAME>
+<RETURNS>void</RETURNS>
+<FLAGS>l</FLAGS>
+GstRTSPMedia *gstrtspmedia
+GstRTSPStream *arg1
+</SIGNAL>
+
+<SIGNAL>
+<NAME>GstRTSPMedia::target-state</NAME>
+<RETURNS>void</RETURNS>
+<FLAGS>l</FLAGS>
+GstRTSPMedia *gstrtspmedia
+gint  arg1
+</SIGNAL>
+
+<SIGNAL>
+<NAME>GstRTSPMedia::unprepared</NAME>
+<RETURNS>void</RETURNS>
+<FLAGS>l</FLAGS>
+GstRTSPMedia *gstrtspmedia
+</SIGNAL>
+
+<SIGNAL>
+<NAME>GstRTSPServer::client-connected</NAME>
+<RETURNS>void</RETURNS>
+<FLAGS>l</FLAGS>
+GstRTSPServer *gstrtspserver
+GstRTSPClient *arg1
+</SIGNAL>
+
+<SIGNAL>
+<NAME>GstRTSPSessionPool::session-removed</NAME>
+<RETURNS>void</RETURNS>
+<FLAGS>l</FLAGS>
+GstRTSPSessionPool *gstrtspsessionpool
+GstRTSPSession *arg1
+</SIGNAL>
+
+<SIGNAL>
+<NAME>GstRTSPClient::announce-request</NAME>
+<RETURNS>void</RETURNS>
+<FLAGS>l</FLAGS>
+GstRTSPClient *gstrtspclient
+GstRTSPContext *arg1
+</SIGNAL>
+
+<SIGNAL>
+<NAME>GstRTSPClient::check-requirements</NAME>
+<RETURNS>gchar*</RETURNS>
+<FLAGS>l</FLAGS>
+GstRTSPClient *gstrtspclient
+GstRTSPContext *arg1
+GStrv  arg2
+</SIGNAL>
+
+<SIGNAL>
+<NAME>GstRTSPClient::closed</NAME>
+<RETURNS>void</RETURNS>
+<FLAGS>l</FLAGS>
+GstRTSPClient *gstrtspclient
+</SIGNAL>
+
+<SIGNAL>
+<NAME>GstRTSPClient::describe-request</NAME>
+<RETURNS>void</RETURNS>
+<FLAGS>l</FLAGS>
+GstRTSPClient *gstrtspclient
+GstRTSPContext *arg1
+</SIGNAL>
+
+<SIGNAL>
+<NAME>GstRTSPClient::get-parameter-request</NAME>
+<RETURNS>void</RETURNS>
+<FLAGS>l</FLAGS>
+GstRTSPClient *gstrtspclient
+GstRTSPContext *arg1
+</SIGNAL>
+
+<SIGNAL>
+<NAME>GstRTSPClient::handle-response</NAME>
+<RETURNS>void</RETURNS>
+<FLAGS>l</FLAGS>
+GstRTSPClient *gstrtspclient
+GstRTSPContext *arg1
+</SIGNAL>
+
+<SIGNAL>
+<NAME>GstRTSPClient::new-session</NAME>
+<RETURNS>void</RETURNS>
+<FLAGS>l</FLAGS>
+GstRTSPClient *gstrtspclient
+GstRTSPSession *arg1
+</SIGNAL>
+
+<SIGNAL>
+<NAME>GstRTSPClient::options-request</NAME>
+<RETURNS>void</RETURNS>
+<FLAGS>l</FLAGS>
+GstRTSPClient *gstrtspclient
+GstRTSPContext *arg1
+</SIGNAL>
+
+<SIGNAL>
+<NAME>GstRTSPClient::pause-request</NAME>
+<RETURNS>void</RETURNS>
+<FLAGS>l</FLAGS>
+GstRTSPClient *gstrtspclient
+GstRTSPContext *arg1
+</SIGNAL>
+
+<SIGNAL>
+<NAME>GstRTSPClient::play-request</NAME>
+<RETURNS>void</RETURNS>
+<FLAGS>l</FLAGS>
+GstRTSPClient *gstrtspclient
+GstRTSPContext *arg1
+</SIGNAL>
+
+<SIGNAL>
+<NAME>GstRTSPClient::pre-announce-request</NAME>
+<RETURNS>GstRTSPStatusCode</RETURNS>
+<FLAGS>l</FLAGS>
+GstRTSPClient *gstrtspclient
+GstRTSPContext *arg1
+</SIGNAL>
+
+<SIGNAL>
+<NAME>GstRTSPClient::pre-describe-request</NAME>
+<RETURNS>GstRTSPStatusCode</RETURNS>
+<FLAGS>l</FLAGS>
+GstRTSPClient *gstrtspclient
+GstRTSPContext *arg1
+</SIGNAL>
+
+<SIGNAL>
+<NAME>GstRTSPClient::pre-get-parameter-request</NAME>
+<RETURNS>GstRTSPStatusCode</RETURNS>
+<FLAGS>l</FLAGS>
+GstRTSPClient *gstrtspclient
+GstRTSPContext *arg1
+</SIGNAL>
+
+<SIGNAL>
+<NAME>GstRTSPClient::pre-options-request</NAME>
+<RETURNS>GstRTSPStatusCode</RETURNS>
+<FLAGS>l</FLAGS>
+GstRTSPClient *gstrtspclient
+GstRTSPContext *arg1
+</SIGNAL>
+
+<SIGNAL>
+<NAME>GstRTSPClient::pre-pause-request</NAME>
+<RETURNS>GstRTSPStatusCode</RETURNS>
+<FLAGS>l</FLAGS>
+GstRTSPClient *gstrtspclient
+GstRTSPContext *arg1
+</SIGNAL>
+
+<SIGNAL>
+<NAME>GstRTSPClient::pre-play-request</NAME>
+<RETURNS>GstRTSPStatusCode</RETURNS>
+<FLAGS>l</FLAGS>
+GstRTSPClient *gstrtspclient
+GstRTSPContext *arg1
+</SIGNAL>
+
+<SIGNAL>
+<NAME>GstRTSPClient::pre-record-request</NAME>
+<RETURNS>GstRTSPStatusCode</RETURNS>
+<FLAGS>l</FLAGS>
+GstRTSPClient *gstrtspclient
+GstRTSPContext *arg1
+</SIGNAL>
+
+<SIGNAL>
+<NAME>GstRTSPClient::pre-set-parameter-request</NAME>
+<RETURNS>GstRTSPStatusCode</RETURNS>
+<FLAGS>l</FLAGS>
+GstRTSPClient *gstrtspclient
+GstRTSPContext *arg1
+</SIGNAL>
+
+<SIGNAL>
+<NAME>GstRTSPClient::pre-setup-request</NAME>
+<RETURNS>GstRTSPStatusCode</RETURNS>
+<FLAGS>l</FLAGS>
+GstRTSPClient *gstrtspclient
+GstRTSPContext *arg1
+</SIGNAL>
+
+<SIGNAL>
+<NAME>GstRTSPClient::pre-teardown-request</NAME>
+<RETURNS>GstRTSPStatusCode</RETURNS>
+<FLAGS>l</FLAGS>
+GstRTSPClient *gstrtspclient
+GstRTSPContext *arg1
+</SIGNAL>
+
+<SIGNAL>
+<NAME>GstRTSPClient::record-request</NAME>
+<RETURNS>void</RETURNS>
+<FLAGS>l</FLAGS>
+GstRTSPClient *gstrtspclient
+GstRTSPContext *arg1
+</SIGNAL>
+
+<SIGNAL>
+<NAME>GstRTSPClient::send-message</NAME>
+<RETURNS>void</RETURNS>
+<FLAGS>l</FLAGS>
+GstRTSPClient *gstrtspclient
+GstRTSPContext *arg1
+gpointer  arg2
+</SIGNAL>
+
+<SIGNAL>
+<NAME>GstRTSPClient::set-parameter-request</NAME>
+<RETURNS>void</RETURNS>
+<FLAGS>l</FLAGS>
+GstRTSPClient *gstrtspclient
+GstRTSPContext *arg1
+</SIGNAL>
+
+<SIGNAL>
+<NAME>GstRTSPClient::setup-request</NAME>
+<RETURNS>void</RETURNS>
+<FLAGS>l</FLAGS>
+GstRTSPClient *gstrtspclient
+GstRTSPContext *arg1
+</SIGNAL>
+
+<SIGNAL>
+<NAME>GstRTSPClient::teardown-request</NAME>
+<RETURNS>void</RETURNS>
+<FLAGS>l</FLAGS>
+GstRTSPClient *gstrtspclient
+GstRTSPContext *arg1
+</SIGNAL>
+
+<SIGNAL>
+<NAME>GstRTSPStream::new-rtcp-encoder</NAME>
+<RETURNS>void</RETURNS>
+<FLAGS>l</FLAGS>
+GstRTSPStream *gstrtspstream
+GstElement *arg1
+</SIGNAL>
+
+<SIGNAL>
+<NAME>GstRTSPStream::new-rtp-encoder</NAME>
+<RETURNS>void</RETURNS>
+<FLAGS>l</FLAGS>
+GstRTSPStream *gstrtspstream
+GstElement *arg1
+</SIGNAL>
+

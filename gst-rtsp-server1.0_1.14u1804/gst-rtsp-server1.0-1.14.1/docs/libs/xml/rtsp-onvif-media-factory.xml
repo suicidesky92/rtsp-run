@@ -1,0 +1,240 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN"
+               "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd" [
+<!ENTITY % version-entities SYSTEM "version.entities">
+%version-entities;
+]>
+<refentry id="gst-rtsp-server-GstRTSPOnvifMediaFactory">
+<refmeta>
+<refentrytitle role="top_of_page" id="gst-rtsp-server-GstRTSPOnvifMediaFactory.top_of_page">GstRTSPOnvifMediaFactory</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GST-RTSP-SERVER Library</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>GstRTSPOnvifMediaFactory</refname>
+<refpurpose>A factory for ONVIF media pipelines</refpurpose>
+</refnamediv>
+
+<refsect1 id="gst-rtsp-server-GstRTSPOnvifMediaFactory.functions" role="functions_proto">
+<title role="functions_proto.title">Functions</title>
+<informaltable pgwide="1" frame="none">
+<tgroup cols="2">
+<colspec colname="functions_return" colwidth="150px"/>
+<colspec colname="functions_name"/>
+<tbody>
+<row><entry role="function_type"><link linkend="GstRTSPMediaFactory"><returnvalue>GstRTSPMediaFactory</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-rtsp-onvif-media-factory-new">gst_rtsp_onvif_media_factory_new</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-rtsp-onvif-media-factory-has-backchannel-support">gst_rtsp_onvif_media_factory_has_backchannel_support</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-rtsp-onvif-media-factory-set-backchannel-bandwidth">gst_rtsp_onvif_media_factory_set_backchannel_bandwidth</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="guint"><returnvalue>guint</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-rtsp-onvif-media-factory-get-backchannel-bandwidth">gst_rtsp_onvif_media_factory_get_backchannel_bandwidth</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-rtsp-onvif-media-factory-set-backchannel-launch">gst_rtsp_onvif_media_factory_set_backchannel_launch</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gchar"><returnvalue>gchar</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-rtsp-onvif-media-factory-get-backchannel-launch">gst_rtsp_onvif_media_factory_get_backchannel_launch</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="gst-rtsp-server-GstRTSPOnvifMediaFactory.other" role="other_proto">
+<title role="other_proto.title">Types and Values</title>
+<informaltable role="enum_members_table" pgwide="1" frame="none">
+<tgroup cols="2">
+<colspec colname="name" colwidth="150px"/>
+<colspec colname="description"/>
+<tbody>
+<row><entry role="typedef_keyword">typedef</entry><entry role="function_name"><link linkend="GstRTSPOnvifMediaFactory">GstRTSPOnvifMediaFactory</link></entry></row>
+<row><entry role="typedef_keyword">typedef</entry><entry role="function_name"><link linkend="GstRTSPOnvifMediaFactoryClass">GstRTSPOnvifMediaFactoryClass</link></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+
+
+<refsect1 id="gst-rtsp-server-GstRTSPOnvifMediaFactory.description" role="desc">
+<title role="desc.title">Description</title>
+<para>The <link linkend="GstRTSPOnvifMediaFactory"><type>GstRTSPOnvifMediaFactory</type></link> is responsible for creating or recycling
+<link linkend="GstRTSPMedia"><type>GstRTSPMedia</type></link> objects based on the passed URL. Different to
+<link linkend="GstRTSPMediaFactory"><type>GstRTSPMediaFactory</type></link>, this supports special ONVIF features and can create
+<link linkend="GstRTSPOnvifMedia"><type>GstRTSPOnvifMedia</type></link> in addition to normal <link linkend="GstRTSPMedia"><type>GstRTSPMedia</type></link>.</para>
+<para>Special ONVIF features that are currently supported is a backchannel for
+the client to send back media to the server in a normal PLAY media, see
+<link linkend="gst-rtsp-onvif-media-factory-set-backchannel-launch"><function>gst_rtsp_onvif_media_factory_set_backchannel_launch()</function></link> and
+<link linkend="gst-rtsp-onvif-media-factory-set-backchannel-bandwidth"><function>gst_rtsp_onvif_media_factory_set_backchannel_bandwidth()</function></link>.</para>
+
+</refsect1>
+<refsect1 id="gst-rtsp-server-GstRTSPOnvifMediaFactory.functions_details" role="details">
+<title role="details.title">Functions</title>
+<refsect2 id="gst-rtsp-onvif-media-factory-new" role="function" condition="since:1.14">
+<title>gst_rtsp_onvif_media_factory_new&#160;()</title>
+<indexterm zone="gst-rtsp-onvif-media-factory-new" role="1.14"><primary>gst_rtsp_onvif_media_factory_new</primary></indexterm>
+<programlisting language="C"><link linkend="GstRTSPMediaFactory"><returnvalue>GstRTSPMediaFactory</returnvalue></link>&#160;*
+gst_rtsp_onvif_media_factory_new (<parameter><type>void</type></parameter>);</programlisting>
+<para>Create a new <link linkend="GstRTSPOnvifMediaFactory"><type>GstRTSPOnvifMediaFactory</type></link></para>
+<refsect3 id="gst-rtsp-onvif-media-factory-new.returns" role="returns">
+<title>Returns</title>
+<para> A new <link linkend="GstRTSPOnvifMediaFactory"><type>GstRTSPOnvifMediaFactory</type></link></para>
+</refsect3><para role="since">Since: <link linkend="api-index-1.14">1.14</link></para></refsect2>
+<refsect2 id="gst-rtsp-onvif-media-factory-has-backchannel-support" role="function" condition="since:1.14">
+<title>gst_rtsp_onvif_media_factory_has_backchannel_support&#160;()</title>
+<indexterm zone="gst-rtsp-onvif-media-factory-has-backchannel-support" role="1.14"><primary>gst_rtsp_onvif_media_factory_has_backchannel_support</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_rtsp_onvif_media_factory_has_backchannel_support
+                               (<parameter><link linkend="GstRTSPOnvifMediaFactory"><type>GstRTSPOnvifMediaFactory</type></link> *factory</parameter>);</programlisting>
+<para>Returns <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if an ONVIF backchannel is supported by the media factory.</para>
+<refsect3 id="gst-rtsp-onvif-media-factory-has-backchannel-support.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>factory</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstRTSPMediaFactory"><type>GstRTSPMediaFactory</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-rtsp-onvif-media-factory-has-backchannel-support.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if an ONVIF backchannel is supported by the media factory.</para>
+</refsect3><para role="since">Since: <link linkend="api-index-1.14">1.14</link></para></refsect2>
+<refsect2 id="gst-rtsp-onvif-media-factory-set-backchannel-bandwidth" role="function" condition="since:1.14">
+<title>gst_rtsp_onvif_media_factory_set_backchannel_bandwidth&#160;()</title>
+<indexterm zone="gst-rtsp-onvif-media-factory-set-backchannel-bandwidth" role="1.14"><primary>gst_rtsp_onvif_media_factory_set_backchannel_bandwidth</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_rtsp_onvif_media_factory_set_backchannel_bandwidth
+                               (<parameter><link linkend="GstRTSPOnvifMediaFactory"><type>GstRTSPOnvifMediaFactory</type></link> *factory</parameter>,
+                                <parameter><link linkend="guint"><type>guint</type></link> bandwidth</parameter>);</programlisting>
+<para>Set the configured/supported bandwidth of the ONVIF backchannel pipeline in
+bits per second.</para>
+<refsect3 id="gst-rtsp-onvif-media-factory-set-backchannel-bandwidth.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>factory</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstRTSPMediaFactory"><type>GstRTSPMediaFactory</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>bandwidth</para></entry>
+<entry role="parameter_description"><para>the bandwidth in bits per second</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><para role="since">Since: <link linkend="api-index-1.14">1.14</link></para></refsect2>
+<refsect2 id="gst-rtsp-onvif-media-factory-get-backchannel-bandwidth" role="function" condition="since:1.14">
+<title>gst_rtsp_onvif_media_factory_get_backchannel_bandwidth&#160;()</title>
+<indexterm zone="gst-rtsp-onvif-media-factory-get-backchannel-bandwidth" role="1.14"><primary>gst_rtsp_onvif_media_factory_get_backchannel_bandwidth</primary></indexterm>
+<programlisting language="C"><link linkend="guint"><returnvalue>guint</returnvalue></link>
+gst_rtsp_onvif_media_factory_get_backchannel_bandwidth
+                               (<parameter><link linkend="GstRTSPOnvifMediaFactory"><type>GstRTSPOnvifMediaFactory</type></link> *factory</parameter>);</programlisting>
+<para>Get the configured/supported bandwidth of the ONVIF backchannel pipeline in
+bits per second.</para>
+<refsect3 id="gst-rtsp-onvif-media-factory-get-backchannel-bandwidth.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>factory</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstRTSPMediaFactory"><type>GstRTSPMediaFactory</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-rtsp-onvif-media-factory-get-backchannel-bandwidth.returns" role="returns">
+<title>Returns</title>
+<para> the configured/supported backchannel bandwidth.</para>
+</refsect3><para role="since">Since: <link linkend="api-index-1.14">1.14</link></para></refsect2>
+<refsect2 id="gst-rtsp-onvif-media-factory-set-backchannel-launch" role="function" condition="since:1.14">
+<title>gst_rtsp_onvif_media_factory_set_backchannel_launch&#160;()</title>
+<indexterm zone="gst-rtsp-onvif-media-factory-set-backchannel-launch" role="1.14"><primary>gst_rtsp_onvif_media_factory_set_backchannel_launch</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_rtsp_onvif_media_factory_set_backchannel_launch
+                               (<parameter><link linkend="GstRTSPOnvifMediaFactory"><type>GstRTSPOnvifMediaFactory</type></link> *factory</parameter>,
+                                <parameter>const <link linkend="gchar"><type>gchar</type></link> *launch</parameter>);</programlisting>
+<para>The <link linkend="gst-parse-launch"><function>gst_parse_launch()</function></link> line to use for constructing the ONVIF backchannel
+pipeline in the default prepare vmethod if requested by the client.</para>
+<para>The pipeline description should return a GstBin as the toplevel element
+which can be accomplished by enclosing the description with brackets '('
+')'.</para>
+<para>The description should return a pipeline with a single depayloader named
+depay_backchannel. A caps query on the depayloader's sinkpad should return
+all possible, complete RTP caps that are going to be supported. At least
+the payload type, clock-rate and encoding-name need to be specified.</para>
+<para>Note: The pipeline part passed here must end in sinks that are not waiting
+until pre-rolling before reaching the PAUSED state, i.e. setting
+async=false on <link linkend="GstBaseSink"><type>GstBaseSink</type></link>. Otherwise the whole media will not be able to
+prepare.</para>
+<refsect3 id="gst-rtsp-onvif-media-factory-set-backchannel-launch.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>factory</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstRTSPMediaFactory"><type>GstRTSPMediaFactory</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>launch</para></entry>
+<entry role="parameter_description"><para>the launch description</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><para role="since">Since: <link linkend="api-index-1.14">1.14</link></para></refsect2>
+<refsect2 id="gst-rtsp-onvif-media-factory-get-backchannel-launch" role="function" condition="since:1.14">
+<title>gst_rtsp_onvif_media_factory_get_backchannel_launch&#160;()</title>
+<indexterm zone="gst-rtsp-onvif-media-factory-get-backchannel-launch" role="1.14"><primary>gst_rtsp_onvif_media_factory_get_backchannel_launch</primary></indexterm>
+<programlisting language="C"><link linkend="gchar"><returnvalue>gchar</returnvalue></link>&#160;*
+gst_rtsp_onvif_media_factory_get_backchannel_launch
+                               (<parameter><link linkend="GstRTSPOnvifMediaFactory"><type>GstRTSPOnvifMediaFactory</type></link> *factory</parameter>);</programlisting>
+<para>Get the <link linkend="gst-parse-launch"><function>gst_parse_launch()</function></link> pipeline description that will be used in the
+default prepare vmethod for generating the ONVIF backchannel pipeline.</para>
+<refsect3 id="gst-rtsp-onvif-media-factory-get-backchannel-launch.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>factory</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstRTSPMediaFactory"><type>GstRTSPMediaFactory</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-rtsp-onvif-media-factory-get-backchannel-launch.returns" role="returns">
+<title>Returns</title>
+<para>the configured backchannel launch description. <link linkend="g-free"><function>g_free()</function></link> after
+usage. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>]</emphasis></para>
+</refsect3><para role="since">Since: <link linkend="api-index-1.14">1.14</link></para></refsect2>
+
+</refsect1>
+<refsect1 id="gst-rtsp-server-GstRTSPOnvifMediaFactory.other_details" role="details">
+<title role="details.title">Types and Values</title>
+<refsect2 id="GstRTSPOnvifMediaFactory" role="typedef">
+<title>GstRTSPOnvifMediaFactory</title>
+<indexterm zone="GstRTSPOnvifMediaFactory"><primary>GstRTSPOnvifMediaFactory</primary></indexterm>
+<programlisting language="C">typedef struct GstRTSPOnvifMediaFactory GstRTSPOnvifMediaFactory;
+</programlisting>
+</refsect2>
+<refsect2 id="GstRTSPOnvifMediaFactoryClass" role="typedef">
+<title>GstRTSPOnvifMediaFactoryClass</title>
+<indexterm zone="GstRTSPOnvifMediaFactoryClass"><primary>GstRTSPOnvifMediaFactoryClass</primary></indexterm>
+<programlisting language="C">typedef struct GstRTSPOnvifMediaFactoryClass GstRTSPOnvifMediaFactoryClass;
+</programlisting>
+</refsect2>
+
+</refsect1>
+<refsect1 id="gst-rtsp-server-GstRTSPOnvifMediaFactory.see-also">
+<title>See Also</title>
+<para><link linkend="GstRTSPMediaFactory"><type>GstRTSPMediaFactory</type></link>, <link linkend="GstRTSPOnvifMedia"><type>GstRTSPOnvifMedia</type></link></para>
+
+</refsect1>
+
+</refentry>

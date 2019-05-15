@@ -1,0 +1,49 @@
+#!/usr/bin/make -f
+
+include /usr/share/dpkg/default.mk
+
+# Work-around for gtk-doc bug:
+# https://bugzilla.gnome.org/show_bug.cgi?id=783926
+export PYTHONIOENCODING="utf-8"
+
+CFLAGS += -Wno-error
+CXXFLAGS += -Wno-error
+LDFLAGS += -Wl,-z,defs -Wl,-O1 -Wl,--as-needed
+
+configure_flags += \
+		--enable-docbook \
+		--enable-gtk-doc \
+		--disable-silent-rules \
+		$(NULL)
+
+%:
+	dh $@ --with autoreconf
+
+override_dh_autoreconf:
+	dh_autoreconf --as-needed
+
+override_dh_auto_configure:
+	dh_auto_configure -- $(configure_flags)
+
+override_dh_auto_install:
+	dh_auto_install
+	rm -f $(CURDIR)/debian/tmp/usr/lib/*/*.la
+
+override_dh_auto_test:
+	true
+
+override_dh_shlibdeps:
+	dh_shlibdeps
+	mkdir -p $(CURDIR)/fake-home
+	HOME=$(CURDIR)/fake-home \
+		dh_girepository -pgir1.2-gst-rtsp-server-1.2
+	rm -rf $(CURDIR)/fake-home
+
+override_dh_strip:
+	dh_strip -plibgstrtspserver-1.0-0 --dbg-package=libgstrtspserver-1.0-0-dbg
+	dh_strip -pgstreamer1.0-rtsp --dbg-package=gstreamer1.0-rtsp-dbg
+	dh_strip --remaining-packages
+
+override_dh_makeshlibs:
+	dh_makeshlibs -plibgstrtspserver-1.0-0 -V 'libgstrtspserver-1.0-0 (>= 1.4.5)' -- -c4
+

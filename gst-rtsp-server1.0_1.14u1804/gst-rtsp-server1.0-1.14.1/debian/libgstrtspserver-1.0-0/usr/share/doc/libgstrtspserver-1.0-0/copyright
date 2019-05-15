@@ -1,0 +1,105 @@
+This package was debianized by Sebastian Dröge <slomo@debian.org> on
+Sun, 15 Mar 2015 12:24:32 +0100.
+
+It was downloaded from
+http://gstreamer.freedesktop.org/data/src/gst-rtsp-server/
+
+Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: GStreamer RTSP Server Library 1.0
+Upstream-Contact: gstreamer-devel@lists.freedesktop.org
+Source: http://gstreamer.freedesktop.org
+
+Files: ./examples/test-appsrc.c
+ ./examples/test-auth.c
+ ./examples/test-cgroups.c
+ ./examples/test-launch.c
+ ./examples/test-mp4.c
+ ./examples/test-multicast.c
+ ./examples/test-multicast2.c
+ ./examples/test-ogg.c
+ ./examples/test-readme.c
+ ./examples/test-sdp.c
+ ./examples/test-uri.c
+ ./examples/test-video.c
+ ./gst/rtsp-server/rtsp-address-pool.c
+ ./gst/rtsp-server/rtsp-address-pool.h
+ ./gst/rtsp-server/rtsp-auth.c
+ ./gst/rtsp-server/rtsp-auth.h
+ ./gst/rtsp-server/rtsp-client.c
+ ./gst/rtsp-server/rtsp-client.h
+ ./gst/rtsp-server/rtsp-context.c
+ ./gst/rtsp-server/rtsp-context.h
+ ./gst/rtsp-server/rtsp-media-factory-uri.c
+ ./gst/rtsp-server/rtsp-media-factory-uri.h
+ ./gst/rtsp-server/rtsp-media-factory.c
+ ./gst/rtsp-server/rtsp-media-factory.h
+ ./gst/rtsp-server/rtsp-media.c
+ ./gst/rtsp-server/rtsp-media.h
+ ./gst/rtsp-server/rtsp-mount-points.c
+ ./gst/rtsp-server/rtsp-mount-points.h
+ ./gst/rtsp-server/rtsp-params.c
+ ./gst/rtsp-server/rtsp-params.h
+ ./gst/rtsp-server/rtsp-permissions.c
+ ./gst/rtsp-server/rtsp-permissions.h
+ ./gst/rtsp-server/rtsp-sdp.c
+ ./gst/rtsp-server/rtsp-sdp.h
+ ./gst/rtsp-server/rtsp-server.c
+ ./gst/rtsp-server/rtsp-server.h
+ ./gst/rtsp-server/rtsp-session-media.c
+ ./gst/rtsp-server/rtsp-session-media.h
+ ./gst/rtsp-server/rtsp-session-pool.c
+ ./gst/rtsp-server/rtsp-session-pool.h
+ ./gst/rtsp-server/rtsp-session.c
+ ./gst/rtsp-server/rtsp-session.h
+ ./gst/rtsp-server/rtsp-stream-transport.c
+ ./gst/rtsp-server/rtsp-stream-transport.h
+ ./gst/rtsp-server/rtsp-stream.c
+ ./gst/rtsp-server/rtsp-stream.h
+ ./gst/rtsp-server/rtsp-thread-pool.c
+ ./gst/rtsp-server/rtsp-thread-pool.h
+ ./gst/rtsp-server/rtsp-token.c
+ ./gst/rtsp-server/rtsp-token.h
+ ./tests/test-cleanup.c
+ ./tests/test-reuse.c
+Copyright: 2008, Wim Taymans <wim.taymans at gmail.com>
+  2009, Wim Taymans <wim.taymans at gmail.com>
+  2010, Wim Taymans <wim.taymans at gmail.com>
+  2012, Wim Taymans <wim.taymans at gmail.com>
+  2013, Wim Taymans <wim.taymans at gmail.com>
+License: LGPL-2+
+ /usr/share/common-licenses/LGPL
+
+Files: ./tests/check/gst/addresspool.c
+ ./tests/check/gst/client.c
+ ./tests/check/gst/media.c
+ ./tests/check/gst/mediafactory.c
+ ./tests/check/gst/mountpoints.c
+Copyright: 2012, Wim Taymans <wim.taymans@gmail.com>
+License: LGPL-2+
+ /usr/share/common-licenses/LGPL
+
+Files: ./tests/check/gst/permissions.c
+ ./tests/check/gst/sessionpool.c
+ ./tests/check/gst/token.c
+Copyright: 2013, Sebastian Rasmussen <sebras@hotmail.com>
+  2014, Sebastian Rasmussen <sebras@hotmail.com>
+License: LGPL-2+
+ /usr/share/common-licenses/LGPL
+
+Files: ./tests/check/gst/rtspserver.c
+ ./tests/check/gst/threadpool.c
+Copyright: 2012, Axis Communications <dev-gstreamer at axis dot com>
+  2013, Axis Communications <dev-gstreamer at axis dot com>
+License: LGPL-2+
+ /usr/share/common-licenses/LGPL
+
+Files: ./tests/check/gst/stream.c
+Copyright: 2013, Axis Communications AB <dev-gstreamer at axis dot com>
+License: LGPL-2+
+ /usr/share/common-licenses/LGPL
+
+Files: ./tests/check/gst/sessionmedia.c
+Copyright: 2013, Branko Subasic <branko.subasic@axis.com>
+License: LGPL-2+
+ /usr/share/common-licenses/LGPL
+

@@ -1,0 +1,650 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN"
+               "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd" [
+<!ENTITY % version-entities SYSTEM "version.entities">
+%version-entities;
+]>
+<refentry id="GstRTSPSession">
+<refmeta>
+<refentrytitle role="top_of_page" id="GstRTSPSession.top_of_page">GstRTSPSession</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GST-RTSP-SERVER Library</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>GstRTSPSession</refname>
+<refpurpose>An object to manage media</refpurpose>
+</refnamediv>
+
+<refsect1 id="GstRTSPSession.functions" role="functions_proto">
+<title role="functions_proto.title">Functions</title>
+<informaltable pgwide="1" frame="none">
+<tgroup cols="2">
+<colspec colname="functions_return" colwidth="150px"/>
+<colspec colname="functions_name"/>
+<tbody>
+<row><entry role="function_type"><link linkend="GstRTSPSession"><returnvalue>GstRTSPSession</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-rtsp-session-new">gst_rtsp_session_new</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type">const <link linkend="gchar"><returnvalue>gchar</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-rtsp-session-get-sessionid">gst_rtsp_session_get_sessionid</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gchar"><returnvalue>gchar</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-rtsp-session-get-header">gst_rtsp_session_get_header</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-rtsp-session-set-timeout">gst_rtsp_session_set_timeout</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="guint"><returnvalue>guint</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-rtsp-session-get-timeout">gst_rtsp_session_get_timeout</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-rtsp-session-touch">gst_rtsp_session_touch</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-rtsp-session-prevent-expire">gst_rtsp_session_prevent_expire</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-rtsp-session-allow-expire">gst_rtsp_session_allow_expire</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gint"><returnvalue>gint</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-rtsp-session-next-timeout">gst_rtsp_session_next_timeout</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-rtsp-session-is-expired">gst_rtsp_session_is_expired</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstRTSPSessionMedia"><returnvalue>GstRTSPSessionMedia</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-rtsp-session-manage-media">gst_rtsp_session_manage_media</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-rtsp-session-release-media">gst_rtsp_session_release_media</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstRTSPSessionMedia"><returnvalue>GstRTSPSessionMedia</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-rtsp-session-get-media">gst_rtsp_session_get_media</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstRTSPFilterResult"><returnvalue>GstRTSPFilterResult</returnvalue></link>
+</entry><entry role="function_name"><phrase role="c_punctuation">(</phrase><link linkend="GstRTSPSessionFilterFunc">*GstRTSPSessionFilterFunc</link><phrase role="c_punctuation">)</phrase>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GList"><returnvalue>GList</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-rtsp-session-filter">gst_rtsp_session_filter</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="GstRTSPSession.properties" role="properties">
+<title role="properties.title">Properties</title>
+<informaltable frame="none">
+<tgroup cols="3">
+<colspec colname="properties_type" colwidth="150px"/>
+<colspec colname="properties_name" colwidth="300px"/>
+<colspec colname="properties_flags" colwidth="200px"/>
+<tbody>
+<row><entry role="property_type"><link linkend="gchar"><type>gchar</type></link>&#160;*</entry><entry role="property_name"><link linkend="GstRTSPSession--sessionid">sessionid</link></entry><entry role="property_flags">Read / Write / Construct Only</entry></row>
+<row><entry role="property_type"><link linkend="guint"><type>guint</type></link></entry><entry role="property_name"><link linkend="GstRTSPSession--timeout">timeout</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gboolean"><type>gboolean</type></link></entry><entry role="property_name"><link linkend="GstRTSPSession--timeout-always-visible">timeout-always-visible</link></entry><entry role="property_flags">Read / Write</entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="GstRTSPSession.other" role="other_proto">
+<title role="other_proto.title">Types and Values</title>
+<informaltable role="enum_members_table" pgwide="1" frame="none">
+<tgroup cols="2">
+<colspec colname="name" colwidth="150px"/>
+<colspec colname="description"/>
+<tbody>
+<row><entry role="datatype_keyword">struct</entry><entry role="function_name"><link linkend="GstRTSPSession-struct">GstRTSPSession</link></entry></row>
+<row><entry role="datatype_keyword">struct</entry><entry role="function_name"><link linkend="GstRTSPSessionClass">GstRTSPSessionClass</link></entry></row>
+<row><entry role="datatype_keyword">enum</entry><entry role="function_name"><link linkend="GstRTSPFilterResult">GstRTSPFilterResult</link></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="GstRTSPSession.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<screen>    <link linkend="GObject">GObject</link>
+    <phrase role="lineart">&#9584;&#9472;&#9472;</phrase> GstRTSPSession
+</screen>
+</refsect1>
+
+
+<refsect1 id="GstRTSPSession.description" role="desc">
+<title role="desc.title">Description</title>
+<para>The <link linkend="GstRTSPSession"><type>GstRTSPSession</type></link> is identified by an id, unique in the
+<link linkend="GstRTSPSessionPool"><type>GstRTSPSessionPool</type></link> that created the session and manages media and its
+configuration.</para>
+<para>A <link linkend="GstRTSPSession"><type>GstRTSPSession</type></link> has a timeout that can be retrieved with
+<link linkend="gst-rtsp-session-get-timeout"><function>gst_rtsp_session_get_timeout()</function></link>. You can check if the sessions is expired with
+<link linkend="gst-rtsp-session-is-expired"><function>gst_rtsp_session_is_expired()</function></link>. <link linkend="gst-rtsp-session-touch"><function>gst_rtsp_session_touch()</function></link> will reset the
+expiration counter of the session.</para>
+<para>When a client configures a media with SETUP, a session will be created to
+keep track of the configuration of that media. With
+<link linkend="gst-rtsp-session-manage-media"><function>gst_rtsp_session_manage_media()</function></link>, the media is added to the managed media
+in the session. With <link linkend="gst-rtsp-session-release-media"><function>gst_rtsp_session_release_media()</function></link> the media can be
+released again from the session. Managed media is identified in the sessions
+with a url. Use <link linkend="gst-rtsp-session-get-media"><function>gst_rtsp_session_get_media()</function></link> to get the media that matches
+(part of) the given url.</para>
+<para>The media in a session can be iterated with <link linkend="gst-rtsp-session-filter"><function>gst_rtsp_session_filter()</function></link>.</para>
+<para>Last reviewed on 2013-07-11 (1.0.0)</para>
+
+</refsect1>
+<refsect1 id="GstRTSPSession.functions_details" role="details">
+<title role="details.title">Functions</title>
+<refsect2 id="gst-rtsp-session-new" role="function">
+<title>gst_rtsp_session_new&#160;()</title>
+<indexterm zone="gst-rtsp-session-new"><primary>gst_rtsp_session_new</primary></indexterm>
+<programlisting language="C"><link linkend="GstRTSPSession"><returnvalue>GstRTSPSession</returnvalue></link>&#160;*
+gst_rtsp_session_new (<parameter>const <link linkend="gchar"><type>gchar</type></link> *sessionid</parameter>);</programlisting>
+<para>Create a new <link linkend="GstRTSPSession"><type>GstRTSPSession</type></link> instance with <parameter>sessionid</parameter>
+.</para>
+<refsect3 id="gst-rtsp-session-new.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>sessionid</para></entry>
+<entry role="parameter_description"><para>a session id</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-rtsp-session-new.returns" role="returns">
+<title>Returns</title>
+<para>a new <link linkend="GstRTSPSession"><type>GstRTSPSession</type></link>. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-rtsp-session-get-sessionid" role="function">
+<title>gst_rtsp_session_get_sessionid&#160;()</title>
+<indexterm zone="gst-rtsp-session-get-sessionid"><primary>gst_rtsp_session_get_sessionid</primary></indexterm>
+<programlisting language="C">const <link linkend="gchar"><returnvalue>gchar</returnvalue></link>&#160;*
+gst_rtsp_session_get_sessionid (<parameter><link linkend="GstRTSPSession"><type>GstRTSPSession</type></link> *session</parameter>);</programlisting>
+<para>Get the sessionid of <parameter>session</parameter>
+.</para>
+<refsect3 id="gst-rtsp-session-get-sessionid.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>session</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstRTSPSession"><type>GstRTSPSession</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-rtsp-session-get-sessionid.returns" role="returns">
+<title>Returns</title>
+<para>the sessionid of <parameter>session</parameter>
+.
+The value remains valid as long as <parameter>session</parameter>
+is alive. </para>
+<para><emphasis role="annotation">[<acronym>transfer none</acronym>][<acronym>nullable</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-rtsp-session-get-header" role="function">
+<title>gst_rtsp_session_get_header&#160;()</title>
+<indexterm zone="gst-rtsp-session-get-header"><primary>gst_rtsp_session_get_header</primary></indexterm>
+<programlisting language="C"><link linkend="gchar"><returnvalue>gchar</returnvalue></link>&#160;*
+gst_rtsp_session_get_header (<parameter><link linkend="GstRTSPSession"><type>GstRTSPSession</type></link> *session</parameter>);</programlisting>
+<para>Get the string that can be placed in the Session header field.</para>
+<refsect3 id="gst-rtsp-session-get-header.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>session</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstRTSPSession"><type>GstRTSPSession</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-rtsp-session-get-header.returns" role="returns">
+<title>Returns</title>
+<para>the Session header of <parameter>session</parameter>
+.
+<link linkend="g-free"><function>g_free()</function></link> after usage. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>][<acronym>nullable</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-rtsp-session-set-timeout" role="function">
+<title>gst_rtsp_session_set_timeout&#160;()</title>
+<indexterm zone="gst-rtsp-session-set-timeout"><primary>gst_rtsp_session_set_timeout</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_rtsp_session_set_timeout (<parameter><link linkend="GstRTSPSession"><type>GstRTSPSession</type></link> *session</parameter>,
+                              <parameter><link linkend="guint"><type>guint</type></link> timeout</parameter>);</programlisting>
+<para>Configure <parameter>session</parameter>
+ for a timeout of <parameter>timeout</parameter>
+ seconds. The session will be
+cleaned up when there is no activity for <parameter>timeout</parameter>
+ seconds.</para>
+<refsect3 id="gst-rtsp-session-set-timeout.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>session</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstRTSPSession"><type>GstRTSPSession</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>timeout</para></entry>
+<entry role="parameter_description"><para>the new timeout</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-rtsp-session-get-timeout" role="function">
+<title>gst_rtsp_session_get_timeout&#160;()</title>
+<indexterm zone="gst-rtsp-session-get-timeout"><primary>gst_rtsp_session_get_timeout</primary></indexterm>
+<programlisting language="C"><link linkend="guint"><returnvalue>guint</returnvalue></link>
+gst_rtsp_session_get_timeout (<parameter><link linkend="GstRTSPSession"><type>GstRTSPSession</type></link> *session</parameter>);</programlisting>
+<para>Get the timeout value of <parameter>session</parameter>
+.</para>
+<refsect3 id="gst-rtsp-session-get-timeout.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>session</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstRTSPSession"><type>GstRTSPSession</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-rtsp-session-get-timeout.returns" role="returns">
+<title>Returns</title>
+<para> the timeout of <parameter>session</parameter>
+in seconds.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-rtsp-session-touch" role="function">
+<title>gst_rtsp_session_touch&#160;()</title>
+<indexterm zone="gst-rtsp-session-touch"><primary>gst_rtsp_session_touch</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_rtsp_session_touch (<parameter><link linkend="GstRTSPSession"><type>GstRTSPSession</type></link> *session</parameter>);</programlisting>
+<para>Update the last_access time of the session to the current time.</para>
+<refsect3 id="gst-rtsp-session-touch.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>session</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstRTSPSession"><type>GstRTSPSession</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-rtsp-session-prevent-expire" role="function">
+<title>gst_rtsp_session_prevent_expire&#160;()</title>
+<indexterm zone="gst-rtsp-session-prevent-expire"><primary>gst_rtsp_session_prevent_expire</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_rtsp_session_prevent_expire (<parameter><link linkend="GstRTSPSession"><type>GstRTSPSession</type></link> *session</parameter>);</programlisting>
+<para>Prevent <parameter>session</parameter>
+ from expiring.</para>
+<refsect3 id="gst-rtsp-session-prevent-expire.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>session</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstRTSPSession"><type>GstRTSPSession</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-rtsp-session-allow-expire" role="function">
+<title>gst_rtsp_session_allow_expire&#160;()</title>
+<indexterm zone="gst-rtsp-session-allow-expire"><primary>gst_rtsp_session_allow_expire</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_rtsp_session_allow_expire (<parameter><link linkend="GstRTSPSession"><type>GstRTSPSession</type></link> *session</parameter>);</programlisting>
+<para>Allow <parameter>session</parameter>
+ to expire. This method must be called an equal
+amount of time as <link linkend="gst-rtsp-session-prevent-expire"><function>gst_rtsp_session_prevent_expire()</function></link>.</para>
+<refsect3 id="gst-rtsp-session-allow-expire.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>session</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstRTSPSession"><type>GstRTSPSession</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-rtsp-session-next-timeout" role="function" condition="deprecated:Use gst_rtsp_session_next_timeout_usec() instead.">
+<title>gst_rtsp_session_next_timeout&#160;()</title>
+<indexterm zone="gst-rtsp-session-next-timeout" role="deprecated"><primary>gst_rtsp_session_next_timeout</primary></indexterm>
+<programlisting language="C"><link linkend="gint"><returnvalue>gint</returnvalue></link>
+gst_rtsp_session_next_timeout (<parameter><link linkend="GstRTSPSession"><type>GstRTSPSession</type></link> *session</parameter>,
+                               <parameter><link linkend="GTimeVal"><type>GTimeVal</type></link> *now</parameter>);</programlisting>
+<warning><para><literal>gst_rtsp_session_next_timeout</literal> is deprecated and should not be used in newly-written code.</para> <para>Use <link linkend="gst-rtsp-session-next-timeout-usec"><function>gst_rtsp_session_next_timeout_usec()</function></link> instead.</para>
+</warning>
+<para>Get the amount of milliseconds till the session will expire.</para>
+<refsect3 id="gst-rtsp-session-next-timeout.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>session</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstRTSPSession"><type>GstRTSPSession</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>now</para></entry>
+<entry role="parameter_description"><para>the current system time. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>transfer none</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-rtsp-session-next-timeout.returns" role="returns">
+<title>Returns</title>
+<para> the amount of milliseconds since the session will time out.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-rtsp-session-is-expired" role="function" condition="deprecated:Use gst_rtsp_session_is_expired_usec() instead.">
+<title>gst_rtsp_session_is_expired&#160;()</title>
+<indexterm zone="gst-rtsp-session-is-expired" role="deprecated"><primary>gst_rtsp_session_is_expired</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_rtsp_session_is_expired (<parameter><link linkend="GstRTSPSession"><type>GstRTSPSession</type></link> *session</parameter>,
+                             <parameter><link linkend="GTimeVal"><type>GTimeVal</type></link> *now</parameter>);</programlisting>
+<warning><para><literal>gst_rtsp_session_is_expired</literal> is deprecated and should not be used in newly-written code.</para> <para>Use <link linkend="gst-rtsp-session-is-expired-usec"><function>gst_rtsp_session_is_expired_usec()</function></link> instead.</para>
+</warning>
+<para>Check if <parameter>session</parameter>
+ timeout out.</para>
+<refsect3 id="gst-rtsp-session-is-expired.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>session</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstRTSPSession"><type>GstRTSPSession</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>now</para></entry>
+<entry role="parameter_description"><para>the current system time. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>transfer none</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-rtsp-session-is-expired.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if <parameter>session</parameter>
+timed out</para>
+</refsect3></refsect2>
+<refsect2 id="gst-rtsp-session-manage-media" role="function">
+<title>gst_rtsp_session_manage_media&#160;()</title>
+<indexterm zone="gst-rtsp-session-manage-media"><primary>gst_rtsp_session_manage_media</primary></indexterm>
+<programlisting language="C"><link linkend="GstRTSPSessionMedia"><returnvalue>GstRTSPSessionMedia</returnvalue></link>&#160;*
+gst_rtsp_session_manage_media (<parameter><link linkend="GstRTSPSession"><type>GstRTSPSession</type></link> *sess</parameter>,
+                               <parameter>const <link linkend="gchar"><type>gchar</type></link> *path</parameter>,
+                               <parameter><link linkend="GstRTSPMedia"><type>GstRTSPMedia</type></link> *media</parameter>);</programlisting>
+<para>Manage the media object <parameter>obj</parameter>
+ in <parameter>sess</parameter>
+. <parameter>path</parameter>
+ will be used to retrieve this
+media from the session with <link linkend="gst-rtsp-session-get-media"><function>gst_rtsp_session_get_media()</function></link>.</para>
+<para>Ownership is taken from <parameter>media</parameter>
+.</para>
+<refsect3 id="gst-rtsp-session-manage-media.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>sess</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstRTSPSession"><type>GstRTSPSession</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>path</para></entry>
+<entry role="parameter_description"><para>the path for the media</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>media</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstRTSPMedia"><type>GstRTSPMedia</type></link>. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>transfer full</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-rtsp-session-manage-media.returns" role="returns">
+<title>Returns</title>
+<para>a new <parameter>GstRTSPSessionMedia</parameter>
+object. </para>
+<para><emphasis role="annotation">[<acronym>transfer none</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-rtsp-session-release-media" role="function">
+<title>gst_rtsp_session_release_media&#160;()</title>
+<indexterm zone="gst-rtsp-session-release-media"><primary>gst_rtsp_session_release_media</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_rtsp_session_release_media (<parameter><link linkend="GstRTSPSession"><type>GstRTSPSession</type></link> *sess</parameter>,
+                                <parameter><link linkend="GstRTSPSessionMedia"><type>GstRTSPSessionMedia</type></link> *media</parameter>);</programlisting>
+<para>Release the managed <parameter>media</parameter>
+ in <parameter>sess</parameter>
+, freeing the memory allocated by it.</para>
+<refsect3 id="gst-rtsp-session-release-media.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>sess</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstRTSPSession"><type>GstRTSPSession</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>media</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstRTSPMedia"><type>GstRTSPMedia</type></link>. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>transfer none</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-rtsp-session-release-media.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if there are more media session left in <parameter>sess</parameter>
+.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-rtsp-session-get-media" role="function">
+<title>gst_rtsp_session_get_media&#160;()</title>
+<indexterm zone="gst-rtsp-session-get-media"><primary>gst_rtsp_session_get_media</primary></indexterm>
+<programlisting language="C"><link linkend="GstRTSPSessionMedia"><returnvalue>GstRTSPSessionMedia</returnvalue></link>&#160;*
+gst_rtsp_session_get_media (<parameter><link linkend="GstRTSPSession"><type>GstRTSPSession</type></link> *sess</parameter>,
+                            <parameter>const <link linkend="gchar"><type>gchar</type></link> *path</parameter>,
+                            <parameter><link linkend="gint"><type>gint</type></link> *matched</parameter>);</programlisting>
+<para>Get the session media for <parameter>path</parameter>
+. <parameter>matched</parameter>
+ will contain the number of matched
+characters of <parameter>path</parameter>
+.</para>
+<refsect3 id="gst-rtsp-session-get-media.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>sess</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstRTSPSession"><type>GstRTSPSession</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>path</para></entry>
+<entry role="parameter_description"><para>the path for the media</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>matched</para></entry>
+<entry role="parameter_description"><para>the amount of matched characters. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>out</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-rtsp-session-get-media.returns" role="returns">
+<title>Returns</title>
+<para>the configuration for <parameter>path</parameter>
+in <parameter>sess</parameter>
+. </para>
+<para><emphasis role="annotation">[<acronym>transfer none</acronym>][<acronym>nullable</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="GstRTSPSessionFilterFunc" role="function">
+<title>GstRTSPSessionFilterFunc&#160;()</title>
+<indexterm zone="GstRTSPSessionFilterFunc"><primary>GstRTSPSessionFilterFunc</primary></indexterm>
+<programlisting language="C"><link linkend="GstRTSPFilterResult"><returnvalue>GstRTSPFilterResult</returnvalue></link>
+<phrase role="c_punctuation">(</phrase>*GstRTSPSessionFilterFunc<phrase role="c_punctuation">)</phrase> (<parameter><link linkend="GstRTSPSession"><type>GstRTSPSession</type></link> *sess</parameter>,
+                             <parameter><link linkend="GstRTSPSessionMedia"><type>GstRTSPSessionMedia</type></link> *media</parameter>,
+                             <parameter><link linkend="gpointer"><type>gpointer</type></link> user_data</parameter>);</programlisting>
+<para>This function will be called by the <link linkend="gst-rtsp-session-filter"><function>gst_rtsp_session_filter()</function></link>. An
+implementation should return a value of <link linkend="GstRTSPFilterResult"><type>GstRTSPFilterResult</type></link>.</para>
+<para>When this function returns <link linkend="GST-RTSP-FILTER-REMOVE:CAPS"><type>GST_RTSP_FILTER_REMOVE</type></link>, <parameter>media</parameter>
+ will be removed
+from <parameter>sess</parameter>
+.</para>
+<para>A return value of <link linkend="GST-RTSP-FILTER-KEEP:CAPS"><type>GST_RTSP_FILTER_KEEP</type></link> will leave <parameter>media</parameter>
+ untouched in
+<parameter>sess</parameter>
+.</para>
+<para>A value of GST_RTSP_FILTER_REF will add <parameter>media</parameter>
+ to the result <link linkend="GList"><type>GList</type></link> of
+<link linkend="gst-rtsp-session-filter"><function>gst_rtsp_session_filter()</function></link>.</para>
+<refsect3 id="GstRTSPSessionFilterFunc.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>sess</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstRTSPSession"><type>GstRTSPSession</type></link> object</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>media</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstRTSPSessionMedia"><type>GstRTSPSessionMedia</type></link> in <parameter>sess</parameter>
+</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>user_data</para></entry>
+<entry role="parameter_description"><para>user data that has been given to <link linkend="gst-rtsp-session-filter"><function>gst_rtsp_session_filter()</function></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="GstRTSPSessionFilterFunc.returns" role="returns">
+<title>Returns</title>
+<para> a <link linkend="GstRTSPFilterResult"><type>GstRTSPFilterResult</type></link>.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-rtsp-session-filter" role="function">
+<title>gst_rtsp_session_filter&#160;()</title>
+<indexterm zone="gst-rtsp-session-filter"><primary>gst_rtsp_session_filter</primary></indexterm>
+<programlisting language="C"><link linkend="GList"><returnvalue>GList</returnvalue></link>&#160;*
+gst_rtsp_session_filter (<parameter><link linkend="GstRTSPSession"><type>GstRTSPSession</type></link> *sess</parameter>,
+                         <parameter><link linkend="GstRTSPSessionFilterFunc"><type>GstRTSPSessionFilterFunc</type></link> func</parameter>,
+                         <parameter><link linkend="gpointer"><type>gpointer</type></link> user_data</parameter>);</programlisting>
+<para>Call <parameter>func</parameter>
+ for each media in <parameter>sess</parameter>
+. The result value of <parameter>func</parameter>
+ determines
+what happens to the media. <parameter>func</parameter>
+ will be called with <parameter>sess</parameter>
+
+locked so no further actions on <parameter>sess</parameter>
+ can be performed from <parameter>func</parameter>
+.</para>
+<para>If <parameter>func</parameter>
+ returns <link linkend="GST-RTSP-FILTER-REMOVE:CAPS"><type>GST_RTSP_FILTER_REMOVE</type></link>, the media will be removed from
+<parameter>sess</parameter>
+.</para>
+<para>If <parameter>func</parameter>
+ returns <link linkend="GST-RTSP-FILTER-KEEP:CAPS"><type>GST_RTSP_FILTER_KEEP</type></link>, the media will remain in <parameter>sess</parameter>
+.</para>
+<para>If <parameter>func</parameter>
+ returns <link linkend="GST-RTSP-FILTER-REF:CAPS"><type>GST_RTSP_FILTER_REF</type></link>, the media will remain in <parameter>sess</parameter>
+ but
+will also be added with an additional ref to the result <link linkend="GList"><type>GList</type></link> of this
+function..</para>
+<para>When <parameter>func</parameter>
+ is <link linkend="NULL:CAPS"><literal>NULL</literal></link>, <link linkend="GST-RTSP-FILTER-REF:CAPS"><type>GST_RTSP_FILTER_REF</type></link> will be assumed for all media.</para>
+<refsect3 id="gst-rtsp-session-filter.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>sess</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstRTSPSession"><type>GstRTSPSession</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>func</para></entry>
+<entry role="parameter_description"><para>a callback. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>scope call</acronym>][<acronym>allow-none</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>user_data</para></entry>
+<entry role="parameter_description"><para>user data passed to <parameter>func</parameter>
+. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>closure</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-rtsp-session-filter.returns" role="returns">
+<title>Returns</title>
+<para>a GList with all
+media for which <parameter>func</parameter>
+returned <link linkend="GST-RTSP-FILTER-REF:CAPS"><type>GST_RTSP_FILTER_REF</type></link>. After usage, each
+element in the <link linkend="GList"><type>GList</type></link> should be unreffed before the list is freed. </para>
+<para><emphasis role="annotation">[<acronym>element-type</acronym> GstRTSPSessionMedia][<acronym>transfer full</acronym>]</emphasis></para>
+</refsect3></refsect2>
+
+</refsect1>
+<refsect1 id="GstRTSPSession.other_details" role="details">
+<title role="details.title">Types and Values</title>
+<refsect2 id="GstRTSPSession-struct" role="struct">
+<title>struct GstRTSPSession</title>
+<indexterm zone="GstRTSPSession-struct"><primary>GstRTSPSession</primary></indexterm>
+<programlisting language="C">struct GstRTSPSession;</programlisting>
+<para>Session information kept by the server for a specific client.
+One client session, identified with a session id, can handle multiple medias
+identified with the url of a media.</para>
+</refsect2>
+<refsect2 id="GstRTSPSessionClass" role="struct">
+<title>struct GstRTSPSessionClass</title>
+<indexterm zone="GstRTSPSessionClass"><primary>GstRTSPSessionClass</primary></indexterm>
+<programlisting language="C">struct GstRTSPSessionClass {
+  GObjectClass  parent_class;
+};
+</programlisting>
+</refsect2>
+<refsect2 id="GstRTSPFilterResult" role="enum">
+<title>enum GstRTSPFilterResult</title>
+<indexterm zone="GstRTSPFilterResult"><primary>GstRTSPFilterResult</primary></indexterm>
+<para>Possible return values for <link linkend="gst-rtsp-session-pool-filter"><function>gst_rtsp_session_pool_filter()</function></link>.</para>
+<refsect3 id="GstRTSPFilterResult.members" role="enum_members">
+<title>Members</title>
+<informaltable role="enum_members_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="enum_members_name" colwidth="300px"/>
+<colspec colname="enum_members_description"/>
+<colspec colname="enum_members_annotations" colwidth="200px"/>
+<tbody>
+<row role="constant"><entry role="enum_member_name"><para id="GST-RTSP-FILTER-REMOVE:CAPS">GST_RTSP_FILTER_REMOVE</para></entry>
+<entry role="enum_member_description"><para>Remove session</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="GST-RTSP-FILTER-KEEP:CAPS">GST_RTSP_FILTER_KEEP</para></entry>
+<entry role="enum_member_description"><para>Keep session in the pool</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="GST-RTSP-FILTER-REF:CAPS">GST_RTSP_FILTER_REF</para></entry>
+<entry role="enum_member_description"><para>Ref session in the result list</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+
+</refsect1>
+<refsect1 id="GstRTSPSession.property-details" role="property_details">
+<title role="property_details.title">Property Details</title>
+<refsect2 id="GstRTSPSession--sessionid" role="property"><title>The <literal>“sessionid”</literal> property</title>
+<indexterm zone="GstRTSPSession--sessionid"><primary>GstRTSPSession:sessionid</primary></indexterm>
+<programlisting>  “sessionid”                <link linkend="gchar"><type>gchar</type></link>&#160;*</programlisting>
+<para>the session id.</para><para>Flags: Read / Write / Construct Only</para>
+<para>Default value: NULL</para>
+</refsect2>
+<refsect2 id="GstRTSPSession--timeout" role="property"><title>The <literal>“timeout”</literal> property</title>
+<indexterm zone="GstRTSPSession--timeout"><primary>GstRTSPSession:timeout</primary></indexterm>
+<programlisting>  “timeout”                  <link linkend="guint"><type>guint</type></link></programlisting>
+<para>the timeout of the session (0 = never).</para><para>Flags: Read / Write</para>
+<para>Default value: 60</para>
+</refsect2>
+<refsect2 id="GstRTSPSession--timeout-always-visible" role="property"><title>The <literal>“timeout-always-visible”</literal> property</title>
+<indexterm zone="GstRTSPSession--timeout-always-visible"><primary>GstRTSPSession:timeout-always-visible</primary></indexterm>
+<programlisting>  “timeout-always-visible”   <link linkend="gboolean"><type>gboolean</type></link></programlisting>
+<para>timeout always visible in header.</para><para>Flags: Read / Write</para>
+<para>Default value: FALSE</para>
+</refsect2>
+
+</refsect1>
+<refsect1 id="GstRTSPSession.see-also">
+<title>See Also</title>
+<para><link linkend="GstRTSPSessionPool"><type>GstRTSPSessionPool</type></link>, <link linkend="GstRTSPSessionMedia"><type>GstRTSPSessionMedia</type></link>, <link linkend="GstRTSPMedia"><type>GstRTSPMedia</type></link></para>
+
+</refsect1>
+
+</refentry>

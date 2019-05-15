@@ -1,0 +1,949 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN"
+               "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd" [
+<!ENTITY % version-entities SYSTEM "version.entities">
+%version-entities;
+]>
+<refentry id="GstRTSPServer">
+<refmeta>
+<refentrytitle role="top_of_page" id="GstRTSPServer.top_of_page">GstRTSPServer</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GST-RTSP-SERVER Library</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>GstRTSPServer</refname>
+<refpurpose>The main server object</refpurpose>
+</refnamediv>
+
+<refsect1 id="GstRTSPServer.functions" role="functions_proto">
+<title role="functions_proto.title">Functions</title>
+<informaltable pgwide="1" frame="none">
+<tgroup cols="2">
+<colspec colname="functions_return" colwidth="150px"/>
+<colspec colname="functions_name"/>
+<tbody>
+<row><entry role="function_type"><link linkend="GstRTSPServer"><returnvalue>GstRTSPServer</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-rtsp-server-new">gst_rtsp_server_new</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gchar"><returnvalue>gchar</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-rtsp-server-get-address">gst_rtsp_server_get_address</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-rtsp-server-set-address">gst_rtsp_server_set_address</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gchar"><returnvalue>gchar</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-rtsp-server-get-service">gst_rtsp_server_get_service</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-rtsp-server-set-service">gst_rtsp_server_set_service</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gint"><returnvalue>gint</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-rtsp-server-get-backlog">gst_rtsp_server_get_backlog</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-rtsp-server-set-backlog">gst_rtsp_server_set_backlog</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="int"><returnvalue>int</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-rtsp-server-get-bound-port">gst_rtsp_server_get_bound_port</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstRTSPMountPoints"><returnvalue>GstRTSPMountPoints</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-rtsp-server-get-mount-points">gst_rtsp_server_get_mount_points</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-rtsp-server-set-mount-points">gst_rtsp_server_set_mount_points</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstRTSPSessionPool"><returnvalue>GstRTSPSessionPool</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-rtsp-server-get-session-pool">gst_rtsp_server_get_session_pool</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-rtsp-server-set-session-pool">gst_rtsp_server_set_session_pool</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstRTSPThreadPool"><returnvalue>GstRTSPThreadPool</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-rtsp-server-get-thread-pool">gst_rtsp_server_get_thread_pool</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-rtsp-server-set-thread-pool">gst_rtsp_server_set_thread_pool</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstRTSPAuth"><returnvalue>GstRTSPAuth</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-rtsp-server-get-auth">gst_rtsp_server_get_auth</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-rtsp-server-set-auth">gst_rtsp_server_set_auth</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-rtsp-server-transfer-connection">gst_rtsp_server_transfer_connection</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-rtsp-server-io-func">gst_rtsp_server_io_func</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GSocket"><returnvalue>GSocket</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-rtsp-server-create-socket">gst_rtsp_server_create_socket</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GSource"><returnvalue>GSource</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-rtsp-server-create-source">gst_rtsp_server_create_source</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="guint"><returnvalue>guint</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-rtsp-server-attach">gst_rtsp_server_attach</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstRTSPFilterResult"><returnvalue>GstRTSPFilterResult</returnvalue></link>
+</entry><entry role="function_name"><phrase role="c_punctuation">(</phrase><link linkend="GstRTSPServerClientFilterFunc">*GstRTSPServerClientFilterFunc</link><phrase role="c_punctuation">)</phrase>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GList"><returnvalue>GList</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-rtsp-server-client-filter">gst_rtsp_server_client_filter</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="GstRTSPServer.properties" role="properties">
+<title role="properties.title">Properties</title>
+<informaltable frame="none">
+<tgroup cols="3">
+<colspec colname="properties_type" colwidth="150px"/>
+<colspec colname="properties_name" colwidth="300px"/>
+<colspec colname="properties_flags" colwidth="200px"/>
+<tbody>
+<row><entry role="property_type"><link linkend="gchar"><type>gchar</type></link>&#160;*</entry><entry role="property_name"><link linkend="GstRTSPServer--address">address</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gint"><type>gint</type></link></entry><entry role="property_name"><link linkend="GstRTSPServer--backlog">backlog</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gint"><type>gint</type></link></entry><entry role="property_name"><link linkend="GstRTSPServer--bound-port">bound-port</link></entry><entry role="property_flags">Read</entry></row>
+<row><entry role="property_type"><link linkend="GstRTSPMountPoints"><type>GstRTSPMountPoints</type></link>&#160;*</entry><entry role="property_name"><link linkend="GstRTSPServer--mount-points">mount-points</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gchar"><type>gchar</type></link>&#160;*</entry><entry role="property_name"><link linkend="GstRTSPServer--service">service</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="GstRTSPSessionPool"><type>GstRTSPSessionPool</type></link>&#160;*</entry><entry role="property_name"><link linkend="GstRTSPServer--session-pool">session-pool</link></entry><entry role="property_flags">Read / Write</entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="GstRTSPServer.signals" role="signal_proto">
+<title role="signal_proto.title">Signals</title>
+<informaltable frame="none">
+<tgroup cols="3">
+<colspec colname="signals_return" colwidth="150px"/>
+<colspec colname="signals_name" colwidth="300px"/>
+<colspec colname="signals_flags" colwidth="200px"/>
+<tbody>
+<row><entry role="signal_type"><link linkend="void"><returnvalue>void</returnvalue></link></entry><entry role="signal_name"><link linkend="GstRTSPServer-client-connected">client-connected</link></entry><entry role="signal_flags"><link linkend="G-SIGNAL-RUN-LAST:CAPS">Run Last</link></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="GstRTSPServer.other" role="other_proto">
+<title role="other_proto.title">Types and Values</title>
+<informaltable role="enum_members_table" pgwide="1" frame="none">
+<tgroup cols="2">
+<colspec colname="name" colwidth="150px"/>
+<colspec colname="description"/>
+<tbody>
+<row><entry role="datatype_keyword">struct</entry><entry role="function_name"><link linkend="GstRTSPServer-struct">GstRTSPServer</link></entry></row>
+<row><entry role="datatype_keyword">struct</entry><entry role="function_name"><link linkend="GstRTSPServerClass">GstRTSPServerClass</link></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="GstRTSPServer.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<screen>    <link linkend="GObject">GObject</link>
+    <phrase role="lineart">&#9584;&#9472;&#9472;</phrase> GstRTSPServer
+</screen>
+</refsect1>
+
+
+<refsect1 id="GstRTSPServer.description" role="desc">
+<title role="desc.title">Description</title>
+<para>The server object is the object listening for connections on a port and
+creating <link linkend="GstRTSPClient"><type>GstRTSPClient</type></link> objects to handle those connections.</para>
+<para>The server will listen on the address set with <link linkend="gst-rtsp-server-set-address"><function>gst_rtsp_server_set_address()</function></link>
+and the port or service configured with <link linkend="gst-rtsp-server-set-service"><function>gst_rtsp_server_set_service()</function></link>.
+Use <link linkend="gst-rtsp-server-set-backlog"><function>gst_rtsp_server_set_backlog()</function></link> to configure the amount of pending requests
+that the server will keep. By default the server listens on the current
+network (0.0.0.0) and port 8554.</para>
+<para>The server will require an SSL connection when a TLS certificate has been
+set in the auth object with <link linkend="gst-rtsp-auth-set-tls-certificate"><function>gst_rtsp_auth_set_tls_certificate()</function></link>.</para>
+<para>To start the server, use <link linkend="gst-rtsp-server-attach"><function>gst_rtsp_server_attach()</function></link> to attach it to a
+<link linkend="GMainContext"><type>GMainContext</type></link>. For more control, <link linkend="gst-rtsp-server-create-source"><function>gst_rtsp_server_create_source()</function></link> and
+<link linkend="gst-rtsp-server-create-socket"><function>gst_rtsp_server_create_socket()</function></link> can be used to get a <link linkend="GSource"><type>GSource</type></link> and <link linkend="GSocket"><type>GSocket</type></link>
+respectively.</para>
+<para>gst_rtsp_server_transfer_connection() can be used to transfer an existing
+socket to the RTSP server, for example from an HTTP server.</para>
+<para>Once the server socket is attached to a mainloop, it will start accepting
+connections. When a new connection is received, a new <link linkend="GstRTSPClient"><type>GstRTSPClient</type></link> object
+is created to handle the connection. The new client will be configured with
+the server <link linkend="GstRTSPAuth"><type>GstRTSPAuth</type></link>, <link linkend="GstRTSPMountPoints"><type>GstRTSPMountPoints</type></link>, <link linkend="GstRTSPSessionPool"><type>GstRTSPSessionPool</type></link> and
+<link linkend="GstRTSPThreadPool"><type>GstRTSPThreadPool</type></link>.</para>
+<para>The server uses the configured <link linkend="GstRTSPThreadPool"><type>GstRTSPThreadPool</type></link> object to handle the
+remainder of the communication with this client.</para>
+<para>Last reviewed on 2013-07-11 (1.0.0)</para>
+
+</refsect1>
+<refsect1 id="GstRTSPServer.functions_details" role="details">
+<title role="details.title">Functions</title>
+<refsect2 id="gst-rtsp-server-new" role="function">
+<title>gst_rtsp_server_new&#160;()</title>
+<indexterm zone="gst-rtsp-server-new"><primary>gst_rtsp_server_new</primary></indexterm>
+<programlisting language="C"><link linkend="GstRTSPServer"><returnvalue>GstRTSPServer</returnvalue></link>&#160;*
+gst_rtsp_server_new (<parameter><type>void</type></parameter>);</programlisting>
+<para>Create a new <link linkend="GstRTSPServer"><type>GstRTSPServer</type></link> instance.</para>
+<refsect3 id="gst-rtsp-server-new.returns" role="returns">
+<title>Returns</title>
+<para>a new <link linkend="GstRTSPServer"><type>GstRTSPServer</type></link>. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-rtsp-server-get-address" role="function">
+<title>gst_rtsp_server_get_address&#160;()</title>
+<indexterm zone="gst-rtsp-server-get-address"><primary>gst_rtsp_server_get_address</primary></indexterm>
+<programlisting language="C"><link linkend="gchar"><returnvalue>gchar</returnvalue></link>&#160;*
+gst_rtsp_server_get_address (<parameter><link linkend="GstRTSPServer"><type>GstRTSPServer</type></link> *server</parameter>);</programlisting>
+<para>Get the address on which the server will accept connections.</para>
+<refsect3 id="gst-rtsp-server-get-address.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>server</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstRTSPServer"><type>GstRTSPServer</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-rtsp-server-get-address.returns" role="returns">
+<title>Returns</title>
+<para>the server address. <link linkend="g-free"><function>g_free()</function></link> after usage. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>][<acronym>nullable</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-rtsp-server-set-address" role="function">
+<title>gst_rtsp_server_set_address&#160;()</title>
+<indexterm zone="gst-rtsp-server-set-address"><primary>gst_rtsp_server_set_address</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_rtsp_server_set_address (<parameter><link linkend="GstRTSPServer"><type>GstRTSPServer</type></link> *server</parameter>,
+                             <parameter>const <link linkend="gchar"><type>gchar</type></link> *address</parameter>);</programlisting>
+<para>Configure <parameter>server</parameter>
+ to accept connections on the given address.</para>
+<para>This function must be called before the server is bound.</para>
+<refsect3 id="gst-rtsp-server-set-address.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>server</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstRTSPServer"><type>GstRTSPServer</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>address</para></entry>
+<entry role="parameter_description"><para>the address</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-rtsp-server-get-service" role="function">
+<title>gst_rtsp_server_get_service&#160;()</title>
+<indexterm zone="gst-rtsp-server-get-service"><primary>gst_rtsp_server_get_service</primary></indexterm>
+<programlisting language="C"><link linkend="gchar"><returnvalue>gchar</returnvalue></link>&#160;*
+gst_rtsp_server_get_service (<parameter><link linkend="GstRTSPServer"><type>GstRTSPServer</type></link> *server</parameter>);</programlisting>
+<para>Get the service on which the server will accept connections.</para>
+<refsect3 id="gst-rtsp-server-get-service.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>server</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstRTSPServer"><type>GstRTSPServer</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-rtsp-server-get-service.returns" role="returns">
+<title>Returns</title>
+<para>the service. use <link linkend="g-free"><function>g_free()</function></link> after usage. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>][<acronym>nullable</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-rtsp-server-set-service" role="function">
+<title>gst_rtsp_server_set_service&#160;()</title>
+<indexterm zone="gst-rtsp-server-set-service"><primary>gst_rtsp_server_set_service</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_rtsp_server_set_service (<parameter><link linkend="GstRTSPServer"><type>GstRTSPServer</type></link> *server</parameter>,
+                             <parameter>const <link linkend="gchar"><type>gchar</type></link> *service</parameter>);</programlisting>
+<para>Configure <parameter>server</parameter>
+ to accept connections on the given service.
+<parameter>service</parameter>
+ should be a string containing the service name (see services(5)) or
+a string containing a port number between 1 and 65535.</para>
+<para>When <parameter>service</parameter>
+ is set to "0", the server will listen on a random free
+port. The actual used port can be retrieved with
+<link linkend="gst-rtsp-server-get-bound-port"><function>gst_rtsp_server_get_bound_port()</function></link>.</para>
+<para>This function must be called before the server is bound.</para>
+<refsect3 id="gst-rtsp-server-set-service.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>server</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstRTSPServer"><type>GstRTSPServer</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>service</para></entry>
+<entry role="parameter_description"><para>the service</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-rtsp-server-get-backlog" role="function">
+<title>gst_rtsp_server_get_backlog&#160;()</title>
+<indexterm zone="gst-rtsp-server-get-backlog"><primary>gst_rtsp_server_get_backlog</primary></indexterm>
+<programlisting language="C"><link linkend="gint"><returnvalue>gint</returnvalue></link>
+gst_rtsp_server_get_backlog (<parameter><link linkend="GstRTSPServer"><type>GstRTSPServer</type></link> *server</parameter>);</programlisting>
+<para>The maximum amount of queued requests for the server.</para>
+<refsect3 id="gst-rtsp-server-get-backlog.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>server</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstRTSPServer"><type>GstRTSPServer</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-rtsp-server-get-backlog.returns" role="returns">
+<title>Returns</title>
+<para> the server backlog.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-rtsp-server-set-backlog" role="function">
+<title>gst_rtsp_server_set_backlog&#160;()</title>
+<indexterm zone="gst-rtsp-server-set-backlog"><primary>gst_rtsp_server_set_backlog</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_rtsp_server_set_backlog (<parameter><link linkend="GstRTSPServer"><type>GstRTSPServer</type></link> *server</parameter>,
+                             <parameter><link linkend="gint"><type>gint</type></link> backlog</parameter>);</programlisting>
+<para>configure the maximum amount of requests that may be queued for the
+server.</para>
+<para>This function must be called before the server is bound.</para>
+<refsect3 id="gst-rtsp-server-set-backlog.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>server</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstRTSPServer"><type>GstRTSPServer</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>backlog</para></entry>
+<entry role="parameter_description"><para>the backlog</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-rtsp-server-get-bound-port" role="function">
+<title>gst_rtsp_server_get_bound_port&#160;()</title>
+<indexterm zone="gst-rtsp-server-get-bound-port"><primary>gst_rtsp_server_get_bound_port</primary></indexterm>
+<programlisting language="C"><link linkend="int"><returnvalue>int</returnvalue></link>
+gst_rtsp_server_get_bound_port (<parameter><link linkend="GstRTSPServer"><type>GstRTSPServer</type></link> *server</parameter>);</programlisting>
+<para>Get the port number where the server was bound to.</para>
+<refsect3 id="gst-rtsp-server-get-bound-port.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>server</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstRTSPServer"><type>GstRTSPServer</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-rtsp-server-get-bound-port.returns" role="returns">
+<title>Returns</title>
+<para> the port number</para>
+</refsect3></refsect2>
+<refsect2 id="gst-rtsp-server-get-mount-points" role="function">
+<title>gst_rtsp_server_get_mount_points&#160;()</title>
+<indexterm zone="gst-rtsp-server-get-mount-points"><primary>gst_rtsp_server_get_mount_points</primary></indexterm>
+<programlisting language="C"><link linkend="GstRTSPMountPoints"><returnvalue>GstRTSPMountPoints</returnvalue></link>&#160;*
+gst_rtsp_server_get_mount_points (<parameter><link linkend="GstRTSPServer"><type>GstRTSPServer</type></link> *server</parameter>);</programlisting>
+<para>Get the <link linkend="GstRTSPMountPoints"><type>GstRTSPMountPoints</type></link> used as the mount points of <parameter>server</parameter>
+.</para>
+<refsect3 id="gst-rtsp-server-get-mount-points.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>server</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstRTSPServer"><type>GstRTSPServer</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-rtsp-server-get-mount-points.returns" role="returns">
+<title>Returns</title>
+<para>the <link linkend="GstRTSPMountPoints"><type>GstRTSPMountPoints</type></link> of <parameter>server</parameter>
+. <link linkend="g-object-unref"><function>g_object_unref()</function></link> after
+usage. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>][<acronym>nullable</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-rtsp-server-set-mount-points" role="function">
+<title>gst_rtsp_server_set_mount_points&#160;()</title>
+<indexterm zone="gst-rtsp-server-set-mount-points"><primary>gst_rtsp_server_set_mount_points</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_rtsp_server_set_mount_points (<parameter><link linkend="GstRTSPServer"><type>GstRTSPServer</type></link> *server</parameter>,
+                                  <parameter><link linkend="GstRTSPMountPoints"><type>GstRTSPMountPoints</type></link> *mounts</parameter>);</programlisting>
+<para>configure <parameter>mounts</parameter>
+ to be used as the mount points of <parameter>server</parameter>
+.</para>
+<refsect3 id="gst-rtsp-server-set-mount-points.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>server</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstRTSPServer"><type>GstRTSPServer</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>mounts</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstRTSPMountPoints"><type>GstRTSPMountPoints</type></link>. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>transfer none</acronym>][<acronym>nullable</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-rtsp-server-get-session-pool" role="function">
+<title>gst_rtsp_server_get_session_pool&#160;()</title>
+<indexterm zone="gst-rtsp-server-get-session-pool"><primary>gst_rtsp_server_get_session_pool</primary></indexterm>
+<programlisting language="C"><link linkend="GstRTSPSessionPool"><returnvalue>GstRTSPSessionPool</returnvalue></link>&#160;*
+gst_rtsp_server_get_session_pool (<parameter><link linkend="GstRTSPServer"><type>GstRTSPServer</type></link> *server</parameter>);</programlisting>
+<para>Get the <link linkend="GstRTSPSessionPool"><type>GstRTSPSessionPool</type></link> used as the session pool of <parameter>server</parameter>
+.</para>
+<refsect3 id="gst-rtsp-server-get-session-pool.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>server</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstRTSPServer"><type>GstRTSPServer</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-rtsp-server-get-session-pool.returns" role="returns">
+<title>Returns</title>
+<para>the <link linkend="GstRTSPSessionPool"><type>GstRTSPSessionPool</type></link> used for sessions. <link linkend="g-object-unref"><function>g_object_unref()</function></link> after
+usage. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>][<acronym>nullable</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-rtsp-server-set-session-pool" role="function">
+<title>gst_rtsp_server_set_session_pool&#160;()</title>
+<indexterm zone="gst-rtsp-server-set-session-pool"><primary>gst_rtsp_server_set_session_pool</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_rtsp_server_set_session_pool (<parameter><link linkend="GstRTSPServer"><type>GstRTSPServer</type></link> *server</parameter>,
+                                  <parameter><link linkend="GstRTSPSessionPool"><type>GstRTSPSessionPool</type></link> *pool</parameter>);</programlisting>
+<para>configure <parameter>pool</parameter>
+ to be used as the session pool of <parameter>server</parameter>
+.</para>
+<refsect3 id="gst-rtsp-server-set-session-pool.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>server</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstRTSPServer"><type>GstRTSPServer</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>pool</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstRTSPSessionPool"><type>GstRTSPSessionPool</type></link>. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>transfer none</acronym>][<acronym>nullable</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-rtsp-server-get-thread-pool" role="function">
+<title>gst_rtsp_server_get_thread_pool&#160;()</title>
+<indexterm zone="gst-rtsp-server-get-thread-pool"><primary>gst_rtsp_server_get_thread_pool</primary></indexterm>
+<programlisting language="C"><link linkend="GstRTSPThreadPool"><returnvalue>GstRTSPThreadPool</returnvalue></link>&#160;*
+gst_rtsp_server_get_thread_pool (<parameter><link linkend="GstRTSPServer"><type>GstRTSPServer</type></link> *server</parameter>);</programlisting>
+<para>Get the <link linkend="GstRTSPThreadPool"><type>GstRTSPThreadPool</type></link> used as the thread pool of <parameter>server</parameter>
+.</para>
+<refsect3 id="gst-rtsp-server-get-thread-pool.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>server</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstRTSPServer"><type>GstRTSPServer</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-rtsp-server-get-thread-pool.returns" role="returns">
+<title>Returns</title>
+<para>the <link linkend="GstRTSPThreadPool"><type>GstRTSPThreadPool</type></link> of <parameter>server</parameter>
+. <link linkend="g-object-unref"><function>g_object_unref()</function></link> after
+usage. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>][<acronym>nullable</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-rtsp-server-set-thread-pool" role="function">
+<title>gst_rtsp_server_set_thread_pool&#160;()</title>
+<indexterm zone="gst-rtsp-server-set-thread-pool"><primary>gst_rtsp_server_set_thread_pool</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_rtsp_server_set_thread_pool (<parameter><link linkend="GstRTSPServer"><type>GstRTSPServer</type></link> *server</parameter>,
+                                 <parameter><link linkend="GstRTSPThreadPool"><type>GstRTSPThreadPool</type></link> *pool</parameter>);</programlisting>
+<para>configure <parameter>pool</parameter>
+ to be used as the thread pool of <parameter>server</parameter>
+.</para>
+<refsect3 id="gst-rtsp-server-set-thread-pool.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>server</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstRTSPServer"><type>GstRTSPServer</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>pool</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstRTSPThreadPool"><type>GstRTSPThreadPool</type></link>. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>transfer none</acronym>][<acronym>nullable</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-rtsp-server-get-auth" role="function">
+<title>gst_rtsp_server_get_auth&#160;()</title>
+<indexterm zone="gst-rtsp-server-get-auth"><primary>gst_rtsp_server_get_auth</primary></indexterm>
+<programlisting language="C"><link linkend="GstRTSPAuth"><returnvalue>GstRTSPAuth</returnvalue></link>&#160;*
+gst_rtsp_server_get_auth (<parameter><link linkend="GstRTSPServer"><type>GstRTSPServer</type></link> *server</parameter>);</programlisting>
+<para>Get the <link linkend="GstRTSPAuth"><type>GstRTSPAuth</type></link> used as the authentication manager of <parameter>server</parameter>
+.</para>
+<refsect3 id="gst-rtsp-server-get-auth.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>server</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstRTSPServer"><type>GstRTSPServer</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-rtsp-server-get-auth.returns" role="returns">
+<title>Returns</title>
+<para>the <link linkend="GstRTSPAuth"><type>GstRTSPAuth</type></link> of <parameter>server</parameter>
+. <link linkend="g-object-unref"><function>g_object_unref()</function></link> after
+usage. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>][<acronym>nullable</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-rtsp-server-set-auth" role="function">
+<title>gst_rtsp_server_set_auth&#160;()</title>
+<indexterm zone="gst-rtsp-server-set-auth"><primary>gst_rtsp_server_set_auth</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_rtsp_server_set_auth (<parameter><link linkend="GstRTSPServer"><type>GstRTSPServer</type></link> *server</parameter>,
+                          <parameter><link linkend="GstRTSPAuth"><type>GstRTSPAuth</type></link> *auth</parameter>);</programlisting>
+<para>configure <parameter>auth</parameter>
+ to be used as the authentication manager of <parameter>server</parameter>
+.</para>
+<refsect3 id="gst-rtsp-server-set-auth.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>server</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstRTSPServer"><type>GstRTSPServer</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>auth</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstRTSPAuth"><type>GstRTSPAuth</type></link>. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>transfer none</acronym>][<acronym>nullable</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-rtsp-server-transfer-connection" role="function">
+<title>gst_rtsp_server_transfer_connection&#160;()</title>
+<indexterm zone="gst-rtsp-server-transfer-connection"><primary>gst_rtsp_server_transfer_connection</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_rtsp_server_transfer_connection (<parameter><link linkend="GstRTSPServer"><type>GstRTSPServer</type></link> *server</parameter>,
+                                     <parameter><link linkend="GSocket"><type>GSocket</type></link> *socket</parameter>,
+                                     <parameter>const <link linkend="gchar"><type>gchar</type></link> *ip</parameter>,
+                                     <parameter><link linkend="gint"><type>gint</type></link> port</parameter>,
+                                     <parameter>const <link linkend="gchar"><type>gchar</type></link> *initial_buffer</parameter>);</programlisting>
+<para>Take an existing network socket and use it for an RTSP connection. This
+is used when transferring a socket from an HTTP server which should be used
+as an RTSP over HTTP tunnel. The <parameter>initial_buffer</parameter>
+ contains any remaining data
+that the HTTP server read from the socket while parsing the HTTP header.</para>
+<refsect3 id="gst-rtsp-server-transfer-connection.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>server</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstRTSPServer"><type>GstRTSPServer</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>socket</para></entry>
+<entry role="parameter_description"><para>a network socket. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>transfer full</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>ip</para></entry>
+<entry role="parameter_description"><para>the IP address of the remote client</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>port</para></entry>
+<entry role="parameter_description"><para>the port used by the other end</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>initial_buffer</para></entry>
+<entry role="parameter_description"><para>any initial data that was already read from the socket. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>nullable</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-rtsp-server-transfer-connection.returns" role="returns">
+<title>Returns</title>
+<para> TRUE if all was ok, FALSE if an error occurred.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-rtsp-server-io-func" role="function">
+<title>gst_rtsp_server_io_func&#160;()</title>
+<indexterm zone="gst-rtsp-server-io-func"><primary>gst_rtsp_server_io_func</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_rtsp_server_io_func (<parameter><link linkend="GSocket"><type>GSocket</type></link> *socket</parameter>,
+                         <parameter><link linkend="GIOCondition"><type>GIOCondition</type></link> condition</parameter>,
+                         <parameter><link linkend="GstRTSPServer"><type>GstRTSPServer</type></link> *server</parameter>);</programlisting>
+<para>A default <link linkend="GSocketSourceFunc"><type>GSocketSourceFunc</type></link> that creates a new <link linkend="GstRTSPClient"><type>GstRTSPClient</type></link> to accept and handle a
+new connection on <parameter>socket</parameter>
+ or <parameter>server</parameter>
+.</para>
+<refsect3 id="gst-rtsp-server-io-func.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>socket</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GSocket"><type>GSocket</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>condition</para></entry>
+<entry role="parameter_description"><para>the condition on <parameter>source</parameter>
+</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>server</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstRTSPServer"><type>GstRTSPServer</type></link>. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>transfer none</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-rtsp-server-io-func.returns" role="returns">
+<title>Returns</title>
+<para> TRUE if the source could be connected, FALSE if an error occurred.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-rtsp-server-create-socket" role="function">
+<title>gst_rtsp_server_create_socket&#160;()</title>
+<indexterm zone="gst-rtsp-server-create-socket"><primary>gst_rtsp_server_create_socket</primary></indexterm>
+<programlisting language="C"><link linkend="GSocket"><returnvalue>GSocket</returnvalue></link>&#160;*
+gst_rtsp_server_create_socket (<parameter><link linkend="GstRTSPServer"><type>GstRTSPServer</type></link> *server</parameter>,
+                               <parameter><link linkend="GCancellable"><type>GCancellable</type></link> *cancellable</parameter>,
+                               <parameter><link linkend="GError"><type>GError</type></link> **error</parameter>);</programlisting>
+<para>Create a <link linkend="GSocket"><type>GSocket</type></link> for <parameter>server</parameter>
+. The socket will listen on the
+configured service.</para>
+<refsect3 id="gst-rtsp-server-create-socket.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>server</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstRTSPServer"><type>GstRTSPServer</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>cancellable</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GCancellable"><type>GCancellable</type></link>. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>allow-none</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>error</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GError"><type>GError</type></link>. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>out</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-rtsp-server-create-socket.returns" role="returns">
+<title>Returns</title>
+<para>the <link linkend="GSocket"><type>GSocket</type></link> for <parameter>server</parameter>
+or <link linkend="NULL:CAPS"><literal>NULL</literal></link> when an error
+occurred. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-rtsp-server-create-source" role="function">
+<title>gst_rtsp_server_create_source&#160;()</title>
+<indexterm zone="gst-rtsp-server-create-source"><primary>gst_rtsp_server_create_source</primary></indexterm>
+<programlisting language="C"><link linkend="GSource"><returnvalue>GSource</returnvalue></link>&#160;*
+gst_rtsp_server_create_source (<parameter><link linkend="GstRTSPServer"><type>GstRTSPServer</type></link> *server</parameter>,
+                               <parameter><link linkend="GCancellable"><type>GCancellable</type></link> *cancellable</parameter>,
+                               <parameter><link linkend="GError"><type>GError</type></link> **error</parameter>);</programlisting>
+<para>Create a <link linkend="GSource"><type>GSource</type></link> for <parameter>server</parameter>
+. The new source will have a default
+<link linkend="GSocketSourceFunc"><type>GSocketSourceFunc</type></link> of <link linkend="gst-rtsp-server-io-func"><function>gst_rtsp_server_io_func()</function></link>.</para>
+<para><parameter>cancellable</parameter>
+ if not <link linkend="NULL:CAPS"><literal>NULL</literal></link> can be used to cancel the source, which will cause
+the source to trigger, reporting the current condition (which is likely 0
+unless cancellation happened at the same time as a condition change). You can
+check for this in the callback using <link linkend="g-cancellable-is-cancelled"><function>g_cancellable_is_cancelled()</function></link>.</para>
+<para>This takes a reference on <parameter>server</parameter>
+ until <parameter>source</parameter>
+ is destroyed.</para>
+<refsect3 id="gst-rtsp-server-create-source.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>server</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstRTSPServer"><type>GstRTSPServer</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>cancellable</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GCancellable"><type>GCancellable</type></link> or <link linkend="NULL:CAPS"><literal>NULL</literal></link>. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>allow-none</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>error</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GError"><type>GError</type></link>. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>out</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-rtsp-server-create-source.returns" role="returns">
+<title>Returns</title>
+<para>the <link linkend="GSource"><type>GSource</type></link> for <parameter>server</parameter>
+or <link linkend="NULL:CAPS"><literal>NULL</literal></link> when an error
+occurred. Free with <link linkend="g-source-unref"><function>g_source_unref()</function></link>. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-rtsp-server-attach" role="function">
+<title>gst_rtsp_server_attach&#160;()</title>
+<indexterm zone="gst-rtsp-server-attach"><primary>gst_rtsp_server_attach</primary></indexterm>
+<programlisting language="C"><link linkend="guint"><returnvalue>guint</returnvalue></link>
+gst_rtsp_server_attach (<parameter><link linkend="GstRTSPServer"><type>GstRTSPServer</type></link> *server</parameter>,
+                        <parameter><link linkend="GMainContext"><type>GMainContext</type></link> *context</parameter>);</programlisting>
+<para>Attaches <parameter>server</parameter>
+ to <parameter>context</parameter>
+. When the mainloop for <parameter>context</parameter>
+ is run, the
+server will be dispatched. When <parameter>context</parameter>
+ is <link linkend="NULL:CAPS"><literal>NULL</literal></link>, the default context will be
+used).</para>
+<para>This function should be called when the server properties and urls are fully
+configured and the server is ready to start.</para>
+<para>This takes a reference on <parameter>server</parameter>
+ until the source is destroyed. Note that
+if <parameter>context</parameter>
+ is not the default main context as returned by
+<link linkend="g-main-context-default"><function>g_main_context_default()</function></link> (or <link linkend="NULL:CAPS"><literal>NULL</literal></link>), <link linkend="g-source-remove"><function>g_source_remove()</function></link> cannot be used to
+destroy the source. In that case it is recommended to use
+<link linkend="gst-rtsp-server-create-source"><function>gst_rtsp_server_create_source()</function></link> and attach it to <parameter>context</parameter>
+ manually.</para>
+<refsect3 id="gst-rtsp-server-attach.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>server</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstRTSPServer"><type>GstRTSPServer</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>context</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GMainContext"><type>GMainContext</type></link>. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>allow-none</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-rtsp-server-attach.returns" role="returns">
+<title>Returns</title>
+<para> the ID (greater than 0) for the source within the GMainContext.</para>
+</refsect3></refsect2>
+<refsect2 id="GstRTSPServerClientFilterFunc" role="function">
+<title>GstRTSPServerClientFilterFunc&#160;()</title>
+<indexterm zone="GstRTSPServerClientFilterFunc"><primary>GstRTSPServerClientFilterFunc</primary></indexterm>
+<programlisting language="C"><link linkend="GstRTSPFilterResult"><returnvalue>GstRTSPFilterResult</returnvalue></link>
+<phrase role="c_punctuation">(</phrase>*GstRTSPServerClientFilterFunc<phrase role="c_punctuation">)</phrase> (<parameter><link linkend="GstRTSPServer"><type>GstRTSPServer</type></link> *server</parameter>,
+                                  <parameter><link linkend="GstRTSPClient"><type>GstRTSPClient</type></link> *client</parameter>,
+                                  <parameter><link linkend="gpointer"><type>gpointer</type></link> user_data</parameter>);</programlisting>
+<para>This function will be called by the <link linkend="gst-rtsp-server-client-filter"><function>gst_rtsp_server_client_filter()</function></link>. An
+implementation should return a value of <link linkend="GstRTSPFilterResult"><type>GstRTSPFilterResult</type></link>.</para>
+<para>When this function returns <link linkend="GST-RTSP-FILTER-REMOVE:CAPS"><type>GST_RTSP_FILTER_REMOVE</type></link>, <parameter>client</parameter>
+ will be removed
+from <parameter>server</parameter>
+.</para>
+<para>A return value of <link linkend="GST-RTSP-FILTER-KEEP:CAPS"><type>GST_RTSP_FILTER_KEEP</type></link> will leave <parameter>client</parameter>
+ untouched in
+<parameter>server</parameter>
+.</para>
+<para>A value of <link linkend="GST-RTSP-FILTER-REF:CAPS"><type>GST_RTSP_FILTER_REF</type></link> will add <parameter>client</parameter>
+ to the result <link linkend="GList"><type>GList</type></link> of
+<link linkend="gst-rtsp-server-client-filter"><function>gst_rtsp_server_client_filter()</function></link>.</para>
+<refsect3 id="GstRTSPServerClientFilterFunc.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>server</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstRTSPServer"><type>GstRTSPServer</type></link> object</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>client</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstRTSPClient"><type>GstRTSPClient</type></link> in <parameter>server</parameter>
+</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>user_data</para></entry>
+<entry role="parameter_description"><para>user data that has been given to <link linkend="gst-rtsp-server-client-filter"><function>gst_rtsp_server_client_filter()</function></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="GstRTSPServerClientFilterFunc.returns" role="returns">
+<title>Returns</title>
+<para> a <link linkend="GstRTSPFilterResult"><type>GstRTSPFilterResult</type></link>.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-rtsp-server-client-filter" role="function">
+<title>gst_rtsp_server_client_filter&#160;()</title>
+<indexterm zone="gst-rtsp-server-client-filter"><primary>gst_rtsp_server_client_filter</primary></indexterm>
+<programlisting language="C"><link linkend="GList"><returnvalue>GList</returnvalue></link>&#160;*
+gst_rtsp_server_client_filter (<parameter><link linkend="GstRTSPServer"><type>GstRTSPServer</type></link> *server</parameter>,
+                               <parameter><link linkend="GstRTSPServerClientFilterFunc"><type>GstRTSPServerClientFilterFunc</type></link> func</parameter>,
+                               <parameter><link linkend="gpointer"><type>gpointer</type></link> user_data</parameter>);</programlisting>
+<para>Call <parameter>func</parameter>
+ for each client managed by <parameter>server</parameter>
+. The result value of <parameter>func</parameter>
+
+determines what happens to the client. <parameter>func</parameter>
+ will be called with <parameter>server</parameter>
+
+locked so no further actions on <parameter>server</parameter>
+ can be performed from <parameter>func</parameter>
+.</para>
+<para>If <parameter>func</parameter>
+ returns <link linkend="GST-RTSP-FILTER-REMOVE:CAPS"><type>GST_RTSP_FILTER_REMOVE</type></link>, the client will be removed from
+<parameter>server</parameter>
+.</para>
+<para>If <parameter>func</parameter>
+ returns <link linkend="GST-RTSP-FILTER-KEEP:CAPS"><type>GST_RTSP_FILTER_KEEP</type></link>, the client will remain in <parameter>server</parameter>
+.</para>
+<para>If <parameter>func</parameter>
+ returns <link linkend="GST-RTSP-FILTER-REF:CAPS"><type>GST_RTSP_FILTER_REF</type></link>, the client will remain in <parameter>server</parameter>
+ but
+will also be added with an additional ref to the result <link linkend="GList"><type>GList</type></link> of this
+function..</para>
+<para>When <parameter>func</parameter>
+ is <link linkend="NULL:CAPS"><literal>NULL</literal></link>, <link linkend="GST-RTSP-FILTER-REF:CAPS"><type>GST_RTSP_FILTER_REF</type></link> will be assumed for each client.</para>
+<refsect3 id="gst-rtsp-server-client-filter.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>server</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstRTSPServer"><type>GstRTSPServer</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>func</para></entry>
+<entry role="parameter_description"><para>a callback. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>scope call</acronym>][<acronym>allow-none</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>user_data</para></entry>
+<entry role="parameter_description"><para>user data passed to <parameter>func</parameter>
+</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-rtsp-server-client-filter.returns" role="returns">
+<title>Returns</title>
+<para>a <link linkend="GList"><type>GList</type></link> with all
+clients for which <parameter>func</parameter>
+returned <link linkend="GST-RTSP-FILTER-REF:CAPS"><type>GST_RTSP_FILTER_REF</type></link>. After usage, each
+element in the <link linkend="GList"><type>GList</type></link> should be unreffed before the list is freed. </para>
+<para><emphasis role="annotation">[<acronym>element-type</acronym> GstRTSPClient][<acronym>transfer full</acronym>]</emphasis></para>
+</refsect3></refsect2>
+
+</refsect1>
+<refsect1 id="GstRTSPServer.other_details" role="details">
+<title role="details.title">Types and Values</title>
+<refsect2 id="GstRTSPServer-struct" role="struct">
+<title>struct GstRTSPServer</title>
+<indexterm zone="GstRTSPServer-struct"><primary>GstRTSPServer</primary></indexterm>
+<programlisting language="C">struct GstRTSPServer;</programlisting>
+<para>This object listens on a port, creates and manages the clients connected to
+it.</para>
+</refsect2>
+<refsect2 id="GstRTSPServerClass" role="struct">
+<title>struct GstRTSPServerClass</title>
+<indexterm zone="GstRTSPServerClass"><primary>GstRTSPServerClass</primary></indexterm>
+<programlisting language="C">struct GstRTSPServerClass {
+  GObjectClass  parent_class;
+
+  GstRTSPClient * (*create_client)      (GstRTSPServer *server);
+
+  /* signals */
+  void            (*client_connected)   (GstRTSPServer *server, GstRTSPClient *client);
+};
+</programlisting>
+<para>The RTSP server class structure</para>
+<refsect3 id="GstRTSPServerClass.members" role="struct_members">
+<title>Members</title>
+<informaltable role="struct_members_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="struct_members_name" colwidth="300px"/>
+<colspec colname="struct_members_description"/>
+<colspec colname="struct_members_annotations" colwidth="200px"/>
+<tbody>
+<row role="member"><entry role="struct_member_name"><para><structfield id="GstRTSPServerClass.create-client">create_client</structfield>&#160;()</para></entry>
+<entry role="struct_member_description"><para>Create, configure a new GstRTSPClient
+object that handles the new connection on <parameter>socket</parameter>
+. The default
+implementation will create a GstRTSPClient and will configure the
+mount-points, auth, session-pool and thread-pool on the client.</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><structfield id="GstRTSPServerClass.client-connected">client_connected</structfield>&#160;()</para></entry>
+<entry role="struct_member_description"><para>emitted when a new client connected.</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+</tbody></tgroup></informaltable>
+</refsect3>
+</refsect2>
+
+</refsect1>
+<refsect1 id="GstRTSPServer.property-details" role="property_details">
+<title role="property_details.title">Property Details</title>
+<refsect2 id="GstRTSPServer--address" role="property"><title>The <literal>“address”</literal> property</title>
+<indexterm zone="GstRTSPServer--address"><primary>GstRTSPServer:address</primary></indexterm>
+<programlisting>  “address”                  <link linkend="gchar"><type>gchar</type></link>&#160;*</programlisting>
+<para>The address the server uses to listen on.</para><para>Flags: Read / Write</para>
+<para>Default value: "0.0.0.0"</para>
+</refsect2>
+<refsect2 id="GstRTSPServer--backlog" role="property"><title>The <literal>“backlog”</literal> property</title>
+<indexterm zone="GstRTSPServer--backlog"><primary>GstRTSPServer:backlog</primary></indexterm>
+<programlisting>  “backlog”                  <link linkend="gint"><type>gint</type></link></programlisting>
+<para>The maximum length to which the queue of pending connections may grow.</para><para>Flags: Read / Write</para>
+<para>Allowed values: &gt;= 0</para>
+<para>Default value: 5</para>
+</refsect2>
+<refsect2 id="GstRTSPServer--bound-port" role="property"><title>The <literal>“bound-port”</literal> property</title>
+<indexterm zone="GstRTSPServer--bound-port"><primary>GstRTSPServer:bound-port</primary></indexterm>
+<programlisting>  “bound-port”               <link linkend="gint"><type>gint</type></link></programlisting>
+<para>The port number the server is listening on.</para><para>Flags: Read</para>
+<para>Allowed values: [-1,65535]</para>
+<para>Default value: -1</para>
+</refsect2>
+<refsect2 id="GstRTSPServer--mount-points" role="property"><title>The <literal>“mount-points”</literal> property</title>
+<indexterm zone="GstRTSPServer--mount-points"><primary>GstRTSPServer:mount-points</primary></indexterm>
+<programlisting>  “mount-points”             <link linkend="GstRTSPMountPoints"><type>GstRTSPMountPoints</type></link>&#160;*</programlisting>
+<para>The mount points to use for client session.</para><para>Flags: Read / Write</para>
+</refsect2>
+<refsect2 id="GstRTSPServer--service" role="property"><title>The <literal>“service”</literal> property</title>
+<indexterm zone="GstRTSPServer--service"><primary>GstRTSPServer:service</primary></indexterm>
+<programlisting>  “service”                  <link linkend="gchar"><type>gchar</type></link>&#160;*</programlisting>
+<para>The service or port number the server uses to listen on.</para><para>Flags: Read / Write</para>
+<para>Default value: "8554"</para>
+</refsect2>
+<refsect2 id="GstRTSPServer--session-pool" role="property"><title>The <literal>“session-pool”</literal> property</title>
+<indexterm zone="GstRTSPServer--session-pool"><primary>GstRTSPServer:session-pool</primary></indexterm>
+<programlisting>  “session-pool”             <link linkend="GstRTSPSessionPool"><type>GstRTSPSessionPool</type></link>&#160;*</programlisting>
+<para>The session pool to use for client session.</para><para>Flags: Read / Write</para>
+</refsect2>
+
+</refsect1>
+<refsect1 id="GstRTSPServer.signal-details" role="signals">
+<title role="signals.title">Signal Details</title>
+<refsect2 id="GstRTSPServer-client-connected" role="signal"><title>The <literal>“client-connected”</literal> signal</title>
+<indexterm zone="GstRTSPServer-client-connected"><primary>GstRTSPServer::client-connected</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+user_function (<link linkend="GstRTSPServer"><type>GstRTSPServer</type></link> *gstrtspserver,
+               <link linkend="GstRTSPClient"><type>GstRTSPClient</type></link> *arg1,
+               <link linkend="gpointer"><type>gpointer</type></link>       user_data)</programlisting>
+<para>Flags: <link linkend="G-SIGNAL-RUN-LAST:CAPS">Run Last</link></para>
+</refsect2>
+</refsect1>
+<refsect1 id="GstRTSPServer.see-also">
+<title>See Also</title>
+<para><link linkend="GstRTSPClient"><type>GstRTSPClient</type></link>, <link linkend="GstRTSPThreadPool"><type>GstRTSPThreadPool</type></link></para>
+
+</refsect1>
+
+</refentry>

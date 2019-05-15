@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!DOCTYPE indexdiv PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN"
+               "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd" [
+<!ENTITY % version-entities SYSTEM "version.entities">
+%version-entities;
+]>
+<indexdiv id="api-index-1.14">
+<indexdiv><title>R</title>
+<indexentry><primaryie linkends="gst-rtsp-media-factory-add-role-from-structure"><link linkend="gst-rtsp-media-factory-add-role-from-structure">gst_rtsp_media_factory_add_role_from_structure</link>, function in <link linkend="GstRTSPMediaFactory">GstRTSPMediaFactory</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-rtsp-onvif-media-collect-backchannel"><link linkend="gst-rtsp-onvif-media-collect-backchannel">gst_rtsp_onvif_media_collect_backchannel</link>, function in <link linkend="gst-rtsp-server-GstRTSPOnvifMedia">GstRTSPOnvifMedia</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-rtsp-onvif-media-factory-get-backchannel-bandwidth"><link linkend="gst-rtsp-onvif-media-factory-get-backchannel-bandwidth">gst_rtsp_onvif_media_factory_get_backchannel_bandwidth</link>, function in <link linkend="gst-rtsp-server-GstRTSPOnvifMediaFactory">GstRTSPOnvifMediaFactory</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-rtsp-onvif-media-factory-get-backchannel-launch"><link linkend="gst-rtsp-onvif-media-factory-get-backchannel-launch">gst_rtsp_onvif_media_factory_get_backchannel_launch</link>, function in <link linkend="gst-rtsp-server-GstRTSPOnvifMediaFactory">GstRTSPOnvifMediaFactory</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-rtsp-onvif-media-factory-has-backchannel-support"><link linkend="gst-rtsp-onvif-media-factory-has-backchannel-support">gst_rtsp_onvif_media_factory_has_backchannel_support</link>, function in <link linkend="gst-rtsp-server-GstRTSPOnvifMediaFactory">GstRTSPOnvifMediaFactory</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-rtsp-onvif-media-factory-new"><link linkend="gst-rtsp-onvif-media-factory-new">gst_rtsp_onvif_media_factory_new</link>, function in <link linkend="gst-rtsp-server-GstRTSPOnvifMediaFactory">GstRTSPOnvifMediaFactory</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-rtsp-onvif-media-factory-set-backchannel-bandwidth"><link linkend="gst-rtsp-onvif-media-factory-set-backchannel-bandwidth">gst_rtsp_onvif_media_factory_set_backchannel_bandwidth</link>, function in <link linkend="gst-rtsp-server-GstRTSPOnvifMediaFactory">GstRTSPOnvifMediaFactory</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-rtsp-onvif-media-factory-set-backchannel-launch"><link linkend="gst-rtsp-onvif-media-factory-set-backchannel-launch">gst_rtsp_onvif_media_factory_set_backchannel_launch</link>, function in <link linkend="gst-rtsp-server-GstRTSPOnvifMediaFactory">GstRTSPOnvifMediaFactory</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-rtsp-onvif-media-get-backchannel-bandwidth"><link linkend="gst-rtsp-onvif-media-get-backchannel-bandwidth">gst_rtsp_onvif_media_get_backchannel_bandwidth</link>, function in <link linkend="gst-rtsp-server-GstRTSPOnvifMedia">GstRTSPOnvifMedia</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-rtsp-onvif-media-set-backchannel-bandwidth"><link linkend="gst-rtsp-onvif-media-set-backchannel-bandwidth">gst_rtsp_onvif_media_set_backchannel_bandwidth</link>, function in <link linkend="gst-rtsp-server-GstRTSPOnvifMedia">GstRTSPOnvifMedia</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-rtsp-permissions-add-permission-for-role"><link linkend="gst-rtsp-permissions-add-permission-for-role">gst_rtsp_permissions_add_permission_for_role</link>, function in <link linkend="GstRTSPPermissions">GstRTSPPermissions</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-rtsp-permissions-add-role-empty"><link linkend="gst-rtsp-permissions-add-role-empty">gst_rtsp_permissions_add_role_empty</link>, function in <link linkend="GstRTSPPermissions">GstRTSPPermissions</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-rtsp-permissions-add-role-from-structure"><link linkend="gst-rtsp-permissions-add-role-from-structure">gst_rtsp_permissions_add_role_from_structure</link>, function in <link linkend="GstRTSPPermissions">GstRTSPPermissions</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-rtsp-token-set-bool"><link linkend="gst-rtsp-token-set-bool">gst_rtsp_token_set_bool</link>, function in <link linkend="GstRTSPToken">GstRTSPToken</link></primaryie></indexentry>
+<indexentry><primaryie linkends="gst-rtsp-token-set-string"><link linkend="gst-rtsp-token-set-string">gst_rtsp_token_set_string</link>, function in <link linkend="GstRTSPToken">GstRTSPToken</link></primaryie></indexentry>
+</indexdiv>
+</indexdiv>

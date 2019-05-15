@@ -1,0 +1,262 @@
+gst-rtsp-server1.0 (1.14.1-1~ubuntu18.04.1) bionic; urgency=medium
+
+  * No-change backport to bionic (LP: #1772898)
+
+ -- Iain Lane <iain@orangesquash.org.uk>  Wed, 23 May 2018 13:56:07 +0100
+
+gst-rtsp-server1.0 (1.14.1-1) unstable; urgency=medium
+
+  * New upstream bugfix release
+
+ -- Sebastian Dröge <slomo@debian.org>  Fri, 18 May 2018 10:57:41 +0300
+
+gst-rtsp-server1.0 (1.14.0-1) unstable; urgency=medium
+
+  * New upstream stable release.
+
+ -- Sebastian Dröge <slomo@debian.org>  Tue, 20 Mar 2018 10:24:45 +0200
+
+gst-rtsp-server1.0 (1.13.91-1) experimental; urgency=medium
+
+  * debian/*.symbols:
+    + Add Build-Depends-Package header to each library section.
+  * New upstream release candidate.
+
+ -- Sebastian Dröge <slomo@debian.org>  Wed, 14 Mar 2018 11:21:33 +0200
+
+gst-rtsp-server1.0 (1.13.90-1) experimental; urgency=medium
+
+  * New upstream release candidate.
+
+ -- Sebastian Dröge <slomo@debian.org>  Mon, 05 Mar 2018 10:36:32 +0200
+
+gst-rtsp-server1.0 (1.13.1-1) experimental; urgency=medium
+
+  * New upstream development release.
+
+ -- Sebastian Dröge <slomo@debian.org>  Mon, 26 Feb 2018 21:19:10 +0200
+
+gst-rtsp-server1.0 (1.12.4-1) unstable; urgency=medium
+
+  * New upstream bugfix release
+
+ -- Sebastian Dröge <slomo@debian.org>  Thu, 07 Dec 2017 19:54:25 +0200
+
+gst-rtsp-server1.0 (1.12.3-1) unstable; urgency=medium
+
+  * New upstream bugfix release
+
+ -- Sebastian Dröge <slomo@debian.org>  Mon, 18 Sep 2017 21:58:36 +0300
+
+gst-rtsp-server1.0 (1.12.2-1) unstable; urgency=medium
+
+  * New upstream bugfix release
+
+ -- Sebastian Dröge <slomo@debian.org>  Fri, 14 Jul 2017 13:44:29 +0300
+
+gst-rtsp-server1.0 (1.12.1-2) unstable; urgency=medium
+
+  * debian/rules:
+    + Disable testsuite for now as it produces multicast traffic (Closes: #865423).
+
+ -- Sebastian Dröge <slomo@debian.org>  Thu, 29 Jun 2017 17:36:04 +0300
+
+gst-rtsp-server1.0 (1.12.1-1) unstable; urgency=medium
+
+  * New upstream bugfix release
+
+ -- Sebastian Dröge <slomo@debian.org>  Tue, 20 Jun 2017 11:58:59 +0300
+
+gst-rtsp-server1.0 (1.12.0-1) experimental; urgency=medium
+
+  * New upstream stable release
+
+ -- Sebastian Dröge <slomo@debian.org>  Thu, 04 May 2017 15:31:35 +0300
+
+gst-rtsp-server1.0 (1.11.91-1) experimental; urgency=medium
+
+  * New upstream release canditate
+
+ -- Sebastian Dröge <slomo@debian.org>  Thu, 27 Apr 2017 17:10:35 +0300
+
+gst-rtsp-server1.0 (1.11.90-1) experimental; urgency=medium
+
+  * New upstream release candidate.
+
+ -- Sebastian Dröge <slomo@debian.org>  Fri, 07 Apr 2017 16:16:32 +0300
+
+gst-rtsp-server1.0 (1.11.2-1) experimental; urgency=medium
+
+  * New development release
+
+ -- Sebastian Dröge <slomo@debian.org>  Fri, 24 Feb 2017 15:01:33 +0200
+
+gst-rtsp-server1.0 (1.11.1-1) experimental; urgency=medium
+
+  * New upstream development release.
+
+ -- Sebastian Dröge <slomo@debian.org>  Thu, 12 Jan 2017 15:35:57 +0200
+
+gst-rtsp-server1.0 (1.10.4-1) unstable; urgency=medium
+
+  * New upstream bugfix release
+
+ -- Sebastian Dröge <slomo@debian.org>  Thu, 23 Feb 2017 15:44:17 +0200
+
+gst-rtsp-server1.0 (1.10.3-1) unstable; urgency=medium
+
+  * New upstream bugfix release
+
+ -- Sebastian Dröge <slomo@debian.org>  Mon, 30 Jan 2017 16:16:23 +0200
+
+
+gst-rtsp-server1.0 (1.10.2-1) unstable; urgency=medium
+
+  * New upstream bugfix release
+
+ -- Sebastian Dröge <slomo@debian.org>  Tue, 29 Nov 2016 16:04:00 +0200
+
+gst-rtsp-server1.0 (1.10.1-1) unstable; urgency=medium
+
+  * New upstream bugfix release
+
+ -- Sebastian Dröge <slomo@debian.org>  Thu, 17 Nov 2016 15:22:25 +0200
+
+gst-rtsp-server1.0 (1.10.0-1) unstable; urgency=medium
+
+  [ Helmut Grohne ]
+  * Mark gstreamer1.0-doc Multi-Arch: foreign (Closes: #842526).
+
+  [ Sebastian Dröge ]
+  * New upstream stable release.
+
+ -- Sebastian Dröge <slomo@debian.org>  Tue, 01 Nov 2016 18:07:30 +0200
+
+gst-rtsp-server1.0 (1.9.90-1) experimental; urgency=medium
+
+  * New upstream unstable release:
+    + debian/control:
+      - Build-depend on GStreamer >= 1.9.90.
+
+ -- Sebastian Dröge <slomo@debian.org>  Fri, 30 Sep 2016 12:49:44 +0300
+
+gst-rtsp-server1.0 (1.9.2-1) experimental; urgency=medium
+
+  * New upstream unstable release:
+    + debian/control:
+      - Build-depend on GStreamer >= 1.9.2.
+
+ -- Sebastian Dröge <slomo@debian.org>  Thu, 01 Sep 2016 12:21:52 +0300
+
+gst-rtsp-server1.0 (1.9.1-1) experimental; urgency=medium
+
+  * New upstream unstable release:
+    + debian/control:
+      - Build-depend on GStreamer >= 1.9.1.
+
+ -- Sebastian Dröge <slomo@debian.org>  Wed, 06 Jul 2016 13:29:05 +0300
+
+gst-rtsp-server1.0 (1.8.2-1) unstable; urgency=medium
+
+  * New upstream bugfix release.
+
+ -- Sebastian Dröge <slomo@debian.org>  Thu, 09 Jun 2016 11:45:20 +0300
+
+gst-rtsp-server1.0 (1.8.1-1) unstable; urgency=medium
+
+  * New upstream bugfix release.
+
+ -- Sebastian Dröge <slomo@debian.org>  Wed, 20 Apr 2016 18:33:09 +0300
+
+gst-rtsp-server1.0 (1.8.0-1) unstable; urgency=medium
+
+  * New upstream stable release:
+    + debian/control:
+      - Build-depend on GStreamer >= 1.8.0.
+
+ -- Sebastian Dröge <slomo@debian.org>  Thu, 24 Mar 2016 12:58:29 +0200
+
+gst-rtsp-server1.0 (1.7.91-1) experimental; urgency=medium
+
+  * New upstream release candidate:
+    + debian/control:
+      - Build-depend on GStreamer >= 1.7.91.
+
+ -- Sebastian Dröge <slomo@debian.org>  Tue, 15 Mar 2016 12:24:02 +0200
+
+gst-rtsp-server1.0 (1.7.90-1) experimental; urgency=medium
+
+  * New upstream release candidate:
+    + debian/control:
+      - Build-depend on GStreamer >= 1.7.90.
+
+ -- Sebastian Dröge <slomo@debian.org>  Tue, 01 Mar 2016 17:35:22 +0200
+
+gst-rtsp-server1.0 (1.7.2-1) experimental; urgency=medium
+
+  * New upstream unstable release:
+    + debian/control:
+      - Build-depend on GStreamer >= 1.7.2.
+    + debian/rules,
+      debian/control,
+      debian/gstreamer1.0-rtsp.install:
+      - Add new package with the RTSP GStreamer plugin.
+
+ -- Sebastian Dröge <slomo@debian.org>  Fri, 19 Feb 2016 11:59:06 +0200
+
+gst-rtsp-server1.0 (1.7.1-1) experimental; urgency=medium
+
+  * New upstream unstable release:
+    + debian/control:
+      - Build-depend on GLib >= 2.40 and GStreamer >= 1.7.1.
+
+ -- Sebastian Dröge <slomo@debian.org>  Thu, 24 Dec 2015 14:53:11 +0100
+
+gst-rtsp-server1.0 (1.6.2-1) unstable; urgency=medium
+
+  * New upstream bugfix release.
+
+ -- Sebastian Dröge <slomo@debian.org>  Mon, 14 Dec 2015 20:02:58 +0100
+
+gst-rtsp-server1.0 (1.6.1-1) unstable; urgency=medium
+
+  * New upstream bugfix release.
+
+ -- Sebastian Dröge <slomo@debian.org>  Fri, 30 Oct 2015 17:04:54 +0200
+
+gst-rtsp-server1.0 (1.6.0-1) unstable; urgency=medium
+
+  * New upstream stable release.
+
+ -- Sebastian Dröge <slomo@debian.org>  Fri, 25 Sep 2015 23:11:01 +0200
+
+gst-rtsp-server1.0 (1.5.91-1) experimental; urgency=medium
+
+  * New upstream release candidate.
+
+ -- Sebastian Dröge <slomo@debian.org>  Fri, 18 Sep 2015 20:10:47 +0200
+
+gst-rtsp-server1.0 (1.5.90-1) experimental; urgency=medium
+
+  * New upstream release candidate.
+
+ -- Sebastian Dröge <slomo@debian.org>  Wed, 19 Aug 2015 14:13:58 +0300
+
+gst-rtsp-server1.0 (1.5.1-1) experimental; urgency=medium
+
+  * New unstable upstream release.
+
+ -- Sebastian Dröge <slomo@debian.org>  Sun, 07 Jun 2015 11:17:28 +0200
+
+gst-rtsp-server1.0 (1.4.5-2) unstable; urgency=medium
+
+  * debian/control:
+    + The -dev package should depend on the GIR package.
+
+ -- Sebastian Dröge <slomo@debian.org>  Thu, 04 Jun 2015 22:21:43 +0200
+
+gst-rtsp-server1.0 (1.4.5-1) unstable; urgency=low
+
+  * Initial upload (Closes: #780513).
+
+ -- Sebastian Dröge <slomo@debian.org>  Sun, 15 Mar 2015 12:16:56 +0000

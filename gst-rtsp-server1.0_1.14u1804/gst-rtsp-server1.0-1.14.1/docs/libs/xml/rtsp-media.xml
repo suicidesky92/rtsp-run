@@ -1,0 +1,1781 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN"
+               "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd" [
+<!ENTITY % version-entities SYSTEM "version.entities">
+%version-entities;
+]>
+<refentry id="GstRTSPMedia">
+<refmeta>
+<refentrytitle role="top_of_page" id="GstRTSPMedia.top_of_page">GstRTSPMedia</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GST-RTSP-SERVER Library</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>GstRTSPMedia</refname>
+<refpurpose>The media pipeline</refpurpose>
+</refnamediv>
+
+<refsect1 id="GstRTSPMedia.functions" role="functions_proto">
+<title role="functions_proto.title">Functions</title>
+<informaltable pgwide="1" frame="none">
+<tgroup cols="2">
+<colspec colname="functions_return" colwidth="150px"/>
+<colspec colname="functions_name"/>
+<tbody>
+<row><entry role="function_type"><link linkend="GstRTSPMedia"><returnvalue>GstRTSPMedia</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-rtsp-media-new">gst_rtsp_media_new</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstElement"><returnvalue>GstElement</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-rtsp-media-get-element">gst_rtsp_media_get_element</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-rtsp-media-take-pipeline">gst_rtsp_media_take_pipeline</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-rtsp-media-set-permissions">gst_rtsp_media_set_permissions</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstRTSPPermissions"><returnvalue>GstRTSPPermissions</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-rtsp-media-get-permissions">gst_rtsp_media_get_permissions</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-rtsp-media-set-shared">gst_rtsp_media_set_shared</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-rtsp-media-is-shared">gst_rtsp_media_is_shared</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-rtsp-media-set-reusable">gst_rtsp_media_set_reusable</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-rtsp-media-is-reusable">gst_rtsp_media_is_reusable</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-rtsp-media-set-profiles">gst_rtsp_media_set_profiles</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstRTSPProfile"><returnvalue>GstRTSPProfile</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-rtsp-media-get-profiles">gst_rtsp_media_get_profiles</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-rtsp-media-set-protocols">gst_rtsp_media_set_protocols</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstRTSPLowerTrans"><returnvalue>GstRTSPLowerTrans</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-rtsp-media-get-protocols">gst_rtsp_media_get_protocols</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-rtsp-media-set-eos-shutdown">gst_rtsp_media_set_eos_shutdown</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-rtsp-media-is-eos-shutdown">gst_rtsp_media_is_eos_shutdown</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-rtsp-media-set-address-pool">gst_rtsp_media_set_address_pool</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstRTSPAddressPool"><returnvalue>GstRTSPAddressPool</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-rtsp-media-get-address-pool">gst_rtsp_media_get_address_pool</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-rtsp-media-set-buffer-size">gst_rtsp_media_set_buffer_size</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="guint"><returnvalue>guint</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-rtsp-media-get-buffer-size">gst_rtsp_media_get_buffer_size</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-rtsp-media-set-retransmission-time">gst_rtsp_media_set_retransmission_time</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstClockTime"><returnvalue>GstClockTime</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-rtsp-media-get-retransmission-time">gst_rtsp_media_get_retransmission_time</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-rtsp-media-set-latency">gst_rtsp_media_set_latency</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="guint"><returnvalue>guint</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-rtsp-media-get-latency">gst_rtsp_media_get_latency</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-rtsp-media-setup-sdp">gst_rtsp_media_setup_sdp</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-rtsp-media-handle-sdp">gst_rtsp_media_handle_sdp</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-rtsp-media-prepare">gst_rtsp_media_prepare</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-rtsp-media-unprepare">gst_rtsp_media_unprepare</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstRTSPMediaStatus"><returnvalue>GstRTSPMediaStatus</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-rtsp-media-get-status">gst_rtsp_media_get_status</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-rtsp-media-set-suspend-mode">gst_rtsp_media_set_suspend_mode</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstRTSPSuspendMode"><returnvalue>GstRTSPSuspendMode</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-rtsp-media-get-suspend-mode">gst_rtsp_media_get_suspend_mode</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-rtsp-media-suspend">gst_rtsp_media_suspend</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-rtsp-media-unsuspend">gst_rtsp_media_unsuspend</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-rtsp-media-collect-streams">gst_rtsp_media_collect_streams</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstRTSPStream"><returnvalue>GstRTSPStream</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-rtsp-media-create-stream">gst_rtsp_media_create_stream</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="guint"><returnvalue>guint</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-rtsp-media-n-streams">gst_rtsp_media_n_streams</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstRTSPStream"><returnvalue>GstRTSPStream</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-rtsp-media-get-stream">gst_rtsp_media_get_stream</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstRTSPStream"><returnvalue>GstRTSPStream</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-rtsp-media-find-stream">gst_rtsp_media_find_stream</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-rtsp-media-seek">gst_rtsp_media_seek</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gchar"><returnvalue>gchar</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-rtsp-media-get-range-string">gst_rtsp_media_get_range_string</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-rtsp-media-set-state">gst_rtsp_media_set_state</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-rtsp-media-set-pipeline-state">gst_rtsp_media_set_pipeline_state</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+
+<row><entry role="function_type"><link linkend="GstClock"><returnvalue>GstClock</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-rtsp-media-get-clock">gst_rtsp_media_get_clock</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstClockTime"><returnvalue>GstClockTime</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-rtsp-media-get-base-time">gst_rtsp_media_get_base_time</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-rtsp-media-use-time-provider">gst_rtsp_media_use_time_provider</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-rtsp-media-is-time-provider">gst_rtsp_media_is_time_provider</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstNetTimeProvider"><returnvalue>GstNetTimeProvider</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-rtsp-media-get-time-provider">gst_rtsp_media_get_time_provider</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="GstRTSPMedia.properties" role="properties">
+<title role="properties.title">Properties</title>
+<informaltable frame="none">
+<tgroup cols="3">
+<colspec colname="properties_type" colwidth="150px"/>
+<colspec colname="properties_name" colwidth="300px"/>
+<colspec colname="properties_flags" colwidth="200px"/>
+<tbody>
+<row><entry role="property_type"><link linkend="guint"><type>guint</type></link></entry><entry role="property_name"><link linkend="GstRTSPMedia--buffer-size">buffer-size</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="GstClock"><type>GstClock</type></link>&#160;*</entry><entry role="property_name"><link linkend="GstRTSPMedia--clock">clock</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="GstElement"><type>GstElement</type></link>&#160;*</entry><entry role="property_name"><link linkend="GstRTSPMedia--element">element</link></entry><entry role="property_flags">Read / Write / Construct Only</entry></row>
+<row><entry role="property_type"><link linkend="gboolean"><type>gboolean</type></link></entry><entry role="property_name"><link linkend="GstRTSPMedia--eos-shutdown">eos-shutdown</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="guint"><type>guint</type></link></entry><entry role="property_name"><link linkend="GstRTSPMedia--latency">latency</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="GstRTSPProfile"><type>GstRTSPProfile</type></link></entry><entry role="property_name"><link linkend="GstRTSPMedia--profiles">profiles</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="GstRTSPLowerTrans"><type>GstRTSPLowerTrans</type></link></entry><entry role="property_name"><link linkend="GstRTSPMedia--protocols">protocols</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gboolean"><type>gboolean</type></link></entry><entry role="property_name"><link linkend="GstRTSPMedia--reusable">reusable</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gboolean"><type>gboolean</type></link></entry><entry role="property_name"><link linkend="GstRTSPMedia--shared">shared</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gboolean"><type>gboolean</type></link></entry><entry role="property_name"><link linkend="GstRTSPMedia--stop-on-disconnect">stop-on-disconnect</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="GstRTSPSuspendMode"><type>GstRTSPSuspendMode</type></link></entry><entry role="property_name"><link linkend="GstRTSPMedia--suspend-mode">suspend-mode</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="gboolean"><type>gboolean</type></link></entry><entry role="property_name"><link linkend="GstRTSPMedia--time-provider">time-provider</link></entry><entry role="property_flags">Read / Write</entry></row>
+<row><entry role="property_type"><link linkend="GstRTSPTransportMode"><type>GstRTSPTransportMode</type></link></entry><entry role="property_name"><link linkend="GstRTSPMedia--transport-mode">transport-mode</link></entry><entry role="property_flags">Read / Write</entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="GstRTSPMedia.signals" role="signal_proto">
+<title role="signal_proto.title">Signals</title>
+<informaltable frame="none">
+<tgroup cols="3">
+<colspec colname="signals_return" colwidth="150px"/>
+<colspec colname="signals_name" colwidth="300px"/>
+<colspec colname="signals_flags" colwidth="200px"/>
+<tbody>
+<row><entry role="signal_type"><link linkend="void"><returnvalue>void</returnvalue></link></entry><entry role="signal_name"><link linkend="GstRTSPMedia-new-state">new-state</link></entry><entry role="signal_flags"><link linkend="G-SIGNAL-RUN-LAST:CAPS">Run Last</link></entry></row>
+<row><entry role="signal_type"><link linkend="void"><returnvalue>void</returnvalue></link></entry><entry role="signal_name"><link linkend="GstRTSPMedia-new-stream">new-stream</link></entry><entry role="signal_flags"><link linkend="G-SIGNAL-RUN-LAST:CAPS">Run Last</link></entry></row>
+<row><entry role="signal_type"><link linkend="void"><returnvalue>void</returnvalue></link></entry><entry role="signal_name"><link linkend="GstRTSPMedia-prepared">prepared</link></entry><entry role="signal_flags"><link linkend="G-SIGNAL-RUN-LAST:CAPS">Run Last</link></entry></row>
+<row><entry role="signal_type"><link linkend="void"><returnvalue>void</returnvalue></link></entry><entry role="signal_name"><link linkend="GstRTSPMedia-removed-stream">removed-stream</link></entry><entry role="signal_flags"><link linkend="G-SIGNAL-RUN-LAST:CAPS">Run Last</link></entry></row>
+<row><entry role="signal_type"><link linkend="void"><returnvalue>void</returnvalue></link></entry><entry role="signal_name"><link linkend="GstRTSPMedia-target-state">target-state</link></entry><entry role="signal_flags"><link linkend="G-SIGNAL-RUN-LAST:CAPS">Run Last</link></entry></row>
+<row><entry role="signal_type"><link linkend="void"><returnvalue>void</returnvalue></link></entry><entry role="signal_name"><link linkend="GstRTSPMedia-unprepared">unprepared</link></entry><entry role="signal_flags"><link linkend="G-SIGNAL-RUN-LAST:CAPS">Run Last</link></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="GstRTSPMedia.other" role="other_proto">
+<title role="other_proto.title">Types and Values</title>
+<informaltable role="enum_members_table" pgwide="1" frame="none">
+<tgroup cols="2">
+<colspec colname="name" colwidth="150px"/>
+<colspec colname="description"/>
+<tbody>
+<row><entry role="datatype_keyword">struct</entry><entry role="function_name"><link linkend="GstRTSPMedia-struct">GstRTSPMedia</link></entry></row>
+<row><entry role="datatype_keyword">struct</entry><entry role="function_name"><link linkend="GstRTSPMediaClass">GstRTSPMediaClass</link></entry></row>
+
+<row><entry role="datatype_keyword">enum</entry><entry role="function_name"><link linkend="GstRTSPMediaStatus">GstRTSPMediaStatus</link></entry></row>
+
+<row><entry role="datatype_keyword">enum</entry><entry role="function_name"><link linkend="GstRTSPSuspendMode">GstRTSPSuspendMode</link></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="GstRTSPMedia.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<screen>    <link linkend="GObject">GObject</link>
+    <phrase role="lineart">&#9584;&#9472;&#9472;</phrase> GstRTSPMedia
+</screen>
+</refsect1>
+
+
+<refsect1 id="GstRTSPMedia.description" role="desc">
+<title role="desc.title">Description</title>
+<para>a <link linkend="GstRTSPMedia"><type>GstRTSPMedia</type></link> contains the complete GStreamer pipeline to manage the
+streaming to the clients. The actual data transfer is done by the
+<link linkend="GstRTSPStream"><type>GstRTSPStream</type></link> objects that are created and exposed by the <link linkend="GstRTSPMedia"><type>GstRTSPMedia</type></link>.</para>
+<para>The <link linkend="GstRTSPMedia"><type>GstRTSPMedia</type></link> is usually created from a <link linkend="GstRTSPMediaFactory"><type>GstRTSPMediaFactory</type></link> when the
+client does a DESCRIBE or SETUP of a resource.</para>
+<para>A media is created with <link linkend="gst-rtsp-media-new"><function>gst_rtsp_media_new()</function></link> that takes the element that will
+provide the streaming elements. For each of the streams, a new <link linkend="GstRTSPStream"><type>GstRTSPStream</type></link>
+object needs to be made with the <link linkend="gst-rtsp-media-create-stream"><function>gst_rtsp_media_create_stream()</function></link> which takes
+the payloader element and the source pad that produces the RTP stream.</para>
+<para>The pipeline of the media is set to PAUSED with <link linkend="gst-rtsp-media-prepare"><function>gst_rtsp_media_prepare()</function></link>. The
+prepare method will add rtpbin and sinks and sources to send and receive RTP
+and RTCP packets from the clients. Each stream srcpad is connected to an
+input into the internal rtpbin.</para>
+<para>It is also possible to dynamically create <link linkend="GstRTSPStream"><type>GstRTSPStream</type></link> objects during the
+prepare phase. With <link linkend="gst-rtsp-media-get-status"><function>gst_rtsp_media_get_status()</function></link> you can check the status of
+the prepare phase.</para>
+<para>After the media is prepared, it is ready for streaming. It will usually be
+managed in a session with <link linkend="gst-rtsp-session-manage-media"><function>gst_rtsp_session_manage_media()</function></link>. See
+<link linkend="GstRTSPSession"><type>GstRTSPSession</type></link> and <link linkend="GstRTSPSessionMedia"><type>GstRTSPSessionMedia</type></link>.</para>
+<para>The state of the media can be controlled with <link linkend="gst-rtsp-media-set-state"><function>gst_rtsp_media_set_state()</function></link>.
+Seeking can be done with <link linkend="gst-rtsp-media-seek"><function>gst_rtsp_media_seek()</function></link>.</para>
+<para>With <link linkend="gst-rtsp-media-unprepare"><function>gst_rtsp_media_unprepare()</function></link> the pipeline is stopped and shut down. When
+<link linkend="gst-rtsp-media-set-eos-shutdown"><function>gst_rtsp_media_set_eos_shutdown()</function></link> an EOS will be sent to the pipeline to
+cleanly shut down.</para>
+<para>With <link linkend="gst-rtsp-media-set-shared"><function>gst_rtsp_media_set_shared()</function></link>, the media can be shared between multiple
+clients. With <link linkend="gst-rtsp-media-set-reusable"><function>gst_rtsp_media_set_reusable()</function></link> you can control if the pipeline
+can be prepared again after an unprepare.</para>
+<para>Last reviewed on 2013-07-11 (1.0.0)</para>
+
+</refsect1>
+<refsect1 id="GstRTSPMedia.functions_details" role="details">
+<title role="details.title">Functions</title>
+<refsect2 id="gst-rtsp-media-new" role="function">
+<title>gst_rtsp_media_new&#160;()</title>
+<indexterm zone="gst-rtsp-media-new"><primary>gst_rtsp_media_new</primary></indexterm>
+<programlisting language="C"><link linkend="GstRTSPMedia"><returnvalue>GstRTSPMedia</returnvalue></link>&#160;*
+gst_rtsp_media_new (<parameter><link linkend="GstElement"><type>GstElement</type></link> *element</parameter>);</programlisting>
+<para>Create a new <link linkend="GstRTSPMedia"><type>GstRTSPMedia</type></link> instance. <parameter>element</parameter>
+ is the bin element that
+provides the different streams. The <link linkend="GstRTSPMedia"><type>GstRTSPMedia</type></link> object contains the
+element to produce RTP data for one or more related (audio/video/..)
+streams.</para>
+<para>Ownership is taken of <parameter>element</parameter>
+.</para>
+<refsect3 id="gst-rtsp-media-new.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>element</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstElement"><type>GstElement</type></link>. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>transfer full</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-rtsp-media-new.returns" role="returns">
+<title>Returns</title>
+<para>a new <link linkend="GstRTSPMedia"><type>GstRTSPMedia</type></link> object. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-rtsp-media-get-element" role="function">
+<title>gst_rtsp_media_get_element&#160;()</title>
+<indexterm zone="gst-rtsp-media-get-element"><primary>gst_rtsp_media_get_element</primary></indexterm>
+<programlisting language="C"><link linkend="GstElement"><returnvalue>GstElement</returnvalue></link>&#160;*
+gst_rtsp_media_get_element (<parameter><link linkend="GstRTSPMedia"><type>GstRTSPMedia</type></link> *media</parameter>);</programlisting>
+<para>Get the element that was used when constructing <parameter>media</parameter>
+.</para>
+<refsect3 id="gst-rtsp-media-get-element.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>media</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstRTSPMedia"><type>GstRTSPMedia</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-rtsp-media-get-element.returns" role="returns">
+<title>Returns</title>
+<para>a <link linkend="GstElement"><type>GstElement</type></link>. Unref after usage. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-rtsp-media-take-pipeline" role="function">
+<title>gst_rtsp_media_take_pipeline&#160;()</title>
+<indexterm zone="gst-rtsp-media-take-pipeline"><primary>gst_rtsp_media_take_pipeline</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_rtsp_media_take_pipeline (<parameter><link linkend="GstRTSPMedia"><type>GstRTSPMedia</type></link> *media</parameter>,
+                              <parameter><link linkend="GstPipeline"><type>GstPipeline</type></link> *pipeline</parameter>);</programlisting>
+<para>Set <parameter>pipeline</parameter>
+ as the <link linkend="GstPipeline"><type>GstPipeline</type></link> for <parameter>media</parameter>
+. Ownership is
+taken of <parameter>pipeline</parameter>
+.</para>
+<refsect3 id="gst-rtsp-media-take-pipeline.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>media</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstRTSPMedia"><type>GstRTSPMedia</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>pipeline</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstPipeline"><type>GstPipeline</type></link>. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>transfer full</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-rtsp-media-set-permissions" role="function">
+<title>gst_rtsp_media_set_permissions&#160;()</title>
+<indexterm zone="gst-rtsp-media-set-permissions"><primary>gst_rtsp_media_set_permissions</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_rtsp_media_set_permissions (<parameter><link linkend="GstRTSPMedia"><type>GstRTSPMedia</type></link> *media</parameter>,
+                                <parameter><link linkend="GstRTSPPermissions"><type>GstRTSPPermissions</type></link> *permissions</parameter>);</programlisting>
+<para>Set <parameter>permissions</parameter>
+ on <parameter>media</parameter>
+.</para>
+<refsect3 id="gst-rtsp-media-set-permissions.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>media</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstRTSPMedia"><type>GstRTSPMedia</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>permissions</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstRTSPPermissions"><type>GstRTSPPermissions</type></link>. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>transfer none</acronym>][<acronym>nullable</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-rtsp-media-get-permissions" role="function">
+<title>gst_rtsp_media_get_permissions&#160;()</title>
+<indexterm zone="gst-rtsp-media-get-permissions"><primary>gst_rtsp_media_get_permissions</primary></indexterm>
+<programlisting language="C"><link linkend="GstRTSPPermissions"><returnvalue>GstRTSPPermissions</returnvalue></link>&#160;*
+gst_rtsp_media_get_permissions (<parameter><link linkend="GstRTSPMedia"><type>GstRTSPMedia</type></link> *media</parameter>);</programlisting>
+<para>Get the permissions object from <parameter>media</parameter>
+.</para>
+<refsect3 id="gst-rtsp-media-get-permissions.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>media</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstRTSPMedia"><type>GstRTSPMedia</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-rtsp-media-get-permissions.returns" role="returns">
+<title>Returns</title>
+<para>a <link linkend="GstRTSPPermissions"><type>GstRTSPPermissions</type></link> object, unref after usage. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>][<acronym>nullable</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-rtsp-media-set-shared" role="function">
+<title>gst_rtsp_media_set_shared&#160;()</title>
+<indexterm zone="gst-rtsp-media-set-shared"><primary>gst_rtsp_media_set_shared</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_rtsp_media_set_shared (<parameter><link linkend="GstRTSPMedia"><type>GstRTSPMedia</type></link> *media</parameter>,
+                           <parameter><link linkend="gboolean"><type>gboolean</type></link> shared</parameter>);</programlisting>
+<para>Set or unset if the pipeline for <parameter>media</parameter>
+ can be shared will multiple clients.
+When <parameter>shared</parameter>
+ is <link linkend="TRUE:CAPS"><literal>TRUE</literal></link>, client requests for this media will share the media
+pipeline.</para>
+<refsect3 id="gst-rtsp-media-set-shared.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>media</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstRTSPMedia"><type>GstRTSPMedia</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>shared</para></entry>
+<entry role="parameter_description"><para>the new value</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-rtsp-media-is-shared" role="function">
+<title>gst_rtsp_media_is_shared&#160;()</title>
+<indexterm zone="gst-rtsp-media-is-shared"><primary>gst_rtsp_media_is_shared</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_rtsp_media_is_shared (<parameter><link linkend="GstRTSPMedia"><type>GstRTSPMedia</type></link> *media</parameter>);</programlisting>
+<para>Check if the pipeline for <parameter>media</parameter>
+ can be shared between multiple clients.</para>
+<refsect3 id="gst-rtsp-media-is-shared.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>media</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstRTSPMedia"><type>GstRTSPMedia</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-rtsp-media-is-shared.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if the media can be shared between clients.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-rtsp-media-set-reusable" role="function">
+<title>gst_rtsp_media_set_reusable&#160;()</title>
+<indexterm zone="gst-rtsp-media-set-reusable"><primary>gst_rtsp_media_set_reusable</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_rtsp_media_set_reusable (<parameter><link linkend="GstRTSPMedia"><type>GstRTSPMedia</type></link> *media</parameter>,
+                             <parameter><link linkend="gboolean"><type>gboolean</type></link> reusable</parameter>);</programlisting>
+<para>Set or unset if the pipeline for <parameter>media</parameter>
+ can be reused after the pipeline has
+been unprepared.</para>
+<refsect3 id="gst-rtsp-media-set-reusable.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>media</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstRTSPMedia"><type>GstRTSPMedia</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>reusable</para></entry>
+<entry role="parameter_description"><para>the new value</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-rtsp-media-is-reusable" role="function">
+<title>gst_rtsp_media_is_reusable&#160;()</title>
+<indexterm zone="gst-rtsp-media-is-reusable"><primary>gst_rtsp_media_is_reusable</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_rtsp_media_is_reusable (<parameter><link linkend="GstRTSPMedia"><type>GstRTSPMedia</type></link> *media</parameter>);</programlisting>
+<para>Check if the pipeline for <parameter>media</parameter>
+ can be reused after an unprepare.</para>
+<refsect3 id="gst-rtsp-media-is-reusable.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>media</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstRTSPMedia"><type>GstRTSPMedia</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-rtsp-media-is-reusable.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if the media can be reused</para>
+</refsect3></refsect2>
+<refsect2 id="gst-rtsp-media-set-profiles" role="function">
+<title>gst_rtsp_media_set_profiles&#160;()</title>
+<indexterm zone="gst-rtsp-media-set-profiles"><primary>gst_rtsp_media_set_profiles</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_rtsp_media_set_profiles (<parameter><link linkend="GstRTSPMedia"><type>GstRTSPMedia</type></link> *media</parameter>,
+                             <parameter><link linkend="GstRTSPProfile"><type>GstRTSPProfile</type></link> profiles</parameter>);</programlisting>
+<para>Configure the allowed lower transport for <parameter>media</parameter>
+.</para>
+<refsect3 id="gst-rtsp-media-set-profiles.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>media</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstRTSPMedia"><type>GstRTSPMedia</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>profiles</para></entry>
+<entry role="parameter_description"><para>the new flags</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-rtsp-media-get-profiles" role="function">
+<title>gst_rtsp_media_get_profiles&#160;()</title>
+<indexterm zone="gst-rtsp-media-get-profiles"><primary>gst_rtsp_media_get_profiles</primary></indexterm>
+<programlisting language="C"><link linkend="GstRTSPProfile"><returnvalue>GstRTSPProfile</returnvalue></link>
+gst_rtsp_media_get_profiles (<parameter><link linkend="GstRTSPMedia"><type>GstRTSPMedia</type></link> *media</parameter>);</programlisting>
+<para>Get the allowed profiles of <parameter>media</parameter>
+.</para>
+<refsect3 id="gst-rtsp-media-get-profiles.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>media</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstRTSPMedia"><type>GstRTSPMedia</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-rtsp-media-get-profiles.returns" role="returns">
+<title>Returns</title>
+<para> a <link linkend="GstRTSPProfile"><type>GstRTSPProfile</type></link></para>
+</refsect3></refsect2>
+<refsect2 id="gst-rtsp-media-set-protocols" role="function">
+<title>gst_rtsp_media_set_protocols&#160;()</title>
+<indexterm zone="gst-rtsp-media-set-protocols"><primary>gst_rtsp_media_set_protocols</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_rtsp_media_set_protocols (<parameter><link linkend="GstRTSPMedia"><type>GstRTSPMedia</type></link> *media</parameter>,
+                              <parameter><link linkend="GstRTSPLowerTrans"><type>GstRTSPLowerTrans</type></link> protocols</parameter>);</programlisting>
+<para>Configure the allowed lower transport for <parameter>media</parameter>
+.</para>
+<refsect3 id="gst-rtsp-media-set-protocols.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>media</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstRTSPMedia"><type>GstRTSPMedia</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>protocols</para></entry>
+<entry role="parameter_description"><para>the new flags</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-rtsp-media-get-protocols" role="function">
+<title>gst_rtsp_media_get_protocols&#160;()</title>
+<indexterm zone="gst-rtsp-media-get-protocols"><primary>gst_rtsp_media_get_protocols</primary></indexterm>
+<programlisting language="C"><link linkend="GstRTSPLowerTrans"><returnvalue>GstRTSPLowerTrans</returnvalue></link>
+gst_rtsp_media_get_protocols (<parameter><link linkend="GstRTSPMedia"><type>GstRTSPMedia</type></link> *media</parameter>);</programlisting>
+<para>Get the allowed protocols of <parameter>media</parameter>
+.</para>
+<refsect3 id="gst-rtsp-media-get-protocols.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>media</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstRTSPMedia"><type>GstRTSPMedia</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-rtsp-media-get-protocols.returns" role="returns">
+<title>Returns</title>
+<para> a <link linkend="GstRTSPLowerTrans"><type>GstRTSPLowerTrans</type></link></para>
+</refsect3></refsect2>
+<refsect2 id="gst-rtsp-media-set-eos-shutdown" role="function">
+<title>gst_rtsp_media_set_eos_shutdown&#160;()</title>
+<indexterm zone="gst-rtsp-media-set-eos-shutdown"><primary>gst_rtsp_media_set_eos_shutdown</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_rtsp_media_set_eos_shutdown (<parameter><link linkend="GstRTSPMedia"><type>GstRTSPMedia</type></link> *media</parameter>,
+                                 <parameter><link linkend="gboolean"><type>gboolean</type></link> eos_shutdown</parameter>);</programlisting>
+<para>Set or unset if an EOS event will be sent to the pipeline for <parameter>media</parameter>
+ before
+it is unprepared.</para>
+<refsect3 id="gst-rtsp-media-set-eos-shutdown.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>media</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstRTSPMedia"><type>GstRTSPMedia</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>eos_shutdown</para></entry>
+<entry role="parameter_description"><para>the new value</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-rtsp-media-is-eos-shutdown" role="function">
+<title>gst_rtsp_media_is_eos_shutdown&#160;()</title>
+<indexterm zone="gst-rtsp-media-is-eos-shutdown"><primary>gst_rtsp_media_is_eos_shutdown</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_rtsp_media_is_eos_shutdown (<parameter><link linkend="GstRTSPMedia"><type>GstRTSPMedia</type></link> *media</parameter>);</programlisting>
+<para>Check if the pipeline for <parameter>media</parameter>
+ will send an EOS down the pipeline before
+unpreparing.</para>
+<refsect3 id="gst-rtsp-media-is-eos-shutdown.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>media</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstRTSPMedia"><type>GstRTSPMedia</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-rtsp-media-is-eos-shutdown.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if the media will send EOS before unpreparing.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-rtsp-media-set-address-pool" role="function">
+<title>gst_rtsp_media_set_address_pool&#160;()</title>
+<indexterm zone="gst-rtsp-media-set-address-pool"><primary>gst_rtsp_media_set_address_pool</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_rtsp_media_set_address_pool (<parameter><link linkend="GstRTSPMedia"><type>GstRTSPMedia</type></link> *media</parameter>,
+                                 <parameter><link linkend="GstRTSPAddressPool"><type>GstRTSPAddressPool</type></link> *pool</parameter>);</programlisting>
+<para>configure <parameter>pool</parameter>
+ to be used as the address pool of <parameter>media</parameter>
+.</para>
+<refsect3 id="gst-rtsp-media-set-address-pool.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>media</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstRTSPMedia"><type>GstRTSPMedia</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>pool</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstRTSPAddressPool"><type>GstRTSPAddressPool</type></link>. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>transfer none</acronym>][<acronym>nullable</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-rtsp-media-get-address-pool" role="function">
+<title>gst_rtsp_media_get_address_pool&#160;()</title>
+<indexterm zone="gst-rtsp-media-get-address-pool"><primary>gst_rtsp_media_get_address_pool</primary></indexterm>
+<programlisting language="C"><link linkend="GstRTSPAddressPool"><returnvalue>GstRTSPAddressPool</returnvalue></link>&#160;*
+gst_rtsp_media_get_address_pool (<parameter><link linkend="GstRTSPMedia"><type>GstRTSPMedia</type></link> *media</parameter>);</programlisting>
+<para>Get the <link linkend="GstRTSPAddressPool"><type>GstRTSPAddressPool</type></link> used as the address pool of <parameter>media</parameter>
+.</para>
+<refsect3 id="gst-rtsp-media-get-address-pool.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>media</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstRTSPMedia"><type>GstRTSPMedia</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-rtsp-media-get-address-pool.returns" role="returns">
+<title>Returns</title>
+<para>the <link linkend="GstRTSPAddressPool"><type>GstRTSPAddressPool</type></link> of <parameter>media</parameter>
+.
+<link linkend="g-object-unref"><function>g_object_unref()</function></link> after usage. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>][<acronym>nullable</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-rtsp-media-set-buffer-size" role="function">
+<title>gst_rtsp_media_set_buffer_size&#160;()</title>
+<indexterm zone="gst-rtsp-media-set-buffer-size"><primary>gst_rtsp_media_set_buffer_size</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_rtsp_media_set_buffer_size (<parameter><link linkend="GstRTSPMedia"><type>GstRTSPMedia</type></link> *media</parameter>,
+                                <parameter><link linkend="guint"><type>guint</type></link> size</parameter>);</programlisting>
+<para>Set the kernel UDP buffer size.</para>
+<refsect3 id="gst-rtsp-media-set-buffer-size.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>media</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstRTSPMedia"><type>GstRTSPMedia</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>size</para></entry>
+<entry role="parameter_description"><para>the new value</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-rtsp-media-get-buffer-size" role="function">
+<title>gst_rtsp_media_get_buffer_size&#160;()</title>
+<indexterm zone="gst-rtsp-media-get-buffer-size"><primary>gst_rtsp_media_get_buffer_size</primary></indexterm>
+<programlisting language="C"><link linkend="guint"><returnvalue>guint</returnvalue></link>
+gst_rtsp_media_get_buffer_size (<parameter><link linkend="GstRTSPMedia"><type>GstRTSPMedia</type></link> *media</parameter>);</programlisting>
+<para>Get the kernel UDP buffer size.</para>
+<refsect3 id="gst-rtsp-media-get-buffer-size.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>media</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstRTSPMedia"><type>GstRTSPMedia</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-rtsp-media-get-buffer-size.returns" role="returns">
+<title>Returns</title>
+<para> the kernel UDP buffer size.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-rtsp-media-set-retransmission-time" role="function">
+<title>gst_rtsp_media_set_retransmission_time&#160;()</title>
+<indexterm zone="gst-rtsp-media-set-retransmission-time"><primary>gst_rtsp_media_set_retransmission_time</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_rtsp_media_set_retransmission_time
+                               (<parameter><link linkend="GstRTSPMedia"><type>GstRTSPMedia</type></link> *media</parameter>,
+                                <parameter><link linkend="GstClockTime"><type>GstClockTime</type></link> time</parameter>);</programlisting>
+<para>Set the amount of time to store retransmission packets.</para>
+<refsect3 id="gst-rtsp-media-set-retransmission-time.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>media</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstRTSPMedia"><type>GstRTSPMedia</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>time</para></entry>
+<entry role="parameter_description"><para>the new value</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-rtsp-media-get-retransmission-time" role="function">
+<title>gst_rtsp_media_get_retransmission_time&#160;()</title>
+<indexterm zone="gst-rtsp-media-get-retransmission-time"><primary>gst_rtsp_media_get_retransmission_time</primary></indexterm>
+<programlisting language="C"><link linkend="GstClockTime"><returnvalue>GstClockTime</returnvalue></link>
+gst_rtsp_media_get_retransmission_time
+                               (<parameter><link linkend="GstRTSPMedia"><type>GstRTSPMedia</type></link> *media</parameter>);</programlisting>
+<para>Get the amount of time to store retransmission data.</para>
+<refsect3 id="gst-rtsp-media-get-retransmission-time.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>media</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstRTSPMedia"><type>GstRTSPMedia</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-rtsp-media-get-retransmission-time.returns" role="returns">
+<title>Returns</title>
+<para> the amount of time to store retransmission data.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-rtsp-media-set-latency" role="function">
+<title>gst_rtsp_media_set_latency&#160;()</title>
+<indexterm zone="gst-rtsp-media-set-latency"><primary>gst_rtsp_media_set_latency</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_rtsp_media_set_latency (<parameter><link linkend="GstRTSPMedia"><type>GstRTSPMedia</type></link> *media</parameter>,
+                            <parameter><link linkend="guint"><type>guint</type></link> latency</parameter>);</programlisting>
+<para>Configure the latency used for receiving media.</para>
+<refsect3 id="gst-rtsp-media-set-latency.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>media</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstRTSPMedia"><type>GstRTSPMedia</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>latency</para></entry>
+<entry role="parameter_description"><para>latency in milliseconds</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-rtsp-media-get-latency" role="function">
+<title>gst_rtsp_media_get_latency&#160;()</title>
+<indexterm zone="gst-rtsp-media-get-latency"><primary>gst_rtsp_media_get_latency</primary></indexterm>
+<programlisting language="C"><link linkend="guint"><returnvalue>guint</returnvalue></link>
+gst_rtsp_media_get_latency (<parameter><link linkend="GstRTSPMedia"><type>GstRTSPMedia</type></link> *media</parameter>);</programlisting>
+<para>Get the latency that is used for receiving media.</para>
+<refsect3 id="gst-rtsp-media-get-latency.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>media</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstRTSPMedia"><type>GstRTSPMedia</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-rtsp-media-get-latency.returns" role="returns">
+<title>Returns</title>
+<para> latency in milliseconds</para>
+</refsect3></refsect2>
+<refsect2 id="gst-rtsp-media-setup-sdp" role="function">
+<title>gst_rtsp_media_setup_sdp&#160;()</title>
+<indexterm zone="gst-rtsp-media-setup-sdp"><primary>gst_rtsp_media_setup_sdp</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_rtsp_media_setup_sdp (<parameter><link linkend="GstRTSPMedia"><type>GstRTSPMedia</type></link> *media</parameter>,
+                          <parameter><link linkend="GstSDPMessage"><type>GstSDPMessage</type></link> *sdp</parameter>,
+                          <parameter><link linkend="GstSDPInfo"><type>GstSDPInfo</type></link> *info</parameter>);</programlisting>
+<para>Add <parameter>media</parameter>
+ specific info to <parameter>sdp</parameter>
+. <parameter>info</parameter>
+ is used to configure the connection
+information in the SDP.</para>
+<refsect3 id="gst-rtsp-media-setup-sdp.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>media</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstRTSPMedia"><type>GstRTSPMedia</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>sdp</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstSDPMessage"><type>GstSDPMessage</type></link>. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>transfer none</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>info</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstSDPInfo"><type>GstSDPInfo</type></link>. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>transfer none</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-rtsp-media-setup-sdp.returns" role="returns">
+<title>Returns</title>
+<para> TRUE on success.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-rtsp-media-handle-sdp" role="function">
+<title>gst_rtsp_media_handle_sdp&#160;()</title>
+<indexterm zone="gst-rtsp-media-handle-sdp"><primary>gst_rtsp_media_handle_sdp</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_rtsp_media_handle_sdp (<parameter><link linkend="GstRTSPMedia"><type>GstRTSPMedia</type></link> *media</parameter>,
+                           <parameter><link linkend="GstSDPMessage"><type>GstSDPMessage</type></link> *sdp</parameter>);</programlisting>
+<para>Configure an SDP on <parameter>media</parameter>
+ for receiving streams</para>
+<refsect3 id="gst-rtsp-media-handle-sdp.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>media</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstRTSPMedia"><type>GstRTSPMedia</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>sdp</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstSDPMessage"><type>GstSDPMessage</type></link>. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>transfer none</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-rtsp-media-handle-sdp.returns" role="returns">
+<title>Returns</title>
+<para> TRUE on success.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-rtsp-media-prepare" role="function">
+<title>gst_rtsp_media_prepare&#160;()</title>
+<indexterm zone="gst-rtsp-media-prepare"><primary>gst_rtsp_media_prepare</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_rtsp_media_prepare (<parameter><link linkend="GstRTSPMedia"><type>GstRTSPMedia</type></link> *media</parameter>,
+                        <parameter><link linkend="GstRTSPThread"><type>GstRTSPThread</type></link> *thread</parameter>);</programlisting>
+<para>Prepare <parameter>media</parameter>
+ for streaming. This function will create the objects
+to manage the streaming. A pipeline must have been set on <parameter>media</parameter>
+ with
+<link linkend="gst-rtsp-media-take-pipeline"><function>gst_rtsp_media_take_pipeline()</function></link>.</para>
+<para>It will preroll the pipeline and collect vital information about the streams
+such as the duration.</para>
+<refsect3 id="gst-rtsp-media-prepare.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>media</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstRTSPMedia"><type>GstRTSPMedia</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>thread</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstRTSPThread"><type>GstRTSPThread</type></link> to run the
+bus handler or <link linkend="NULL:CAPS"><literal>NULL</literal></link>. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>transfer full</acronym>][<acronym>allow-none</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-rtsp-media-prepare.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> on success.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-rtsp-media-unprepare" role="function">
+<title>gst_rtsp_media_unprepare&#160;()</title>
+<indexterm zone="gst-rtsp-media-unprepare"><primary>gst_rtsp_media_unprepare</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_rtsp_media_unprepare (<parameter><link linkend="GstRTSPMedia"><type>GstRTSPMedia</type></link> *media</parameter>);</programlisting>
+<para>Unprepare <parameter>media</parameter>
+. After this call, the media should be prepared again before
+it can be used again. If the media is set to be non-reusable, a new instance
+must be created.</para>
+<refsect3 id="gst-rtsp-media-unprepare.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>media</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstRTSPMedia"><type>GstRTSPMedia</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-rtsp-media-unprepare.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> on success.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-rtsp-media-get-status" role="function">
+<title>gst_rtsp_media_get_status&#160;()</title>
+<indexterm zone="gst-rtsp-media-get-status"><primary>gst_rtsp_media_get_status</primary></indexterm>
+<programlisting language="C"><link linkend="GstRTSPMediaStatus"><returnvalue>GstRTSPMediaStatus</returnvalue></link>
+gst_rtsp_media_get_status (<parameter><link linkend="GstRTSPMedia"><type>GstRTSPMedia</type></link> *media</parameter>);</programlisting>
+<para>Get the status of <parameter>media</parameter>
+. When <parameter>media</parameter>
+ is busy preparing, this function waits
+until <parameter>media</parameter>
+ is prepared or in error.</para>
+<refsect3 id="gst-rtsp-media-get-status.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>media</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstRTSPMedia"><type>GstRTSPMedia</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-rtsp-media-get-status.returns" role="returns">
+<title>Returns</title>
+<para> the status of <parameter>media</parameter>
+.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-rtsp-media-set-suspend-mode" role="function">
+<title>gst_rtsp_media_set_suspend_mode&#160;()</title>
+<indexterm zone="gst-rtsp-media-set-suspend-mode"><primary>gst_rtsp_media_set_suspend_mode</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_rtsp_media_set_suspend_mode (<parameter><link linkend="GstRTSPMedia"><type>GstRTSPMedia</type></link> *media</parameter>,
+                                 <parameter><link linkend="GstRTSPSuspendMode"><type>GstRTSPSuspendMode</type></link> mode</parameter>);</programlisting>
+<para>Control how @ media will be suspended after the SDP has been generated and
+after a PAUSE request has been performed.</para>
+<para>Media must be unprepared when setting the suspend mode.</para>
+<refsect3 id="gst-rtsp-media-set-suspend-mode.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>media</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstRTSPMedia"><type>GstRTSPMedia</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>mode</para></entry>
+<entry role="parameter_description"><para>the new <link linkend="GstRTSPSuspendMode"><type>GstRTSPSuspendMode</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-rtsp-media-get-suspend-mode" role="function">
+<title>gst_rtsp_media_get_suspend_mode&#160;()</title>
+<indexterm zone="gst-rtsp-media-get-suspend-mode"><primary>gst_rtsp_media_get_suspend_mode</primary></indexterm>
+<programlisting language="C"><link linkend="GstRTSPSuspendMode"><returnvalue>GstRTSPSuspendMode</returnvalue></link>
+gst_rtsp_media_get_suspend_mode (<parameter><link linkend="GstRTSPMedia"><type>GstRTSPMedia</type></link> *media</parameter>);</programlisting>
+<para>Get how <parameter>media</parameter>
+ will be suspended.</para>
+<refsect3 id="gst-rtsp-media-get-suspend-mode.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>media</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstRTSPMedia"><type>GstRTSPMedia</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-rtsp-media-get-suspend-mode.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="GstRTSPSuspendMode"><type>GstRTSPSuspendMode</type></link>.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-rtsp-media-suspend" role="function">
+<title>gst_rtsp_media_suspend&#160;()</title>
+<indexterm zone="gst-rtsp-media-suspend"><primary>gst_rtsp_media_suspend</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_rtsp_media_suspend (<parameter><link linkend="GstRTSPMedia"><type>GstRTSPMedia</type></link> *media</parameter>);</programlisting>
+<para>Suspend <parameter>media</parameter>
+. The state of the pipeline managed by <parameter>media</parameter>
+ is set to
+GST_STATE_NULL but all streams are kept. <parameter>media</parameter>
+ can be prepared again
+with <link linkend="gst-rtsp-media-unsuspend"><function>gst_rtsp_media_unsuspend()</function></link></para>
+<para><parameter>media</parameter>
+ must be prepared with <link linkend="gst-rtsp-media-prepare"><function>gst_rtsp_media_prepare()</function></link>;</para>
+<refsect3 id="gst-rtsp-media-suspend.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>media</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstRTSPMedia"><type>GstRTSPMedia</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-rtsp-media-suspend.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> on success.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-rtsp-media-unsuspend" role="function">
+<title>gst_rtsp_media_unsuspend&#160;()</title>
+<indexterm zone="gst-rtsp-media-unsuspend"><primary>gst_rtsp_media_unsuspend</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_rtsp_media_unsuspend (<parameter><link linkend="GstRTSPMedia"><type>GstRTSPMedia</type></link> *media</parameter>);</programlisting>
+<para>Unsuspend <parameter>media</parameter>
+ if it was in a suspended state. This method does nothing
+when the media was not in the suspended state.</para>
+<refsect3 id="gst-rtsp-media-unsuspend.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>media</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstRTSPMedia"><type>GstRTSPMedia</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-rtsp-media-unsuspend.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> on success.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-rtsp-media-collect-streams" role="function">
+<title>gst_rtsp_media_collect_streams&#160;()</title>
+<indexterm zone="gst-rtsp-media-collect-streams"><primary>gst_rtsp_media_collect_streams</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_rtsp_media_collect_streams (<parameter><link linkend="GstRTSPMedia"><type>GstRTSPMedia</type></link> *media</parameter>);</programlisting>
+<para>Find all payloader elements, they should be named pay%d in the
+element of <parameter>media</parameter>
+, and create <link linkend="GstRTSPStreams"><type>GstRTSPStreams</type></link> for them.</para>
+<para>Collect all dynamic elements, named dynpay%d, and add them to
+the list of dynamic elements.</para>
+<para>Find all depayloader elements, they should be named depay%d in the
+element of <parameter>media</parameter>
+, and create <link linkend="GstRTSPStreams"><type>GstRTSPStreams</type></link> for them.</para>
+<refsect3 id="gst-rtsp-media-collect-streams.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>media</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstRTSPMedia"><type>GstRTSPMedia</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-rtsp-media-create-stream" role="function">
+<title>gst_rtsp_media_create_stream&#160;()</title>
+<indexterm zone="gst-rtsp-media-create-stream"><primary>gst_rtsp_media_create_stream</primary></indexterm>
+<programlisting language="C"><link linkend="GstRTSPStream"><returnvalue>GstRTSPStream</returnvalue></link>&#160;*
+gst_rtsp_media_create_stream (<parameter><link linkend="GstRTSPMedia"><type>GstRTSPMedia</type></link> *media</parameter>,
+                              <parameter><link linkend="GstElement"><type>GstElement</type></link> *payloader</parameter>,
+                              <parameter><link linkend="GstPad"><type>GstPad</type></link> *pad</parameter>);</programlisting>
+<para>Create a new stream in <parameter>media</parameter>
+ that provides RTP data on <parameter>pad</parameter>
+.
+<parameter>pad</parameter>
+ should be a pad of an element inside <parameter>media->element</parameter>
+.</para>
+<refsect3 id="gst-rtsp-media-create-stream.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>media</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstRTSPMedia"><type>GstRTSPMedia</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>payloader</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstElement"><type>GstElement</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>pad</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstPad"><type>GstPad</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-rtsp-media-create-stream.returns" role="returns">
+<title>Returns</title>
+<para>a new <link linkend="GstRTSPStream"><type>GstRTSPStream</type></link> that remains valid for as long
+as <parameter>media</parameter>
+exists. </para>
+<para><emphasis role="annotation">[<acronym>transfer none</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-rtsp-media-n-streams" role="function">
+<title>gst_rtsp_media_n_streams&#160;()</title>
+<indexterm zone="gst-rtsp-media-n-streams"><primary>gst_rtsp_media_n_streams</primary></indexterm>
+<programlisting language="C"><link linkend="guint"><returnvalue>guint</returnvalue></link>
+gst_rtsp_media_n_streams (<parameter><link linkend="GstRTSPMedia"><type>GstRTSPMedia</type></link> *media</parameter>);</programlisting>
+<para>Get the number of streams in this media.</para>
+<refsect3 id="gst-rtsp-media-n-streams.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>media</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstRTSPMedia"><type>GstRTSPMedia</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-rtsp-media-n-streams.returns" role="returns">
+<title>Returns</title>
+<para> The number of streams.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-rtsp-media-get-stream" role="function">
+<title>gst_rtsp_media_get_stream&#160;()</title>
+<indexterm zone="gst-rtsp-media-get-stream"><primary>gst_rtsp_media_get_stream</primary></indexterm>
+<programlisting language="C"><link linkend="GstRTSPStream"><returnvalue>GstRTSPStream</returnvalue></link>&#160;*
+gst_rtsp_media_get_stream (<parameter><link linkend="GstRTSPMedia"><type>GstRTSPMedia</type></link> *media</parameter>,
+                           <parameter><link linkend="guint"><type>guint</type></link> idx</parameter>);</programlisting>
+<para>Retrieve the stream with index <parameter>idx</parameter>
+ from <parameter>media</parameter>
+.</para>
+<refsect3 id="gst-rtsp-media-get-stream.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>media</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstRTSPMedia"><type>GstRTSPMedia</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>idx</para></entry>
+<entry role="parameter_description"><para>the stream index</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-rtsp-media-get-stream.returns" role="returns">
+<title>Returns</title>
+<para>the <link linkend="GstRTSPStream"><type>GstRTSPStream</type></link> at index
+<parameter>idx</parameter>
+or <link linkend="NULL:CAPS"><literal>NULL</literal></link> when a stream with that index did not exist. </para>
+<para><emphasis role="annotation">[<acronym>nullable</acronym>][<acronym>transfer none</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-rtsp-media-find-stream" role="function">
+<title>gst_rtsp_media_find_stream&#160;()</title>
+<indexterm zone="gst-rtsp-media-find-stream"><primary>gst_rtsp_media_find_stream</primary></indexterm>
+<programlisting language="C"><link linkend="GstRTSPStream"><returnvalue>GstRTSPStream</returnvalue></link>&#160;*
+gst_rtsp_media_find_stream (<parameter><link linkend="GstRTSPMedia"><type>GstRTSPMedia</type></link> *media</parameter>,
+                            <parameter>const <link linkend="gchar"><type>gchar</type></link> *control</parameter>);</programlisting>
+<para>Find a stream in <parameter>media</parameter>
+ with <parameter>control</parameter>
+ as the control uri.</para>
+<refsect3 id="gst-rtsp-media-find-stream.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>media</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstRTSPMedia"><type>GstRTSPMedia</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>control</para></entry>
+<entry role="parameter_description"><para>the control of the stream</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-rtsp-media-find-stream.returns" role="returns">
+<title>Returns</title>
+<para>the <link linkend="GstRTSPStream"><type>GstRTSPStream</type></link> with
+control uri <parameter>control</parameter>
+or <link linkend="NULL:CAPS"><literal>NULL</literal></link> when a stream with that control did
+not exist. </para>
+<para><emphasis role="annotation">[<acronym>nullable</acronym>][<acronym>transfer none</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-rtsp-media-seek" role="function">
+<title>gst_rtsp_media_seek&#160;()</title>
+<indexterm zone="gst-rtsp-media-seek"><primary>gst_rtsp_media_seek</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_rtsp_media_seek (<parameter><link linkend="GstRTSPMedia"><type>GstRTSPMedia</type></link> *media</parameter>,
+                     <parameter><link linkend="GstRTSPTimeRange"><type>GstRTSPTimeRange</type></link> *range</parameter>);</programlisting>
+<para>Seek the pipeline of <parameter>media</parameter>
+ to <parameter>range</parameter>
+. <parameter>media</parameter>
+ must be prepared with
+<link linkend="gst-rtsp-media-prepare"><function>gst_rtsp_media_prepare()</function></link>.</para>
+<refsect3 id="gst-rtsp-media-seek.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>media</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstRTSPMedia"><type>GstRTSPMedia</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>range</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstRTSPTimeRange"><type>GstRTSPTimeRange</type></link>. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>transfer none</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-rtsp-media-seek.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> on success.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-rtsp-media-get-range-string" role="function">
+<title>gst_rtsp_media_get_range_string&#160;()</title>
+<indexterm zone="gst-rtsp-media-get-range-string"><primary>gst_rtsp_media_get_range_string</primary></indexterm>
+<programlisting language="C"><link linkend="gchar"><returnvalue>gchar</returnvalue></link>&#160;*
+gst_rtsp_media_get_range_string (<parameter><link linkend="GstRTSPMedia"><type>GstRTSPMedia</type></link> *media</parameter>,
+                                 <parameter><link linkend="gboolean"><type>gboolean</type></link> play</parameter>,
+                                 <parameter><link linkend="GstRTSPRangeUnit"><type>GstRTSPRangeUnit</type></link> unit</parameter>);</programlisting>
+<para>Get the current range as a string. <parameter>media</parameter>
+ must be prepared with
+<link linkend="gst-rtsp-media-prepare"><function>gst_rtsp_media_prepare()</function></link>.</para>
+<refsect3 id="gst-rtsp-media-get-range-string.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>media</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstRTSPMedia"><type>GstRTSPMedia</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>play</para></entry>
+<entry role="parameter_description"><para>for the PLAY request</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>unit</para></entry>
+<entry role="parameter_description"><para>the unit to use for the string</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-rtsp-media-get-range-string.returns" role="returns">
+<title>Returns</title>
+<para>The range as a string, <link linkend="g-free"><function>g_free()</function></link> after usage. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>][<acronym>nullable</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-rtsp-media-set-state" role="function">
+<title>gst_rtsp_media_set_state&#160;()</title>
+<indexterm zone="gst-rtsp-media-set-state"><primary>gst_rtsp_media_set_state</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_rtsp_media_set_state (<parameter><link linkend="GstRTSPMedia"><type>GstRTSPMedia</type></link> *media</parameter>,
+                          <parameter><link linkend="GstState"><type>GstState</type></link> state</parameter>,
+                          <parameter><link linkend="GPtrArray"><type>GPtrArray</type></link> *transports</parameter>);</programlisting>
+<para>Set the state of <parameter>media</parameter>
+ to <parameter>state</parameter>
+ and for the transports in <parameter>transports</parameter>
+.</para>
+<para><parameter>media</parameter>
+ must be prepared with <link linkend="gst-rtsp-media-prepare"><function>gst_rtsp_media_prepare()</function></link>;</para>
+<refsect3 id="gst-rtsp-media-set-state.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>media</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstRTSPMedia"><type>GstRTSPMedia</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>state</para></entry>
+<entry role="parameter_description"><para>the target state of the media</para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>transports</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GPtrArray"><type>GPtrArray</type></link> of <link linkend="GstRTSPStreamTransport"><type>GstRTSPStreamTransport</type></link> pointers. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>transfer none</acronym>][<acronym>element-type</acronym> GstRtspServer.RTSPStreamTransport]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-rtsp-media-set-state.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> on success.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-rtsp-media-set-pipeline-state" role="function">
+<title>gst_rtsp_media_set_pipeline_state&#160;()</title>
+<indexterm zone="gst-rtsp-media-set-pipeline-state"><primary>gst_rtsp_media_set_pipeline_state</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_rtsp_media_set_pipeline_state (<parameter><link linkend="GstRTSPMedia"><type>GstRTSPMedia</type></link> *media</parameter>,
+                                   <parameter><link linkend="GstState"><type>GstState</type></link> state</parameter>);</programlisting>
+<para>Set the state of the pipeline managed by <parameter>media</parameter>
+ to <parameter>state</parameter>
+</para>
+<refsect3 id="gst-rtsp-media-set-pipeline-state.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>media</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstRTSPMedia"><type>GstRTSPMedia</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>state</para></entry>
+<entry role="parameter_description"><para>the target state of the pipeline</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-rtsp-media-get-clock" role="function">
+<title>gst_rtsp_media_get_clock&#160;()</title>
+<indexterm zone="gst-rtsp-media-get-clock"><primary>gst_rtsp_media_get_clock</primary></indexterm>
+<programlisting language="C"><link linkend="GstClock"><returnvalue>GstClock</returnvalue></link>&#160;*
+gst_rtsp_media_get_clock (<parameter><link linkend="GstRTSPMedia"><type>GstRTSPMedia</type></link> *media</parameter>);</programlisting>
+<para>Get the clock that is used by the pipeline in <parameter>media</parameter>
+.</para>
+<para><parameter>media</parameter>
+ must be prepared before this method returns a valid clock object.</para>
+<refsect3 id="gst-rtsp-media-get-clock.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>media</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstRTSPMedia"><type>GstRTSPMedia</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-rtsp-media-get-clock.returns" role="returns">
+<title>Returns</title>
+<para>the <link linkend="GstClock"><type>GstClock</type></link> used by <parameter>media</parameter>
+. unref after usage. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>][<acronym>nullable</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-rtsp-media-get-base-time" role="function">
+<title>gst_rtsp_media_get_base_time&#160;()</title>
+<indexterm zone="gst-rtsp-media-get-base-time"><primary>gst_rtsp_media_get_base_time</primary></indexterm>
+<programlisting language="C"><link linkend="GstClockTime"><returnvalue>GstClockTime</returnvalue></link>
+gst_rtsp_media_get_base_time (<parameter><link linkend="GstRTSPMedia"><type>GstRTSPMedia</type></link> *media</parameter>);</programlisting>
+<para>Get the base_time that is used by the pipeline in <parameter>media</parameter>
+.</para>
+<para><parameter>media</parameter>
+ must be prepared before this method returns a valid base_time.</para>
+<refsect3 id="gst-rtsp-media-get-base-time.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>media</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstRTSPMedia"><type>GstRTSPMedia</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-rtsp-media-get-base-time.returns" role="returns">
+<title>Returns</title>
+<para> the base_time used by <parameter>media</parameter>
+.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-rtsp-media-use-time-provider" role="function">
+<title>gst_rtsp_media_use_time_provider&#160;()</title>
+<indexterm zone="gst-rtsp-media-use-time-provider"><primary>gst_rtsp_media_use_time_provider</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_rtsp_media_use_time_provider (<parameter><link linkend="GstRTSPMedia"><type>GstRTSPMedia</type></link> *media</parameter>,
+                                  <parameter><link linkend="gboolean"><type>gboolean</type></link> time_provider</parameter>);</programlisting>
+<para>Set <parameter>media</parameter>
+ to provide a <link linkend="GstNetTimeProvider"><type>GstNetTimeProvider</type></link>.</para>
+<refsect3 id="gst-rtsp-media-use-time-provider.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>media</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstRTSPMedia"><type>GstRTSPMedia</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>time_provider</para></entry>
+<entry role="parameter_description"><para>if a <link linkend="GstNetTimeProvider"><type>GstNetTimeProvider</type></link> should be used</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-rtsp-media-is-time-provider" role="function">
+<title>gst_rtsp_media_is_time_provider&#160;()</title>
+<indexterm zone="gst-rtsp-media-is-time-provider"><primary>gst_rtsp_media_is_time_provider</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_rtsp_media_is_time_provider (<parameter><link linkend="GstRTSPMedia"><type>GstRTSPMedia</type></link> *media</parameter>);</programlisting>
+<para>Check if <parameter>media</parameter>
+ can provide a <link linkend="GstNetTimeProvider"><type>GstNetTimeProvider</type></link> for its pipeline clock.</para>
+<para>Use <link linkend="gst-rtsp-media-get-time-provider"><function>gst_rtsp_media_get_time_provider()</function></link> to get the network clock.</para>
+<refsect3 id="gst-rtsp-media-is-time-provider.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>media</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstRTSPMedia"><type>GstRTSPMedia</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-rtsp-media-is-time-provider.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if <parameter>media</parameter>
+can provide a <link linkend="GstNetTimeProvider"><type>GstNetTimeProvider</type></link>.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-rtsp-media-get-time-provider" role="function">
+<title>gst_rtsp_media_get_time_provider&#160;()</title>
+<indexterm zone="gst-rtsp-media-get-time-provider"><primary>gst_rtsp_media_get_time_provider</primary></indexterm>
+<programlisting language="C"><link linkend="GstNetTimeProvider"><returnvalue>GstNetTimeProvider</returnvalue></link>&#160;*
+gst_rtsp_media_get_time_provider (<parameter><link linkend="GstRTSPMedia"><type>GstRTSPMedia</type></link> *media</parameter>,
+                                  <parameter>const <link linkend="gchar"><type>gchar</type></link> *address</parameter>,
+                                  <parameter><link linkend="guint16"><type>guint16</type></link> port</parameter>);</programlisting>
+<para>Get the <link linkend="GstNetTimeProvider"><type>GstNetTimeProvider</type></link> for the clock used by <parameter>media</parameter>
+. The time provider
+will listen on <parameter>address</parameter>
+ and <parameter>port</parameter>
+ for client time requests.</para>
+<refsect3 id="gst-rtsp-media-get-time-provider.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>media</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstRTSPMedia"><type>GstRTSPMedia</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>address</para></entry>
+<entry role="parameter_description"><para>an address or <link linkend="NULL:CAPS"><literal>NULL</literal></link>. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>allow-none</acronym>]</emphasis></entry></row>
+<row><entry role="parameter_name"><para>port</para></entry>
+<entry role="parameter_description"><para>a port or 0</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-rtsp-media-get-time-provider.returns" role="returns">
+<title>Returns</title>
+<para>the <link linkend="GstNetTimeProvider"><type>GstNetTimeProvider</type></link> of <parameter>media</parameter>
+. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>]</emphasis></para>
+</refsect3></refsect2>
+
+</refsect1>
+<refsect1 id="GstRTSPMedia.other_details" role="details">
+<title role="details.title">Types and Values</title>
+<refsect2 id="GstRTSPMedia-struct" role="struct">
+<title>struct GstRTSPMedia</title>
+<indexterm zone="GstRTSPMedia-struct"><primary>GstRTSPMedia</primary></indexterm>
+<programlisting language="C">struct GstRTSPMedia;</programlisting>
+<para>A class that contains the GStreamer element along with a list of
+<link linkend="GstRTSPStream"><type>GstRTSPStream</type></link> objects that can produce data.</para>
+<para>This object is usually created from a <link linkend="GstRTSPMediaFactory"><type>GstRTSPMediaFactory</type></link>.</para>
+</refsect2>
+<refsect2 id="GstRTSPMediaClass" role="struct">
+<title>struct GstRTSPMediaClass</title>
+<indexterm zone="GstRTSPMediaClass"><primary>GstRTSPMediaClass</primary></indexterm>
+<programlisting language="C">struct GstRTSPMediaClass {
+  GObjectClass  parent_class;
+
+  /* vmethods */
+  gboolean        (*handle_message)  (GstRTSPMedia *media, GstMessage *message);
+  gboolean        (*prepare)         (GstRTSPMedia *media, GstRTSPThread *thread);
+  gboolean        (*unprepare)       (GstRTSPMedia *media);
+  gboolean        (*suspend)         (GstRTSPMedia *media);
+  gboolean        (*unsuspend)       (GstRTSPMedia *media);
+  gboolean        (*convert_range)   (GstRTSPMedia *media, GstRTSPTimeRange *range,
+                                      GstRTSPRangeUnit unit);
+  gboolean        (*query_position)  (GstRTSPMedia *media, gint64 *position);
+  gboolean        (*query_stop)      (GstRTSPMedia *media, gint64 *stop);
+  GstElement *    (*create_rtpbin)   (GstRTSPMedia *media);
+  gboolean        (*setup_rtpbin)    (GstRTSPMedia *media, GstElement *rtpbin);
+  gboolean        (*setup_sdp)       (GstRTSPMedia *media, GstSDPMessage *sdp, GstSDPInfo *info);
+
+  /* signals */
+  void            (*new_stream)      (GstRTSPMedia *media, GstRTSPStream * stream);
+  void            (*removed_stream)  (GstRTSPMedia *media, GstRTSPStream * stream);
+
+  void            (*prepared)        (GstRTSPMedia *media);
+  void            (*unprepared)      (GstRTSPMedia *media);
+
+  void            (*target_state)    (GstRTSPMedia *media, GstState state);
+  void            (*new_state)       (GstRTSPMedia *media, GstState state);
+
+  gboolean        (*handle_sdp)      (GstRTSPMedia *media, GstSDPMessage *sdp);
+};
+</programlisting>
+<para>The RTSP media class</para>
+<refsect3 id="GstRTSPMediaClass.members" role="struct_members">
+<title>Members</title>
+<informaltable role="struct_members_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="struct_members_name" colwidth="300px"/>
+<colspec colname="struct_members_description"/>
+<colspec colname="struct_members_annotations" colwidth="200px"/>
+<tbody>
+<row role="member"><entry role="struct_member_name"><para><structfield id="GstRTSPMediaClass.handle-message">handle_message</structfield>&#160;()</para></entry>
+<entry role="struct_member_description"><para>handle a message</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><structfield id="GstRTSPMediaClass.prepare">prepare</structfield>&#160;()</para></entry>
+<entry role="struct_member_description"><para>the default implementation adds all elements and sets the
+pipeline's state to GST_STATE_PAUSED (or GST_STATE_PLAYING
+in case of NO_PREROLL elements).</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><structfield id="GstRTSPMediaClass.unprepare">unprepare</structfield>&#160;()</para></entry>
+<entry role="struct_member_description"><para>the default implementation sets the pipeline's state
+to GST_STATE_NULL and removes all elements.</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><structfield id="GstRTSPMediaClass.suspend">suspend</structfield>&#160;()</para></entry>
+<entry role="struct_member_description"><para>the default implementation sets the pipeline's state to
+GST_STATE_NULL GST_STATE_PAUSED depending on the selected
+suspend mode.</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><structfield id="GstRTSPMediaClass.unsuspend">unsuspend</structfield>&#160;()</para></entry>
+<entry role="struct_member_description"><para>the default implementation reverts the suspend operation.
+The pipeline will be prerolled again if it's state was
+set to GST_STATE_NULL in suspend.</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><structfield id="GstRTSPMediaClass.convert-range">convert_range</structfield>&#160;()</para></entry>
+<entry role="struct_member_description"><para>convert a range to the given unit</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><structfield id="GstRTSPMediaClass.query-position">query_position</structfield>&#160;()</para></entry>
+<entry role="struct_member_description"><para>query the current position in the pipeline</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><structfield id="GstRTSPMediaClass.query-stop">query_stop</structfield>&#160;()</para></entry>
+<entry role="struct_member_description"><para>query when playback will stop</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><structfield id="GstRTSPMediaClass.create-rtpbin">create_rtpbin</structfield>&#160;()</para></entry>
+<entry /><entry />
+</row>
+<row role="member"><entry role="struct_member_name"><para><structfield id="GstRTSPMediaClass.setup-rtpbin">setup_rtpbin</structfield>&#160;()</para></entry>
+<entry /><entry />
+</row>
+<row role="member"><entry role="struct_member_name"><para><structfield id="GstRTSPMediaClass.setup-sdp">setup_sdp</structfield>&#160;()</para></entry>
+<entry /><entry />
+</row>
+<row role="member"><entry role="struct_member_name"><para><structfield id="GstRTSPMediaClass.new-stream">new_stream</structfield>&#160;()</para></entry>
+<entry /><entry />
+</row>
+<row role="member"><entry role="struct_member_name"><para><structfield id="GstRTSPMediaClass.removed-stream">removed_stream</structfield>&#160;()</para></entry>
+<entry /><entry />
+</row>
+<row role="member"><entry role="struct_member_name"><para><structfield id="GstRTSPMediaClass.prepared">prepared</structfield>&#160;()</para></entry>
+<entry /><entry />
+</row>
+<row role="member"><entry role="struct_member_name"><para><structfield id="GstRTSPMediaClass.unprepared">unprepared</structfield>&#160;()</para></entry>
+<entry /><entry />
+</row>
+<row role="member"><entry role="struct_member_name"><para><structfield id="GstRTSPMediaClass.target-state">target_state</structfield>&#160;()</para></entry>
+<entry /><entry />
+</row>
+<row role="member"><entry role="struct_member_name"><para><structfield id="GstRTSPMediaClass.new-state">new_state</structfield>&#160;()</para></entry>
+<entry /><entry />
+</row>
+<row role="member"><entry role="struct_member_name"><para><structfield id="GstRTSPMediaClass.handle-sdp">handle_sdp</structfield>&#160;()</para></entry>
+<entry /><entry />
+</row>
+</tbody></tgroup></informaltable>
+</refsect3>
+</refsect2>
+<refsect2 id="GstRTSPMediaStatus" role="enum">
+<title>enum GstRTSPMediaStatus</title>
+<indexterm zone="GstRTSPMediaStatus"><primary>GstRTSPMediaStatus</primary></indexterm>
+<para>The state of the media pipeline.</para>
+<refsect3 id="GstRTSPMediaStatus.members" role="enum_members">
+<title>Members</title>
+<informaltable role="enum_members_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="enum_members_name" colwidth="300px"/>
+<colspec colname="enum_members_description"/>
+<colspec colname="enum_members_annotations" colwidth="200px"/>
+<tbody>
+<row role="constant"><entry role="enum_member_name"><para id="GST-RTSP-MEDIA-STATUS-UNPREPARED:CAPS">GST_RTSP_MEDIA_STATUS_UNPREPARED</para></entry>
+<entry role="enum_member_description"><para>media pipeline not prerolled</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="GST-RTSP-MEDIA-STATUS-UNPREPARING:CAPS">GST_RTSP_MEDIA_STATUS_UNPREPARING</para></entry>
+<entry role="enum_member_description"><para>media pipeline is busy doing a clean
+                                    shutdown.</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="GST-RTSP-MEDIA-STATUS-PREPARING:CAPS">GST_RTSP_MEDIA_STATUS_PREPARING</para></entry>
+<entry role="enum_member_description"><para>media pipeline is prerolling</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="GST-RTSP-MEDIA-STATUS-PREPARED:CAPS">GST_RTSP_MEDIA_STATUS_PREPARED</para></entry>
+<entry role="enum_member_description"><para>media pipeline is prerolled</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="GST-RTSP-MEDIA-STATUS-SUSPENDED:CAPS">GST_RTSP_MEDIA_STATUS_SUSPENDED</para></entry>
+<entry role="enum_member_description"><para>media is suspended</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="GST-RTSP-MEDIA-STATUS-ERROR:CAPS">GST_RTSP_MEDIA_STATUS_ERROR</para></entry>
+<entry role="enum_member_description"><para>media pipeline is in error</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="GstRTSPSuspendMode" role="enum">
+<title>enum GstRTSPSuspendMode</title>
+<indexterm zone="GstRTSPSuspendMode"><primary>GstRTSPSuspendMode</primary></indexterm>
+<para>The suspend mode of the media pipeline. A media pipeline is suspended right
+after creating the SDP and when the client performs a PAUSED request.</para>
+<refsect3 id="GstRTSPSuspendMode.members" role="enum_members">
+<title>Members</title>
+<informaltable role="enum_members_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="enum_members_name" colwidth="300px"/>
+<colspec colname="enum_members_description"/>
+<colspec colname="enum_members_annotations" colwidth="200px"/>
+<tbody>
+<row role="constant"><entry role="enum_member_name"><para id="GST-RTSP-SUSPEND-MODE-NONE:CAPS">GST_RTSP_SUSPEND_MODE_NONE</para></entry>
+<entry role="enum_member_description"><para>Media is not suspended</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="GST-RTSP-SUSPEND-MODE-PAUSE:CAPS">GST_RTSP_SUSPEND_MODE_PAUSE</para></entry>
+<entry role="enum_member_description"><para>Media is PAUSED in suspend</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="GST-RTSP-SUSPEND-MODE-RESET:CAPS">GST_RTSP_SUSPEND_MODE_RESET</para></entry>
+<entry role="enum_member_description"><para>The media is set to NULL when suspended</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+
+</refsect1>
+<refsect1 id="GstRTSPMedia.property-details" role="property_details">
+<title role="property_details.title">Property Details</title>
+<refsect2 id="GstRTSPMedia--buffer-size" role="property"><title>The <literal>“buffer-size”</literal> property</title>
+<indexterm zone="GstRTSPMedia--buffer-size"><primary>GstRTSPMedia:buffer-size</primary></indexterm>
+<programlisting>  “buffer-size”              <link linkend="guint"><type>guint</type></link></programlisting>
+<para>The kernel UDP buffer size to use.</para><para>Flags: Read / Write</para>
+<para>Default value: 524288</para>
+</refsect2>
+<refsect2 id="GstRTSPMedia--clock" role="property"><title>The <literal>“clock”</literal> property</title>
+<indexterm zone="GstRTSPMedia--clock"><primary>GstRTSPMedia:clock</primary></indexterm>
+<programlisting>  “clock”                    <link linkend="GstClock"><type>GstClock</type></link>&#160;*</programlisting>
+<para>Clock to be used by the media pipeline.</para><para>Flags: Read / Write</para>
+</refsect2>
+<refsect2 id="GstRTSPMedia--element" role="property"><title>The <literal>“element”</literal> property</title>
+<indexterm zone="GstRTSPMedia--element"><primary>GstRTSPMedia:element</primary></indexterm>
+<programlisting>  “element”                  <link linkend="GstElement"><type>GstElement</type></link>&#160;*</programlisting>
+<para>The GstBin to use for streaming the media.</para><para>Flags: Read / Write / Construct Only</para>
+</refsect2>
+<refsect2 id="GstRTSPMedia--eos-shutdown" role="property"><title>The <literal>“eos-shutdown”</literal> property</title>
+<indexterm zone="GstRTSPMedia--eos-shutdown"><primary>GstRTSPMedia:eos-shutdown</primary></indexterm>
+<programlisting>  “eos-shutdown”             <link linkend="gboolean"><type>gboolean</type></link></programlisting>
+<para>Send an EOS event to the pipeline before unpreparing.</para><para>Flags: Read / Write</para>
+<para>Default value: FALSE</para>
+</refsect2>
+<refsect2 id="GstRTSPMedia--latency" role="property"><title>The <literal>“latency”</literal> property</title>
+<indexterm zone="GstRTSPMedia--latency"><primary>GstRTSPMedia:latency</primary></indexterm>
+<programlisting>  “latency”                  <link linkend="guint"><type>guint</type></link></programlisting>
+<para>Latency used for receiving media in milliseconds.</para><para>Flags: Read / Write</para>
+<para>Default value: 524288</para>
+</refsect2>
+<refsect2 id="GstRTSPMedia--profiles" role="property"><title>The <literal>“profiles”</literal> property</title>
+<indexterm zone="GstRTSPMedia--profiles"><primary>GstRTSPMedia:profiles</primary></indexterm>
+<programlisting>  “profiles”                 <link linkend="GstRTSPProfile"><type>GstRTSPProfile</type></link></programlisting>
+<para>Allowed transfer profiles.</para><para>Flags: Read / Write</para>
+<para>Default value: GST_RTSP_PROFILE_AVP</para>
+</refsect2>
+<refsect2 id="GstRTSPMedia--protocols" role="property"><title>The <literal>“protocols”</literal> property</title>
+<indexterm zone="GstRTSPMedia--protocols"><primary>GstRTSPMedia:protocols</primary></indexterm>
+<programlisting>  “protocols”                <link linkend="GstRTSPLowerTrans"><type>GstRTSPLowerTrans</type></link></programlisting>
+<para>Allowed lower transport protocols.</para><para>Flags: Read / Write</para>
+<para>Default value: GST_RTSP_LOWER_TRANS_UDP | GST_RTSP_LOWER_TRANS_UDP_MCAST | GST_RTSP_LOWER_TRANS_TCP</para>
+</refsect2>
+<refsect2 id="GstRTSPMedia--reusable" role="property"><title>The <literal>“reusable”</literal> property</title>
+<indexterm zone="GstRTSPMedia--reusable"><primary>GstRTSPMedia:reusable</primary></indexterm>
+<programlisting>  “reusable”                 <link linkend="gboolean"><type>gboolean</type></link></programlisting>
+<para>If this media pipeline can be reused after an unprepare.</para><para>Flags: Read / Write</para>
+<para>Default value: FALSE</para>
+</refsect2>
+<refsect2 id="GstRTSPMedia--shared" role="property"><title>The <literal>“shared”</literal> property</title>
+<indexterm zone="GstRTSPMedia--shared"><primary>GstRTSPMedia:shared</primary></indexterm>
+<programlisting>  “shared”                   <link linkend="gboolean"><type>gboolean</type></link></programlisting>
+<para>If this media pipeline can be shared.</para><para>Flags: Read / Write</para>
+<para>Default value: FALSE</para>
+</refsect2>
+<refsect2 id="GstRTSPMedia--stop-on-disconnect" role="property"><title>The <literal>“stop-on-disconnect”</literal> property</title>
+<indexterm zone="GstRTSPMedia--stop-on-disconnect"><primary>GstRTSPMedia:stop-on-disconnect</primary></indexterm>
+<programlisting>  “stop-on-disconnect”       <link linkend="gboolean"><type>gboolean</type></link></programlisting>
+<para>If this media pipeline should be stopped when a client disconnects without TEARDOWN.</para><para>Flags: Read / Write</para>
+<para>Default value: TRUE</para>
+</refsect2>
+<refsect2 id="GstRTSPMedia--suspend-mode" role="property"><title>The <literal>“suspend-mode”</literal> property</title>
+<indexterm zone="GstRTSPMedia--suspend-mode"><primary>GstRTSPMedia:suspend-mode</primary></indexterm>
+<programlisting>  “suspend-mode”             <link linkend="GstRTSPSuspendMode"><type>GstRTSPSuspendMode</type></link></programlisting>
+<para>How to suspend the media in PAUSED.</para><para>Flags: Read / Write</para>
+<para>Default value: GST_RTSP_SUSPEND_MODE_NONE</para>
+</refsect2>
+<refsect2 id="GstRTSPMedia--time-provider" role="property"><title>The <literal>“time-provider”</literal> property</title>
+<indexterm zone="GstRTSPMedia--time-provider"><primary>GstRTSPMedia:time-provider</primary></indexterm>
+<programlisting>  “time-provider”            <link linkend="gboolean"><type>gboolean</type></link></programlisting>
+<para>Use a NetTimeProvider for clients.</para><para>Flags: Read / Write</para>
+<para>Default value: FALSE</para>
+</refsect2>
+<refsect2 id="GstRTSPMedia--transport-mode" role="property"><title>The <literal>“transport-mode”</literal> property</title>
+<indexterm zone="GstRTSPMedia--transport-mode"><primary>GstRTSPMedia:transport-mode</primary></indexterm>
+<programlisting>  “transport-mode”           <link linkend="GstRTSPTransportMode"><type>GstRTSPTransportMode</type></link></programlisting>
+<para>If this media pipeline can be used for PLAY or RECORD.</para><para>Flags: Read / Write</para>
+<para>Default value: GST_RTSP_TRANSPORT_MODE_PLAY</para>
+</refsect2>
+
+</refsect1>
+<refsect1 id="GstRTSPMedia.signal-details" role="signals">
+<title role="signals.title">Signal Details</title>
+<refsect2 id="GstRTSPMedia-new-state" role="signal"><title>The <literal>“new-state”</literal> signal</title>
+<indexterm zone="GstRTSPMedia-new-state"><primary>GstRTSPMedia::new-state</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+user_function (<link linkend="GstRTSPMedia"><type>GstRTSPMedia</type></link> *gstrtspmedia,
+               <link linkend="gint"><type>gint</type></link>          arg1,
+               <link linkend="gpointer"><type>gpointer</type></link>      user_data)</programlisting>
+<para>Flags: <link linkend="G-SIGNAL-RUN-LAST:CAPS">Run Last</link></para>
+</refsect2><refsect2 id="GstRTSPMedia-new-stream" role="signal"><title>The <literal>“new-stream”</literal> signal</title>
+<indexterm zone="GstRTSPMedia-new-stream"><primary>GstRTSPMedia::new-stream</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+user_function (<link linkend="GstRTSPMedia"><type>GstRTSPMedia</type></link>  *gstrtspmedia,
+               <link linkend="GstRTSPStream"><type>GstRTSPStream</type></link> *arg1,
+               <link linkend="gpointer"><type>gpointer</type></link>       user_data)</programlisting>
+<para>Flags: <link linkend="G-SIGNAL-RUN-LAST:CAPS">Run Last</link></para>
+</refsect2><refsect2 id="GstRTSPMedia-prepared" role="signal"><title>The <literal>“prepared”</literal> signal</title>
+<indexterm zone="GstRTSPMedia-prepared"><primary>GstRTSPMedia::prepared</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+user_function (<link linkend="GstRTSPMedia"><type>GstRTSPMedia</type></link> *gstrtspmedia,
+               <link linkend="gpointer"><type>gpointer</type></link>      user_data)</programlisting>
+<para>Flags: <link linkend="G-SIGNAL-RUN-LAST:CAPS">Run Last</link></para>
+</refsect2><refsect2 id="GstRTSPMedia-removed-stream" role="signal"><title>The <literal>“removed-stream”</literal> signal</title>
+<indexterm zone="GstRTSPMedia-removed-stream"><primary>GstRTSPMedia::removed-stream</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+user_function (<link linkend="GstRTSPMedia"><type>GstRTSPMedia</type></link>  *gstrtspmedia,
+               <link linkend="GstRTSPStream"><type>GstRTSPStream</type></link> *arg1,
+               <link linkend="gpointer"><type>gpointer</type></link>       user_data)</programlisting>
+<para>Flags: <link linkend="G-SIGNAL-RUN-LAST:CAPS">Run Last</link></para>
+</refsect2><refsect2 id="GstRTSPMedia-target-state" role="signal"><title>The <literal>“target-state”</literal> signal</title>
+<indexterm zone="GstRTSPMedia-target-state"><primary>GstRTSPMedia::target-state</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+user_function (<link linkend="GstRTSPMedia"><type>GstRTSPMedia</type></link> *gstrtspmedia,
+               <link linkend="gint"><type>gint</type></link>          arg1,
+               <link linkend="gpointer"><type>gpointer</type></link>      user_data)</programlisting>
+<para>Flags: <link linkend="G-SIGNAL-RUN-LAST:CAPS">Run Last</link></para>
+</refsect2><refsect2 id="GstRTSPMedia-unprepared" role="signal"><title>The <literal>“unprepared”</literal> signal</title>
+<indexterm zone="GstRTSPMedia-unprepared"><primary>GstRTSPMedia::unprepared</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+user_function (<link linkend="GstRTSPMedia"><type>GstRTSPMedia</type></link> *gstrtspmedia,
+               <link linkend="gpointer"><type>gpointer</type></link>      user_data)</programlisting>
+<para>Flags: <link linkend="G-SIGNAL-RUN-LAST:CAPS">Run Last</link></para>
+</refsect2>
+</refsect1>
+<refsect1 id="GstRTSPMedia.see-also">
+<title>See Also</title>
+<para><link linkend="GstRTSPMediaFactory"><type>GstRTSPMediaFactory</type></link>, <link linkend="GstRTSPStream"><type>GstRTSPStream</type></link>, <link linkend="GstRTSPSession"><type>GstRTSPSession</type></link>,
+    <link linkend="GstRTSPSessionMedia"><type>GstRTSPSessionMedia</type></link></para>
+
+</refsect1>
+
+</refentry>

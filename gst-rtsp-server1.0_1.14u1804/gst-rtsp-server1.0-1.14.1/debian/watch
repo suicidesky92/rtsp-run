@@ -1,0 +1,3 @@
+# uscan file
+version=3
+http://gstreamer.freedesktop.org/data/src/gst-rtsp-server/ gst-rtsp-server-([\d\.]+)\..*

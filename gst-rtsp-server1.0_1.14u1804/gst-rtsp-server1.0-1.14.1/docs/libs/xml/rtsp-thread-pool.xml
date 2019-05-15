@@ -1,0 +1,474 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN"
+               "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd" [
+<!ENTITY % version-entities SYSTEM "version.entities">
+%version-entities;
+]>
+<refentry id="GstRTSPThreadPool">
+<refmeta>
+<refentrytitle role="top_of_page" id="GstRTSPThreadPool.top_of_page">GstRTSPThreadPool</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GST-RTSP-SERVER Library</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>GstRTSPThreadPool</refname>
+<refpurpose>A pool of threads</refpurpose>
+</refnamediv>
+
+<refsect1 id="GstRTSPThreadPool.functions" role="functions_proto">
+<title role="functions_proto.title">Functions</title>
+<informaltable pgwide="1" frame="none">
+<tgroup cols="2">
+<colspec colname="functions_return" colwidth="150px"/>
+<colspec colname="functions_name"/>
+<tbody>
+<row><entry role="function_type"><link linkend="GstRTSPThread"><returnvalue>GstRTSPThread</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-rtsp-thread-new">gst_rtsp_thread_new</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstRTSPThread"><returnvalue>GstRTSPThread</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-rtsp-thread-ref">gst_rtsp_thread_ref</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-rtsp-thread-unref">gst_rtsp_thread_unref</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-rtsp-thread-reuse">gst_rtsp_thread_reuse</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-rtsp-thread-stop">gst_rtsp_thread_stop</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+
+<row><entry role="function_type"><link linkend="GstRTSPThreadPool"><returnvalue>GstRTSPThreadPool</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-rtsp-thread-pool-new">gst_rtsp_thread_pool_new</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="gint"><returnvalue>gint</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-rtsp-thread-pool-get-max-threads">gst_rtsp_thread_pool_get_max_threads</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-rtsp-thread-pool-set-max-threads">gst_rtsp_thread_pool_set_max_threads</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="GstRTSPThread"><returnvalue>GstRTSPThread</returnvalue></link>&#160;*
+</entry><entry role="function_name"><link linkend="gst-rtsp-thread-pool-get-thread">gst_rtsp_thread_pool_get_thread</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-rtsp-thread-pool-cleanup">gst_rtsp_thread_pool_cleanup</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="GstRTSPThreadPool.properties" role="properties">
+<title role="properties.title">Properties</title>
+<informaltable frame="none">
+<tgroup cols="3">
+<colspec colname="properties_type" colwidth="150px"/>
+<colspec colname="properties_name" colwidth="300px"/>
+<colspec colname="properties_flags" colwidth="200px"/>
+<tbody>
+<row><entry role="property_type"><link linkend="gint"><type>gint</type></link></entry><entry role="property_name"><link linkend="GstRTSPThreadPool--max-threads">max-threads</link></entry><entry role="property_flags">Read / Write</entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="GstRTSPThreadPool.other" role="other_proto">
+<title role="other_proto.title">Types and Values</title>
+<informaltable role="enum_members_table" pgwide="1" frame="none">
+<tgroup cols="2">
+<colspec colname="name" colwidth="150px"/>
+<colspec colname="description"/>
+<tbody>
+<row><entry role="datatype_keyword">enum</entry><entry role="function_name"><link linkend="GstRTSPThreadType">GstRTSPThreadType</link></entry></row>
+<row><entry role="datatype_keyword">struct</entry><entry role="function_name"><link linkend="GstRTSPThread">GstRTSPThread</link></entry></row>
+
+<row><entry role="datatype_keyword">struct</entry><entry role="function_name"><link linkend="GstRTSPThreadPool-struct">GstRTSPThreadPool</link></entry></row>
+<row><entry role="datatype_keyword">struct</entry><entry role="function_name"><link linkend="GstRTSPThreadPoolClass">GstRTSPThreadPoolClass</link></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="GstRTSPThreadPool.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<screen>    <link linkend="GObject">GObject</link>
+    <phrase role="lineart">&#9584;&#9472;&#9472;</phrase> GstRTSPThreadPool
+</screen>
+</refsect1>
+
+
+<refsect1 id="GstRTSPThreadPool.description" role="desc">
+<title role="desc.title">Description</title>
+<para>A <link linkend="GstRTSPThreadPool"><type>GstRTSPThreadPool</type></link> manages reusable threads for various server tasks.
+Currently the defined thread types can be found in <link linkend="GstRTSPThreadType"><type>GstRTSPThreadType</type></link>.</para>
+<para>Threads of type <link linkend="GST-RTSP-THREAD-TYPE-CLIENT:CAPS"><type>GST_RTSP_THREAD_TYPE_CLIENT</type></link> are used to handle requests from
+a connected client. With <link linkend="gst-rtsp-thread-pool-get-max-threads"><function>gst_rtsp_thread_pool_get_max_threads()</function></link> a maximum
+number of threads can be set after which the pool will start to reuse the
+same thread for multiple clients.</para>
+<para>Threads of type <link linkend="GST-RTSP-THREAD-TYPE-MEDIA:CAPS"><type>GST_RTSP_THREAD_TYPE_MEDIA</type></link> will be used to perform the state
+changes of the media pipelines and handle its bus messages.</para>
+<para>gst_rtsp_thread_pool_get_thread() can be used to create a <link linkend="GstRTSPThread"><type>GstRTSPThread</type></link>
+object of the right type. The thread object contains a mainloop and context
+that run in a seperate thread and can be used to attached sources to.</para>
+<para>gst_rtsp_thread_reuse() can be used to reuse a thread for multiple purposes.
+If all <link linkend="gst-rtsp-thread-reuse"><function>gst_rtsp_thread_reuse()</function></link> calls are matched with a
+<link linkend="gst-rtsp-thread-stop"><function>gst_rtsp_thread_stop()</function></link> call, the mainloop will be quit and the thread will
+stop.</para>
+<para>To configure the threads, a subclass of this object should be made and the
+virtual methods should be overriden to implement the desired functionality.</para>
+<para>Last reviewed on 2013-07-11 (1.0.0)</para>
+
+</refsect1>
+<refsect1 id="GstRTSPThreadPool.functions_details" role="details">
+<title role="details.title">Functions</title>
+<refsect2 id="gst-rtsp-thread-new" role="function">
+<title>gst_rtsp_thread_new&#160;()</title>
+<indexterm zone="gst-rtsp-thread-new"><primary>gst_rtsp_thread_new</primary></indexterm>
+<programlisting language="C"><link linkend="GstRTSPThread"><returnvalue>GstRTSPThread</returnvalue></link>&#160;*
+gst_rtsp_thread_new (<parameter><link linkend="GstRTSPThreadType"><type>GstRTSPThreadType</type></link> type</parameter>);</programlisting>
+<para>Create a new thread object that can run a mainloop.</para>
+<refsect3 id="gst-rtsp-thread-new.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>type</para></entry>
+<entry role="parameter_description"><para>the thread type</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-rtsp-thread-new.returns" role="returns">
+<title>Returns</title>
+<para>a <link linkend="GstRTSPThread"><type>GstRTSPThread</type></link>. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-rtsp-thread-ref" role="function">
+<title>gst_rtsp_thread_ref&#160;()</title>
+<indexterm zone="gst-rtsp-thread-ref"><primary>gst_rtsp_thread_ref</primary></indexterm>
+<programlisting language="C"><link linkend="GstRTSPThread"><returnvalue>GstRTSPThread</returnvalue></link>&#160;*
+gst_rtsp_thread_ref (<parameter><link linkend="GstRTSPThread"><type>GstRTSPThread</type></link> *thread</parameter>);</programlisting>
+<para>Increase the refcount of this thread.</para>
+<refsect3 id="gst-rtsp-thread-ref.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>thread</para></entry>
+<entry role="parameter_description"><para>The thread to refcount</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-rtsp-thread-ref.returns" role="returns">
+<title>Returns</title>
+<para><parameter>thread</parameter>
+(for convenience when doing assignments). </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-rtsp-thread-unref" role="function">
+<title>gst_rtsp_thread_unref&#160;()</title>
+<indexterm zone="gst-rtsp-thread-unref"><primary>gst_rtsp_thread_unref</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_rtsp_thread_unref (<parameter><link linkend="GstRTSPThread"><type>GstRTSPThread</type></link> *thread</parameter>);</programlisting>
+<para>Decrease the refcount of an thread, freeing it if the refcount reaches 0.</para>
+<refsect3 id="gst-rtsp-thread-unref.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>thread</para></entry>
+<entry role="parameter_description"><para>the thread to refcount. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>transfer full</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-rtsp-thread-reuse" role="function">
+<title>gst_rtsp_thread_reuse&#160;()</title>
+<indexterm zone="gst-rtsp-thread-reuse"><primary>gst_rtsp_thread_reuse</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_rtsp_thread_reuse (<parameter><link linkend="GstRTSPThread"><type>GstRTSPThread</type></link> *thread</parameter>);</programlisting>
+<para>Reuse the mainloop of <parameter>thread</parameter>
+</para>
+<refsect3 id="gst-rtsp-thread-reuse.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>thread</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstRTSPThread"><type>GstRTSPThread</type></link>. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>transfer none</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-rtsp-thread-reuse.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if the mainloop could be reused</para>
+</refsect3></refsect2>
+<refsect2 id="gst-rtsp-thread-stop" role="function">
+<title>gst_rtsp_thread_stop&#160;()</title>
+<indexterm zone="gst-rtsp-thread-stop"><primary>gst_rtsp_thread_stop</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_rtsp_thread_stop (<parameter><link linkend="GstRTSPThread"><type>GstRTSPThread</type></link> *thread</parameter>);</programlisting>
+<para>Stop and unref <parameter>thread</parameter>
+. When no threads are using the mainloop, the thread
+will be stopped and the final ref to <parameter>thread</parameter>
+ will be released.</para>
+<refsect3 id="gst-rtsp-thread-stop.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>thread</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstRTSPThread"><type>GstRTSPThread</type></link>. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>transfer full</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-rtsp-thread-pool-new" role="function">
+<title>gst_rtsp_thread_pool_new&#160;()</title>
+<indexterm zone="gst-rtsp-thread-pool-new"><primary>gst_rtsp_thread_pool_new</primary></indexterm>
+<programlisting language="C"><link linkend="GstRTSPThreadPool"><returnvalue>GstRTSPThreadPool</returnvalue></link>&#160;*
+gst_rtsp_thread_pool_new (<parameter><type>void</type></parameter>);</programlisting>
+<para>Create a new <link linkend="GstRTSPThreadPool"><type>GstRTSPThreadPool</type></link> instance.</para>
+<refsect3 id="gst-rtsp-thread-pool-new.returns" role="returns">
+<title>Returns</title>
+<para>a new <link linkend="GstRTSPThreadPool"><type>GstRTSPThreadPool</type></link>. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-rtsp-thread-pool-get-max-threads" role="function">
+<title>gst_rtsp_thread_pool_get_max_threads&#160;()</title>
+<indexterm zone="gst-rtsp-thread-pool-get-max-threads"><primary>gst_rtsp_thread_pool_get_max_threads</primary></indexterm>
+<programlisting language="C"><link linkend="gint"><returnvalue>gint</returnvalue></link>
+gst_rtsp_thread_pool_get_max_threads (<parameter><link linkend="GstRTSPThreadPool"><type>GstRTSPThreadPool</type></link> *pool</parameter>);</programlisting>
+<para>Get the maximum number of threads used for client connections.
+See <link linkend="gst-rtsp-thread-pool-set-max-threads"><function>gst_rtsp_thread_pool_set_max_threads()</function></link>.</para>
+<refsect3 id="gst-rtsp-thread-pool-get-max-threads.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>pool</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstRTSPThreadPool"><type>GstRTSPThreadPool</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-rtsp-thread-pool-get-max-threads.returns" role="returns">
+<title>Returns</title>
+<para> the maximum number of threads.</para>
+</refsect3></refsect2>
+<refsect2 id="gst-rtsp-thread-pool-set-max-threads" role="function">
+<title>gst_rtsp_thread_pool_set_max_threads&#160;()</title>
+<indexterm zone="gst-rtsp-thread-pool-set-max-threads"><primary>gst_rtsp_thread_pool_set_max_threads</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_rtsp_thread_pool_set_max_threads (<parameter><link linkend="GstRTSPThreadPool"><type>GstRTSPThreadPool</type></link> *pool</parameter>,
+                                      <parameter><link linkend="gint"><type>gint</type></link> max_threads</parameter>);</programlisting>
+<para>Set the maximum threads used by the pool to handle client requests.
+A value of 0 will use the pool mainloop, a value of -1 will use an
+unlimited number of threads.</para>
+<refsect3 id="gst-rtsp-thread-pool-set-max-threads.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>pool</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstRTSPThreadPool"><type>GstRTSPThreadPool</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>max_threads</para></entry>
+<entry role="parameter_description"><para>maximum threads</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="gst-rtsp-thread-pool-get-thread" role="function">
+<title>gst_rtsp_thread_pool_get_thread&#160;()</title>
+<indexterm zone="gst-rtsp-thread-pool-get-thread"><primary>gst_rtsp_thread_pool_get_thread</primary></indexterm>
+<programlisting language="C"><link linkend="GstRTSPThread"><returnvalue>GstRTSPThread</returnvalue></link>&#160;*
+gst_rtsp_thread_pool_get_thread (<parameter><link linkend="GstRTSPThreadPool"><type>GstRTSPThreadPool</type></link> *pool</parameter>,
+                                 <parameter><link linkend="GstRTSPThreadType"><type>GstRTSPThreadType</type></link> type</parameter>,
+                                 <parameter><link linkend="GstRTSPContext"><type>GstRTSPContext</type></link> *ctx</parameter>);</programlisting>
+<para>Get a new <link linkend="GstRTSPThread"><type>GstRTSPThread</type></link> for <parameter>type</parameter>
+ and <parameter>ctx</parameter>
+.</para>
+<refsect3 id="gst-rtsp-thread-pool-get-thread.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>pool</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstRTSPThreadPool"><type>GstRTSPThreadPool</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>type</para></entry>
+<entry role="parameter_description"><para>the <link linkend="GstRTSPThreadType"><type>GstRTSPThreadType</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>ctx</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstRTSPContext"><type>GstRTSPContext</type></link>. </para></entry>
+<entry role="parameter_annotations"><emphasis role="annotation">[<acronym>transfer none</acronym>]</emphasis></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-rtsp-thread-pool-get-thread.returns" role="returns">
+<title>Returns</title>
+<para>a new <link linkend="GstRTSPThread"><type>GstRTSPThread</type></link>,
+<link linkend="gst-rtsp-thread-stop"><function>gst_rtsp_thread_stop()</function></link> after usage. </para>
+<para><emphasis role="annotation">[<acronym>transfer full</acronym>][<acronym>nullable</acronym>]</emphasis></para>
+</refsect3></refsect2>
+<refsect2 id="gst-rtsp-thread-pool-cleanup" role="function">
+<title>gst_rtsp_thread_pool_cleanup&#160;()</title>
+<indexterm zone="gst-rtsp-thread-pool-cleanup"><primary>gst_rtsp_thread_pool_cleanup</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_rtsp_thread_pool_cleanup (<parameter><type>void</type></parameter>);</programlisting>
+<para>Wait for all tasks to be stopped and free all allocated resources. This is
+mainly used in test suites to ensure proper cleanup of internal data
+structures.</para>
+</refsect2>
+
+</refsect1>
+<refsect1 id="GstRTSPThreadPool.other_details" role="details">
+<title role="details.title">Types and Values</title>
+<refsect2 id="GstRTSPThreadType" role="enum">
+<title>enum GstRTSPThreadType</title>
+<indexterm zone="GstRTSPThreadType"><primary>GstRTSPThreadType</primary></indexterm>
+<para>Different thread types</para>
+<refsect3 id="GstRTSPThreadType.members" role="enum_members">
+<title>Members</title>
+<informaltable role="enum_members_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="enum_members_name" colwidth="300px"/>
+<colspec colname="enum_members_description"/>
+<colspec colname="enum_members_annotations" colwidth="200px"/>
+<tbody>
+<row role="constant"><entry role="enum_member_name"><para id="GST-RTSP-THREAD-TYPE-CLIENT:CAPS">GST_RTSP_THREAD_TYPE_CLIENT</para></entry>
+<entry role="enum_member_description"><para>a thread to handle the client communication</para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+<row role="constant"><entry role="enum_member_name"><para id="GST-RTSP-THREAD-TYPE-MEDIA:CAPS">GST_RTSP_THREAD_TYPE_MEDIA</para></entry>
+<entry role="enum_member_description"><para>a thread to handle media </para>
+</entry>
+<entry role="enum_member_annotations"></entry>
+</row>
+</tbody></tgroup></informaltable>
+</refsect3></refsect2>
+<refsect2 id="GstRTSPThread" role="struct">
+<title>struct GstRTSPThread</title>
+<indexterm zone="GstRTSPThread"><primary>GstRTSPThread</primary></indexterm>
+<programlisting language="C">struct GstRTSPThread {
+  GstMiniObject mini_object;
+
+  GstRTSPThreadType type;
+  GMainContext *context;
+  GMainLoop *loop;
+};
+</programlisting>
+<para>Structure holding info about a mainloop running in a thread</para>
+<refsect3 id="GstRTSPThread.members" role="struct_members">
+<title>Members</title>
+<informaltable role="struct_members_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="struct_members_name" colwidth="300px"/>
+<colspec colname="struct_members_description"/>
+<colspec colname="struct_members_annotations" colwidth="200px"/>
+<tbody>
+<row role="member"><entry role="struct_member_name"><para><link linkend="GstMiniObject"><type>GstMiniObject</type></link>&#160;<structfield id="GstRTSPThread.mini-object">mini_object</structfield>;</para></entry>
+<entry role="struct_member_description"><para>parent <link linkend="GstMiniObject"><type>GstMiniObject</type></link></para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><link linkend="GstRTSPThreadType"><type>GstRTSPThreadType</type></link>&#160;<structfield id="GstRTSPThread.type">type</structfield>;</para></entry>
+<entry role="struct_member_description"><para>the thread type</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><link linkend="GMainContext"><type>GMainContext</type></link>&#160;*<structfield id="GstRTSPThread.context">context</structfield>;</para></entry>
+<entry role="struct_member_description"><para>a <link linkend="GMainContext"><type>GMainContext</type></link></para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><link linkend="GMainLoop"><type>GMainLoop</type></link>&#160;*<structfield id="GstRTSPThread.loop">loop</structfield>;</para></entry>
+<entry role="struct_member_description"><para>a <link linkend="GMainLoop"><type>GMainLoop</type></link></para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+</tbody></tgroup></informaltable>
+</refsect3>
+</refsect2>
+<refsect2 id="GstRTSPThreadPool-struct" role="struct">
+<title>struct GstRTSPThreadPool</title>
+<indexterm zone="GstRTSPThreadPool-struct"><primary>GstRTSPThreadPool</primary></indexterm>
+<programlisting language="C">struct GstRTSPThreadPool;</programlisting>
+<para>The thread pool structure.</para>
+</refsect2>
+<refsect2 id="GstRTSPThreadPoolClass" role="struct">
+<title>struct GstRTSPThreadPoolClass</title>
+<indexterm zone="GstRTSPThreadPoolClass"><primary>GstRTSPThreadPoolClass</primary></indexterm>
+<programlisting language="C">struct GstRTSPThreadPoolClass {
+  GObjectClass  parent_class;
+
+  GThreadPool *pool;
+
+  GstRTSPThread * (*get_thread)        (GstRTSPThreadPool *pool,
+                                        GstRTSPThreadType type,
+                                        GstRTSPContext *ctx);
+  void            (*configure_thread)  (GstRTSPThreadPool *pool,
+                                        GstRTSPThread * thread,
+                                        GstRTSPContext *ctx);
+
+  void            (*thread_enter)      (GstRTSPThreadPool *pool,
+                                        GstRTSPThread *thread);
+  void            (*thread_leave)      (GstRTSPThreadPool *pool,
+                                        GstRTSPThread *thread);
+};
+</programlisting>
+<para>Class for managing threads.</para>
+<refsect3 id="GstRTSPThreadPoolClass.members" role="struct_members">
+<title>Members</title>
+<informaltable role="struct_members_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="struct_members_name" colwidth="300px"/>
+<colspec colname="struct_members_description"/>
+<colspec colname="struct_members_annotations" colwidth="200px"/>
+<tbody>
+<row role="member"><entry role="struct_member_name"><para><link linkend="GThreadPool"><type>GThreadPool</type></link>&#160;*<structfield id="GstRTSPThreadPoolClass.pool">pool</structfield>;</para></entry>
+<entry role="struct_member_description"><para>a <link linkend="GThreadPool"><type>GThreadPool</type></link> used internally</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><structfield id="GstRTSPThreadPoolClass.get-thread">get_thread</structfield>&#160;()</para></entry>
+<entry role="struct_member_description"><para>this function should make or reuse an existing thread that runs
+a mainloop.</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><structfield id="GstRTSPThreadPoolClass.configure-thread">configure_thread</structfield>&#160;()</para></entry>
+<entry role="struct_member_description"><para>configure a thread object. this vmethod is called when
+a new thread has been created and should be configured.</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><structfield id="GstRTSPThreadPoolClass.thread-enter">thread_enter</structfield>&#160;()</para></entry>
+<entry role="struct_member_description"><para>called from the thread when it is entered</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+<row role="member"><entry role="struct_member_name"><para><structfield id="GstRTSPThreadPoolClass.thread-leave">thread_leave</structfield>&#160;()</para></entry>
+<entry role="struct_member_description"><para>called from the thread when it is left</para></entry>
+<entry role="struct_member_annotations"></entry>
+</row>
+</tbody></tgroup></informaltable>
+</refsect3>
+</refsect2>
+
+</refsect1>
+<refsect1 id="GstRTSPThreadPool.property-details" role="property_details">
+<title role="property_details.title">Property Details</title>
+<refsect2 id="GstRTSPThreadPool--max-threads" role="property"><title>The <literal>“max-threads”</literal> property</title>
+<indexterm zone="GstRTSPThreadPool--max-threads"><primary>GstRTSPThreadPool:max-threads</primary></indexterm>
+<programlisting>  “max-threads”              <link linkend="gint"><type>gint</type></link></programlisting>
+<para>The maximum amount of threads to use for client connections (0 = only mainloop, -1 = unlimited).</para><para>Flags: Read / Write</para>
+<para>Allowed values: &gt;= -1</para>
+<para>Default value: 1</para>
+</refsect2>
+
+</refsect1>
+<refsect1 id="GstRTSPThreadPool.see-also">
+<title>See Also</title>
+<para><link linkend="GstRTSPMedia"><type>GstRTSPMedia</type></link>, <link linkend="GstRTSPClient"><type>GstRTSPClient</type></link></para>
+
+</refsect1>
+
+</refentry>

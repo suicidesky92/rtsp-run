@@ -1,0 +1,167 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN"
+               "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd" [
+<!ENTITY % version-entities SYSTEM "version.entities">
+%version-entities;
+]>
+<refentry id="gst-rtsp-server-GstRTSPOnvifMedia">
+<refmeta>
+<refentrytitle role="top_of_page" id="gst-rtsp-server-GstRTSPOnvifMedia.top_of_page">GstRTSPOnvifMedia</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>GST-RTSP-SERVER Library</refmiscinfo>
+</refmeta>
+<refnamediv>
+<refname>GstRTSPOnvifMedia</refname>
+<refpurpose>The ONVIF media pipeline</refpurpose>
+</refnamediv>
+
+<refsect1 id="gst-rtsp-server-GstRTSPOnvifMedia.functions" role="functions_proto">
+<title role="functions_proto.title">Functions</title>
+<informaltable pgwide="1" frame="none">
+<tgroup cols="2">
+<colspec colname="functions_return" colwidth="150px"/>
+<colspec colname="functions_name"/>
+<tbody>
+<row><entry role="function_type"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-rtsp-onvif-media-collect-backchannel">gst_rtsp_onvif_media_collect_backchannel</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="guint"><returnvalue>guint</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-rtsp-onvif-media-get-backchannel-bandwidth">gst_rtsp_onvif_media_get_backchannel_bandwidth</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+<row><entry role="function_type"><link linkend="void"><returnvalue>void</returnvalue></link>
+</entry><entry role="function_name"><link linkend="gst-rtsp-onvif-media-set-backchannel-bandwidth">gst_rtsp_onvif_media_set_backchannel_bandwidth</link>&#160;<phrase role="c_punctuation">()</phrase></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+<refsect1 id="gst-rtsp-server-GstRTSPOnvifMedia.other" role="other_proto">
+<title role="other_proto.title">Types and Values</title>
+<informaltable role="enum_members_table" pgwide="1" frame="none">
+<tgroup cols="2">
+<colspec colname="name" colwidth="150px"/>
+<colspec colname="description"/>
+<tbody>
+<row><entry role="typedef_keyword">typedef</entry><entry role="function_name"><link linkend="GstRTSPOnvifMedia">GstRTSPOnvifMedia</link></entry></row>
+<row><entry role="typedef_keyword">typedef</entry><entry role="function_name"><link linkend="GstRTSPOnvifMediaClass">GstRTSPOnvifMediaClass</link></entry></row>
+
+</tbody>
+</tgroup>
+</informaltable>
+</refsect1>
+
+
+<refsect1 id="gst-rtsp-server-GstRTSPOnvifMedia.description" role="desc">
+<title role="desc.title">Description</title>
+<para>a <link linkend="GstRTSPOnvifMedia"><type>GstRTSPOnvifMedia</type></link> contains the complete GStreamer pipeline to manage the
+streaming to the clients. The actual data transfer is done by the
+<link linkend="GstRTSPStream"><type>GstRTSPStream</type></link> objects that are created and exposed by the <link linkend="GstRTSPMedia"><type>GstRTSPMedia</type></link>.</para>
+<para>On top of <link linkend="GstRTSPMedia"><type>GstRTSPMedia</type></link> this subclass adds special ONVIF features.
+Special ONVIF features that are currently supported is a backchannel for
+the client to send back media to the server in a normal PLAY media. To
+handle the ONVIF backchannel, a <link linkend="GstRTSPOnvifMediaFactory"><type>GstRTSPOnvifMediaFactory</type></link> and
+<link linkend="GstRTSPOnvifServer"><type>GstRTSPOnvifServer</type></link> has to be used.</para>
+
+</refsect1>
+<refsect1 id="gst-rtsp-server-GstRTSPOnvifMedia.functions_details" role="details">
+<title role="details.title">Functions</title>
+<refsect2 id="gst-rtsp-onvif-media-collect-backchannel" role="function" condition="since:1.14">
+<title>gst_rtsp_onvif_media_collect_backchannel&#160;()</title>
+<indexterm zone="gst-rtsp-onvif-media-collect-backchannel" role="1.14"><primary>gst_rtsp_onvif_media_collect_backchannel</primary></indexterm>
+<programlisting language="C"><link linkend="gboolean"><returnvalue>gboolean</returnvalue></link>
+gst_rtsp_onvif_media_collect_backchannel
+                               (<parameter><link linkend="GstRTSPOnvifMedia"><type>GstRTSPOnvifMedia</type></link> *media</parameter>);</programlisting>
+<para>Find the ONVIF backchannel depayloader element. It should be named
+'depay_backchannel', be placed in a bin called 'onvif-backchannel'
+and return all supported RTP caps on a caps query. Complete RTP caps with
+at least the payload type, clock-rate and encoding-name are required.</para>
+<para>A new <link linkend="GstRTSPStream"><type>GstRTSPStream</type></link> is created for the backchannel if found.</para>
+<refsect3 id="gst-rtsp-onvif-media-collect-backchannel.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>media</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstRTSPOnvifMedia"><type>GstRTSPOnvifMedia</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-rtsp-onvif-media-collect-backchannel.returns" role="returns">
+<title>Returns</title>
+<para> <link linkend="TRUE:CAPS"><literal>TRUE</literal></link> if a backchannel stream could be found and created</para>
+</refsect3><para role="since">Since: <link linkend="api-index-1.14">1.14</link></para></refsect2>
+<refsect2 id="gst-rtsp-onvif-media-get-backchannel-bandwidth" role="function" condition="since:1.14">
+<title>gst_rtsp_onvif_media_get_backchannel_bandwidth&#160;()</title>
+<indexterm zone="gst-rtsp-onvif-media-get-backchannel-bandwidth" role="1.14"><primary>gst_rtsp_onvif_media_get_backchannel_bandwidth</primary></indexterm>
+<programlisting language="C"><link linkend="guint"><returnvalue>guint</returnvalue></link>
+gst_rtsp_onvif_media_get_backchannel_bandwidth
+                               (<parameter><link linkend="GstRTSPOnvifMedia"><type>GstRTSPOnvifMedia</type></link> *media</parameter>);</programlisting>
+<para>Get the configured/supported bandwidth of the ONVIF backchannel pipeline in
+bits per second.</para>
+<refsect3 id="gst-rtsp-onvif-media-get-backchannel-bandwidth.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>factory</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstRTSPMedia"><type>GstRTSPMedia</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><refsect3 id="gst-rtsp-onvif-media-get-backchannel-bandwidth.returns" role="returns">
+<title>Returns</title>
+<para> the configured/supported backchannel bandwidth.</para>
+</refsect3><para role="since">Since: <link linkend="api-index-1.14">1.14</link></para></refsect2>
+<refsect2 id="gst-rtsp-onvif-media-set-backchannel-bandwidth" role="function" condition="since:1.14">
+<title>gst_rtsp_onvif_media_set_backchannel_bandwidth&#160;()</title>
+<indexterm zone="gst-rtsp-onvif-media-set-backchannel-bandwidth" role="1.14"><primary>gst_rtsp_onvif_media_set_backchannel_bandwidth</primary></indexterm>
+<programlisting language="C"><link linkend="void"><returnvalue>void</returnvalue></link>
+gst_rtsp_onvif_media_set_backchannel_bandwidth
+                               (<parameter><link linkend="GstRTSPOnvifMedia"><type>GstRTSPOnvifMedia</type></link> *media</parameter>,
+                                <parameter><link linkend="guint"><type>guint</type></link> bandwidth</parameter>);</programlisting>
+<para>Set the configured/supported bandwidth of the ONVIF backchannel pipeline in
+bits per second.</para>
+<refsect3 id="gst-rtsp-onvif-media-set-backchannel-bandwidth.parameters" role="parameters">
+<title>Parameters</title>
+<informaltable role="parameters_table" pgwide="1" frame="none">
+<tgroup cols="3">
+<colspec colname="parameters_name" colwidth="150px"/>
+<colspec colname="parameters_description"/>
+<colspec colname="parameters_annotations" colwidth="200px"/>
+<tbody>
+<row><entry role="parameter_name"><para>factory</para></entry>
+<entry role="parameter_description"><para>a <link linkend="GstRTSPMedia"><type>GstRTSPMedia</type></link></para></entry>
+<entry role="parameter_annotations"></entry></row>
+<row><entry role="parameter_name"><para>bandwidth</para></entry>
+<entry role="parameter_description"><para>the bandwidth in bits per second</para></entry>
+<entry role="parameter_annotations"></entry></row>
+</tbody></tgroup></informaltable>
+</refsect3><para role="since">Since: <link linkend="api-index-1.14">1.14</link></para></refsect2>
+
+</refsect1>
+<refsect1 id="gst-rtsp-server-GstRTSPOnvifMedia.other_details" role="details">
+<title role="details.title">Types and Values</title>
+<refsect2 id="GstRTSPOnvifMedia" role="typedef">
+<title>GstRTSPOnvifMedia</title>
+<indexterm zone="GstRTSPOnvifMedia"><primary>GstRTSPOnvifMedia</primary></indexterm>
+<programlisting language="C">typedef struct GstRTSPOnvifMedia GstRTSPOnvifMedia;
+</programlisting>
+</refsect2>
+<refsect2 id="GstRTSPOnvifMediaClass" role="typedef">
+<title>GstRTSPOnvifMediaClass</title>
+<indexterm zone="GstRTSPOnvifMediaClass"><primary>GstRTSPOnvifMediaClass</primary></indexterm>
+<programlisting language="C">typedef struct GstRTSPOnvifMediaClass GstRTSPOnvifMediaClass;
+</programlisting>
+</refsect2>
+
+</refsect1>
+<refsect1 id="gst-rtsp-server-GstRTSPOnvifMedia.see-also">
+<title>See Also</title>
+<para><link linkend="GstRTSPMedia"><type>GstRTSPMedia</type></link>, <link linkend="GstRTSPOnvifMediaFactory"><type>GstRTSPOnvifMediaFactory</type></link>, <link linkend="GstRTSPStream"><type>GstRTSPStream</type></link>, <link linkend="GstRTSPSession"><type>GstRTSPSession</type></link>,
+    <link linkend="GstRTSPSessionMedia"><type>GstRTSPSessionMedia</type></link></para>
+
+</refsect1>
+
+</refentry>
